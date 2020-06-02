@@ -1,0 +1,53 @@
+
+@import 'src/variables.scss' ;
+
+
+
+:host {
+   display : flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding : 1rem;
+}
+
+
+
+.logoContainer {
+    // margin-top: 2rem ;
+    align-self: start;
+    display : grid;
+
+    & span {
+        font-size: 3rem;
+        font-family: 'Niconne', cursive;
+        color: #c21f27;
+
+        &::first-letter {
+            font-size : 5rem;
+            color: rgb(236, 37, 146);
+            font-weight:bolder
+        }
+
+        &:last-child {
+            margin-left: 2rem;
+            margin-top: -1.5rem;
+        }
+    }
+}
+
+
+
+.searchBoxContainer-header {
+    margin-bottom : 2rem;
+}
+
+
+
+
+
+
+
+
+
+

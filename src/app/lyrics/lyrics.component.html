@@ -1,0 +1,35 @@
+
+
+
+
+<div class="searchBoxContainer  searchBoxContainer-lyrics">
+
+    <input type="text" class="searchBox" placeholder="search for lyrics .." #searchInput 
+    (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
+
+    <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'   >
+        <svg class="searchLogo__logo" *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>
+        <app-loading-spinner *ngIf='isLoading'></app-loading-spinner>
+    </div>
+
+</div>
+
+
+
+<ul class="lyricsSuggestions" *ngIf="showSuggestions">
+    <li class="lyricsSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)"  >  {{ sugg.title }} </li>
+    <!-- <li class="lyricsSuggestions__suggestion"  >  cfgfgfjh dufif ddtfuf </li>
+    <li class="lyricsSuggestions__suggestion"  >  cfgfgfjh dufif ddtfuf </li>
+    <li class="lyricsSuggestions__suggestion"  >  cfgfgfjh dufif ddtfuf </li>
+    <li class="lyricsSuggestions__suggestion"  >  cfgfgfjh dufif ddtfuf </li>
+    <li class="lyricsSuggestions__suggestion"  >  cfgfgfjh dufif ddtfuf </li> -->
+</ul>
+
+
+
+<div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='!showSuggestions'>
+</div>
+
+
+
+

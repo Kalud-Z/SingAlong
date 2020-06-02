@@ -1,0 +1,103 @@
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { DataService } from '../_services/data.service';
+import { LyricObj } from './lyrics.model';
+import { AjaxService } from '../_services/ajax.service';
+
+@Component({
+  selector: 'app-lyrics',
+  templateUrl: './lyrics.component.html',
+  styleUrls: ['./lyrics.component.scss']
+})
+
+//############################################################################################################################################################
+export class LyricsComponent implements OnInit {  //##########################################################################################################
+  allSuggestions : LyricObj[] = [];
+  isLoading = false;
+
+
+  @Output() hideBackgroundImageEmitter = new EventEmitter<boolean>();
+
+
+  selectedLyric : string;
+  selectedTitle : string;
+  FinalTextToDisplay : string = '';
+
+  searchQuery : string = '';
+
+  constructor(private dataService : DataService , private ajaxService : AjaxService) { }
+
+  showSuggestions = false;
+
+  ngOnInit(): void {
+    this.dataService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
+    this.dataService.lyricsSearch_LoadingNow.subscribe(data => { this.isLoading = data })
+
+    // this.ajaxService.searchLyrics();
+    this.dataService.allLyricsSuggestionsSubject.subscribe((data : any) => {
+      this.allSuggestions = data;
+      this.showSuggestions = true;
+      console.log(this.allSuggestions)
+    })
+  }
+
+  onSearch(searchInput) {
+    this.isLoading = true;
+    this.dataService.getLyrics(searchInput.value);
+  }
+
+  onSelectLyric(lyricObj : LyricObj) {
+    // this.hideBackgroundImageEmitter = true;
+    this.hideBackgroundImageEmitter.emit(true);
+    this.selectedLyric = lyricObj.lyrics;
+    this.selectedTitle = lyricObj.title;
+    this.FinalTextToDisplay =  this.selectedTitle + '\n \n \n' + this.selectedLyric;
+  
+    this.showSuggestions = false;
+  }
+
+
+
+  str = `[Verse 1]
+  Hello, it's me
+  I was wondering if after all these years you'd like to meet
+  To go over everything
+  They say that time's supposed to heal ya, but I ain't done much healing
+  Hello, can you hear me?
+  I'm in California dreaming about who we used to be
+  When we were younger and free
+  I've forgotten how it felt before the world fell at our feet
+  
+  [Pre-Chorus]
+  There's such a difference between us
+  And a million miles
+  
+  [Chorus]
+  Hello from the other side
+  I must've called a thousand times
+  To tell you I'm sorry for everything that I've done
+  But when I call, you never seem to be home
+  Hello from the outside
+  At least, I can say that I've tried
+  To tell you I'm sorry for breaking your heart
+  But it don't matter, it clearly doesn't tear you apart anymore
+  
+  [Verse 2]
+  Hello, how are you?
+  It's so typical of me to talk about myself, I'm sorry
+  I hope that you're well
+  Did you ever make it out of that town where nothing ever happened?
+  
+  [Pre-Chorus]
+  It's no secret that the both of us
+  Are running out of time
+  
+  [Chorus]`
+
+  strFinal = 'Adele milionssss \n \n \n' + this.str;
+
+
+}  //########################################################################################################################################################
+// ##########################################################################################################################################################
+
+
+

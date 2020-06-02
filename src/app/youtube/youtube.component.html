@@ -1,0 +1,45 @@
+
+
+
+
+<div class="searchBoxContainer  searchBoxContainer-video">
+
+    <input type="text" class="searchBox" placeholder="search for music videos .." #searchInput 
+    (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
+
+    <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'   >
+        <svg class="searchLogo__logo" *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
+        <app-loading-spinner *ngIf='isLoading'></app-loading-spinner>
+    </div>
+
+</div>
+
+
+
+
+<ul class="videosSuggestions" *ngIf="showSuggestions">
+
+    <li class="videosSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)" >
+        <figure class="videosSuggestions__suggestion__imgWrapper"> <img  [src]="[sugg.thumbnail]"> </figure>
+        <p class="videosSuggestions__suggestion__title"   > {{ sugg.title }} </p>
+    </li>
+
+    <!-- <li class="videosSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)" >
+        <img  src="https://i.ytimg.com/vi/r_0JjYUe5jo/hqdefault.jpg" alt="">
+        <p class="videosSuggestions__suggestion__title"> KHladed sxrf ssser hdss zhhdsh </p>
+        
+    </li> -->
+
+</ul> 
+
+
+
+<iframe class="videoFrame" [src]="selectedVideoURL | safe : 'resourceUrl'" *ngIf='showVideoFrame' frameborder="0" 
+allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+
+<!-- 
+<iframe src="https://player.vimeo.com/video/255508288" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+ -->
+
+
+

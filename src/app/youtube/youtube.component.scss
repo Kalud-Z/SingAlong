@@ -1,0 +1,83 @@
+
+
+:host {
+    display : flex;
+    flex-direction: column;
+    // justify-content: center;
+}
+
+// * { border : 1px solid yellow}
+
+$videoHeight : 30rem;
+
+.videoFrame {
+    align-self: center;
+    border-radius: 4px;
+    height: $videoHeight;
+    width : calc(1.777 * #{$videoHeight});
+}
+
+
+.searchBoxContainer-video {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+
+
+
+.videosSuggestions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    // grid-template-columns: 3;
+    justify-content: center;
+    // align-content: center;
+
+
+    &__suggestion {
+        cursor: pointer;
+        overflow:hidden;
+        border-radius: 4px;
+        border :1px solid transparent;
+        transition: all 0.1s;
+        display : grid;
+        grid-template-rows: 15rem 1fr;
+        align-items: stretch;
+
+        &:hover {
+            border :1px solid rgba(255, 0, 0, 0.5);
+        }
+
+        &__imgWrapper {
+            width: 100%;
+            height: 100%;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+
+        &__title {
+            // text-align: center;
+            display : flex;
+            align-items: center;
+            justify-content: center;
+            padding : 1.5rem 1rem;
+            background-color: rgba(195, 155, 218, 0.527);
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+
+
+
+
+

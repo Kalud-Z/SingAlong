@@ -1,0 +1,88 @@
+@import 'src/variables.scss' ;
+
+
+
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
+
+// * { border : 3px solid green }
+
+
+.searchBoxContainer-lyrics {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+
+
+.lyricsSuggestions {
+    align-self: center;
+    list-style: none;
+    // margin-bottom: auto;
+    width : 87%;
+
+    &__suggestion {
+        transition : all 0.2s;
+        cursor : pointer;
+        background-color: #D4E0F4;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+
+        border : 1px solid rgba(0, 0, 0, 0.473);
+
+        &:first-child {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+        }
+
+        &:not(:first-child) {
+            border-top : 1px solid rgba(0, 0, 0, 0.473)
+        }
+
+        &:not(:last-child) {
+            border-bottom : none
+        }
+
+        &:hover {
+            background-color: rgba(147, 181, 241, 0.644);
+        }
+    }
+}
+
+
+.lyric-container {
+    // background-color: red;
+    font-family: 'Raleway', sans-serif;
+    line-height: 152%;
+    font-weight: 500;
+    // padding : 2rem 0rem;
+    // padding-top: 30rem;
+    font-size : 1.5rem;
+    text-align: center;
+
+    &::first-line {
+        font-weight: bolder;
+        font-style: italic;
+        font-size : 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,1 +1,116 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+
+// <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+
+// <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
+// <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+
+    // border:1px solid yellow;
+}
+
+html { // this defines what 1 rem is : 1rem = 10px
+    font-size: 62.5%;  /* this is the root font-size ! | and = 62.5% of the default browser font-size which is usually 16px ==> final value 10px */ 
+    font-family: 'Baloo 2', cursive;
+}
+
+
+body { /* all the stuff in here , will be inherited to the child elements.*/
+    box-sizing: border-box;
+   
+}
+
+
+
+
+// ##################################################    SHARED COMPONENTS  ###########################################################################
+
+
+// --------------------------    Search Input   ------------------------------------------------------
+
+
+.searchBoxContainer {
+    grid-column: 1 / -1;
+    justify-self: center;
+    display : flex;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+
+
+    .searchBox {
+        padding: 1rem;
+        font-size: 1.5rem;
+        border-width: 1px;
+        border-color: #CCCCCC;
+        width: 32vw;
+        background-color: #FFFFFF;
+        color: #000000;
+        border-style: solid;
+        border-radius: 10px;
+        box-shadow: 0px 0px 2px rgba(66,66,66,.75);
+    
+        &:focus { outline:none }
+    
+    }
+
+    .searchLogo {
+        align-self: stretch;
+        height: 100%;
+        width: 15%;
+        position : absolute;
+        top: 0;
+        right: 0;
+        border-top-right-radius: 10px ;
+        border-bottom-right-radius: 10px;
+        background-color: rgba(255, 0, 0, 0.425);
+        display : flex;
+        justify-items: center;
+        align-items: center;
+        cursor : pointer;
+        transition: all 0.2s;
+
+        &:hover  { background-color: rgba(255, 0, 0, 0.644) }
+
+        &__logo {
+            height : 2.25rem;
+            width: 2.25rem;
+            position : absolute;
+            top: 50%;
+            left: 50%;
+            transform : translate(-50%, -50%);
+        }
+    }
+
+}
+
+
+
+
+.lyrics-background-hideImage {
+    background-image:  linear-gradient(180deg, rgba(246,231,230,1) 0%, rgba(246,231,230,1) 100%), url(/assets/pic2.jpg) !important;
+}
+
+
+
+
+
+
+
+
+
