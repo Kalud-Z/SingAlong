@@ -1,5 +1,9 @@
 
 
+<div class="changeFontSizeWrapper"  *ngIf='showFontSizeButtons'>
+    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-add-outline"></use> </svg>
+    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-minus-outline"></use> </svg>
+</div>
 
 
 <div class="searchBoxContainer  searchBoxContainer-lyrics">
@@ -27,7 +31,8 @@
 
 
 
-<div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='!showSuggestions'>
+<div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='!showSuggestions' 
+[ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2 , 'fontSize-2_5rem' : lyricsCurrentFontSize === 2.5 }" >
 </div>
 
 

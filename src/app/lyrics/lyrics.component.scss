@@ -5,8 +5,35 @@
 :host {
     display: flex;
     flex-direction: column;
+
+    position: relative;
 }
 
+
+.changeFontSizeWrapper {
+    // position : absolute;
+    position : fixed;
+    top: 32%;
+    right: 5.7%;
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+        height: 2.5rem;
+        width: 2.5rem;
+        cursor : pointer;
+
+        &-increase {
+            fill : rgb(24, 156, 24);
+            margin-bottom: 0.4rem;
+        }
+        &-decrease {
+            fill : red;
+        }
+    }
+}
 
 // * { border : 3px solid green }
 
@@ -60,12 +87,9 @@
 
 
 .lyric-container {
-    // background-color: red;
     font-family: 'Raleway', sans-serif;
     line-height: 152%;
     font-weight: 500;
-    // padding : 2rem 0rem;
-    // padding-top: 30rem;
     font-size : 1.5rem;
     text-align: center;
 
@@ -77,6 +101,19 @@
 }
 
 
+.fontSize-1_5rem {
+    font-size: 1.5rem !important;
+}
+
+
+.fontSize-2rem {
+    font-size: 2rem !important;
+}
+
+
+.fontSize-2_5rem {
+    font-size: 2.5rem !important;
+}
 
 
 

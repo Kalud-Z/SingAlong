@@ -14,8 +14,22 @@ export class LyricsComponent implements OnInit {  //############################
   allSuggestions : LyricObj[] = [];
   isLoading = false;
 
+  showFontSizeButtons = false;
+  lyricsCurrentFontSize : number = 1.5;
 
   @Output() hideBackgroundImageEmitter = new EventEmitter<boolean>();
+
+  increaseFontSize() {
+    if(this.lyricsCurrentFontSize < 2.5) {
+      this.lyricsCurrentFontSize += 0.5;
+    }
+  }
+
+  decreaseFontSize() {
+    if(this.lyricsCurrentFontSize > 1.5) {
+      this.lyricsCurrentFontSize -= 0.5;
+    }
+  }
 
 
   selectedLyric : string;
@@ -41,6 +55,7 @@ export class LyricsComponent implements OnInit {  //############################
   }
 
   onSearch(searchInput) {
+    this.showFontSizeButtons = false;
     this.isLoading = true;
     this.dataService.getLyrics(searchInput.value);
   }
@@ -53,6 +68,7 @@ export class LyricsComponent implements OnInit {  //############################
     this.FinalTextToDisplay =  this.selectedTitle + '\n \n \n' + this.selectedLyric;
   
     this.showSuggestions = false;
+    this.showFontSizeButtons = true;
   }
 
 
