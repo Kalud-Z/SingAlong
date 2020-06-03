@@ -13,10 +13,10 @@ export class AjaxService {  //##################################################
 
   searchQuery_ : string = "church" 
 
+
   searchResultSubject = new Subject<any>();
 
   constructor(private http : HttpClient) { }
-
 
   searchVideo(searchQuery?) {
     // console.log('we are searching now')
@@ -34,6 +34,8 @@ export class AjaxService {  //##################################################
  
   }
 
+  
+
 
   // #####################################################################################################################################################
 }  //####################################################################################################################################################
@@ -42,6 +44,21 @@ export class AjaxService {  //##################################################
 
 
 
+
+
+
+
+//   WAITING FOR SOUNDCLOUD TO REOPEN ITS API #####
+
+
+
+// searchSoundCloudTracks() {
+//   this.http.get('https://api.soundcloud.com/tracks/?client_id=' + this.clientID + '&q=' + this.sq).subscribe(data => {
+//     // this.http.get('https://api.soundcloud.com/tracks/search' + '&q=' + this.sq).subscribe(data => {
+//     console.log('###############################')
+//   console.log(data);
+//   })    
+// }
 
 
 

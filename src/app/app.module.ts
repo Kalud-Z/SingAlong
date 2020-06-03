@@ -13,6 +13,7 @@ import { AdjustLyricPipe } from './lyrics/adjust-lyric.pipe';
 import { SearchFieldComponent } from './_shared/search-field/search-field.component';
 import { LoadingSpinnerComponent } from './_shared/loading-spinner/loading-spinner.component';
 import { SafePipe } from './safe.pipe';
+import { SoundCloudComponent } from './sound-cloud/sound-cloud.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SafePipe } from './safe.pipe';
     AdjustLyricPipe,
     SearchFieldComponent,
     LoadingSpinnerComponent,
-    SafePipe
+    SafePipe,
+    SoundCloudComponent,
   ],
   imports: [
     BrowserModule,

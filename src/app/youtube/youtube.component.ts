@@ -57,12 +57,13 @@ export class YoutubeComponent implements OnInit {  //###########################
 
   onSelectVideo(sugg : videoObj) {
     this.selectedVideoID = sugg.videoID;
-    // console.log(this.selectedVideoID)
-    this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID;
+    // this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID;
+    this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID + '?controls=0&disablekb=1&enablejsapi=1&fs=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&widgetid=1'
     this.showVideoFrame = true;
     this.showSuggestions = false;
   }
 
+  // https://www.youtube.com/embed/YQHsXMglC9A?controls=0&disablekb=1&enablejsapi=1&fs=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&widgetid=1
 
 
 }  //#########################################################################################################################################################
