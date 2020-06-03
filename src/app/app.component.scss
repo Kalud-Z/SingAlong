@@ -54,7 +54,9 @@ app-header {
     }
 
     app-youtube  {
-        // margin-right: 2vw;
+        background-image: linear-gradient(180deg, rgba(246,231,230,1) 0%, rgba(255,255,255,0.5606617647058824) 100%), url(/assets/music-small.jpg);
+        background-size: cover;
+        background-position: center;
     }  
 
     app-lyrics {

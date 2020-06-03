@@ -43,6 +43,11 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
 
+  returnToVideos() {
+    this.showSuggestions = true;
+    this.showVideoFrame = false;
+  }
+
   onSearch(searchInput?) {
     console.log('onSearch called')
     this.isLoading = true;

@@ -4,18 +4,42 @@
     display : flex;
     flex-direction: column;
     // justify-content: center;
+    position: relative;
+    
 }
 
 // * { border : 1px solid yellow}
 
-$videoHeight : 30rem;
-
-.videoFrame {
-    align-self: center;
+$videoHeight : 23vw;
+.iframeWrapper {
+    position : absolute;
+    top: 50%;
+    left: 50%;
+    transform : translate(-50%, -41%);
     border-radius: 4px;
     height: $videoHeight;
     width : calc(1.777 * #{$videoHeight});
+
+        
+    .exitVideoButton {
+        position: absolute;
+        top: 0;
+        right: -24px;
+        height: 2.5rem;
+        width: 2.5rem;
+        cursor : pointer;
+    }
+
+    .videoFrame {
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+    }
+
 }
+
+
+
 
 
 .searchBoxContainer-video {
@@ -23,8 +47,6 @@ $videoHeight : 30rem;
     margin-bottom: 2rem;
     align-self: center;
 }
-
-
 
 
 .videosSuggestions {

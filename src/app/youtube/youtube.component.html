@@ -2,6 +2,8 @@
 
 
 
+
+
 <div class="searchBoxContainer  searchBoxContainer-video">
 
     <input type="text" class="searchBox" placeholder="search for music videos .." #searchInput 
@@ -33,9 +35,13 @@
 </ul> 
 
 
+<div class="iframeWrapper" *ngIf='showVideoFrame'>
+    <svg class="exitVideoButton" *ngIf='showVideoFrame'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
+    
+    <iframe class="videoFrame" [src]="selectedVideoURL | safe : 'resourceUrl'" *ngIf='showVideoFrame' frameborder="0" 
+    allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 
-<iframe class="videoFrame" [src]="selectedVideoURL | safe : 'resourceUrl'" *ngIf='showVideoFrame' frameborder="0" 
-allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+</div>
 
 <!-- 
 <iframe src="https://player.vimeo.com/video/255508288" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
