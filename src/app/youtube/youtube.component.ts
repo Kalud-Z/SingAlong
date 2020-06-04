@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AjaxService } from '../_services/ajax.service';
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
-import { DomSanitizer, SafeResourceUrl, SafeUrl} from '@angular/platform-browser';
+import { DomSanitizer} from '@angular/platform-browser';
+
 
 
 @Component({
@@ -22,11 +22,12 @@ export class YoutubeComponent implements OnInit {  //###########################
 
   selectedVideoID = ''
   selectedVideoURL = ''
+  selectedVideoUrlSafe : any;
 
   searchQuery : string = '';
 
-  constructor(private ajaxService : AjaxService ,
-              private dataService : DataService,
+
+  constructor(private dataService : DataService,
               private sanitizer: DomSanitizer
               ) { }
 
@@ -57,13 +58,18 @@ export class YoutubeComponent implements OnInit {  //###########################
 
   onSelectVideo(sugg : videoObj) {
     this.selectedVideoID = sugg.videoID;
-    // this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID;
-    this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID + '?controls=0&disablekb=1&enablejsapi=1&fs=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&widgetid=1'
+    this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID + '?rel=0' ;
+    this.selectedVideoUrlSafe = this.makeUrlSafe(this.selectedVideoURL);
+    
     this.showVideoFrame = true;
     this.showSuggestions = false;
   }
 
-  // https://www.youtube.com/embed/YQHsXMglC9A?controls=0&disablekb=1&enablejsapi=1&fs=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&widgetid=1
+  //I had a pipe that does this. But when i use in the iframe . the video frame loses its controls ! (only pause works !)
+  // when I remove the pipe. everything works fine.
+  private makeUrlSafe(url : string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
 
 
 }  //#########################################################################################################################################################
