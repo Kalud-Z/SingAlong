@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { YouTubePlayerModule } from "@angular/youtube-player";
+
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +16,7 @@ import { SearchFieldComponent } from './_shared/search-field/search-field.compon
 import { LoadingSpinnerComponent } from './_shared/loading-spinner/loading-spinner.component';
 import { SafePipe } from './safe.pipe';
 import { SoundCloudComponent } from './sound-cloud/sound-cloud.component';
+import { AdjustPlayerSizeDirective } from './youtube/adjust-player-size.directive';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,12 @@ import { SoundCloudComponent } from './sound-cloud/sound-cloud.component';
     LoadingSpinnerComponent,
     SafePipe,
     SoundCloudComponent,
+    AdjustPlayerSizeDirective,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

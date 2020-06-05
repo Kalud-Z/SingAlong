@@ -1,6 +1,10 @@
+<!-- <svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' > <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg> -->
+<svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()'> <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg>
+<svg class="fullScreen__logo fullScreen__logo-shrink"    (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
 
 
-<div class="changeFontSizeWrapper"  *ngIf='showFontSizeButtons'>
+
+<div class="changeFontSizeWrapper"  *ngIf='showLyricsContainer' [ngClass]="{ changeFontSizeWrapper__lyricsFullScreen : isLyricsFullScreen }">
     <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-add-outline"></use> </svg>
     <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-minus-outline"></use> </svg>
 </div>
@@ -31,8 +35,9 @@
 
 
 
-<div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='!showSuggestions' 
-[ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2 , 'fontSize-2_5rem' : lyricsCurrentFontSize === 2.5 }" >
+<div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='showLyricsContainer' 
+[ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2 ,
+            'fontSize-2_5rem' : lyricsCurrentFontSize === 2.5 }" >
 </div>
 
 

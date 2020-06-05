@@ -5,9 +5,13 @@
 
     <app-header></app-header>
 
-    <main class="body">
-        <app-youtube></app-youtube>
-        <app-lyrics (hideBackgroundImageEmitter)='hideBackgroundImage = true'  [ngClass]="{'lyrics-background-hideImage' : hideBackgroundImage}" ></app-lyrics>
+    <main class="body" [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }" >
+        <app-youtube [ngClass]="{ videoShrink : isLyricsFullScreen  }"  [isLyricsFullScreen]="isLyricsFullScreen" ></app-youtube>
+
+        <app-lyrics (hideBackgroundImageEmitter)='hideBackgroundImage = true' 
+        [ngClass]="{'lyrics-background-hideImage' : hideBackgroundImage , lyricsFullScreen : isLyricsFullScreen}" 
+        (lyricsFullScreenEmitter)='onLyricsFullScreen($event)'  
+        ></app-lyrics>
     </main>
 
 

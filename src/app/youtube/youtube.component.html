@@ -13,8 +13,7 @@
     </div>
 
 </div>
-
-
+ 
 
 
 <ul class="videosSuggestions" *ngIf="showSuggestions">
@@ -34,15 +33,61 @@
 
 
 
+<div class="iframeWrapper" *ngIf='showVideoFrame'  appAdjustPlayerSize (calculatedWidth)='setCalculatedPlayerWidth($event)' >
+    <!-- <div class="iframeWrapper" *ngIf='!showVideoFrame'  appAdjustPlayerSize (calculatedWidth)='setCalculatedPlayerWidth($event)' > -->
+        <!-- <div class="iframeWrapper"   appAdjustPlayerSize (calculatedWidth)='setCalculatedPlayerWidth($event)' #playWrapper > -->
 
-<div class="iframeWrapper" *ngIf='showVideoFrame'>
     <svg class="exitVideoButton" *ngIf='showVideoFrame'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
-    <iframe class="videoFrame" [src]="selectedVideoUrlSafe"  
-    *ngIf='showVideoFrame' frameborder="0" 
-    allow="accelerometer; autoplay ; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe> 
-
+        
 </div> 
+<youtube-player   class="videoFrame" [height]='playerHeight' [width]='playerWidth' #player 
+[videoId]="selectedVideoID" [ngClass]="{hide_videoFrame : isLyricsFullScreen }" ></youtube-player>
+<!-- [videoId]="selectedVideoID" [ngClass]="{hide_videoFrame : isLyricsFullScreen || !showVideoFrame }" ></youtube-player> -->
+<!-- <youtube-player   class="videoFrame" [height]='playerHeight' [width]='playerWidth' #player [videoId]="selectedVideoID" [ngClass]="{hide_videoFrame : isLyricsFullScreen }" ></youtube-player> -->
+    
+
+
+<div class="videoControlsWrapper" *ngIf='isLyricsFullScreen' >
+    <input type="range" min="0" [max]="videoLength" [value]="currentTime" class="slider" id="myRange" (input)='getValue($event)' #inputRange>
+    <div class="buttonsWrapper">
+        <svg class="buttonsWrapper__button buttonsWrapper__button-backward " (click)='jumpBackward()'   > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>
+        <svg class="buttonsWrapper__button buttonsWrapper__button-play  "    (click)='startVideo()'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>
+        <svg class="buttonsWrapper__button buttonsWrapper__button-pause "    (click)='pauseVideo()' > <use xlink:href="/assets/symbol-defs.svg#icon-pause"></use> </svg>
+        <svg class="buttonsWrapper__button buttonsWrapper__button-forward "  (click)='jumpForward()'  > <use xlink:href="/assets/symbol-defs.svg#icon-forward"></use> </svg>
+    </div>
+    <h1 class="videoControlsWrapper__songTitle"> Shikra sey ass hahaha I love ou <3 </h1>
+</div>
+ 
+
+
+<!-- 
+<div class="buttons">
+    
+    <button id="play-button" (click)='startVideo()'> play </button>
+    <button id="pause-button" (click)='pauseVideo()'> pause </button>
+    <button id="advance-button"> advacne </button>
+
+</div> -->
 
 
 
 
+
+<!-- 
+
+
+
+ -->
+
+
+
+
+
+
+<!--  <iframe class="videoFrame" id="video" [src]="selectedVideoUrlSafe"  
+            *ngIf='showVideoFrame' frameborder="0" 
+            allow="accelerometer; autoplay ; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>  -->
+            
+        <!-- <youtube-player class="videoFrame" [height]='playerHeight' [width]='playerWidth' #player [videoId]="selectedVideoID" *ngIf='showVideoFrame'></youtube-player> -->
+        <!-- <youtube-player class="videoFrame" [height]='playerHeight' [width]='playerWidth' #player [videoId]="selectedVideoID" *ngIf='!showVideoFrame'></youtube-player> -->
+    
