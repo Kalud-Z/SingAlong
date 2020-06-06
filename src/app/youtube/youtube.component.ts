@@ -1,12 +1,11 @@
 // https://developers.google.com/youtube/iframe_api_reference#seekTo
 
 
-import { Component, OnInit, ViewChild, ViewChildren, QueryList, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, Input, HostListener, ElementRef } from '@angular/core';
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 import { DomSanitizer} from '@angular/platform-browser';
 import { YouTubePlayer } from '@angular/youtube-player';
-
 
 
 
@@ -21,15 +20,31 @@ export class YoutubeComponent implements OnInit {  //###########################
   allSuggestions : videoObj[] = [];
   isLoading = false;
   showSuggestions = false;
-
   @Input() isLyricsFullScreen = false;
-
   searchQuery : string = '';
+  @ViewChild('videoPlayer' , { static : false })  videoPlayer : ElementRef<HTMLElement>;
+
   
+  // keyCode = 39  arrow right
+  // keyCode = 37  arrow left
+  // keyCode = 38  arrow up
+  // keyCode = 40  arrow down
 
   constructor(private dataService : DataService,
               private sanitizer: DomSanitizer
               ) { }
+
+              
+  @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
+    // console.log(event)
+    if(event.keyCode === 39) {  //we skip forward
+      console.log(this.videoPlayer)
+      this.videoPlayer.nativeElement.click();
+      // if(this.videoPlayer !== undefined) {
+      //   this.videoPlayer.nativeElement.click();
+      // }
+    }
+  }
 
   ngOnInit(): void {
     this.dataService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })

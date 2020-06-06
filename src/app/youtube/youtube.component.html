@@ -7,7 +7,7 @@
     <input type="text" class="searchBox" placeholder="search for music videos .." #searchInput 
     (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
 
-    <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'   >
+    <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'  >
         <svg class="searchLogo__logo" *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
         <app-loading-spinner *ngIf='isLoading'></app-loading-spinner>
     </div>
@@ -33,10 +33,11 @@
 
 
 
-<div class="iframeWrapper" *ngIf='showVideoFrame'  appAdjustPlayerSize (calculatedWidth)='setCalculatedPlayerWidth($event)' [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen}" >
-    <svg class="exitVideoButton" *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
+<div class="iframeWrapper"   *ngIf='showVideoFrame'  appAdjustPlayerSize (calculatedWidth)='setCalculatedPlayerWidth($event)' [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen}" >
+    <!-- <div class="iframeWrapper"    [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen}" > -->
+    <svg class="exitVideoButton"   *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
 
-    <iframe class="videoFrame" id="video" [src]="selectedVideoUrlSafe"  *ngIf='showVideoFrame' frameborder="0" 
+    <iframe class="videoFrame"  #videoPlayer  id="video" [src]="selectedVideoUrlSafe"  *ngIf='showVideoFrame' frameborder="0" 
     allow="accelerometer; autoplay ; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe> 
 </div> 
 
