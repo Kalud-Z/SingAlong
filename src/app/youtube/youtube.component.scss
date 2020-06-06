@@ -33,6 +33,11 @@ $videoHeight : 20vw;
     width : calc(1.777 * #{$videoHeight});
     transition : all 0.4s;
 
+    &__videoPlayer {
+        height: 100%;
+        width : 100%;
+    }
+
     .exitVideoButton {
         position: absolute;
         top: 0;
@@ -44,6 +49,10 @@ $videoHeight : 20vw;
 
 }
 
+.hideVideoWrapper {
+    opacity : 0 !important;
+    visibility: hidden !important;
+}
 
 
 .videoFrame {

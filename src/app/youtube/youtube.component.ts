@@ -22,31 +22,14 @@ export class YoutubeComponent implements OnInit {  //###########################
   showSuggestions = false;
   @Input() isLyricsFullScreen = false;
   searchQuery : string = '';
-  @ViewChild('videoPlayer' , { static : false })  videoPlayer : ElementRef<HTMLElement>;
-
-  
-  // keyCode = 39  arrow right
-  // keyCode = 37  arrow left
-  // keyCode = 38  arrow up
-  // keyCode = 40  arrow down
 
   constructor(private dataService : DataService,
               private sanitizer: DomSanitizer
               ) { }
-
               
-  @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
-    // console.log(event)
-    if(event.keyCode === 39) {  //we skip forward
-      console.log(this.videoPlayer)
-      this.videoPlayer.nativeElement.click();
-      // if(this.videoPlayer !== undefined) {
-      //   this.videoPlayer.nativeElement.click();
-      // }
-    }
-  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // this.initAPI()
     this.dataService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
     this.dataService.videoSearch_LoadingNow.subscribe(data => { this.isLoading = data })
 
@@ -57,13 +40,10 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
 
-  AfterViewInit() {
-    
-  }
-
   returnToVideos() {
     this.showSuggestions = true;
     this.showVideoFrame = false;
+    this.player.destroy()
   }
 
   onSearch(searchInput?) {
@@ -80,6 +60,8 @@ export class YoutubeComponent implements OnInit {  //###########################
     
     this.showVideoFrame = true;
     this.showSuggestions = false;
+
+    this.initAPI()
   }
 
   //I had a pipe that does this. But when i use in the iframe . the video frame loses its controls ! (only pause works !)
@@ -88,8 +70,35 @@ export class YoutubeComponent implements OnInit {  //###########################
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
-
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+  setCalculatedPlayerWidth(event) {
+    this.playerWidth = event;
+    this.playerHeight = this.playerWidth / 1.777
+  }
+
+  // YT: YouTubePlayer;
+  afterFirstVideo = false;
+  YT: any;
+  videoID: string;
+  player: any;
+
+  // keyCode = 39  arrow right
+  // keyCode = 37  arrow left
+  // keyCode = 38  arrow up
+  // keyCode = 40  arrow down
+
+  @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
+    if(event.keyCode === 39) {  //we skip forward
+      this.player.seekTo( this.player.getCurrentTime() + 5, true)
+    }
+
+    if(event.keyCode === 37) {  //we skip forward
+      this.player.seekTo( this.player.getCurrentTime() - 5, true)
+    }
+
+  }
+        
 
   // selectedVideoID = 'As0RsSTYbAI'
   selectedVideoID = ''
@@ -102,10 +111,56 @@ export class YoutubeComponent implements OnInit {  //###########################
   playerHeight : number
 
 
-  setCalculatedPlayerWidth(event) {
-    this.playerWidth = event;
-    this.playerHeight = this.playerWidth / 1.777
+
+  /* 2. Initialize method for YT IFrame API */
+  initAPI() {
+    // Return if Player is already created . in case we wanna play another video . without refreshing the app.
+    if (window['YT']) {
+      this.initVideoPlayer();
+      return;
+    }
+
+    var tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    /* 3. initVideoPlayer() will create an <iframe> (and YouTube player) after the API code downloads. */
+    window['onYouTubeIframeAPIReady'] = () => this.initVideoPlayer();
   }
+
+
+  initVideoPlayer() {
+    this.player = new window['YT'].Player('player', {
+      videoId: this.selectedVideoID,
+      // videoId: 'tNy8Y7BhUeI',
+      height: "100%",
+      width: "100%",
+      // playerVars: {
+      //   autoplay: 0,
+      //   modestbranding: 1,
+      //   controls: 1,
+      //   disablekb: 1,
+      //   rel: 0,
+      //   showinfo: 0,
+      //   fs: 0,
+      //   playsinline: 1
+      // },
+      // events: { 'onReady'  : this.onPlayerReady.bind(this) }
+      events: { 'onReady'  : this.onPlayerReady}
+    });
+  }
+
+  onPlayerReady(event) {
+    event.target.playVideo();
+  }
+
+  
+
+
+  cleanTime() {
+    return Math.round(this.player.getCurrentTime())
+  };
 
 
 
