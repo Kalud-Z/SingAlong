@@ -65,8 +65,6 @@ export class YoutubeComponent implements OnInit {  //###########################
     
     this.showVideoFrame = true;
     this.showSuggestions = false;
-
-     this.videoLength = this.player.getDuration();
   }
 
   //I had a pipe that does this. But when i use in the iframe . the video frame loses its controls ! (only pause works !)
@@ -77,9 +75,6 @@ export class YoutubeComponent implements OnInit {  //###########################
 
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  @ViewChild('player', {static: true}) player: YouTubePlayer;
-  @ViewChild('inputRange', {static: true}) inputRange : any;
-  
 
   // selectedVideoID = 'As0RsSTYbAI'
   selectedVideoID = ''
@@ -88,66 +83,16 @@ export class YoutubeComponent implements OnInit {  //###########################
   selectedVideoUrlSafe : any;
   showVideoFrame = false;
 
-  playerWidth : number = 400
-  playerHeight : number = 400
+  playerWidth : number 
+  playerHeight : number
 
-  currentTime  : number = 0;
-  videoLength : number 
-  // this.videoLength = this.player.getDuration();
-
-
-  videoInterval : any;
-
-  // setIntervalFunction() {
-  // }
-
-  startInterval() {
-    this.videoInterval = setInterval(() => {
-      this.currentTime++;
-      console.log(this.currentTime)
-    }, 1000);
-  }
-  
-  
-  startVideo() {
-    this.player.playVideo();
-    this.startInterval();
-  }
-
-  pauseVideo() {
-    this.player.pauseVideo()
-    clearInterval(this.videoInterval);
-  }
 
   setCalculatedPlayerWidth(event) {
-    // console.log(this.player)
-    // console.log('this is player width : ' , event)
-    // this.playerWidth = event;
-    // this.playerHeight = this.playerWidth / 1.777
-    // console.log('this is the width : ' , this.playerWidth)
-    // console.log('this is the height : ' , this.playerH
-  }
-
-  jumpForward() {
-      this.player.seekTo(this.player.getCurrentTime() + 10, true)
-  }
-
-  jumpBackward() {
-    this.player.seekTo(this.player.getCurrentTime() - 10, true)
+    this.playerWidth = event;
+    this.playerHeight = this.playerWidth / 1.777
   }
 
 
-  getValue(event) {
-    console.log(event.target.value)
-    this.currentTime = event.target.value;
-    this.player.seekTo(event.target.value, true)
-  }
-
-  setValue(inputRange) {
-    console.log(inputRange)
-    inputRange.value = 86;
-    // console.log(inputRange.target.value)
-  }
 
 
 }  //#########################################################################################################################################################
