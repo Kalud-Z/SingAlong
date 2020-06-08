@@ -2,22 +2,21 @@
 @import 'src/variables.scss' ;
 
 
-
 :host {
    display : flex;
-   flex-direction: column;
    justify-content: center;
-   align-items: center;
-   padding : 1rem;
+   align-items: flex-end;
+   position: relative;
 }
 
 
 
 .logoContainer {
-    // margin-top: 2rem ;
-    align-self: start;
+    position: absolute;
+    top: 0 ;
+    left : 0;
     display : grid;
-    margin-left: .5rem;
+    padding :0 1rem;
 
 
     & span {
@@ -41,6 +40,7 @@
 
 
 .searchBoxContainer-header {
+    align-self: flex-end;
     margin-bottom : 2rem;
 }
 

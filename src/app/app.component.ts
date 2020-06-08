@@ -1,6 +1,5 @@
 import { Component, HostListener, OnInit, Inject, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { NgForm } from '@angular/forms';
 import { lyricsFullScreenTrigger } from './animations';
 
 

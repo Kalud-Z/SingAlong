@@ -171,8 +171,11 @@ export class YoutubeComponent implements OnInit {  //###########################
         disablekb: 1,
         rel: 0,
         showinfo: 0,
-        fs: 0,
-        playsinline: 1
+        fs: 1,
+        playsinline: 1,
+        enablejsapi : 1,
+        iv_load_policy : 3, // annotations => 1 : show | 3 : hide
+        origin : 'http://127.0.0.1:4200/'  // your domain
       },
       events: {
         'onReady'  : this.onPlayerReady

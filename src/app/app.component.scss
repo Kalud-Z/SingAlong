@@ -7,11 +7,9 @@
 }
 
 
-
 .container {
     height : 100vh;
     width : 100vw;
-    // border:3px solid red;
     display : flex;
     flex-direction: column;
     align-items: center;
@@ -21,8 +19,7 @@
 
 
 app-header {
-    min-height : 25vh;
-    // background-color: $main-color-darker3;
+    min-height : 22vh;
     background: rgb(185,204,237);
     background: linear-gradient(0deg, rgba(185,204,237,1) 0%, rgba(255,255,255,0.8071603641456583) 100%);
     border-bottom : 3px solid black;
@@ -37,7 +34,6 @@ app-header {
     height: 75vh;
     width: 100%;
     display : flex;
-    // justify-content: center;
     justify-content: space-evenly;
     align-items: center;
     padding : 2rem 2rem;
@@ -46,11 +42,13 @@ app-header {
     // background-color: red;
 
     &__lyricsFullScreen {
-        // overflow: scroll;
         flex-direction: column !important;
         justify-content: center !important;
         overflow: visible !important;
+        // overflow:   scroll !important;
         height: auto !important;
+
+       
     }
 
     app-youtube , app-lyrics {
@@ -81,19 +79,14 @@ app-header {
 
 
 .lyricsFullScreen {
-    // width: 95vw !important;
     width: 95vw !important;
-    // align-self: flex-end;
-    // width: 55vw ;
     overflow-y: visible !important;
     margin-top : 2rem;
 }
 
 .videoShrink {
-    // width: auto !important;
-    // height: auto !important;
     overflow-y: visible !important;
-      height : auto !important;
+    height : auto !important;
     width : auto !important;
     padding : 2rem 10rem !important;
 }
@@ -108,11 +101,15 @@ app-header {
     opacity : 0.4;
     padding : .5rem .5rem !important;
   
-
     &:hover {
         opacity : 1;
     }
 }
 
+
+*:not(app-youtube)::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
 
 

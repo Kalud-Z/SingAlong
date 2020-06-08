@@ -1,12 +1,10 @@
 
 
 <div class="container"  (scroll)="onWindowScroll($event)" >
-    <!-- <div class="container"> -->
 
     <app-header></app-header>
 
     <main class="body"   [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }"  [@lyricsFullScreenState]="isLyricsFullScreen ? 'fullScreen' : 'default'" >
-        <!-- <app-youtube appMoveVideoToTheSide  [ngClass]="{ videoShrink : isLyricsFullScreen , 'app-youtube-onTheSide' : placeVideoOnTheSide }"  [isLyricsFullScreen]="isLyricsFullScreen" ></app-youtube> -->
         <app-youtube  [ngClass]="{ videoShrink : isLyricsFullScreen }" (videoSelectedEmitter)='videoSelected = $event'
         [isVideoOnTheSide]="placeVideoOnTheSide"  [isLyricsFullScreen]="isLyricsFullScreen"  >
         </app-youtube>
