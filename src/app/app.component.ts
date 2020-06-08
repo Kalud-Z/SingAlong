@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {  //###############################
   isLyricsFullScreen = false;
 
   placeVideoOnTheSide = false;
+  videoSelected = false;
 
 
   constructor(@Inject(DOCUMENT) document) {}

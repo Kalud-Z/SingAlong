@@ -1,10 +1,11 @@
 // https://developers.google.com/youtube/iframe_api_reference#seekTo
 
 
-import { Component, OnInit, ViewChild, ViewChildren, QueryList, Input, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 import { DomSanitizer} from '@angular/platform-browser';
+import { exitLogoTrigger } from '../animations';
 // import { YouTubePlayer } from '@angular/youtube-player';
 
 
@@ -12,7 +13,10 @@ import { DomSanitizer} from '@angular/platform-browser';
 @Component({
   selector: 'app-youtube',
   templateUrl: './youtube.component.html',
-  styleUrls: ['./youtube.component.scss']
+  styleUrls: ['./youtube.component.scss'],
+  animations : [
+    exitLogoTrigger
+  ]
 })
 
 //############################################################################################################################################################
@@ -22,6 +26,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   showSuggestions = false;
   @Input() isLyricsFullScreen = false;
   @Input() isVideoOnTheSide = false;
+  @Output() videoSelectedEmitter = new EventEmitter<boolean>();
+
   searchQuery : string = '';
 
 
@@ -43,6 +49,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   returnToVideos() {
     this.showSuggestions = true;
     this.showVideoFrame = false;
+    this.videoSelectedEmitter.emit(false);
+
     this.player.destroy()
   }
 
@@ -59,6 +67,7 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.selectedVideoUrlSafe = this.makeUrlSafe(this.selectedVideoURL);
     
     this.showVideoFrame = true;
+    this.videoSelectedEmitter.emit(true);
     this.showSuggestions = false;
 
     this.initAPI()

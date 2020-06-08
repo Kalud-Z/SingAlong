@@ -1,12 +1,18 @@
-<!-- <svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' > <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg> -->
-<svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()'> <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg>
-<svg class="fullScreen__logo fullScreen__logo-shrink"    (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
 
 
 
-<div class="changeFontSizeWrapper"  *ngIf='showLyricsContainer' [ngClass]="{ changeFontSizeWrapper__lyricsFullScreen : isLyricsFullScreen }">
-    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
-    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
+<div class="fullScreenLogosWrapper" [ngClass]="{ 'fullScreenLogosWrapper-fullScreenMode' : isLyricsFullScreen }" *ngIf='isVideoSelected' >
+    <div class="fullScreenLogosWrapper__tooltiptext"> <span *ngIf='!isLyricsFullScreen' > fullscreen </span>  <span *ngIf='isLyricsFullScreen' > minimize </span> </div>
+    <svg class="fullScreen__logo  fullScreen__logo-enlarge" (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' ><use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use></svg>
+    <svg class="fullScreen__logo fullScreen__logo-shrink"    (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
+</div>
+
+
+
+<div class="changeFontSizeWrapper"  *ngIf='showLyricsContainer'  [ngClass]="{ changeFontSizeWrapper__lyricsFullScreen : isLyricsFullScreen }">
+    <span class="changeFontSizeWrapper__tooltiptext"> increase/decrease font-size </span>
+    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
+    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
 </div>
 
 

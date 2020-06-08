@@ -9,24 +9,69 @@
     position: relative;
 }
 
-.fullScreen__logo {
-    height : 2.3rem;
-    width: 2.3rem;
+
+.fullScreenLogosWrapper {
     position: absolute;
     top: 1.2%;
     left : 1.2%;
+    // background-color: rgba(255, 255, 0, 0.432);
+
+    &-fullScreenMode {
+        top: 0.5% !important;
+        left: 1% !important;
+    }
+
+    &:hover .fullScreenLogosWrapper__tooltiptext {
+        opacity: 0.8;
+        visibility: visible;
+
+    }
+
+    &__tooltiptext {
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 5px;
+        font-style: italic;
+        padding: .5rem;
+        position: absolute;
+        top: 124%;
+        left: -12%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+
+        &::after {
+            content : '';
+            position :absolute;
+            top: -19%;
+            right: 54%;
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+        }
+    }
+}
+
+.fullScreen__logo {
+    height : 2.3rem;
+    width: 2.3rem;
+    // position: absolute;
+    // top: 1.2%;
+    // left : 1.2%;
     cursor : pointer;
     fill : rgba(0, 0, 0, 0.521);
 
-    &-shrink {
-        top: 0.6% !important;
-        left: 0.9% !important;
-    }
+    // &-shrink {
+    //     // top: 0.6% !important;
+    //     // left: 0.9% !important;
+    // }
 }
 
 
 .changeFontSizeWrapper {
-    // position : absolute;
     position : fixed;
     top: 32%;
     right: 5%;
@@ -34,6 +79,40 @@
     flex-direction: column;
     align-items: center;
     justify-content: center; 
+
+    &:hover > &__tooltiptext {
+        opacity: 0.8;
+    }
+
+    &__tooltiptext {
+        // visibility: hidden;
+        // width: 10vw;
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 5px;
+        font-style: italic;
+        padding: .5rem;
+        position: absolute;
+        top: 122%;
+        left: -219%;
+        opacity: 0;
+        transition: all 0.2s;
+
+        &::after {
+            content : '';
+            /* display : block; */
+            position :absolute;
+            top: -19%;
+            right: 12%;
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            
+            border-bottom: 10px solid white;
+        }
+    }
 
     &__lyricsFullScreen {
         top : 71% !important;
@@ -44,11 +123,30 @@
         height: 2.5rem;
         width: 2.5rem;
         cursor : pointer;
+        // &:hover .changeFontSizeWrapper__tooltiptext {
+        //     opacity: 0.2;
+        // background-color: red;
+
+        // }
 
         &-increase {
+            position: relative;
             fill : rgb(24, 156, 24);
             margin-bottom: 0.4rem;
+            // Change it to #myDiv:hover::after
+            &::after {
+                // position:absolute;
+                // top: 0;
+                // left: 0;
+                content:"hahaha";
+                display:block;
+                background-color : red;
+                color : yellow;
+                // width:50px;
+                // height:50px;
+            }
         }
+
         &-decrease {
             fill : red;
         }
@@ -112,7 +210,7 @@
     font-weight: 500;
     font-size : 1.5rem;
     text-align: center;
-
+    transition: all .3s ease-out;
     &::first-line {
         font-weight: bolder;
         font-style: italic;
@@ -134,12 +232,5 @@
 .fontSize-2_5rem {
     font-size: 2.5rem !important;
 }
-
-
-
-
-
-
-
 
 

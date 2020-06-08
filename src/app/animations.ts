@@ -34,3 +34,15 @@ export const lyricsFullScreenTrigger = trigger('lyricsFullScreenState', [
       ]), //transition
 ])
 
+
+
+
+export const exitLogoTrigger = trigger('exitLogoState', [
+    transition(':enter' , [
+        style({
+            opacity: 0
+        }),
+        animate('0.2s 2s')
+      ]), //transition
+])
+

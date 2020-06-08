@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 import { DataService } from '../_services/data.service';
 import { LyricObj } from './lyrics.model';
 import { AjaxService } from '../_services/ajax.service';
@@ -18,6 +18,8 @@ export class LyricsComponent implements OnInit {  //############################
 
   @Output() hideBackgroundImageEmitter = new EventEmitter<boolean>();
   @Output() lyricsFullScreenEmitter = new EventEmitter<boolean>();
+  @Input() isVideoSelected = false;
+
   isLyricsFullScreen = false;
 
 
@@ -74,8 +76,10 @@ export class LyricsComponent implements OnInit {  //############################
   }
 
   onFullScreenLyrics() {
-    this.lyricsFullScreenEmitter.emit(true);
-    this.isLyricsFullScreen = true;
+    if(this.isVideoSelected) {
+      this.lyricsFullScreenEmitter.emit(true);
+      this.isLyricsFullScreen = true;
+    }
   }
 
   onShrinkLyrics() {
