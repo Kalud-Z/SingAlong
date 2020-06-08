@@ -21,11 +21,11 @@ export class YoutubeComponent implements OnInit {  //###########################
   isLoading = false;
   showSuggestions = false;
   @Input() isLyricsFullScreen = false;
+  @Input() isVideoOnTheSide = false;
   searchQuery : string = '';
 
-  constructor(private dataService : DataService,
-              private sanitizer: DomSanitizer
-              ) { }
+
+  constructor(private dataService : DataService, private sanitizer: DomSanitizer) { }
               
 
   ngOnInit() {

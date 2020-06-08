@@ -1,11 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { YouTubePlayerModule } from "@angular/youtube-player";
-
-
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { YouTubePlayerModule } from "@angular/youtube-player";
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,8 +12,8 @@ import { AdjustLyricPipe } from './lyrics/adjust-lyric.pipe';
 import { SearchFieldComponent } from './_shared/search-field/search-field.component';
 import { LoadingSpinnerComponent } from './_shared/loading-spinner/loading-spinner.component';
 import { SafePipe } from './safe.pipe';
-import { SoundCloudComponent } from './sound-cloud/sound-cloud.component';
 import { AdjustPlayerSizeDirective } from './youtube/adjust-player-size.directive';
+import { MoveVideoToTheSideDirective } from './directives/move-video-to-the-side.directive';
 
 @NgModule({
   declarations: [
@@ -28,13 +25,14 @@ import { AdjustPlayerSizeDirective } from './youtube/adjust-player-size.directiv
     SearchFieldComponent,
     LoadingSpinnerComponent,
     SafePipe,
-    SoundCloudComponent,
     AdjustPlayerSizeDirective,
+    MoveVideoToTheSideDirective,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    YouTubePlayerModule
+    YouTubePlayerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

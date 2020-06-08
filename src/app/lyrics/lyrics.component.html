@@ -1,12 +1,12 @@
-<svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' > <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg>
-<!-- <svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()'> <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg> -->
+<!-- <svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' > <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg> -->
+<svg class="fullScreen__logo  fullScreen__logo-enlarge " (click)='onFullScreenLyrics()'> <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use> </svg>
 <svg class="fullScreen__logo fullScreen__logo-shrink"    (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
 
 
 
 <div class="changeFontSizeWrapper"  *ngIf='showLyricsContainer' [ngClass]="{ changeFontSizeWrapper__lyricsFullScreen : isLyricsFullScreen }">
-    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-add-outline"></use> </svg>
-    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-minus-outline"></use> </svg>
+    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
+    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()' > <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
 </div>
 
 

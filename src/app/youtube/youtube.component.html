@@ -33,11 +33,11 @@
 
 <!--  *ngIf='showVideoFrame' -->
 <div class="iframeWrapper"    appAdjustPlayerSize (calculatedWidth)='setCalculatedPlayerWidth($event)' 
-[ngClass]="{'iframeWrapper-small' : isLyricsFullScreen , hideVideoWrapper : !showVideoFrame}" >
+[ngClass]="{'iframeWrapper-small' : isLyricsFullScreen , 'iframeWrapper-small-onTheSide' : isVideoOnTheSide ,  hideVideoWrapper : !showVideoFrame}" >
     <svg class="exitVideoButton"   *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
             
     <!-- <div class="iframeWrapper__videoPlayer"  *ngIf='showVideoFrame'> -->
-        <div class="iframeWrapper__videoPlayer">
+    <div class="iframeWrapper__videoPlayer">
         <div id='player'></div>
     </div>
 

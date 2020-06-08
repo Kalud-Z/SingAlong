@@ -1,13 +1,16 @@
 
 
-<div class="container">
+<div class="container"  (scroll)="onWindowScroll($event)" >
+    <!-- <div class="container"> -->
 
     <app-header></app-header>
 
-    <main class="body" [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }" >
-        <app-youtube [ngClass]="{ videoShrink : isLyricsFullScreen  }"  [isLyricsFullScreen]="isLyricsFullScreen" ></app-youtube>
+    <main class="body"   [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }"  [@lyricsFullScreenState]="isLyricsFullScreen ? 'fullScreen' : 'default'" >
+        <!-- <app-youtube appMoveVideoToTheSide  [ngClass]="{ videoShrink : isLyricsFullScreen , 'app-youtube-onTheSide' : placeVideoOnTheSide }"  [isLyricsFullScreen]="isLyricsFullScreen" ></app-youtube> -->
+        <app-youtube  [ngClass]="{ videoShrink : isLyricsFullScreen }" [isVideoOnTheSide]="placeVideoOnTheSide"  [isLyricsFullScreen]="isLyricsFullScreen"  >
+        </app-youtube>
 
-        <app-lyrics (hideBackgroundImageEmitter)='hideBackgroundImage = true' 
+        <app-lyrics   (hideBackgroundImageEmitter)='hideBackgroundImage = true' 
         [ngClass]="{'lyrics-background-hideImage' : hideBackgroundImage , lyricsFullScreen : isLyricsFullScreen}" 
         (lyricsFullScreenEmitter)='onLyricsFullScreen($event)'  
         ></app-lyrics>
