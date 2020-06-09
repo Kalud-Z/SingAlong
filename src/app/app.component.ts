@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, Inject, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, Inject, ViewChild, Renderer2, ElementRef } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { lyricsFullScreenTrigger } from './animations';
 
@@ -19,22 +19,35 @@ export class AppComponent implements OnInit {  //###############################
   placeVideoOnTheSide = false;
   videoSelected = false;
 
+  //if you dont specify the read option , you will get the instance of the youtube class itself.
+  @ViewChild('youtubeVideoContainer' , { static : false , read: ElementRef }) youtubeVideoContainer : ElementRef; 
 
-  constructor(@Inject(DOCUMENT) document) {}
+  constructor(private renderer : Renderer2) {}
 
 
   @HostListener('window:scroll', ['$event']) onWindowScroll(e) { //attatch this call back func to the container. IMPORTANT !!
-    var main = e.target;
-    var youtubeVideo = e.target.childNodes[1].childNodes[0]
-    // console.log(main.scrollTop)
+    const  main = e.target;
+    // const  youtubeVideoContainer = e.target.childNodes[1].childNodes[0]
+  
+    const youtubeVideoContainer_Element = this.youtubeVideoContainer.nativeElement;
+    const  youtubeVideoContainer_Height =  youtubeVideoContainer_Element.clientHeight; 
+
+    // console.log(this.youtubeVideoContainer)
+    // console.log(this.youtubeVideoContainer.nativeElement)
+
+    // const div  = this.renderer.createElement('div');
+    // this.renderer.setStyle(div, 'height', `${youtubeVideoContainer_Height}px`);
+    // this.renderer.setStyle(div, 'width', `${youtubeVideoContainer_Height}px`);
+
     if (main.scrollTop > 400) {
       this.placeVideoOnTheSide = true;
-      youtubeVideo.classList.add('appYoutubeOnTheSide');
+      this.renderer.addClass(youtubeVideoContainer_Element, 'appYoutubeOnTheSide');
+
     } else {
       this.placeVideoOnTheSide = false;
-      youtubeVideo.classList.remove('appYoutubeOnTheSide');
+      this.renderer.removeClass(youtubeVideoContainer_Element, 'appYoutubeOnTheSide');
     }
-  }
+  }  //HostListener
 
 
   ngOnInit() {
