@@ -1,0 +1,4 @@
+
+
+search text appears on top of the search logo !
+I tried z-index'ing them . it didnt work !!

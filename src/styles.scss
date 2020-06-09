@@ -59,11 +59,14 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
 
 
     .searchBox {
+        z-index: 20;
         padding: 1rem;
         font-size: 1.5rem;
         border-width: 1px;
         border-color: #CCCCCC;
         width: 32vw;
+        // ab 700px . 44vw
+        @include respond(tab-port-small) { width: 44vw }
         background-color: #FFFFFF;
         color: #000000;
         border-style: solid;
@@ -75,6 +78,7 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
     }
 
     .searchLogo {
+        z-index: 300 !important;
         align-self: stretch;
         height: 100%;
         width: 7rem;
@@ -106,7 +110,9 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
     .loadingLogo {
         // background-color : red;
         // height : 2rem;
-        width : 3rem;
+        // width : 3rem;
+        width : 40%;
+        height : auto;
         transform : rotate(90deg) 
     }
     

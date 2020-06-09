@@ -15,7 +15,6 @@
 
     <div class="searchLogo" (click)='onSearch(searchInput) ;  searchInput.blur()'  >
         <svg class="searchLogo__logo"  *ngIf='!(lyricsStillLoading || videoStillLoading)' > <use xlink:href="/assets/symbol-defs.svg#icon-music-playlist"></use> </svg>
-        <!-- <app-loading-spinner *ngIf='lyricsStillLoading || videoStillLoading' ></app-loading-spinner> -->
         
         <img class="loadingLogo"  *ngIf='lyricsStillLoading || videoStillLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
 
