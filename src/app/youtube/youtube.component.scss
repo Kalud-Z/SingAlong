@@ -1,3 +1,4 @@
+@import 'src/mixins.scss';
 
 
 :host {
@@ -15,6 +16,9 @@
     // width : 45rem !important;
     height : 30vh !important;
     width : 39vw !important;
+    @include respond(tab-port) { width : 60vw !important }
+    @include respond(tab-port-small) { width : 80vw !important }
+    
     position : relative !important;
     transform : translate(0, 0) !important;
     top: 0 !important;
@@ -67,16 +71,7 @@ $videoHeight : 20vw;
     width: 100%;
     border-radius: 4px;
     transition : all 0.4s;
-
-
-    // z-index: 20;
-    // border-radius: 4px;
-    // position : absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform : translate(-50%, -41%);
 }
-
 
 
 .searchBoxContainer-video {
@@ -90,9 +85,16 @@ $videoHeight : 20vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
-    // grid-template-columns: 3;
     justify-content: center;
-    // align-content: center;
+    @include respond(tab-port) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond(tab-port-small) {
+        grid-template-columns: 1fr;
+    }
+
+    
 
 
     &__suggestion {

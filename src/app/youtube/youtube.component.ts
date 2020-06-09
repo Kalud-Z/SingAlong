@@ -164,7 +164,7 @@ export class YoutubeComponent implements OnInit {  //###########################
       // videoId: 'tNy8Y7BhUeI',
       height: "100%",
       width: "100%",
-      playerVars: {   //these parameters , most of them aint working properly !!!
+      playerVars: {   //these parameters , most of them aint working properly !!! WEIRD 
         autoplay: 0,
         modestbranding: 1,
         controls: 1,
