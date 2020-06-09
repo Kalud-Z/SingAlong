@@ -2,11 +2,17 @@ import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input }
 import { DataService } from '../_services/data.service';
 import { LyricObj } from './lyrics.model';
 import { AjaxService } from '../_services/ajax.service';
+import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger } from '../animations';
 
 @Component({
   selector: 'app-lyrics',
   templateUrl: './lyrics.component.html',
-  styleUrls: ['./lyrics.component.scss']
+  styleUrls: ['./lyrics.component.scss'],
+  animations : [
+    displayVideoSuggestionsTrigger,
+    displayLyricsSuggestionsTrigger,
+    displayChosenLyricTrigger
+  ]
 })
 
 //############################################################################################################################################################

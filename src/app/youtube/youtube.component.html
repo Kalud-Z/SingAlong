@@ -15,13 +15,12 @@
  
 
 
-<ul class="videosSuggestions" *ngIf="showSuggestions">
+<ul class="videosSuggestions" *ngIf="showSuggestions"   [@displayVideoSuggestionsState]='allSuggestions.length' >
 
     <li class="videosSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)" >
         <figure class="videosSuggestions__suggestion__imgWrapper"> <img  [src]="[sugg.thumbnail]"> </figure>
         <p class="videosSuggestions__suggestion__title"   > {{ sugg.title }} </p>
     </li>
-
 
 </ul> 
 
