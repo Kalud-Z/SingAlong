@@ -71,7 +71,6 @@ export const displayVideoSuggestionsTrigger = trigger('displayVideoSuggestionsSt
 
 
 
-
 export const displayLyricsSuggestionsTrigger = trigger('displayLyricsSuggestionsState' , [
     transition(':enter' , [
         query('.lyricsSuggestions__suggestion' , [
@@ -82,21 +81,6 @@ export const displayLyricsSuggestionsTrigger = trigger('displayLyricsSuggestions
     ]),  //enter
 
     transition(':leave' , [
-        // query(':self' , animate('4s' , style({
-        //     opacity : 0,
-        //     transform : 'translateX(300%)'
-        // })), { optional : true })
-        // query('.lyricsSuggestions__suggestion' , [
-        //     style({
-        //         opacity : 1,
-        //         transform : 'translateX(0%)'
-        //     }),
-        //     animate('2s ease-in' , style({
-        //         opacity : 0,
-        //         transform : 'translateX(100%)'
-        //     }))
-        // ] , { optional : true })
-
         query('.lyricsSuggestions__suggestion' , [
             stagger('120ms' , animate('2.12s ease-in' , style({ 
                 opacity : 0,
@@ -104,8 +88,6 @@ export const displayLyricsSuggestionsTrigger = trigger('displayLyricsSuggestions
             })))
         ] , { optional : true }), 
 
-
-      
     ]),  //leave    
 ])
 

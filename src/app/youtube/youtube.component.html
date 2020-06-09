@@ -8,7 +8,8 @@
 
     <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'  >
         <svg class="searchLogo__logo" *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
-        <app-loading-spinner *ngIf='isLoading'></app-loading-spinner>
+        <img class="loadingLogo"  *ngIf='isLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
+
     </div>
 
 </div>

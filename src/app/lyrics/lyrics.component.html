@@ -23,15 +23,15 @@
 
     <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'   >
         <svg class="searchLogo__logo" *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>
-        <app-loading-spinner *ngIf='isLoading'></app-loading-spinner>
+        <img class="loadingLogo"  *ngIf='isLoading'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
+        
     </div>
 
 </div>
 
 
 
-<!-- <ul class="lyricsSuggestions" *ngIf="showSuggestions"    [@displayLyricsSuggestionsState]='allSuggestions.length'> -->
-    <ul class="lyricsSuggestions" *ngIf="showSuggestions"    @displayLyricsSuggestionsState>
+<ul class="lyricsSuggestions" *ngIf="showSuggestions"    @displayLyricsSuggestionsState>
     <li class="lyricsSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)"  >  {{ sugg.title }} </li>
 </ul>
 
