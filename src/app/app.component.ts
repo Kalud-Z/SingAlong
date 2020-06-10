@@ -30,8 +30,8 @@ export class AppComponent  {  //################################################
     const  main = e.target;
     // const youtubeVideoContainer_Element = this.youtubeVideoContainer.nativeElement;
 
-    if (main.scrollTop > 400) { this.dataService.setVideoOnTheSide.next(true) } 
-    else { this.dataService.setVideoOnTheSide.next(false) }
+    if (main.scrollTop > 500) { this.dataService.setVideoOnTheSide.next(true) } 
+    else if (main.scrollTop < 485) { this.dataService.setVideoOnTheSide.next(false) }
   }  //HostListener
 
 

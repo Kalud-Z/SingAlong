@@ -8,73 +8,39 @@
 }
 
 
+.iframeOuterContainer {
+    background-color: rgba(189, 207, 238, 0.616);
+    border :1px solid rgba(255, 0, 0, 0.5);
+    border-radius: 5px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position : relative;
+    padding : 1.5rem;
+    padding-top : 4rem;
+    padding-bottom : 1rem;
+    // transition: all 0.5s ease-in-out;
 
-$videoHeight : 20vw;
-.iframeWrapper {
-    z-index: 10;
-    position : absolute;
-    top: 50%;
-    right: 50%;
-    // transform : translate(50%, -41%);
-    transform : translate(50%, -50%);
-    border-radius: 4px;
-    height: $videoHeight;
-    width : calc(1.777 * #{$videoHeight});
-    // transition : all 0.4s;
-
-    &-small {
-        height : 30vh !important;
-        width : 39vw !important;
-        @include respond(tab-port) { width : 60vw !important }
-        @include respond(tab-port-small) { width : 80vw !important }
-        
-        position : relative !important;
-        transform : translate(0, 0) !important;
-        top: 0 !important;
-        right: 0 !important;
-        align-self: center;
-        transition: all 1s ease-in-out !important;
+    &-inLyricsFullscreenMode {
+        padding-top : 1rem !important;
     }
 
-    &-onTheSide {
-        z-index: 20;
-        height: 24vh !important;
-        width: 32vw !important;
-        position : fixed !important;
-        top: 0.9% !important;
-        right: 3% !important;
-        border-radius: 1rem !important;
-        opacity : 0.4 !important;
-        &:hover { opacity : 1 !important }
-    }
-
-    &-hide {
-        opacity : 0 !important;
-        visibility: hidden !important;
-    }
-
-
-    &__videoPlayer {
-        height: 100%;
-        width : 100%;
-        position : relative;
-
-        &__shield {
-            position : absolute;
-            top: 0;
-            left : 0;
-            height : 100%;
-            width : 100%;
-        }
+    &-inInitialMode {
+        height : auto !important;
     }
 
     .exitVideoButton {
         position: absolute;
         top: 0;
-        right: -24px;
+        right: 0;
+        // margin-bottom : 4rem;
         height: 2.5rem;
         width: 2.5rem;
         cursor : pointer;
+        transition : all 0.15s;
+        fill : rgba(0, 0, 0, 0.527);
+        &:hover { fill : black  }
         @include respond(phone) {
             top: -31%;
             right: 50%;
@@ -84,28 +50,96 @@ $videoHeight : 20vw;
         }
     }
 
+
+    .iframeWrapper {
+        z-index: 10;
+        border-radius: 4px;
+        height: 16vw;
+        width : 90%;
+        // transition: all 0.5s ease-in-out;
+
+
+        &-small {
+            height : 30vh !important;
+            width : 39vw !important;
+            @include respond(tab-port) { width : 60vw !important }
+            @include respond(tab-port-small) { width : 80vw !important }
+            
+            align-self: center;
+            // transition: all 1s ease-in-out !important;
+        }
+
+        &-onTheSide {
+            z-index: 20;
+            height: 24vh !important;
+            width: 32vw !important;
+            position : fixed !important;
+            top: 0.9% !important;
+            right: 3% !important;
+            border-radius: 1rem !important;
+            opacity : 0.4 !important;
+            &:hover { opacity : 1 !important }
+        }
+
+        &-hide {
+            opacity : 0 !important;
+            visibility: hidden !important;
+        }
+
+        &__videoPlayer {
+            height: 100%;
+            width : 100%;
+            position : relative;
+
+            &__shield , &__loadingView {
+                position : absolute;
+                top: 0;
+                left : 0;
+                height : 100%;
+                width : 100%;
+            }
+
+            &__loadingView {
+                z-index: -1;
+                background-color: black;
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                &-logo {
+                    width : 16%;
+                    height : auto;
+                }
+            }
+        }
+
+    }
+
+
     .controlButtonsContainer {
-        // border : 3px solid yellow;
-        position : absolute;
-        bottom : -22%;
-        left : 50%;
-        transform: translateX(-50%);
+        margin-top : 1rem;
         display :flex;
         justify-content: center;
         align-items: center;
+
+        &-onTheSide {
+            z-index: 20;
+            width: 32vw !important;
+            position : fixed !important;
+            top: 26% !important;
+            right: 3% !important;
+            opacity : 0.5 !important;
+            &:hover { opacity : 1 !important }
+        }
 
         .controlButton {
             height : 3.5rem;
             width : 3.5rem;
             cursor : pointer;
-            fill : rgb(209, 75, 75);
             transition : all 0.13s;
-
+            fill : rgb(209, 75, 75);
             &:hover { fill : rgba(0, 0, 0, 0.692) }
-            
-
+        
             &:not(:last-child) { margin-right : 2rem  }
-
             &-play , &-pause {
                 height : 4.5rem;
                 width : 4.5rem;
@@ -114,6 +148,7 @@ $videoHeight : 20vw;
     }
 
 }
+
 
 
 
