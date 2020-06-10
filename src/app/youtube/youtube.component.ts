@@ -1,7 +1,7 @@
 // https://developers.google.com/youtube/iframe_api_reference#seekTo
 
 
-import { Component, OnInit, ViewChild, ViewChildren, QueryList, Input, HostListener, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 import { DomSanitizer} from '@angular/platform-browser';
@@ -28,12 +28,23 @@ export class YoutubeComponent implements OnInit {  //###########################
   @Input() isLyricsFullScreen = false;
   @Input() isVideoOnTheSide = false;
   @Output() videoSelectedEmitter = new EventEmitter<boolean>();
+  // @ViewChild('videoPlayer' , { static : false , read: ElementRef }) videoPlayer : ElementRef; 
+  @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef; 
+  @ViewChild('heightFixer' , { static : false}) heightFixer : ElementRef; 
+  
+
+
+  setVideoOnTheSide = false;
 
   searchQuery : string = '';
 
 
-  constructor(private dataService : DataService, private sanitizer: DomSanitizer) { }
-              
+  constructor(private dataService : DataService,
+              private sanitizer: DomSanitizer,
+              private renderer : Renderer2
+              ) { }
+            
+
 
   ngOnInit() {
     // this.initAPI()
@@ -44,6 +55,14 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.allSuggestions = data;
     this.showSuggestions = true;
    })
+
+   this.dataService.setVideoOnTheSide.subscribe(data => {
+      const desiredHeight = this.videoPlayer.nativeElement.clientHeight;
+      console.log('height : ' , desiredHeight);
+      this.renderer.setStyle(this.heightFixer.nativeElement, 'height', `${desiredHeight}px`);
+      this.setVideoOnTheSide = data;
+   })
+   
   }
 
 

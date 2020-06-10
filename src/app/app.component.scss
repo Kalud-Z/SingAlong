@@ -89,22 +89,13 @@ app-header {
     width : auto !important;
     padding : 2rem 10rem !important;
     @include respond(tab-port) { padding : 2rem 2rem !important }
+    // display : flex;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    // justify-content: center;
 }
 
 
-
-.appYoutubeOnTheSide {
-    z-index: 20;
-    position : fixed;
-    top: 1.9% ;
-    right: 4% ;
-    opacity : 0.4;
-    padding : .5rem .5rem !important;
-  
-    &:hover {
-        opacity : 1;
-    }
-}
 
 
 *:not(app-youtube)::-webkit-scrollbar {

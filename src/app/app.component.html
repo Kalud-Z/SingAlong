@@ -1,7 +1,6 @@
 
 
 <div class="container"  (scroll)="onWindowScroll($event)" >
-
     <app-header></app-header>
 
     <main class="body"   [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }"  [@lyricsFullScreenState]="isLyricsFullScreen ? 'fullScreen' : 'default'" >

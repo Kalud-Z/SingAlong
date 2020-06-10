@@ -18,6 +18,8 @@ export class DataService {  //##################################################
   lyricsSearch_LoadingNow = new Subject<boolean>() ;
   videoSearch_LoadingNow = new Subject<boolean>() ;
 
+  setVideoOnTheSide = new Subject<boolean>() ;
+
   allLyricsSuggestions : LyricObj[] = [];
   allVideosSuggestions : videoObj[] = [];
 

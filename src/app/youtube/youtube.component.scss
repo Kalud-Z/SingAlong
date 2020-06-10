@@ -4,43 +4,54 @@
 :host {
     display : flex;
     flex-direction: column;
-    // justify-content: center;
-    position: relative;
-    
+    position: relative; 
 }
 
-// * { border : 1px solid yellow}
 
-.iframeWrapper-small {
-    height : 30vh !important;
-    width : 39vw !important;
-    @include respond(tab-port) { width : 60vw !important }
-    @include respond(tab-port-small) { width : 80vw !important }
-    
-    position : relative !important;
-    transform : translate(0, 0) !important;
-    top: 0 !important;
-    left: 0 !important;
-    align-self: center;
-
-    &-onTheSide {
-        height : 21vh !important;
-        width  : 21vw !important;
-    }
-}
 
 $videoHeight : 20vw;
-// $videoHeight : 13vw;
 .iframeWrapper {
     z-index: 10;
     position : absolute;
     top: 50%;
-    left: 50%;
-    transform : translate(-50%, -41%);
+    right: 50%;
+    transform : translate(50%, -41%);
     border-radius: 4px;
     height: $videoHeight;
     width : calc(1.777 * #{$videoHeight});
-    transition : all 0.4s;
+    // transition : all 0.4s;
+
+    &-small {
+        height : 30vh !important;
+        width : 39vw !important;
+        @include respond(tab-port) { width : 60vw !important }
+        @include respond(tab-port-small) { width : 80vw !important }
+        
+        position : relative !important;
+        transform : translate(0, 0) !important;
+        top: 0 !important;
+        right: 0 !important;
+        align-self: center;
+        transition: all 1s ease-out !important;
+    }
+
+    &-onTheSide {
+        z-index: 20;
+        height: 24vh !important;
+        width: 32vw !important;
+        position : fixed !important;
+        top: 0.9% !important;
+        right: 3% !important;
+        border-radius: 1rem !important;
+        opacity : 0.4 !important;
+        &:hover { opacity : 1 !important }
+    }
+
+    &-hide {
+        opacity : 0 !important;
+        visibility: hidden !important;
+    }
+
 
     &__videoPlayer {
         height: 100%;
@@ -58,18 +69,6 @@ $videoHeight : 20vw;
 
 }
 
-.hideVideoWrapper {
-    opacity : 0 !important;
-    visibility: hidden !important;
-}
-
-
-.videoFrame {
-    height: 100%;
-    width: 100%;
-    border-radius: 4px;
-    transition : all 0.4s;
-}
 
 
 .searchBoxContainer-video {
@@ -79,35 +78,26 @@ $videoHeight : 20vw;
 }
 
 
+
 .videosSuggestions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
     justify-content: center;
-    @include respond(tab-port) {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    @include respond(tab-port-small) {
-        grid-template-columns: 1fr;
-    }
-
-    
-
+    @include respond(tab-port) { grid-template-columns: 1fr 1fr }
+    @include respond(tab-port-small) { grid-template-columns: 1fr}
 
     &__suggestion {
         cursor: pointer;
         overflow:hidden;
         border-radius: 4px;
-        border :1px solid transparent;
         transition: all 0.1s;
         display : grid;
         grid-template-rows: 15rem 1fr;
         align-items: stretch;
-
-        &:hover {
-            border :1px solid rgba(255, 0, 0, 0.5);
-        }
+        
+        border :1px solid transparent;
+        &:hover {  border :1px solid rgba(255, 0, 0, 0.5) }
 
         &__imgWrapper {
             width: 100%;
@@ -121,9 +111,7 @@ $videoHeight : 20vw;
             }
         }
 
-
         &__title {
-            // text-align: center;
             display : flex;
             align-items: center;
             justify-content: center;
@@ -137,5 +125,23 @@ $videoHeight : 20vw;
 
 
 
+.heightFixer {
+    // height : 9rem;
+    width: 1px;
+    // background-color: red;
+}
 
 
+
+
+
+
+
+
+
+// .videoFrame {
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 4px;
+//     transition : all 0.4s;
+// }
