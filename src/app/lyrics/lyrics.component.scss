@@ -212,7 +212,7 @@
     font-weight: 500;
     font-size : 1.5rem;
     text-align: center;
-    transition: all 2.3s ease-out;
+    transition: all .2s ease-in-out;
     &::first-line {
         font-weight: bolder;
         font-style: italic;

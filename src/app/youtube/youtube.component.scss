@@ -65,6 +65,13 @@ $videoHeight : 20vw;
         height: 2.5rem;
         width: 2.5rem;
         cursor : pointer;
+        @include respond(phone) {
+            top: -31%;
+            right: 50%;
+            transform: translateX(50%);
+            height: 3.5rem;
+            width: 3.5rem;
+        }
     }
 
 }
