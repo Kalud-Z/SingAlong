@@ -10,7 +10,7 @@
 <div class="searchBoxContainer  searchBoxContainer-header">
 
 
-    <input type="text" class="searchBox" placeholder="search for songs .." #searchInput (input)="typingSearchQuery(searchInput)" 
+    <input type="text" (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for songs .." #searchInput (input)="typingSearchQuery(searchInput)" 
     (keyup.enter)="onSearch(searchInput) ;  searchInput.blur()"> 
 
     <div class="searchLogo" (click)='onSearch(searchInput) ;  searchInput.blur()'  >

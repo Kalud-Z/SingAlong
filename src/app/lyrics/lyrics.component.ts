@@ -93,6 +93,11 @@ export class LyricsComponent implements OnInit {  //############################
     this.isLyricsFullScreen = false;
   }
 
+  
+  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true }
+  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false }
+
+
 }  //########################################################################################################################################################
 // ##########################################################################################################################################################
 

@@ -27,12 +27,17 @@ export class HeaderComponent implements OnInit { //#############################
   }
 
   typingSearchQuery(searchInput) {
+    // console.log('we are searching now')
+    // console.log(searchInput)
     this.dataService.bindSearchQuery(searchInput.value);
   }
 
   refreshPage() {
     location.reload();
   }
+
+  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true }
+  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false }
 
   
 }  //###############################################################################################################################################

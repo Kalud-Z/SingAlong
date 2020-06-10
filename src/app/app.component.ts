@@ -21,27 +21,23 @@ export class AppComponent  {  //################################################
   videoSelected = false;
 
   //if you dont specify the read option , you will get the instance of the youtube class itself.
-  @ViewChild('youtubeVideoContainer' , { static : false , read: ElementRef }) youtubeVideoContainer : ElementRef; 
+  // @ViewChild('youtubeVideoContainer' , { static : false , read: ElementRef }) youtubeVideoContainer : ElementRef; 
 
   constructor(private renderer : Renderer2 , private dataService : DataService) {}
 
 
   @HostListener('window:scroll', ['$event']) onWindowScroll(e) { //attatch this call back func to the container. IMPORTANT !!
     const  main = e.target;
-    const youtubeVideoContainer_Element = this.youtubeVideoContainer.nativeElement;
+    // const youtubeVideoContainer_Element = this.youtubeVideoContainer.nativeElement;
 
-    if (main.scrollTop > 400) {
-      // this.placeVideoOnTheSide = true;
-      this.dataService.setVideoOnTheSide.next(true)
-      console.log('we are nextin now . true')
-      // this.renderer.addClass(youtubeVideoContainer_Element, 'appYoutubeOnTheSide');
+    if (main.scrollTop > 400) { this.dataService.setVideoOnTheSide.next(true) } 
+    else { this.dataService.setVideoOnTheSide.next(false) }
+  }  //HostListener
 
-    } else {
-      // this.placeVideoOnTheSide = false;
-      this.dataService.setVideoOnTheSide.next(false)
-      console.log('we are nextin now . false')
-      // this.renderer.removeClass(youtubeVideoContainer_Element, 'appYoutubeOnTheSide');
-    }
+
+  @HostListener('window:focus', ['$event']) onWindowFocus(e) { //attatch this call back func to the container. IMPORTANT !!
+    // const  main = e.target;
+    // console.log('foxuussss : ' , e.target.document)
   }  //HostListener
 
 

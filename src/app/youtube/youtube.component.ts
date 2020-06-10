@@ -1,7 +1,7 @@
 // https://developers.google.com/youtube/iframe_api_reference#seekTo
 
 
-import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef, SimpleChanges } from '@angular/core';
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 import { DomSanitizer} from '@angular/platform-browser';
@@ -28,11 +28,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   @Input() isLyricsFullScreen = false;
   @Input() isVideoOnTheSide = false;
   @Output() videoSelectedEmitter = new EventEmitter<boolean>();
-  // @ViewChild('videoPlayer' , { static : false , read: ElementRef }) videoPlayer : ElementRef; 
   @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef; 
   @ViewChild('heightFixer' , { static : false}) heightFixer : ElementRef; 
-  
-
 
   setVideoOnTheSide = false;
 
@@ -62,8 +59,7 @@ export class YoutubeComponent implements OnInit {  //###########################
       this.renderer.setStyle(this.heightFixer.nativeElement, 'height', `${desiredHeight}px`);
       this.setVideoOnTheSide = data;
    })
-   
-  }
+  } //ngOnInit
 
 
   returnToVideos() {
@@ -100,6 +96,11 @@ export class YoutubeComponent implements OnInit {  //###########################
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
+  
+  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true }
+  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false }
+
+
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   
   setCalculatedPlayerWidth(event) {
@@ -121,33 +122,31 @@ export class YoutubeComponent implements OnInit {  //###########################
   // keyCode = 32  space
 
   @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
-    // console.log(event)
+    if(this.player && !this.dataService.searchQueryIsBeingTypedNow) { //otherwise , unexpected error and behavior might occur.
+      if(event.keyCode === 39) {  //we skip forward
+        this.player.seekTo(this.player.getCurrentTime() + 5, true)
+      }
 
-    if(event.keyCode === 39) {  //we skip forward
-      this.player.seekTo(this.player.getCurrentTime() + 5, true)
-    }
+      if(event.keyCode === 37) {  //we skip backward
+        this.player.seekTo(this.player.getCurrentTime() - 5, true)
+      }
 
-    if(event.keyCode === 37) {  //we skip backward
-      this.player.seekTo(this.player.getCurrentTime() - 5, true)
-    }
+      if(event.keyCode === 32) {  //we pause
+        // console.log(event.target)
+        if(event.target === document.body) { event.preventDefault() }
 
-    if(event.keyCode === 32) {  //we pause
-
-       if(event.target === document.body) {
-        event.preventDefault();
+        if(this.videoState == 1) {
+          this.player.playVideo();
+          setTimeout(() => { this.videoState = 2 }, 50);
         }
-
-      if(this.videoState == 1) {
-        this.player.playVideo();
-        setTimeout(() => { this.videoState = 2 }, 50);
-      }
-      if(this.videoState == 2) {
-        this.player.pauseVideo();
-        setTimeout(() => { this.videoState = 1 }, 50);
+        if(this.videoState == 2) {
+          this.player.pauseVideo();
+          setTimeout(() => { this.videoState = 1 }, 50);
+        }
       }
 
-    }
-  }
+    } //outer-if
+  } //HostListener
         
 
   // selectedVideoID = 'As0RsSTYbAI'

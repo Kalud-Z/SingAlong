@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -32,7 +34,8 @@ import { MoveVideoToTheSideDirective } from './directives/move-video-to-the-side
     BrowserModule,
     HttpClientModule,
     YouTubePlayerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
