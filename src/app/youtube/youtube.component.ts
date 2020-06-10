@@ -67,7 +67,10 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.showVideoFrame = false;
     this.videoSelectedEmitter.emit(false);
 
+    console.log(this.player)
     this.player.destroy()
+    console.log(this.player)
+
   }
 
   onSearch(searchInput?) {
