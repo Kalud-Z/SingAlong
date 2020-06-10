@@ -15,7 +15,8 @@ $videoHeight : 20vw;
     position : absolute;
     top: 50%;
     right: 50%;
-    transform : translate(50%, -41%);
+    // transform : translate(50%, -41%);
+    transform : translate(50%, -50%);
     border-radius: 4px;
     height: $videoHeight;
     width : calc(1.777 * #{$videoHeight});
@@ -56,6 +57,15 @@ $videoHeight : 20vw;
     &__videoPlayer {
         height: 100%;
         width : 100%;
+        position : relative;
+
+        &__shield {
+            position : absolute;
+            top: 0;
+            left : 0;
+            height : 100%;
+            width : 100%;
+        }
     }
 
     .exitVideoButton {
@@ -71,6 +81,35 @@ $videoHeight : 20vw;
             transform: translateX(50%);
             height: 3.5rem;
             width: 3.5rem;
+        }
+    }
+
+    .controlButtonsContainer {
+        // border : 3px solid yellow;
+        position : absolute;
+        bottom : -22%;
+        left : 50%;
+        transform: translateX(-50%);
+        display :flex;
+        justify-content: center;
+        align-items: center;
+
+        .controlButton {
+            height : 3.5rem;
+            width : 3.5rem;
+            cursor : pointer;
+            fill : rgb(209, 75, 75);
+            transition : all 0.13s;
+
+            &:hover { fill : rgba(0, 0, 0, 0.692) }
+            
+
+            &:not(:last-child) { margin-right : 2rem  }
+
+            &-play , &-pause {
+                height : 4.5rem;
+                width : 4.5rem;
+            }
         }
     }
 

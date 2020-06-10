@@ -25,21 +25,25 @@
 
 </ul> 
 
+<!-- <div class="iframeOuterContainer"></div> -->
 
 <div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,
                                                     'iframeWrapper-hide' : !showVideoFrame , 'iframeWrapper-onTheSide' : setVideoOnTheSide }" >
     <svg class="exitVideoButton"  @exitLogoState  *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
             
-    <!-- <div class="iframeWrapper__videoPlayer"  *ngIf='showVideoFrame'> -->
     <div class="iframeWrapper__videoPlayer">
         <div id='player'></div>
+        <div class="iframeWrapper__videoPlayer__shield"></div>
     </div>
 
-    <!-- <iframe class="videoFrame"  #videoPlayer  id="video" [src]="selectedVideoUrlSafe"  *ngIf='showVideoFrame' frameborder="0" 
-    allow="accelerometer; autoplay ; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>  -->
 
+    <div class="controlButtonsContainer">
+        <svg class="controlButton controlButton-backward"(click)='jumpBackward()' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>
+        <svg class="controlButton controlButton-play"    (click)='playVideo()'  *ngIf='videoState === 1'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>
+        <svg class="controlButton controlButton-pause"   (click)='pauseVideo()' *ngIf='videoState === 2' > <use xlink:href="/assets/symbol-defs.svg#icon-pause"></use> </svg>
+        <svg class="controlButton controlButton-forward" (click)='jumpForward()'> <use xlink:href="/assets/symbol-defs.svg#icon-forward"></use> </svg>
+    </div>
 </div> 
-
 <div class="heightFixer" #heightFixer></div>
 
 

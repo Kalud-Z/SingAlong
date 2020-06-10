@@ -124,11 +124,13 @@ export class YoutubeComponent implements OnInit {  //###########################
   @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
     if(this.player && !this.dataService.searchQueryIsBeingTypedNow) { //otherwise , unexpected error and behavior might occur.
       if(event.keyCode === 39) {  //we skip forward
-        this.player.seekTo(this.player.getCurrentTime() + 5, true)
+        // this.player.seekTo(this.player.getCurrentTime() + 5, true)
+        this.jumpForward();
       }
 
       if(event.keyCode === 37) {  //we skip backward
-        this.player.seekTo(this.player.getCurrentTime() - 5, true)
+        // this.player.seekTo(this.player.getCurrentTime() - 5, true)
+        this.jumpBackward();
       }
 
       if(event.keyCode === 32) {  //we pause
@@ -136,12 +138,12 @@ export class YoutubeComponent implements OnInit {  //###########################
         if(event.target === document.body) { event.preventDefault() }
 
         if(this.videoState == 1) {
-          this.player.playVideo();
-          setTimeout(() => { this.videoState = 2 }, 50);
+          // this.player.playVideo();
+          this.playVideo();
         }
         if(this.videoState == 2) {
-          this.player.pauseVideo();
-          setTimeout(() => { this.videoState = 1 }, 50);
+          // this.player.pauseVideo();
+          this.pauseVideo();
         }
       }
 
@@ -209,6 +211,23 @@ export class YoutubeComponent implements OnInit {  //###########################
     setTimeout(() => { event.target.pauseVideo() }, 1000)
   }
 
+  playVideo() {
+    this.player.playVideo()
+    setTimeout(() => { this.videoState = 2 }, 50)
+  }
+
+  pauseVideo() {
+    this.player.pauseVideo()
+    setTimeout(() => { this.videoState = 1 }, 50);
+  }
+
+  jumpBackward() {
+    this.player.seekTo(this.player.getCurrentTime() - 5, true)
+  }
+
+  jumpForward() {
+    this.player.seekTo(this.player.getCurrentTime() + 5, true)
+  }
 
 
 // tried to assign the state value from the event , to a property . it didnt work !! (so I had to keep track of the state manually)
