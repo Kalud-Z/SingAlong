@@ -27,7 +27,6 @@ export class YoutubeComponent implements OnInit {  //###########################
   isLoading = false;
   showSuggestions = false;
   @Input() isLyricsFullScreen = false;
-  @Input() isVideoOnTheSide = false;
   @Output() videoSelectedEmitter = new EventEmitter<boolean>();
   @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef; 
   @ViewChild('iframeOuterContainer' , { static : false}) iframeOuterContainer : ElementRef; 

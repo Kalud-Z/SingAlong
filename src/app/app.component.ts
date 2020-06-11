@@ -17,7 +17,6 @@ export class AppComponent  {  //################################################
   hideBackgroundImage = false;
   isLyricsFullScreen = false;
 
-  placeVideoOnTheSide = false;
   videoSelected = false;
 
   //if you dont specify the read option , you will get the instance of the youtube class itself.
