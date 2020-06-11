@@ -72,7 +72,8 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.showVideoFrame = false;
     this.videoSelectedEmitter.emit(false);
 
-    console.log(this.player)
+    console.log(this.player.getIframe())
+    
     this.player.destroy();
   }
 
