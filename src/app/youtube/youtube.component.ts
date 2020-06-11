@@ -121,6 +121,12 @@ export class YoutubeComponent implements OnInit {  //###########################
   videoID: string;
   player: any;
   videoState = 1; //= 2 ==> playin // = 1 ==> paused
+  isVideoMuted = false;
+
+  
+  @ViewChild('volumeRangeSlider' , { static : false}) volumeRangeSlider : ElementRef; 
+
+
 
 
   // keyCode = 39  arrow right
@@ -233,6 +239,21 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.player.seekTo(this.player.getCurrentTime() + 5, true)
   }
 
+  muteVideo() {
+    this.player.mute();
+    this.isVideoMuted = true;
+    this.volumeRangeSlider.nativeElement.value = 2;
+  }
+
+  unmuteVideo() {
+    this.player.unMute();
+    this.isVideoMuted = false;
+  }
+
+  changeVolume(event) {
+    this.unmuteVideo();
+    this.player.setVolume(event.target.value);
+  }
 
   toggleVideo() {
     if(this.videoState === 1) { this.playVideo() }

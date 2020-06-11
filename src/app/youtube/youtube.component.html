@@ -39,7 +39,12 @@
         <div class="iframeWrapper__loadingView">   <img class="iframeWrapper__videoPlayer__loadingView-logo"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
     </div> 
 
-    <div class="controlButtonsContainer" [ngClass]="{ 'controlButtonsContainer-onTheSide' : setVideoOnTheSide }" >
+    <div class="controlVideoButtonsContainer" [ngClass]="{ 'controlVideoButtonsContainer-onTheSide' : setVideoOnTheSide }" >
+        <div class="controlVolumeWrapper">
+            <svg class="controlVolumeButton controlVolumeButton-mute   controlButton"  (click)='unmuteVideo()'  *ngIf='isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use> </svg>
+            <svg class="controlVolumeButton controlVolumeButton-unMute controlButton"  (click)='muteVideo()'  *ngIf='!isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use> </svg>
+            <div class="volumeRangeSliderContainer"> <input type="range" class="volumeRangeSlider" #volumeRangeSlider (input)='changeVolume($event)' min="0" max="100"> </div>  
+        </div>
         <svg class="controlButton controlButton-backward"(click)='jumpBackward()' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>
         <svg class="controlButton controlButton-play"    (click)='playVideo()'  *ngIf='videoState === 1'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>
         <svg class="controlButton controlButton-pause"   (click)='pauseVideo()' *ngIf='videoState === 2' > <use xlink:href="/assets/symbol-defs.svg#icon-pause"></use> </svg>
