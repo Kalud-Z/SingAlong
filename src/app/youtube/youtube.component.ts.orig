@@ -5,7 +5,7 @@ import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 import { DomSanitizer} from '@angular/platform-browser';
-import { exitLogoTrigger, displayVideoSuggestionsTrigger, iframeOuterContainerTrigger } from '../animations';
+import { exitLogoTrigger, displayVideoSuggestionsTrigger } from '../animations';
 // import { YouTubePlayer } from '@angular/youtube-player';
 
 
@@ -16,8 +16,7 @@ import { exitLogoTrigger, displayVideoSuggestionsTrigger, iframeOuterContainerTr
   styleUrls: ['./youtube.component.scss'],
   animations : [
     exitLogoTrigger,
-    displayVideoSuggestionsTrigger,
-    iframeOuterContainerTrigger
+    displayVideoSuggestionsTrigger
   ]
 })
 
@@ -72,8 +71,19 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.showVideoFrame = false;
     this.videoSelectedEmitter.emit(false);
 
+<<<<<<< HEAD
     console.log(this.player)
+    this.player.destroy()
+    console.log(this.player)
+
+=======
+    // console.log('this is player :  BEFORE' , this.player);
+
+    // this.player.clearVideo();
     this.player.destroy();
+
+    // console.log('this is player : AFTER ' , this.player);
+>>>>>>> refactor_VideoContainer
   }
 
   onSearch(searchInput?) {
@@ -191,15 +201,16 @@ export class YoutubeComponent implements OnInit {  //###########################
       playerVars: {   //these parameters , most of them aint working properly !!! WEIRD 
         autoplay: 0,
         modestbranding: 1,
-        controls: 1,
+        controls: 0,
         disablekb: 1,
         rel: 0,
         showinfo: 0,
         fs: 1,
-        // playsinline: 1,
+        playsinline: 1,
         enablejsapi : 1,
         iv_load_policy : 3, // annotations => 1 : show | 3 : hide
-        cc_load_policy : 0
+        cc_load_policy : 1,
+        origin : 'http://127.0.0.1:4200/'  // your domain
       },
       events: {
         'onReady'  : this.onPlayerReady
@@ -210,8 +221,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
   onPlayerReady(event) {
-    // event.target.playVideo();
-    // setTimeout(() => { event.target.pauseVideo() }, 1000)
+    event.target.playVideo();
+    setTimeout(() => { event.target.pauseVideo() }, 1000)
   }
 
   playVideo() {
@@ -233,10 +244,13 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
 
-  toggleVideo() {
-    if(this.videoState === 1) { this.playVideo() }
-    if(this.videoState === 2) { this.pauseVideo() }
-  }
+// tried to assign the state value from the event , to a property . it didnt work !! (so I had to keep track of the state manually)
+  // onPlayerStateChange(event) {
+    // console.log(event)
+    // this.changeVideoState(event.data)
+  //   this.videoState = event.data
+  // };
+
 
 }  //#########################################################################################################################################################
 // ###########################################################################################################################################################

@@ -16,7 +16,7 @@
  
 
 
-<ul class="videosSuggestions" *ngIf="showSuggestions"   [@displayVideoSuggestionsState]='allSuggestions.length' >
+<ul class="videosSuggestions" *ngIf="showSuggestions"   @displayVideoSuggestionsState >
 
     <li class="videosSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)" >
         <figure class="videosSuggestions__suggestion__imgWrapper"> <img  [src]="[sugg.thumbnail]"> </figure>
@@ -27,7 +27,7 @@
 
 
 <!-- weird issue : if I use *ngIf on this div. The player obj , stops being able to load a second video !! => I had to add a ...-hide class to hide it. -->
-<div class="iframeOuterContainer" #iframeOuterContainer  
+<div class="iframeOuterContainer" #iframeOuterContainer  [@iframeOuterContainerState]="!showVideoFrame ? 'hidden' : 'shown'"
 [ngClass]="{ 'iframeOuterContainer-inLyricsFullscreenMode' : isLyricsFullScreen ,
 'iframeOuterContainer-inInitialMode' : !isLyricsFullScreen , 'iframeOuterContainer-hide' : !showVideoFrame }">
 
@@ -35,7 +35,7 @@
 
     <div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,'iframeWrapper-hide' : !showVideoFrame , 'iframeWrapper-onTheSide' : setVideoOnTheSide }" >
         <div id='player'></div>
-        <div class="iframeWrapper__shield"></div>
+        <div class="iframeWrapper__shield" (click)='toggleVideo()' ></div>
         <div class="iframeWrapper__loadingView">   <img class="iframeWrapper__videoPlayer__loadingView-logo"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
     </div> 
 
