@@ -61,7 +61,6 @@ export class LyricsComponent implements OnInit {  //############################
     this.dataService.allLyricsSuggestionsSubject.subscribe((data : any) => {
       this.allSuggestions = data;
       this.showSuggestions = true;
-      console.log(this.allSuggestions)
     })
   }
 

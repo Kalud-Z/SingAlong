@@ -29,10 +29,11 @@ export class YoutubeComponent implements OnInit {  //###########################
   @Input() isVideoOnTheSide = false;
   @Output() videoSelectedEmitter = new EventEmitter<boolean>();
   @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef; 
-  @ViewChild('heightFixer' , { static : false}) heightFixer : ElementRef; 
+  @ViewChild('iframeOuterContainer' , { static : false}) iframeOuterContainer : ElementRef; 
+  
+  iframeOuterContainerHeight_alreadySet = false;
 
   setVideoOnTheSide = false;
-
   searchQuery : string = '';
 
 
@@ -54,9 +55,12 @@ export class YoutubeComponent implements OnInit {  //###########################
    })
 
    this.dataService.setVideoOnTheSide.subscribe(data => {
-      const desiredHeight = this.videoPlayer.nativeElement.clientHeight;
-      console.log('height : ' , desiredHeight);
-      this.renderer.setStyle(this.heightFixer.nativeElement, 'height', `${desiredHeight}px`);
+     if(!this.iframeOuterContainerHeight_alreadySet) {
+       const desiredHeight = this.iframeOuterContainer.nativeElement.clientHeight;
+       this.renderer.setStyle(this.iframeOuterContainer.nativeElement, 'height', `${desiredHeight}px`);
+       this.iframeOuterContainerHeight_alreadySet = true;
+     }
+    
       this.setVideoOnTheSide = data;
    })
   } //ngOnInit
@@ -67,10 +71,7 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.showVideoFrame = false;
     this.videoSelectedEmitter.emit(false);
 
-    console.log(this.player)
-    this.player.destroy()
-    console.log(this.player)
-
+    this.player.destroy();
   }
 
   onSearch(searchInput?) {
@@ -85,10 +86,11 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID ;
     this.selectedVideoUrlSafe = this.makeUrlSafe(this.selectedVideoURL);
     
-    this.showVideoFrame = true;
     this.videoSelectedEmitter.emit(true);
     this.showSuggestions = false;
-
+    
+    this.showVideoFrame = true;
+    
     this.initAPI()
   }
 
@@ -101,7 +103,7 @@ export class YoutubeComponent implements OnInit {  //###########################
 
   
   onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true }
-  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false }
+  onBlur_SearchInput(event)  { this.dataService.searchQueryIsBeingTypedNow = false }
 
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -111,7 +113,7 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.playerHeight = this.playerWidth / 1.777
   }
 
-  afterFirstVideo = false;
+  videoAlreadyLoadedOnce = false;
   YT: any;
   videoID: string;
   player: any;
@@ -127,25 +129,20 @@ export class YoutubeComponent implements OnInit {  //###########################
   @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
     if(this.player && !this.dataService.searchQueryIsBeingTypedNow) { //otherwise , unexpected error and behavior might occur.
       if(event.keyCode === 39) {  //we skip forward
-        // this.player.seekTo(this.player.getCurrentTime() + 5, true)
         this.jumpForward();
       }
 
       if(event.keyCode === 37) {  //we skip backward
-        // this.player.seekTo(this.player.getCurrentTime() - 5, true)
         this.jumpBackward();
       }
 
-      if(event.keyCode === 32) {  //we pause
-        // console.log(event.target)
+      if(event.keyCode === 32) {  //we pause or play
         if(event.target === document.body) { event.preventDefault() }
 
         if(this.videoState == 1) {
-          // this.player.playVideo();
           this.playVideo();
         }
         if(this.videoState == 2) {
-          // this.player.pauseVideo();
           this.pauseVideo();
         }
       }
@@ -168,6 +165,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   initAPI() {
     // Return if Player is already created . in case we wanna play another video . without refreshing the app.
     if (window['YT']) {
+      console.log('yes , YT already exists. goin straight to : initVideoPlayer ')
       this.initVideoPlayer();
       return;
     }
@@ -191,7 +189,7 @@ export class YoutubeComponent implements OnInit {  //###########################
       playerVars: {   //these parameters , most of them aint working properly !!! WEIRD 
         autoplay: 0,
         modestbranding: 1,
-        controls: 1,
+        controls: 0,
         disablekb: 1,
         rel: 0,
         showinfo: 0,
@@ -199,6 +197,7 @@ export class YoutubeComponent implements OnInit {  //###########################
         playsinline: 1,
         enablejsapi : 1,
         iv_load_policy : 3, // annotations => 1 : show | 3 : hide
+        cc_load_policy : 1,
         origin : 'http://127.0.0.1:4200/'  // your domain
       },
       events: {

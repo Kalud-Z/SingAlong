@@ -28,16 +28,9 @@ export class AppComponent  {  //################################################
 
   @HostListener('window:scroll', ['$event']) onWindowScroll(e) { //attatch this call back func to the container. IMPORTANT !!
     const  main = e.target;
-    // const youtubeVideoContainer_Element = this.youtubeVideoContainer.nativeElement;
 
-    if (main.scrollTop > 400) { this.dataService.setVideoOnTheSide.next(true) } 
-    else { this.dataService.setVideoOnTheSide.next(false) }
-  }  //HostListener
-
-
-  @HostListener('window:focus', ['$event']) onWindowFocus(e) { //attatch this call back func to the container. IMPORTANT !!
-    // const  main = e.target;
-    // console.log('foxuussss : ' , e.target.document)
+    if (main.scrollTop > 500 && main.scrollTop < 800) { this.dataService.setVideoOnTheSide.next(true) } 
+    else if (main.scrollTop < 485  && main.scrollTop > 200) { this.dataService.setVideoOnTheSide.next(false) }
   }  //HostListener
 
 

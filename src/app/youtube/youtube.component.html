@@ -25,26 +25,27 @@
 
 </ul> 
 
-<!-- <div class="iframeOuterContainer"></div> -->
 
-<div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,
-                                                    'iframeWrapper-hide' : !showVideoFrame , 'iframeWrapper-onTheSide' : setVideoOnTheSide }" >
+<!-- weird issue : if I use *ngIf on this div. The player obj , stops being able to load a second video !! => I had to add a ...-hide class to hide it. -->
+<div class="iframeOuterContainer" #iframeOuterContainer  
+[ngClass]="{ 'iframeOuterContainer-inLyricsFullscreenMode' : isLyricsFullScreen ,
+'iframeOuterContainer-inInitialMode' : !isLyricsFullScreen , 'iframeOuterContainer-hide' : !showVideoFrame }">
+
     <svg class="exitVideoButton"  @exitLogoState  *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
-            
-    <div class="iframeWrapper__videoPlayer">
+
+    <div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,'iframeWrapper-hide' : !showVideoFrame , 'iframeWrapper-onTheSide' : setVideoOnTheSide }" >
         <div id='player'></div>
-        <div class="iframeWrapper__videoPlayer__shield"></div>
-    </div>
+        <div class="iframeWrapper__shield"></div>
+        <div class="iframeWrapper__loadingView">   <img class="iframeWrapper__videoPlayer__loadingView-logo"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
+    </div> 
 
-
-    <div class="controlButtonsContainer">
+    <div class="controlButtonsContainer" [ngClass]="{ 'controlButtonsContainer-onTheSide' : setVideoOnTheSide }" >
         <svg class="controlButton controlButton-backward"(click)='jumpBackward()' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>
         <svg class="controlButton controlButton-play"    (click)='playVideo()'  *ngIf='videoState === 1'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>
         <svg class="controlButton controlButton-pause"   (click)='pauseVideo()' *ngIf='videoState === 2' > <use xlink:href="/assets/symbol-defs.svg#icon-pause"></use> </svg>
         <svg class="controlButton controlButton-forward" (click)='jumpForward()'> <use xlink:href="/assets/symbol-defs.svg#icon-forward"></use> </svg>
     </div>
-</div> 
-<div class="heightFixer" #heightFixer></div>
+</div>
 
 
 

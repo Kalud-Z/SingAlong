@@ -39,7 +39,7 @@ export class DataService {  //##################################################
 
   videosNotify() {
     this.allVideosSuggestionsSubject.next(this.allVideosSuggestions);
-    console.log('this is thevideo list :' , this.allVideosSuggestions)
+    // console.log('this is thevideo list :' , this.allVideosSuggestions)
   }
 
 
@@ -64,7 +64,7 @@ export class DataService {  //##################################################
 
     this.allVideosSuggestions = [];
     this.ajaxService.searchVideo(searchQuery).subscribe((data : any) => {
-      console.log(data)
+      // console.log(data)
       const allItems = data.items;
       allItems.forEach(el => {
         const newVideoObj = new videoObj( this.transformHTMLChars(el.snippet.title), el.id.videoId , el.snippet.thumbnails.high.url);
