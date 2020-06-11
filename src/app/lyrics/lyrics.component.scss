@@ -1,4 +1,5 @@
 @import 'src/variables.scss' ;
+@import 'src/mixins.scss';
 
 
 
@@ -58,16 +59,17 @@
 .fullScreen__logo {
     height : 2.3rem;
     width: 2.3rem;
-    // position: absolute;
-    // top: 1.2%;
-    // left : 1.2%;
     cursor : pointer;
     fill : rgba(0, 0, 0, 0.521);
 
-    // &-shrink {
-    //     // top: 0.6% !important;
-    //     // left: 0.9% !important;
-    // }
+    &-enlarge {
+        @include respond(tab-port-small) { 
+            position : fixed;
+            top: 20%;
+            right: 5%;
+        }
+    }
+   
 }
 
 
@@ -75,6 +77,7 @@
     position : fixed;
     top: 32%;
     right: 5%;
+    @include respond(tab-port-small) { top : 86% }
     
     display : flex;
     flex-direction: column;

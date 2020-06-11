@@ -36,7 +36,7 @@
     <div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,'iframeWrapper-hide' : !showVideoFrame , 'iframeWrapper-onTheSide' : setVideoOnTheSide }" >
         <div id='player'></div>
         <div class="iframeWrapper__shield" (click)='toggleVideo()' ></div>
-        <div class="iframeWrapper__loadingView">   <img class="iframeWrapper__videoPlayer__loadingView-logo"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
+        <div class="iframeWrapper__loadingView">   <img class="iframeWrapper__loadingView-logo"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
     </div> 
 
     <div class="controlVideoButtonsContainer" [ngClass]="{ 'controlVideoButtonsContainer-onTheSide' : setVideoOnTheSide }" >

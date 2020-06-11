@@ -47,11 +47,11 @@
         fill : rgba(0, 0, 0, 0.527);
         &:hover { fill : black  }
         @include respond(phone) {
-            top: -31%;
-            right: 50%;
-            transform: translateX(50%);
-            height: 3.5rem;
-            width: 3.5rem;
+            // top: -31%;
+            // right: 50%;
+            // transform: translateX(50%);
+            // height: 3.5rem;
+            // width: 3.5rem;
         }
     }
 
@@ -108,9 +108,10 @@
             display : flex;
             align-items: center;
             justify-content: center;
-            &-logo {
+            &-logo { 
                 width : 16%;
                 height : auto;
+                // @include respond(tab-port-small) { width : 5% } 
             }
         }
     
@@ -152,7 +153,7 @@
             fill : rgb(209, 75, 75);
             &:hover { fill : rgba(0, 0, 0, 0.692) }
         
-            &:not(:last-child) { margin-right : 2rem  }
+            &:not(:last-child) { margin-right : 2rem ; @include respond(tab-port-small) { margin-right : 1rem }  }
             &-play , &-pause {
                 height : 4.5rem;
                 width : 4.5rem;

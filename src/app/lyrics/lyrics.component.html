@@ -9,7 +9,8 @@
 
 
 
-<div class="changeFontSizeWrapper"  *ngIf='showLyricsContainer'  @displayChosenLyricState  [ngClass]="{ changeFontSizeWrapper__lyricsFullScreen : isLyricsFullScreen }">
+<div class="changeFontSizeWrapper"  *ngIf='showLyricsContainer'  @displayChosenLyricState  
+[ngClass]="{ changeFontSizeWrapper__lyricsFullScreen : isLyricsFullScreen }">
     <span class="changeFontSizeWrapper__tooltiptext"> increase/decrease font-size </span>
     <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
     <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
