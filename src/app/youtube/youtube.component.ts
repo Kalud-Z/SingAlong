@@ -74,9 +74,9 @@ export class YoutubeComponent implements OnInit {  //###########################
     // console.log('this is player :  BEFORE' , this.player);
 
     // this.player.clearVideo();
-    // this.player.destroy();
+    this.player.destroy();
 
-    console.log('this is player : AFTER ' , this.player);
+    // console.log('this is player : AFTER ' , this.player);
   }
 
   onSearch(searchInput?) {
@@ -91,17 +91,12 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID ;
     this.selectedVideoUrlSafe = this.makeUrlSafe(this.selectedVideoURL);
     
-    this.showVideoFrame = true;
     this.videoSelectedEmitter.emit(true);
     this.showSuggestions = false;
-
-    if(this.videoAlreadyLoadedOnce) {
-      this.player.clearVideo();
-      this.player.loadVideoById("XNT8hf49HCE", 5, "large")
-    }
-
+    
+    this.showVideoFrame = true;
+    
     this.initAPI()
-    this.videoAlreadyLoadedOnce = true;
   }
 
 
@@ -174,11 +169,11 @@ export class YoutubeComponent implements OnInit {  //###########################
 
   initAPI() {
     // Return if Player is already created . in case we wanna play another video . without refreshing the app.
-    // if (window['YT']) {
-    //   console.log('yes , YT already exists. goin straight to : initVideoPlayer ')
-    //   this.initVideoPlayer();
-    //   return;
-    // }
+    if (window['YT']) {
+      console.log('yes , YT already exists. goin straight to : initVideoPlayer ')
+      this.initVideoPlayer();
+      return;
+    }
 
     var tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/iframe_api';
@@ -199,7 +194,7 @@ export class YoutubeComponent implements OnInit {  //###########################
       playerVars: {   //these parameters , most of them aint working properly !!! WEIRD 
         autoplay: 0,
         modestbranding: 1,
-        controls: 1,
+        controls: 0,
         disablekb: 1,
         rel: 0,
         showinfo: 0,
@@ -207,6 +202,7 @@ export class YoutubeComponent implements OnInit {  //###########################
         playsinline: 1,
         enablejsapi : 1,
         iv_load_policy : 3, // annotations => 1 : show | 3 : hide
+        cc_load_policy : 1,
         origin : 'http://127.0.0.1:4200/'  // your domain
       },
       events: {
@@ -218,8 +214,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
   onPlayerReady(event) {
-    // event.target.playVideo();
-    // setTimeout(() => { event.target.pauseVideo() }, 1000)
+    event.target.playVideo();
+    setTimeout(() => { event.target.pauseVideo() }, 1000)
   }
 
   playVideo() {
