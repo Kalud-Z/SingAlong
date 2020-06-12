@@ -42,8 +42,11 @@
         <div class="controlVolumeWrapper">
             <svg class="controlVolumeIcon controlVolumeIcon-mute   controlIcon"  (click)='unmuteVideo()'  *ngIf='isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use> </svg>
             <svg class="controlVolumeIcon controlVolumeIcon-unMute controlIcon"  (click)='muteVideo()'  *ngIf='!isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use> </svg>
-            <svg class="controlVolumeIcon controlVolumeIcon-equalizer controlIcon" *ngIf='!setVideoOnTheSide'> <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg>
-            <div class="volumeRangeSliderWrapper"> <input type="range" class="volumeRangeSlider" #volumeRangeSlider (input)='changeVolume($event)' min="0" max="100"> </div>  
+            <!-- <svg class="controlVolumeIcon controlVolumeIcon-equalizer controlIcon" *ngIf='!setVideoOnTheSide'> <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg> -->
+            <div class="volumeRangeSliderWrapper"  *ngIf='!setVideoOnTheSide'> 
+                <svg class="controlVolumeIcon controlVolumeIcon-equalizer" > <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg>
+                <input type="range" class="volumeRangeSlider" #volumeRangeSlider (input)='changeVolume($event)' min="0" max="100">
+            </div>  
         </div>
         <svg class="controlIcon controlIcon-backward"(click)='jumpBackward()' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>
         <svg class="controlIcon controlIcon-play"    (click)='playVideo()'  *ngIf='videoState === 1'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>
