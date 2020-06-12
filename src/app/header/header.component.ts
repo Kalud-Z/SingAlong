@@ -11,6 +11,7 @@ import { DataService } from '../_services/data.service';
 export class HeaderComponent implements OnInit { //###########################################################################################################
   lyricsStillLoading = false;
   videoStillLoading  = false;
+  searchInputEntered = false;
 
   constructor(private dataService : DataService) { }
 
@@ -27,8 +28,6 @@ export class HeaderComponent implements OnInit { //#############################
   }
 
   typingSearchQuery(searchInput) {
-    // console.log('we are searching now')
-    // console.log(searchInput)
     this.dataService.bindSearchQuery(searchInput.value);
   }
 
@@ -36,8 +35,8 @@ export class HeaderComponent implements OnInit { //#############################
     location.reload();
   }
 
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true }
-  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false }
+  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
+  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
   
 }  //###############################################################################################################################################

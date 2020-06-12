@@ -1,9 +1,10 @@
-<!-- <button (click)='pp()' > pause</button> -->
 
 
 <div class="searchBoxContainer  searchBoxContainer-video"   *ngIf='!isLyricsFullScreen'>
+    
 
-    <input type="text" (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for music videos .." #searchInput 
+    <input type="text"   [ngClass]="{ 'searchBox-active'  : searchInputEntered }" 
+    (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for music videos .." #searchInput 
     (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
 
     <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'  >

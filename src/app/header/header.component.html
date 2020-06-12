@@ -8,26 +8,18 @@
 
 
 <div class="searchBoxContainer  searchBoxContainer-header">
+        <input  #searchInput
+        type="text"  class="searchBox"  placeholder="search for songs .." 
+        [ngClass]="{ 'searchBox-active'  : searchInputEntered }"
+        (input)="typingSearchQuery(searchInput)"  (focus)='onFocus_SearchInput($event)'  (blur)='onBlur_SearchInput($event)'  
+        (keyup.enter)="onSearch(searchInput); searchInput.blur()"
+        > 
 
-
-    <input 
-    type="text" 
-    #searchInput 
-    class="searchBox" 
-    placeholder="search for songs .." 
-    (input)="typingSearchQuery(searchInput)" 
-    (focus)='onFocus_SearchInput($event)' 
-    (blur)='onBlur_SearchInput($event)'  
-    (keyup.enter)="onSearch(searchInput); searchInput.blur()"
-    > 
-
-    <div class="searchLogo" (click)='onSearch(searchInput) ;  searchInput.blur()'  >
-        <svg class="searchLogo__logo"  *ngIf='!(lyricsStillLoading || videoStillLoading)' > <use xlink:href="/assets/symbol-defs.svg#icon-music-playlist"></use> </svg>
-        
-        <img class="loadingLogo"  *ngIf='lyricsStillLoading || videoStillLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
-
-    </div>
-
+        <div class="searchLogo"  (click)='onSearch(searchInput) ;  searchInput.blur()'  >
+            <svg class="searchLogo__logo"  *ngIf='!(lyricsStillLoading || videoStillLoading)' > <use xlink:href="/assets/symbol-defs.svg#icon-music-playlist"></use> </svg>
+            
+            <img class="loadingLogo"  *ngIf='lyricsStillLoading || videoStillLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
+        </div>
 </div>
 
 

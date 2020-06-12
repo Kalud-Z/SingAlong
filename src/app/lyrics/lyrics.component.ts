@@ -18,40 +18,24 @@ import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displa
 //############################################################################################################################################################
 export class LyricsComponent implements OnInit {  //##########################################################################################################
   allSuggestions : LyricObj[] = [];
-  isLoading = false;
-
   lyricsCurrentFontSize : number = 1.5;
+  selectedLyric : string;
+  selectedTitle : string;
+  FinalTextToDisplay : string = '';
+  searchQuery : string = '';
+
+  isLoading = false;
+  searchInputEntered = false;
+  isLyricsFullScreen = false;
+  showSuggestions = false;
+  showLyricsContainer = false;
 
   @Output() hideBackgroundImageEmitter = new EventEmitter<boolean>();
   @Output() lyricsFullScreenEmitter = new EventEmitter<boolean>();
   @Input() isVideoSelected = false;
 
-  isLyricsFullScreen = false;
-
-
-  increaseFontSize() {
-    if(this.lyricsCurrentFontSize < 2.5) {
-      this.lyricsCurrentFontSize += 0.5;
-    }
-  }
-
-  decreaseFontSize() {
-    if(this.lyricsCurrentFontSize > 1.5) {
-      this.lyricsCurrentFontSize -= 0.5;
-    }
-  }
-
-
-  selectedLyric : string;
-  selectedTitle : string;
-  FinalTextToDisplay : string = '';
-
-  searchQuery : string = '';
 
   constructor(private dataService : DataService , private ajaxService : AjaxService) { }
-
-  showSuggestions = false;
-  showLyricsContainer = false;
 
   ngOnInit(): void {
     this.dataService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
@@ -93,8 +77,21 @@ export class LyricsComponent implements OnInit {  //############################
   }
 
   
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true }
-  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false }
+  increaseFontSize() {
+    if(this.lyricsCurrentFontSize < 2.5) {
+      this.lyricsCurrentFontSize += 0.5;
+    }
+  }
+
+  decreaseFontSize() {
+    if(this.lyricsCurrentFontSize > 1.5) {
+      this.lyricsCurrentFontSize -= 0.5;
+    }
+  }
+
+  
+  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
+  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
 
 }  //########################################################################################################################################################

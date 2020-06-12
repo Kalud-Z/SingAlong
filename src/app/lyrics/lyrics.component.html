@@ -19,7 +19,8 @@
 
 <div class="searchBoxContainer  searchBoxContainer-lyrics">
 
-    <input type="text"  (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for lyrics .." #searchInput 
+    <input type="text"  [ngClass]="{ 'searchBox-active'  : searchInputEntered }"  
+    (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for lyrics .." #searchInput 
     (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
 
     <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'   >

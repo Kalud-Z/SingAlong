@@ -26,16 +26,16 @@ export class YoutubeComponent implements OnInit {  //###########################
   allSuggestions : videoObj[] = [];
   isLoading = false;
   showSuggestions = false;
-  @Input() isLyricsFullScreen = false;
-  @Output() videoSelectedEmitter = new EventEmitter<boolean>();
-  @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef; 
-  @ViewChild('iframeOuterContainer' , { static : false}) iframeOuterContainer : ElementRef; 
-  
+  searchInputEntered = false;
   iframeOuterContainerHeight_alreadySet = false;
-
   setVideoOnTheSide = false;
   searchQuery : string = '';
 
+  @Input() isLyricsFullScreen = false;
+  @Output() videoSelectedEmitter = new EventEmitter<boolean>();
+
+  @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef; 
+  @ViewChild('iframeOuterContainer' , { static : false}) iframeOuterContainer : ElementRef; 
 
   constructor(private dataService : DataService,
               private sanitizer: DomSanitizer,
@@ -45,24 +45,22 @@ export class YoutubeComponent implements OnInit {  //###########################
 
 
   ngOnInit() {
-    // this.initAPI()
     this.dataService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
     this.dataService.videoSearch_LoadingNow.subscribe(data => { this.isLoading = data })
 
-   this.dataService.allVideosSuggestionsSubject.subscribe(data => {
-    this.allSuggestions = data;
-    this.showSuggestions = true;
-   })
+    this.dataService.allVideosSuggestionsSubject.subscribe(data => {
+      this.allSuggestions = data;
+      this.showSuggestions = true;
+    })
 
-   this.dataService.setVideoOnTheSide.subscribe(data => {
+    this.dataService.setVideoOnTheSide.subscribe(data => {
      if(!this.iframeOuterContainerHeight_alreadySet) {
        const desiredHeight = this.iframeOuterContainer.nativeElement.clientHeight;
        this.renderer.setStyle(this.iframeOuterContainer.nativeElement, 'height', `${desiredHeight}px`);
        this.iframeOuterContainerHeight_alreadySet = true;
      }
-    
       this.setVideoOnTheSide = data;
-   })
+    })
   } //ngOnInit
 
 
@@ -104,8 +102,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
   
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true }
-  onBlur_SearchInput(event)  { this.dataService.searchQueryIsBeingTypedNow = false }
+  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true  ; this.searchInputEntered = true }
+  onBlur_SearchInput(event)  { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -122,10 +120,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   videoState = 1; //= 2 ==> playin // = 1 ==> paused
   isVideoMuted = false;
 
-  
   @ViewChild('volumeRangeSlider' , { static : false}) volumeRangeSlider : ElementRef; 
-
-
 
 
   // keyCode = 39  arrow right
