@@ -52,7 +52,8 @@
         z-index: 10;
         border-radius: 4px;
         height: 16vw;
-        width : 90%;
+        // width : 90%;
+        align-self: stretch;
         position: relative;
         // transition: all 0.5s ease-in-out;
 
@@ -135,6 +136,13 @@
             &:hover { opacity : 1 !important ; border : .5px solid black;  }
         }
 
+        &-initialStyle {
+            @include respond(phone) {
+                padding-right: 2rem;
+                justify-content: flex-end !important;
+            }
+        }
+
         .controlIcon {
             align-self: center;
             height : 3.5rem;
@@ -164,10 +172,11 @@
             .controlVolumeIcon {
                 height : 2rem;
                 width : 2rem;
-                margin-right : 0.5rem;
     
                 &-equalizer {
-                    &:hover + .volumeRangeSliderContainer {
+                    // margin-left : 0.5rem;
+                    @include respond(phone) { margin-left : 1rem; }
+                    &:hover + .volumeRangeSliderWrapper {
                         opacity: 1;
                         visibility: visible;
                     }
@@ -175,11 +184,12 @@
             }
 
             .volumeRangeSliderWrapper {
-                opacity: 0;
-                visibility: hidden;
+                // opacity: 0;
+                // visibility: hidden;
                 position: absolute;
                 top: -291%;
-                left: -27%;
+                left: 3%;
+                @include respond(phone) { left : 5% }
                 transform: rotate(-90deg);
                 width : 10rem;
                 &:hover {
@@ -280,14 +290,15 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-webkit-slider-thumb {
     z-index: 600;
     border-width: 0;
-    height: 1.5rem;
+    // height: 1.5rem;
+    height: 1rem;
     width: 2.5rem;
     border-radius: 6px;
     background: rgb(187, 59, 59);
     cursor: -webkit-grab;
     cursor: pointer;
     -webkit-appearance: none;
-    transform: translateY(-20%);
+    // transform: translateY(-20%);
 } 
 
 
