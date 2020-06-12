@@ -66,11 +66,19 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
         border-color: #CCCCCC;
         width: 32vw;
         @include respond(tab-port-small) { width: 44vw }
-        background-color: #FFFFFF;
-        color: #000000;
+        // background-color: #FFFFFF;
+        background-color: rgba(235, 192, 192, 0.425);
+        color : rgba(141, 123, 123, 0.438);
+        // color: #000000;
         border-style: solid;
         border-radius: 10px;
         box-shadow: 0px 0px 2px rgba(66,66,66,.75);
+        transition: all .2s;
+
+        &-active {  
+            color : black !important;
+            background-color: #FFFFFF !important;
+        }
     
         &:focus { outline:none }
     }
