@@ -91,8 +91,6 @@
     }
 
     &__tooltiptext {
-        // visibility: hidden;
-        // width: 10vw;
         background-color: white;
         color: black;
         text-align: center;
@@ -107,7 +105,6 @@
 
         &::after {
             content : '';
-            /* display : block; */
             position :absolute;
             top: -19%;
             right: 12%;
@@ -136,21 +133,17 @@
         }
 
 
-
         &-increase {
             position: relative;
-            // fill : rgb(24, 156, 24);
             margin-bottom: 1rem;
-        
         }
 
-        &-decrease {
-            // fill : red;
-        }
+        // &-decrease {
+        //     // fill : red;
+        // }
     }
 }
 
-// * { border : 3px solid green }
 
 
 .searchBoxContainer-lyrics {

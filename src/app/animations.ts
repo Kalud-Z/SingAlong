@@ -92,31 +92,7 @@ export const displayChosenLyricTrigger = trigger('displayChosenLyricState' , [
       animate('2s 1.6s ease-out' , style({
         opacity : 1,
         transform : 'translateY(0%)'
-      }))
-
-    
-        // query('.changeFontSizeWrapper' , [
-        //     style({
-        //         opacity : 0,
-        //         transform : 'translateY(300%)'
-        //     }),
-        //     animate('8.5s  ease-out' , style({
-        //         opacity : 1,
-        //         transform : 'translateY(0%)'
-        //     }))
-        // ] , { optional : true }),
-    
-        // query('.lyric-container' , [
-        //     style({
-        //         opacity : 0,
-        //         transform : 'translateY(50%)'
-        //     }),
-        //     animate('5.5s  ease-out' , style({
-        //         opacity : 1,
-        //         transform : 'translateY(0%)'
-        //     }))
-        // ] , { optional : true })
-    
+      }))    
   ]) //enter
 ])
 
@@ -135,6 +111,21 @@ export const lyricsFullScreenTrigger = trigger('lyricsFullScreenState', [
       ]), //transition
 ])
 
+
+
+export const displayEnlargeIconTrigger = trigger('displayEnlargeIconState' , [
+    transition(':enter' , [
+        style({
+            opacity : 0,
+            // transform : 'translateY(50%)'
+        }),
+        animate('2s 1.6s ease-out' , style({
+          opacity : 1,
+        //   transform : 'translateY(0%)'
+        }))    
+    ]) //enter
+  ])
+  
 
 
 

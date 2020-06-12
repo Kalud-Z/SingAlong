@@ -1,7 +1,7 @@
 
 
 
-<div class="fullScreenLogosWrapper" [ngClass]="{ 'fullScreenLogosWrapper-fullScreenMode' : isLyricsFullScreen }" *ngIf='isVideoSelected' >
+<div class="fullScreenLogosWrapper" @displayEnlargeIconState [ngClass]="{ 'fullScreenLogosWrapper-fullScreenMode' : isLyricsFullScreen }" *ngIf='isVideoSelected && showLyricsContainer' >
     <div class="fullScreenLogosWrapper__tooltiptext"> <span *ngIf='!isLyricsFullScreen' > fullscreen </span>  <span *ngIf='isLyricsFullScreen' > minimize </span> </div>
     <svg class="fullScreen__logo  fullScreen__logo-enlarge" (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' ><use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use></svg>
     <svg class="fullScreen__logo fullScreen__logo-shrink"    (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
@@ -37,8 +37,6 @@
     <li class="lyricsSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)"  >  {{ sugg.title }} </li>
 </ul>
 
-
-<!-- <div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='false'  -->
 
 <div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='showLyricsContainer'   @displayChosenLyricState
 [ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2 ,

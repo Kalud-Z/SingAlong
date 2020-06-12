@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input }
 import { DataService } from '../_services/data.service';
 import { LyricObj } from './lyrics.model';
 import { AjaxService } from '../_services/ajax.service';
-import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger } from '../animations';
+import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger, displayEnlargeIconTrigger } from '../animations';
 
 @Component({
   selector: 'app-lyrics',
@@ -11,7 +11,8 @@ import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displa
   animations : [
     displayVideoSuggestionsTrigger,
     displayLyricsSuggestionsTrigger,
-    displayChosenLyricTrigger
+    displayChosenLyricTrigger,
+    displayEnlargeIconTrigger
   ]
 })
 
