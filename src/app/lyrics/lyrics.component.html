@@ -1,20 +1,21 @@
 
 
 
-<div class="fullScreenLogosWrapper" @displayEnlargeIconState [ngClass]="{ 'fullScreenLogosWrapper-fullScreenMode' : isLyricsFullScreen }" *ngIf='isVideoSelected && showLyricsContainer' >
-    <div class="fullScreenLogosWrapper__tooltiptext"> <span *ngIf='!isLyricsFullScreen' > fullscreen </span>  <span *ngIf='isLyricsFullScreen' > minimize </span> </div>
-    <svg class="fullScreen__logo  fullScreen__logo-enlarge" (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' ><use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use></svg>
-    <svg class="fullScreen__logo fullScreen__logo-shrink"    (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
+<div class="screenSizeIconsContainer" @displayEnlargeIconState [ngClass]="{ 'screenSizeIconsContainer-fullScreenMode' : isLyricsFullScreen }" *ngIf='isVideoSelected && showLyricsContainer' >
+    <div class="screenSizeIconsContainer__tooltiptext"> <span *ngIf='!isLyricsFullScreen' > fullscreen </span>  <span *ngIf='isLyricsFullScreen' > minimize </span> </div>
+    <svg class="screenSizeIcon  screenSizeIcon-enlarge" (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' ><use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use></svg>
+    <svg class="screenSizeIcon  screenSizeIcon -shrink"  (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
 </div>
 
 
 
-<div class="changeFontSizeWrapper"  *ngIf='showLyricsContainer'  @displayChosenLyricState  
-[ngClass]="{ changeFontSizeWrapper__lyricsFullScreen : isLyricsFullScreen }">
-    <span class="changeFontSizeWrapper__tooltiptext"> increase/decrease font-size </span>
-    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-increase" (click)='increaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
-    <svg class="changeFontSizeWrapper__logo changeFontSizeWrapper__logo-decrease" (click)='decreaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
+<div class="fontSizeIconsContainer"  *ngIf='showLyricsContainer'  @displayChosenLyricState  
+[ngClass]="{ fontSizeIconsContainer__lyricsFullScreen : isLyricsFullScreen }">
+    <span class="fontSizeIconsContainer__tooltiptext"> increase/decrease font-size </span>
+    <svg class="fontSizeIcon fontSizeIcon-increase" (click)='increaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
+    <svg class="fontSizeIcon fontSizeIcon-decrease" (click)='decreaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
 </div>
+
 
 
 <div class="searchBoxContainer  searchBoxContainer-lyrics">
@@ -23,10 +24,9 @@
     (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for lyrics .." #searchInput 
     (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
 
-    <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'   >
-        <svg class="searchLogo__logo" *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>
-        <img class="loadingLogo"  *ngIf='isLoading'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
-        
+    <div class="searchIconWrapper" (click)='onSearch(searchInput); searchInput.blur()'   >
+        <svg class="searchIconWrapper__mainIcon"     *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>
+        <img class="searchIconWrapper__loadingIcon"  *ngIf='isLoading'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
     </div>
 
 </div>
@@ -38,10 +38,13 @@
 </ul>
 
 
+
 <div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf='showLyricsContainer'   @displayChosenLyricState
 [ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2 ,
             'fontSize-2_5rem' : lyricsCurrentFontSize === 2.5 }" >
 </div>
+
+
 
 
 

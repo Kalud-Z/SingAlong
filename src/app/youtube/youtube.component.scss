@@ -35,24 +35,16 @@
         height : auto !important;
     }
 
-    .exitVideoButton {
+    .closeVideoIcon {
         position: absolute;
         top: 0;
         right: 0;
-        // margin-bottom : 4rem;
         height: 2.5rem;
         width: 2.5rem;
         cursor : pointer;
         transition : all 0.15s;
         fill : rgba(0, 0, 0, 0.527);
         &:hover { fill : black  }
-        @include respond(phone) {
-            // top: -31%;
-            // right: 50%;
-            // transform: translateX(50%);
-            // height: 3.5rem;
-            // width: 3.5rem;
-        }
     }
 
 
@@ -92,7 +84,7 @@
             visibility: hidden !important;
         }
 
-        &__shield , &__loadingView {
+        &__shield , &__loadingWindow {
             position : absolute;
             top: 0;
             left : 0;
@@ -102,16 +94,15 @@
 
         &__shield { cursor: pointer }
 
-        &__loadingView {
+        &__loadingWindow {
             z-index: -1;
             background-color: black;
             display : flex;
             align-items: center;
             justify-content: center;
-            &-logo { 
+            &__icon { 
                 width : 16%;
                 height : auto;
-                // @include respond(tab-port-small) { width : 5% } 
             }
         }
     
@@ -119,7 +110,7 @@
     }
 
 
-    .controlVideoButtonsContainer {
+    .controlVideoIconsContainer {
         z-index: 50;
         position: relative;
         // background-color: red;
@@ -144,7 +135,7 @@
             &:hover { opacity : 1 !important ; border : .5px solid black;  }
         }
 
-        .controlButton {
+        .controlIcon {
             align-self: center;
             height : 3.5rem;
             width : 3.5rem;
@@ -170,7 +161,7 @@
             left: 17%;
             transform: translate(-50%, -50%);
 
-            .controlVolumeButton {
+            .controlVolumeIcon {
                 height : 2rem;
                 width : 2rem;
                 margin-right : 0.5rem;
@@ -183,7 +174,7 @@
                 }
             }
 
-            .volumeRangeSliderContainer {
+            .volumeRangeSliderWrapper {
                 opacity: 0;
                 visibility: hidden;
                 position: absolute;
@@ -257,8 +248,10 @@
 
 
 
+// ##################################################################################################################################################
 
-// custom input range
+
+// custom input range slider
 /* between chrome and firefox all properties are the same, Expect translateY needs a diff value. */
 
 input[type=range] {

@@ -4,7 +4,7 @@ import { trigger, transition, group, query, style, animate, stagger } from '@ang
 
 // Video Stuff ###########################################################################################
 
-export const exitLogoTrigger = trigger('exitLogoState', [
+export const closeVideoIconTrigger = trigger('closeVideoIconState', [
     transition(':enter' , [
         style({
             opacity: 0

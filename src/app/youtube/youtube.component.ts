@@ -5,9 +5,8 @@ import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 import { DomSanitizer} from '@angular/platform-browser';
-import { exitLogoTrigger, displayVideoSuggestionsTrigger, iframeOuterContainerTrigger } from '../animations';
+import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from '../animations';
 // import { YouTubePlayer } from '@angular/youtube-player';
-
 
 
 @Component({
@@ -15,7 +14,7 @@ import { exitLogoTrigger, displayVideoSuggestionsTrigger, iframeOuterContainerTr
   templateUrl: './youtube.component.html',
   styleUrls: ['./youtube.component.scss'],
   animations : [
-    exitLogoTrigger,
+    closeVideoIconTrigger,
     displayVideoSuggestionsTrigger,
     iframeOuterContainerTrigger
   ]

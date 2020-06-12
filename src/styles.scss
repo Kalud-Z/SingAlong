@@ -83,7 +83,7 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
         &:focus { outline:none }
     }
 
-    .searchLogo {
+    .searchIconWrapper {
         align-self: stretch;
         height: 100%;
         width: 7rem;
@@ -101,7 +101,7 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
 
         &:hover  { background-color: #ff1a1a }
 
-        &__logo {
+        &__mainIcon {
             height : 2.25rem;
             width: 2.25rem;
             position : absolute;
@@ -109,17 +109,15 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
             left: 50%;
             transform : translate(-50%, -50%);
         }
+
+        &__loadingIcon {
+            width : 40%;
+            height : auto;
+            transform : rotate(90deg) 
+        }
     }
 
 
-    .loadingLogo {
-        // background-color : red;
-        // height : 2rem;
-        // width : 3rem;
-        width : 40%;
-        height : auto;
-        transform : rotate(90deg) 
-    }
     
 
 }

@@ -2,15 +2,13 @@
 
 <div class="searchBoxContainer  searchBoxContainer-video"   *ngIf='!isLyricsFullScreen'>
     
-
     <input type="text"   [ngClass]="{ 'searchBox-active'  : searchInputEntered }" 
     (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for music videos .." #searchInput 
     (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
 
-    <div class="searchLogo" (click)='onSearch(searchInput); searchInput.blur()'  >
-        <svg class="searchLogo__logo" *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
-        <img class="loadingLogo"  *ngIf='isLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
-
+    <div class="searchIconWrapper" (click)='onSearch(searchInput); searchInput.blur()'  >
+        <svg class="searchIconWrapper__mainIcon"     *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
+        <img class="searchIconWrapper__loadingIcon"  *ngIf='isLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
     </div>
 
 </div>
@@ -32,25 +30,25 @@
 [ngClass]="{ 'iframeOuterContainer-inLyricsFullscreenMode' : isLyricsFullScreen ,
 'iframeOuterContainer-inInitialMode' : !isLyricsFullScreen , 'iframeOuterContainer-hide' : !showVideoFrame }">
 
-    <svg class="exitVideoButton"  @exitLogoState  *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
+    <svg class="closeVideoIcon"  @closeVideoIconState  *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
 
     <div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,'iframeWrapper-hide' : !showVideoFrame , 'iframeWrapper-onTheSide' : setVideoOnTheSide }" >
         <div id='player'></div>
         <div class="iframeWrapper__shield" (click)='toggleVideo()' ></div>
-        <div class="iframeWrapper__loadingView">   <img class="iframeWrapper__loadingView-logo"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
+        <div class="iframeWrapper__loadingWindow">   <img class="iframeWrapper__loadingWindow__icon"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
     </div> 
 
-    <div class="controlVideoButtonsContainer" [ngClass]="{ 'controlVideoButtonsContainer-onTheSide' : setVideoOnTheSide }" >
+    <div class="controlVideoIconsContainer" [ngClass]="{ 'controlVideoIconsContainer-onTheSide' : setVideoOnTheSide }" >
         <div class="controlVolumeWrapper">
-            <svg class="controlVolumeButton controlVolumeButton-mute   controlButton"  (click)='unmuteVideo()'  *ngIf='isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use> </svg>
-            <svg class="controlVolumeButton controlVolumeButton-unMute controlButton"  (click)='muteVideo()'  *ngIf='!isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use> </svg>
-            <svg class="controlVolumeButton controlVolumeButton-equalizer controlButton" *ngIf='!setVideoOnTheSide'> <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg>
-            <div class="volumeRangeSliderContainer"> <input type="range" class="volumeRangeSlider" #volumeRangeSlider (input)='changeVolume($event)' min="0" max="100"> </div>  
+            <svg class="controlVolumeIcon controlVolumeIcon-mute   controlButton"  (click)='unmuteVideo()'  *ngIf='isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use> </svg>
+            <svg class="controlVolumeIcon controlVolumeIcon-unMute controlButton"  (click)='muteVideo()'  *ngIf='!isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use> </svg>
+            <svg class="controlVolumeIcon controlVolumeIcon-equalizer controlButton" *ngIf='!setVideoOnTheSide'> <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg>
+            <div class="volumeRangeSliderWrapper"> <input type="range" class="volumeRangeSlider" #volumeRangeSlider (input)='changeVolume($event)' min="0" max="100"> </div>  
         </div>
-        <svg class="controlButton controlButton-backward"(click)='jumpBackward()' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>
-        <svg class="controlButton controlButton-play"    (click)='playVideo()'  *ngIf='videoState === 1'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>
-        <svg class="controlButton controlButton-pause"   (click)='pauseVideo()' *ngIf='videoState === 2' > <use xlink:href="/assets/symbol-defs.svg#icon-pause"></use> </svg>
-        <svg class="controlButton controlButton-forward" (click)='jumpForward()'> <use xlink:href="/assets/symbol-defs.svg#icon-forward"></use> </svg>
+        <svg class="controlIcon controlIcon-backward"(click)='jumpBackward()' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>
+        <svg class="controlIcon controlIcon-play"    (click)='playVideo()'  *ngIf='videoState === 1'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>
+        <svg class="controlIcon controlIcon-pause"   (click)='pauseVideo()' *ngIf='videoState === 2'> <use xlink:href="/assets/symbol-defs.svg#icon-pause"></use> </svg>
+        <svg class="controlIcon controlIcon-forward" (click)='jumpForward()'> <use xlink:href="/assets/symbol-defs.svg#icon-forward"></use> </svg>
     </div>
 </div>
 
