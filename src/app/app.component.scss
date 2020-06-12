@@ -49,6 +49,9 @@ app-header {
         justify-content: center !important;
         overflow: visible !important;
         height: auto !important;
+        @include respond(phone) {
+            padding : 2rem 0;
+        }
     }
 
     app-youtube , app-lyrics {
