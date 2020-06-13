@@ -43,67 +43,84 @@
 }
 
 .titleWrapper {
-    // position : absolute;
-    // top : 28%;
-    // left : 54%;
-    // transform: translate(-50%,-50%);
     width : 70%;
     margin-bottom: 6rem;
     transform: translateX(3%);
-    @include respond(phone) {transform: translateX(6%) }
-    @include respond(phone-extra-small) {transform: translateX(14%) }
-    // background-color: rgba(255, 0, 0, 0.658);
+    @include respond(phone-small) { 
+        margin-top : 1.2rem;
+        align-self: flex-end;
+        margin-right : 2rem;
+        max-width : 75%;
+    }
 
+    // background-color: rgba(255, 0, 0, 0.103);
 
     .text {
-        // display : flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
         height : 100%;
         width : 100%;
-        // background-color: yellow;
 
         display: grid;
-        // grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
 
         font-family: 'Delius Swash Caps', cursive;
         font-size: 2.6rem;
         @include respond(tab-port) { font-size: 2rem;  }
-        // font-size: auto;
-        // font-size: 5.2rem;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
         text-align: center;
-        
 
-        &__part1 {
-            // grid-column: 1 / 6;
+        &__partA , &__partB {
+            @include respond(phone-small) {
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                justify-self: center !important;
+            }
+        }
+
+        &__partA {
             grid-row: 1 / 2;
-            // margin-left : -15rem;
+            grid-column: 1 / 2;
             justify-self: start;
-            @include respond(phone-small) { justify-self: center; }
+
             background-image: linear-gradient(180deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+
+            &__1 {
+
+            }
+
+            &__2 {
+                
+            }
         }
 
-        &__part2 {
-            // margin-right : -15rem;
-            // grid-column: 2 / 7  ;
+        &__partB {
             grid-row: 2 / 3;
+            grid-column: 1 / 2;
             justify-self: end;
-            @include respond(phone-small) { justify-self: center; }
-
-
             background-image: linear-gradient(0deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+
+            &__1 {
+
+            }
+
+            &__2 {
+                
+            }
+
         }
+        
+
+
     }
 }
 
