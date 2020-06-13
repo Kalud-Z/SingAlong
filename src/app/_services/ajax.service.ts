@@ -48,7 +48,7 @@ export class AjaxService {  //##################################################
 
 
 
-//   WAITING FOR SOUNDCLOUD TO REOPEN ITS API #####
+//   WAITING FOR SOUNDCLOUD TO REACTIVATE ITS API #####
 
 
 
