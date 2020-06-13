@@ -21,3 +21,12 @@ It is specifically designed to make it faster to find your favorite songs and th
 __________________________________________________________________
 
 
+![](AppPreviewScreenshots/main.png)
+
+__________________________________________________________________
+
+![](AppPreviewScreenshots/start.png)
+
+__________________________________________________________________
+
+![](AppPreviewScreenshots/fullscreen.png)
