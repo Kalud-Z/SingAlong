@@ -85,18 +85,14 @@
             grid-row: 1 / 2;
             grid-column: 1 / 2;
             justify-self: start;
-
-            background-image: linear-gradient(180deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            @include colorGradientTop;
 
             &__1 {
-
+                @include respond(phone-small) { @include colorGradientTop }
             }
 
             &__2 {
-                
+                @include respond(phone-small) { @include colorGradientBottom }
             }
         }
 
@@ -104,17 +100,14 @@
             grid-row: 2 / 3;
             grid-column: 1 / 2;
             justify-self: end;
-            background-image: linear-gradient(0deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            @include colorGradientBottom;
 
             &__1 {
-
+                @include respond(phone-small) { @include colorGradientTop }
             }
 
             &__2 {
-                
+                @include respond(phone-small) { @include colorGradientBottom }
             }
 
         }

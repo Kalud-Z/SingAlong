@@ -53,6 +53,21 @@
 
 
 
+@mixin colorGradientTop {
+    background-image: linear-gradient(180deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+@mixin colorGradientBottom {
+    background-image: linear-gradient(0deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
 
 
