@@ -31,6 +31,7 @@ export class LyricsComponent implements OnInit {  //############################
   isLyricsFullScreen = false;
   showSuggestions = false;
   showLyricsContainer = false;
+  scrolledToEndOfPage = false;
 
   @Output() hideBackgroundImageEmitter = new EventEmitter<boolean>();
   @Output() lyricsFullScreenEmitter = new EventEmitter<boolean>();
@@ -71,6 +72,7 @@ export class LyricsComponent implements OnInit {  //############################
     if(this.isVideoSelected) {
       this.lyricsFullScreenEmitter.emit(true);
       this.isLyricsFullScreen = true;
+      this.synchUIService.scrolledToEndOfPage.subscribe(data => { this.scrolledToEndOfPage = data })
     }
   }
 

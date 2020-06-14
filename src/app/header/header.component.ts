@@ -12,7 +12,7 @@ import { SynchUIService } from '../_services/synch-ui.service';
 export class HeaderComponent implements OnInit { //###########################################################################################################
   lyricsStillLoading = false;
   videoStillLoading  = false;
-  searchInputEntered = false;
+  searchInputBeingEntered = false;
 
   constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
 
@@ -28,7 +28,6 @@ export class HeaderComponent implements OnInit { //#############################
       this.dataService.getLyrics(input.value);
       this.dataService.getVideos(input.value);
     }
-    
   }
 
   typingSearchQuery(searchInput  : HTMLInputElement) {
@@ -39,8 +38,8 @@ export class HeaderComponent implements OnInit { //#############################
     location.reload();
   }
 
-  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }  // TODO : turn this one into : searchInputBeingEntered 
-  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputBeingEntered = true } 
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputBeingEntered = false }
 
   
 }  //###############################################################################################################################################

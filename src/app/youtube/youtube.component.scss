@@ -114,7 +114,6 @@
     .controlVideoIconsContainer {
         z-index: 50;
         position: relative;
-        // background-color: red;
         align-self: stretch;
         margin-top : 1rem;
         display :flex;
@@ -130,9 +129,9 @@
             width: 33vw !important;
             @include respond(tab-port-small) {  width: 50vw !important }
             position : fixed !important;
-            top: 0% !important;
-            padding: 1rem 0;
+            top: 85% !important;
             right: 3% !important;
+            padding: 1rem 0;
             opacity : 0.5 !important;
             &:hover { opacity : 1 !important ; border : .5px solid black;  }
         }
@@ -148,6 +147,7 @@
             align-self: center;
             height : 3.5rem;
             width : 3.5rem;
+            @include respond(phone) { height : 4.5rem ; width : 4.5rem;  }
             cursor : pointer;
             transition : all 0.13s;
             fill : rgb(209, 75, 75);
@@ -157,6 +157,8 @@
             &-play , &-pause {
                 height : 4.5rem;
                 width : 4.5rem;
+                @include respond(phone) { height : 5.5rem ; width : 5.5rem;  }
+
             }
         }
 
@@ -173,6 +175,7 @@
             .controlVolumeIcon {
                 height : 2rem;
                 width : 2rem;
+                @include respond(phone) { height : 3rem ; width : 3rem;  }
     
                 &-equalizer {
                     margin: 0;

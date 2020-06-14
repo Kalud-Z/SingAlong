@@ -16,6 +16,7 @@ import { LoadingSpinnerComponent } from './_shared/loading-spinner/loading-spinn
 import { SafePipe } from './safe.pipe';
 import { AdjustPlayerSizeDirective } from './youtube/adjust-player-size.directive';
 import { MoveVideoToTheSideDirective } from './directives/move-video-to-the-side.directive';
+import { detectScroll } from './lyrics/detect-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MoveVideoToTheSideDirective } from './directives/move-video-to-the-side
     SafePipe,
     AdjustPlayerSizeDirective,
     MoveVideoToTheSideDirective,
+    detectScroll,
   ],
   imports: [
     BrowserModule,

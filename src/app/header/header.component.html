@@ -25,7 +25,7 @@
 <div class="searchBoxContainer  searchBoxContainer-headerComponent">
         <input  #searchInput
         type="text"  class="searchBox"  placeholder="search for songs .." 
-        [ngClass]="{ 'searchBox-active'  : searchInputEntered }"
+        [ngClass]="{ 'searchBox-active'  : searchInputBeingEntered }"
         (input)="typingSearchQuery(searchInput)"  (focus)='onFocus_SearchInput()'  (blur)='onBlur_SearchInput()'  
         (keyup.enter)="onSearch(searchInput); searchInput.blur()"
         > 

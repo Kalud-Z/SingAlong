@@ -17,8 +17,11 @@
     left : 1.2%;
 
     &-fullScreenMode {
-        top: 10px !important;
-        left: 10px !important;
+        // top: auto;
+        // left: auto;
+        // position : fixed;
+        // margin-top: 5rem;
+        // margin-left: 5rem;
     }
 
     &:hover .screenSizeIconsContainer__tooltiptext {
@@ -79,14 +82,15 @@
 
 .fontSizeIconsContainer {
     position : fixed;
-    top: 32%;
+    top: 34%;
     right: 5%;
-    @include respond(tab-port-small) { top : 84% }
+    // @include respond(tab-port-small) { top : 84% }
     
     display : flex;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
+    transition: all 0.2s ease-out;
 
     &:hover > &__tooltiptext {
         opacity: 0.8;
@@ -119,9 +123,15 @@
         }
     }
 
-    &__lyricsFullScreen {
-        top : 83% !important;
-        right : 3.5% !important;
+    &-lyricsFullScreen {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        top : auto;
+        right : auto;
+
+        &-endOfPageAdjustement {
+            margin-top: -3rem !important;
+        }
     }
 
     .fontSizeIcon {
@@ -130,10 +140,10 @@
         cursor : pointer;
         fill : rgba(0, 0, 0, 0.521);
         @include respond(tab-port-small) {  height: 4rem; width: 4rem }
-
+        &:not(:last-child) { margin-bottom: 1rem }
+        
         &-increase {
             position: relative;
-            margin-bottom: 1rem;
         }
     }
 }
@@ -141,7 +151,7 @@
 
 
 .searchBoxContainer-lyrics {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     margin-bottom: 2rem;
     align-self: center;
 }
@@ -190,6 +200,7 @@
 
 
 .lyric-container {
+    margin-bottom: 1.5rem;
     font-family: 'Raleway', sans-serif;
     line-height: 152%;
     font-weight: 500;

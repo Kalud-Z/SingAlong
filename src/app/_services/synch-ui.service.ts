@@ -15,7 +15,9 @@ export class SynchUIService {  //###############################################
 
   searchQueryTypedSubject         = new Subject<string>() ;  
 
-  searchQueryIsBeingTypedNow      = false;       
+  searchQueryIsBeingTypedNow      = false;   
+  
+  scrolledToEndOfPage             = new Subject<boolean>() ;
 
 
   lyricsSearch_StopLoading() {
