@@ -50,6 +50,7 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.synchUIService.videoSearch_LoadingNowSubject.subscribe(data => { this.isLoading = data })
 
     this.dataService.allVideosSuggestionsSubject.subscribe(data => {
+      if(this.showVideoFrame) { this.returnToVideos()  }
       this.allSuggestions = data;
       this.showSuggestions = true;
     })
@@ -76,7 +77,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
   onSearch(searchInput?) {
-    console.log('onSearch called')
+    if(this.showVideoFrame) { this.returnToVideos() }
     this.isLoading = true;
     this.showVideoFrame = false;
     this.dataService.getVideos(searchInput.value)

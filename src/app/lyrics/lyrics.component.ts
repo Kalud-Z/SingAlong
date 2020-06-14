@@ -42,14 +42,15 @@ export class LyricsComponent implements OnInit {  //############################
 
   ngOnInit(): void {
     this.synchUIService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
-    // this.dataService.lyricsSearch_LoadingNow.subscribe(data => { this.isLoading = data })
     this.synchUIService.lyricsSearch_LoadingNowSubject.subscribe(data => { this.isLoading = data })
-
-    // this.ajaxService.searchLyrics();
     this.dataService.allLyricsSuggestionsSubject.subscribe((data : any) => {
       this.allSuggestions = data;
       this.showSuggestions = true;
     })
+    this.synchUIService.lyricsFullScreenSubject.subscribe(data => {
+      this.isLyricsFullScreen = data;
+    })
+
   }
 
   onSearch(searchInput) {
@@ -72,13 +73,14 @@ export class LyricsComponent implements OnInit {  //############################
     if(this.isVideoSelected) {
       this.lyricsFullScreenEmitter.emit(true);
       this.isLyricsFullScreen = true;
-      this.synchUIService.scrolledToEndOfPage.subscribe(data => { this.scrolledToEndOfPage = data })
+      this.synchUIService.scrolledToEndOfPageSubject.subscribe(data => { this.scrolledToEndOfPage = data })
     }
   }
 
   onShrinkLyrics() {
     this.lyricsFullScreenEmitter.emit(false);
-    this.isLyricsFullScreen = false;
+    this.synchUIService.lyricsFullScreenSubject.next(false);
+    this.synchUIService.setVideoOnTheSideSubject.next(false);
   }
 
   

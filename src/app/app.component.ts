@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { lyricsFullScreenTrigger } from './animations';
+import { SynchUIService } from './_services/synch-ui.service';
 
 
 @Component({
@@ -11,22 +12,22 @@ import { lyricsFullScreenTrigger } from './animations';
   ]
 })
 // ##########################################################################################################################################################
-export class AppComponent  {  //############################################################################################################################
+export class AppComponent implements OnInit {  //############################################################################################################################
   hideBackgroundImage = false;
   isLyricsFullScreen = false;
 
   videoSelected = false;
 
-  //if you dont specify the read option , you will get the instance of the youtube class itself.
-  // @ViewChild('youtubeVideoContainer' , { static : false , read: ElementRef }) youtubeVideoContainer : ElementRef; 
+  constructor(private synchUIService : SynchUIService) {}
 
-  constructor() {}
-
+  ngOnInit() {
+    this.synchUIService.lyricsFullScreenSubject.subscribe(data => {
+      this.isLyricsFullScreen = data;
+    })
+  }
 
   onLyricsFullScreen(event) {
     this.isLyricsFullScreen = event;
-    console.log('we just tun full svren');
-    console.log('and thisi the isLyricsFullScreen ' , this.isLyricsFullScreen)
   }
 
 

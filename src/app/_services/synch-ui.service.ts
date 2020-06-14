@@ -12,14 +12,13 @@ export class SynchUIService {  //###############################################
   videoSearch_LoadingNowSubject   = new Subject<boolean>() ;   
 
   setVideoOnTheSideSubject        = new Subject<boolean>() ;    
+  scrolledToEndOfPageSubject      = new Subject<boolean>() ;
+  lyricsFullScreenSubject         = new Subject<boolean>() ;
 
-  searchQueryTypedSubject         = new Subject<string>() ;  
-
-  searchQueryIsBeingTypedNow      = false;   
+  searchQueryTypedSubject         = new Subject<string>()  ;  
+  searchQueryIsBeingTypedNow      = false;  
   
-  scrolledToEndOfPage             = new Subject<boolean>() ;
-
-
+  
   lyricsSearch_StopLoading() {
     this.lyricsSearch_LoadingNowSubject.next(false)
   }
