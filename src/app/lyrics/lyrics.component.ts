@@ -3,6 +3,7 @@ import { DataService } from '../_services/data.service';
 import { LyricObj } from './lyrics.model';
 import { AjaxService } from '../_services/ajax.service';
 import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger, displayEnlargeIconTrigger } from '../animations';
+import { SynchUIService } from '../_services/synch-ui.service';
 
 @Component({
   selector: 'app-lyrics',
@@ -36,11 +37,12 @@ export class LyricsComponent implements OnInit {  //############################
   @Input() isVideoSelected = false;
 
 
-  constructor(private dataService : DataService , private ajaxService : AjaxService) { }
+  constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
 
   ngOnInit(): void {
-    this.dataService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
-    this.dataService.lyricsSearch_LoadingNow.subscribe(data => { this.isLoading = data })
+    this.synchUIService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
+    // this.dataService.lyricsSearch_LoadingNow.subscribe(data => { this.isLoading = data })
+    this.synchUIService.lyricsSearch_LoadingNowSubject.subscribe(data => { this.isLoading = data })
 
     // this.ajaxService.searchLyrics();
     this.dataService.allLyricsSuggestionsSubject.subscribe((data : any) => {
@@ -91,8 +93,8 @@ export class LyricsComponent implements OnInit {  //############################
   }
 
   
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
-  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput(event) { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
+  onBlur_SearchInput(event) { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
 
 }  //########################################################################################################################################################

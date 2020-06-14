@@ -3,6 +3,7 @@ import { LyricObj } from '../lyrics/lyrics.model';
 import { AjaxService } from './ajax.service';
 import { Subject } from 'rxjs';
 import { videoObj } from '../youtube/video.model';
+import { SynchUIService } from './synch-ui.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,30 +14,15 @@ import { videoObj } from '../youtube/video.model';
  */
 // #########################################################################################################################################################
 export class DataService {  //##############################################################################################################################
-  
   allLyricsSuggestions : LyricObj[] = [];
   allLyricsSuggestionsSubject = new Subject<LyricObj[]>() ;
-  lyricsSearch_LoadingNow  = new Subject<boolean>() ;
   
-
   allVideosSuggestions : videoObj[] = [];
   allVideosSuggestionsSubject = new Subject<videoObj[]>() ;
-  videoSearch_LoadingNow   = new Subject<boolean>() ;
-  setVideoOnTheSide = new Subject<boolean>() ;
-
-  searchQueryTypedSubject  = new Subject<string>() ; 
-  searchQueryIsBeingTypedNow: boolean = false;
-  generalSearch_LoadingNow = new Subject<boolean>() ;
 
 
-  constructor(private ajaxService : AjaxService) {}
+  constructor(private ajaxService : AjaxService, private synchUIService : SynchUIService) {}
 
-  /**
-   * It delivers the searchQuery to the subscribers of 'searchQueryTypedSubject' 
-   */
-  bindSearchQuery(searchInput : string) {
-    this.searchQueryTypedSubject.next(searchInput);
-  }
 
   /**
    * It delivers the 'allLyricsSuggestions' to the subscribers of 'allLyricsSuggestionsSubject'.
@@ -66,7 +52,7 @@ export class DataService {  //##################################################
         this.allLyricsSuggestions.push(newLyric);
       })
       this.lyricsNotify();
-      this.lyricsSearch_LoadingNow.next(false);
+      this.synchUIService.lyricsSearch_StopLoading();
     })
 
   }
@@ -82,7 +68,7 @@ export class DataService {  //##################################################
         this.allVideosSuggestions.push(newVideoObj);
       })
       this.videosNotify();
-      this.videoSearch_LoadingNow.next(false);
+      this.synchUIService.videoSearch_StopLoading();
     })
 
   }
@@ -91,7 +77,6 @@ export class DataService {  //##################################################
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ PRIVATE  §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
-    
   private transformHTMLChars(str:string): string {
     str = str.replace(/&#039;/gi , "'");
     str = str.replace(/&#39;/gi , "'");
@@ -102,8 +87,6 @@ export class DataService {  //##################################################
 
     return str;
   }
-
-
 
 
   // #####################################################################################################################################################

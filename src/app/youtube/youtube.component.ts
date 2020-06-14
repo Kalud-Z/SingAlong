@@ -6,6 +6,7 @@ import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 import { DomSanitizer} from '@angular/platform-browser';
 import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from '../animations';
+import { SynchUIService } from '../_services/synch-ui.service';
 // import { YouTubePlayer } from '@angular/youtube-player';
 
 
@@ -38,21 +39,22 @@ export class YoutubeComponent implements OnInit {  //###########################
 
   constructor(private dataService : DataService,
               private sanitizer: DomSanitizer,
-              private renderer : Renderer2
+              private renderer : Renderer2,
+              private synchUIService : SynchUIService
               ) { }
             
 
 
   ngOnInit() {
-    this.dataService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
-    this.dataService.videoSearch_LoadingNow.subscribe(data => { this.isLoading = data })
+    this.synchUIService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
+    this.synchUIService.videoSearch_LoadingNowSubject.subscribe(data => { this.isLoading = data })
 
     this.dataService.allVideosSuggestionsSubject.subscribe(data => {
       this.allSuggestions = data;
       this.showSuggestions = true;
     })
 
-    this.dataService.setVideoOnTheSide.subscribe(data => {
+    this.synchUIService.setVideoOnTheSideSubject.subscribe(data => {
      if(!this.iframeOuterContainerHeight_alreadySet) {
        const desiredHeight = this.iframeOuterContainer.nativeElement.clientHeight;
        this.renderer.setStyle(this.iframeOuterContainer.nativeElement, 'height', `${desiredHeight}px`);
@@ -101,8 +103,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
   
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true  ; this.searchInputEntered = true }
-  onBlur_SearchInput(event)  { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput(event) { this.synchUIService.searchQueryIsBeingTypedNow = true  ; this.searchInputEntered = true }
+  onBlur_SearchInput(event)  { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,7 +131,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   // keyCode = 32  space
 
   @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
-    if(this.player && !this.dataService.searchQueryIsBeingTypedNow) { //otherwise , unexpected error and behavior might occur.
+    if(this.player && !this.synchUIService.searchQueryIsBeingTypedNow) { //otherwise , unexpected error and behavior might occur.
       if(event.keyCode === 39) {  //we skip forward
         this.jumpForward();
       }

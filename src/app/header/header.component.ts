@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../_services/data.service';
+import { SynchUIService } from '../_services/synch-ui.service';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +14,11 @@ export class HeaderComponent implements OnInit { //#############################
   videoStillLoading  = false;
   searchInputEntered = false;
 
-  constructor(private dataService : DataService) { }
+  constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
 
   ngOnInit(): void {
-    this.dataService.lyricsSearch_LoadingNow.subscribe(data => { this.lyricsStillLoading = data })
-    this.dataService.videoSearch_LoadingNow.subscribe(data => { this.videoStillLoading = data })
+    this.synchUIService.lyricsSearch_LoadingNowSubject.subscribe(data => { this.lyricsStillLoading = data })
+    this.synchUIService.videoSearch_LoadingNowSubject.subscribe(data => { this.videoStillLoading = data })
   }
 
   onSearch(input : HTMLInputElement) {
@@ -31,15 +32,15 @@ export class HeaderComponent implements OnInit { //#############################
   }
 
   typingSearchQuery(searchInput  : HTMLInputElement) {
-    this.dataService.bindSearchQuery(searchInput.value);
+    this.synchUIService.bindSearchQuery(searchInput.value);
   }
 
   refreshPage() {
     location.reload();
   }
 
-  onFocus_SearchInput() { this.dataService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
-  onBlur_SearchInput() { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }  // TODO : turn this one into : searchInputBeingEntered 
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
   
 }  //###############################################################################################################################################

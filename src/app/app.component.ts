@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit, Inject, ViewChild, Renderer2, ElementR
 import { DOCUMENT } from '@angular/common';
 import { lyricsFullScreenTrigger } from './animations';
 import { DataService } from './_services/data.service';
+import { SynchUIService } from './_services/synch-ui.service';
 
 
 @Component({
@@ -22,14 +23,14 @@ export class AppComponent  {  //################################################
   //if you dont specify the read option , you will get the instance of the youtube class itself.
   // @ViewChild('youtubeVideoContainer' , { static : false , read: ElementRef }) youtubeVideoContainer : ElementRef; 
 
-  constructor(private renderer : Renderer2 , private dataService : DataService) {}
+  constructor(private dataService : DataService , private synchUIService : SynchUIService) {}
 
 
   @HostListener('window:scroll', ['$event']) onWindowScroll(e) { //attatch this call back func to the container. IMPORTANT !!
     const  main = e.target;
 
-    if (main.scrollTop > 500 && main.scrollTop < 800) { this.dataService.setVideoOnTheSide.next(true) } 
-    else if (main.scrollTop < 485  && main.scrollTop > 200) { this.dataService.setVideoOnTheSide.next(false) }
+    if (main.scrollTop > 500 && main.scrollTop < 800) { this.synchUIService.setVideoOnTheSideSubject.next(true) } 
+    else if (main.scrollTop < 485  && main.scrollTop > 200) { this.synchUIService.setVideoOnTheSideSubject.next(false) }
   }  //HostListener
 
 
