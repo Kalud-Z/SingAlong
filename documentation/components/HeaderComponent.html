@@ -292,15 +292,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onBlur_SearchInput(event)</code>
+<code>onBlur_SearchInput()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/header/header.component.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/header/header.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -308,36 +308,9 @@
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -358,15 +331,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onFocus_SearchInput(event)</code>
+<code>onFocus_SearchInput()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/header/header.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/header/header.component.ts:41</a></div>
                 </td>
             </tr>
 
@@ -374,36 +347,9 @@
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -424,7 +370,7 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onSearch(input)</code>
+<code>onSearch(input: HTMLInputElement)</code>
                 </td>
             </tr>
 
@@ -446,12 +392,16 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>input</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
 
                                     <td>
                                         No
@@ -497,8 +447,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/header/header.component.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/header/header.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -529,15 +479,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>typingSearchQuery(searchInput)</code>
+<code>typingSearchQuery(searchInput: HTMLInputElement)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="30"
-                            class="link-to-prism">src/app/header/header.component.ts:30</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="33"
+                            class="link-to-prism">src/app/header/header.component.ts:33</a></div>
                 </td>
             </tr>
 
@@ -551,12 +501,16 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>searchInput</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
 
                                     <td>
                                         No
@@ -692,14 +646,17 @@ export class HeaderComponent implements OnInit { //#############################
     this.dataService.videoSearch_LoadingNow.subscribe(data &#x3D;&gt; { this.videoStillLoading &#x3D; data })
   }
 
-  onSearch(input) {
-    this.lyricsStillLoading &#x3D; true;
-    this.videoStillLoading &#x3D; true;
-    this.dataService.getLyrics(input.value);
-    this.dataService.getVideos(input.value);
+  onSearch(input : HTMLInputElement) {
+    if(input.value.length &gt; 0) {
+      this.lyricsStillLoading &#x3D; true;
+      this.videoStillLoading &#x3D; true;
+      this.dataService.getLyrics(input.value);
+      this.dataService.getVideos(input.value);
+    }
+    
   }
 
-  typingSearchQuery(searchInput) {
+  typingSearchQuery(searchInput  : HTMLInputElement) {
     this.dataService.bindSearchQuery(searchInput.value);
   }
 
@@ -707,8 +664,8 @@ export class HeaderComponent implements OnInit { //#############################
     location.reload();
   }
 
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow &#x3D; true ; this.searchInputEntered &#x3D; true }
-  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow &#x3D; false ; this.searchInputEntered &#x3D; false }
+  onFocus_SearchInput() { this.dataService.searchQueryIsBeingTypedNow &#x3D; true ; this.searchInputEntered &#x3D; true }
+  onBlur_SearchInput() { this.dataService.searchQueryIsBeingTypedNow &#x3D; false ; this.searchInputEntered &#x3D; false }
 
   
 }  //###############################################################################################################################################
@@ -725,9 +682,15 @@ export class HeaderComponent implements OnInit { //#############################
 &lt;/div&gt;
 
 &lt;div class&#x3D;&quot;titleWrapper&quot;&gt;
-    &lt;div class&#x3D;&quot;text&quot;&gt; 
-        &lt;span class&#x3D;&quot;text__part1&quot;&gt;  Music gives a soul to the Universe, wings to the Mind  &lt;/span&gt;
-        &lt;span class&#x3D;&quot;text__part2&quot;&gt; flight to the Imagination and life to Everything &lt;/span&gt;
+    &lt;div class&#x3D;&quot;text&quot;&gt;
+        &lt;div class&#x3D;&quot;text__partA&quot;&gt;
+            &lt;span class&#x3D;&quot;text__partA__1&quot;&gt; Music gives a soul to the Universe,  &lt;/span&gt;
+            &lt;span class&#x3D;&quot;text__partA__2&quot;&gt; wings to the Mind &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;text__partB&quot;&gt;
+            &lt;span class&#x3D;&quot;text__partB__1&quot;&gt; flight to the Imagination &lt;/span&gt;
+            &lt;span class&#x3D;&quot;text__partB__2&quot;&gt; and life to Everything &lt;/span&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
@@ -735,12 +698,11 @@ export class HeaderComponent implements OnInit { //#############################
 &lt;img class&#x3D;&quot;musicIcon&quot;  src&#x3D;&quot;/assets/music-icon.svg&quot;/&gt;
 
 
-
 &lt;div class&#x3D;&quot;searchBoxContainer  searchBoxContainer-headerComponent&quot;&gt;
         &lt;input  #searchInput
         type&#x3D;&quot;text&quot;  class&#x3D;&quot;searchBox&quot;  placeholder&#x3D;&quot;search for songs ..&quot; 
         [ngClass]&#x3D;&quot;{ &#x27;searchBox-active&#x27;  : searchInputEntered }&quot;
-        (input)&#x3D;&quot;typingSearchQuery(searchInput)&quot;  (focus)&#x3D;&#x27;onFocus_SearchInput($event)&#x27;  (blur)&#x3D;&#x27;onBlur_SearchInput($event)&#x27;  
+        (input)&#x3D;&quot;typingSearchQuery(searchInput)&quot;  (focus)&#x3D;&#x27;onFocus_SearchInput()&#x27;  (blur)&#x3D;&#x27;onBlur_SearchInput()&#x27;  
         (keyup.enter)&#x3D;&quot;onSearch(searchInput); searchInput.blur()&quot;
         &gt; 
 
@@ -749,12 +711,6 @@ export class HeaderComponent implements OnInit { //#############################
             &lt;img class&#x3D;&quot;searchIconWrapper__loadingIcon&quot;  *ngIf&#x3D;&#x27;lyricsStillLoading || videoStillLoading&#x27; src&#x3D;&quot;/assets/loadingSpinners/svg-loaders/audio.svg&quot;/&gt;
         &lt;/div&gt;
 &lt;/div&gt;
-
-&lt;!-- 
-
-
- --&gt;
-
 
 
 
@@ -816,67 +772,77 @@ export class HeaderComponent implements OnInit { //#############################
 }
 
 .titleWrapper {
-    // position : absolute;
-    // top : 28%;
-    // left : 54%;
-    // transform: translate(-50%,-50%);
     width : 70%;
     margin-bottom: 6rem;
     transform: translateX(3%);
-    @include respond(phone) {transform: translateX(6%) }
-    @include respond(phone-extra-small) {transform: translateX(14%) }
-    // background-color: rgba(255, 0, 0, 0.658);
+    @include respond(phone-small) { 
+        margin-top : 1.2rem;
+        align-self: flex-end;
+        margin-right : 2rem;
+        max-width : 75%;
+    }
 
+    // background-color: rgba(255, 0, 0, 0.103);
 
     .text {
-        // display : flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
         height : 100%;
         width : 100%;
-        // background-color: yellow;
 
         display: grid;
-        // grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
 
         font-family: &#x27;Delius Swash Caps&#x27;, cursive;
         font-size: 2.6rem;
         @include respond(tab-port) { font-size: 2rem;  }
-        // font-size: auto;
-        // font-size: 5.2rem;
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
         text-align: center;
+
+        &amp;__partA , &amp;__partB {
+            @include respond(phone-small) {
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                justify-self: center !important;
+            }
+        }
+
+        &amp;__partA {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            justify-self: start;
+            @include colorGradientTop;
+
+            &amp;__1 {
+                @include respond(phone-small) { @include colorGradientTop }
+            }
+
+            &amp;__2 {
+                @include respond(phone-small) { @include colorGradientBottom }
+            }
+        }
+
+        &amp;__partB {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            justify-self: end;
+            @include colorGradientBottom;
+
+            &amp;__1 {
+                @include respond(phone-small) { @include colorGradientTop }
+            }
+
+            &amp;__2 {
+                @include respond(phone-small) { @include colorGradientBottom }
+            }
+
+        }
         
 
-        &amp;__part1 {
-            // grid-column: 1 / 6;
-            grid-row: 1 / 2;
-            // margin-left : -15rem;
-            justify-self: start;
-            @include respond(phone-small) { justify-self: center; }
-            background-image: linear-gradient(180deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
 
-        &amp;__part2 {
-            // margin-right : -15rem;
-            // grid-column: 2 / 7  ;
-            grid-row: 2 / 3;
-            justify-self: end;
-            @include respond(phone-small) { justify-self: center; }
-
-
-            background-image: linear-gradient(0deg, rgba(236,37,146,1) 0%, rgba(230,201,201,1) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
     }
 }
 
@@ -944,7 +910,7 @@ export class HeaderComponent implements OnInit { //#############################
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="logoContainer" (click)=\'refreshPage()\'>    <span> Sing </span>    <span> Along</span></div><div class="titleWrapper">    <div class="text">         <span class="text__part1">  Music gives a soul to the Universe, wings to the Mind  </span>        <span class="text__part2"> flight to the Imagination and life to Everything </span>    </div></div><img class="musicIcon"  src="/assets/music-icon.svg"/><div class="searchBoxContainer  searchBoxContainer-headerComponent">        <input  #searchInput        type="text"  class="searchBox"  placeholder="search for songs .."         [ngClass]="{ \'searchBox-active\'  : searchInputEntered }"        (input)="typingSearchQuery(searchInput)"  (focus)=\'onFocus_SearchInput($event)\'  (blur)=\'onBlur_SearchInput($event)\'          (keyup.enter)="onSearch(searchInput); searchInput.blur()"        >         <div class="searchIconWrapper"  (click)=\'onSearch(searchInput) ;  searchInput.blur()\'  >            <svg class="searchIconWrapper__mainIcon"     *ngIf=\'!(lyricsStillLoading || videoStillLoading)\' > <use xlink:href="/assets/symbol-defs.svg#icon-music-playlist"></use> </svg>            <img class="searchIconWrapper__loadingIcon"  *ngIf=\'lyricsStillLoading || videoStillLoading\' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>        </div></div><!--  --></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="logoContainer" (click)=\'refreshPage()\'>    <span> Sing </span>    <span> Along</span></div><div class="titleWrapper">    <div class="text">        <div class="text__partA">            <span class="text__partA__1"> Music gives a soul to the Universe,  </span>            <span class="text__partA__2"> wings to the Mind </span>        </div>        <div class="text__partB">            <span class="text__partB__1"> flight to the Imagination </span>            <span class="text__partB__2"> and life to Everything </span>        </div>    </div></div><img class="musicIcon"  src="/assets/music-icon.svg"/><div class="searchBoxContainer  searchBoxContainer-headerComponent">        <input  #searchInput        type="text"  class="searchBox"  placeholder="search for songs .."         [ngClass]="{ \'searchBox-active\'  : searchInputEntered }"        (input)="typingSearchQuery(searchInput)"  (focus)=\'onFocus_SearchInput()\'  (blur)=\'onBlur_SearchInput()\'          (keyup.enter)="onSearch(searchInput); searchInput.blur()"        >         <div class="searchIconWrapper"  (click)=\'onSearch(searchInput) ;  searchInput.blur()\'  >            <svg class="searchIconWrapper__mainIcon"     *ngIf=\'!(lyricsStillLoading || videoStillLoading)\' > <use xlink:href="/assets/symbol-defs.svg#icon-music-playlist"></use> </svg>            <img class="searchIconWrapper__loadingIcon"  *ngIf=\'lyricsStillLoading || videoStillLoading\' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>        </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingSpinnerComponent', 'selector': 'app-loading-spinner'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SearchFieldComponent', 'selector': 'app-search-field'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
     var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'MoveVideoToTheSideDirective', 'selector': '[appMoveVideoToTheSide]'}];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};

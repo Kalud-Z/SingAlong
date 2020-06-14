@@ -20,14 +20,17 @@ export class HeaderComponent implements OnInit { //#############################
     this.dataService.videoSearch_LoadingNow.subscribe(data => { this.videoStillLoading = data })
   }
 
-  onSearch(input) {
-    this.lyricsStillLoading = true;
-    this.videoStillLoading = true;
-    this.dataService.getLyrics(input.value);
-    this.dataService.getVideos(input.value);
+  onSearch(input : HTMLInputElement) {
+    if(input.value.length > 0) {
+      this.lyricsStillLoading = true;
+      this.videoStillLoading = true;
+      this.dataService.getLyrics(input.value);
+      this.dataService.getVideos(input.value);
+    }
+    
   }
 
-  typingSearchQuery(searchInput) {
+  typingSearchQuery(searchInput  : HTMLInputElement) {
     this.dataService.bindSearchQuery(searchInput.value);
   }
 
@@ -35,8 +38,8 @@ export class HeaderComponent implements OnInit { //#############################
     location.reload();
   }
 
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
-  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput() { this.dataService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
+  onBlur_SearchInput() { this.dataService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
   
 }  //###############################################################################################################################################

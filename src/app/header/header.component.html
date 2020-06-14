@@ -26,7 +26,7 @@
         <input  #searchInput
         type="text"  class="searchBox"  placeholder="search for songs .." 
         [ngClass]="{ 'searchBox-active'  : searchInputEntered }"
-        (input)="typingSearchQuery(searchInput)"  (focus)='onFocus_SearchInput($event)'  (blur)='onBlur_SearchInput($event)'  
+        (input)="typingSearchQuery(searchInput)"  (focus)='onFocus_SearchInput()'  (blur)='onBlur_SearchInput()'  
         (keyup.enter)="onSearch(searchInput); searchInput.blur()"
         > 
 

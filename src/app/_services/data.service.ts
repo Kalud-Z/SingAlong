@@ -8,30 +8,39 @@ import { videoObj } from '../youtube/video.model';
   providedIn: 'root'
 })
 
+/**
+ * This service is responsible for handling the returned data from the APIs. It manipulates it and forwards it to the components.
+ */
 // #########################################################################################################################################################
 export class DataService {  //##############################################################################################################################
+  
+  allLyricsSuggestions : LyricObj[] = [];
   allLyricsSuggestionsSubject = new Subject<LyricObj[]>() ;
+  lyricsSearch_LoadingNow  = new Subject<boolean>() ;
+  
+
+  allVideosSuggestions : videoObj[] = [];
   allVideosSuggestionsSubject = new Subject<videoObj[]>() ;
-
-  searchQueryTypedSubject = new Subject<string>() ;
-  generalSearch_LoadingNow = new Subject<boolean>() ;
-  lyricsSearch_LoadingNow = new Subject<boolean>() ;
-  videoSearch_LoadingNow = new Subject<boolean>() ;
-
-  searchQueryIsBeingTypedNow = false;
-
+  videoSearch_LoadingNow   = new Subject<boolean>() ;
   setVideoOnTheSide = new Subject<boolean>() ;
 
-  allLyricsSuggestions : LyricObj[] = [];
-  allVideosSuggestions : videoObj[] = [];
+  searchQueryTypedSubject  = new Subject<string>() ; 
+  searchQueryIsBeingTypedNow: boolean = false;
+  generalSearch_LoadingNow = new Subject<boolean>() ;
 
 
   constructor(private ajaxService : AjaxService) {}
 
-  bindSearchQuery(searchInput) {
+  /**
+   * It delivers the searchQuery to the subscribers of 'searchQueryTypedSubject' 
+   */
+  bindSearchQuery(searchInput : string) {
     this.searchQueryTypedSubject.next(searchInput);
   }
 
+  /**
+   * It delivers the 'allLyricsSuggestions' to the subscribers of 'allLyricsSuggestionsSubject'.
+   */
   lyricsNotify() {
     this.allLyricsSuggestionsSubject.next(this.allLyricsSuggestions);
   }
@@ -43,8 +52,13 @@ export class DataService {  //##################################################
   }
 
 
-  getLyrics(searchQuery : string , caller? : string) {
-    this.allLyricsSuggestions = [];
+  /**
+   * This method is called by a component.
+   * It fill the 'allLyricsSuggestions' array with  'LyricObj' objects.
+   * @param searchQuery entered by the user.
+   */
+  getLyrics(searchQuery : string) {
+    this.allLyricsSuggestions = [];  // delete previous data.
 
     this.ajaxService.searchLyrics(searchQuery).subscribe((data : any) => {
       data.content.forEach((el, index) => {
@@ -55,13 +69,10 @@ export class DataService {  //##################################################
       this.lyricsSearch_LoadingNow.next(false);
     })
 
-
   }
 
 
-  getVideos(searchQuery : string , caller? : string) {
-    // console.log('inside getVideos : this is search query ' , searchQuery)
-
+  getVideos(searchQuery : string) {
     this.allVideosSuggestions = [];
     this.ajaxService.searchVideo(searchQuery).subscribe((data : any) => {
       // console.log(data)
