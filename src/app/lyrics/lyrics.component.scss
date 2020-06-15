@@ -16,14 +16,6 @@
     top: 1.2%;
     left : 1.2%;
 
-    &-fullScreenMode {
-        // top: auto;
-        // left: auto;
-        // position : fixed;
-        // margin-top: 5rem;
-        // margin-left: 5rem;
-    }
-
     &:hover .screenSizeIconsContainer__tooltiptext {
         opacity: 0.8;
         visibility: visible;
@@ -79,7 +71,6 @@
 
 
 
-
 .fontSizeIconsContainer {
     position : fixed;
     top: 34%;
@@ -92,9 +83,7 @@
     justify-content: center; 
     transition: all 0.2s ease-out;
 
-    &:hover > &__tooltiptext {
-        opacity: 0.8;
-    }
+    &:hover > &__tooltiptext { opacity: 0.8 }
 
     &__tooltiptext {
         background-color: white;
@@ -129,9 +118,7 @@
         top : auto;
         right : auto;
 
-        &-endOfPageAdjustement {
-            margin-top: -3rem !important;
-        }
+        &-endOfPageAdjustement { margin-top: -3rem !important }
     }
 
     .fontSizeIcon {
@@ -145,9 +132,7 @@
             @include respond(phone) { margin-bottom: 2rem }
         }
         
-        &-increase {
-            position: relative;
-        }
+        &-increase { position: relative }
 
         &-shrink {
             height: 2.7rem;
@@ -166,20 +151,18 @@
 
 
 
-.lyricsSuggestions {
+.lyricsSuggestionsWrapper {
     align-self: center;
     list-style: none;
-    // margin-bottom: auto;
     width : 87%;
 
-    &__suggestion {
-        transition : all 0.2s;
+    .lyricsSuggestion {
         cursor : pointer;
         background-color: #D4E0F4;
         padding: 1rem 2rem;
         font-size: 1.5rem;
-
         border : 1px solid rgba(0, 0, 0, 0.473);
+        transition : all 0.2s;
 
         &:first-child {
             border-top-left-radius: 7px;
@@ -192,17 +175,11 @@
             margin-bottom: 2rem;
         }
 
-        &:not(:first-child) {
-            border-top : 1px solid rgba(0, 0, 0, 0.473)
-        }
+        &:not(:first-child) { border-top : 1px solid rgba(0, 0, 0, 0.473) }
 
-        &:not(:last-child) {
-            border-bottom : none
-        }
+        &:not(:last-child) { border-bottom : none }
 
-        &:hover {
-            background-color: rgba(147, 181, 241, 0.644);
-        }
+        &:hover { background-color: rgba(147, 181, 241, 0.644) }
     }
 }
 
@@ -216,6 +193,7 @@
     text-align: center;
     transition: all .2s ease-in-out;
     padding : 0 0.5rem;
+
     &::first-line {
         font-weight: bolder;
         font-style: italic;
@@ -224,18 +202,8 @@
 }
 
 
-.fontSize-1_5rem {
-    font-size: 1.5rem !important;
-}
-
-
-.fontSize-2rem {
-    font-size: 2rem !important;
-}
-
-
-.fontSize-2_5rem {
-    font-size: 2.5rem !important;
-}
+.fontSize-1_5rem { font-size: 1.5rem !important }
+.fontSize-2rem { font-size: 2rem !important }
+.fontSize-2_5rem { font-size: 2.5rem !important }
 
 

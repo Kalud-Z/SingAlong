@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit { //#############################
     this.synchUIService.videoSearch_LoadingNowSubject.subscribe(data => { this.videoStillLoading = data })
   }
 
+  //searches for both videos and lyrics at the same time
   onSearch(input : HTMLInputElement) {
     if(input.value.length > 0) {
       this.lyricsStillLoading = true;
@@ -31,13 +32,9 @@ export class HeaderComponent implements OnInit { //#############################
     }
   }
 
-  typingSearchQuery(searchInput  : HTMLInputElement) {
-    this.synchUIService.bindSearchQuery(searchInput.value);
-  }
+  typingSearchQuery(searchInput  : HTMLInputElement) { this.synchUIService.bindSearchQuery(searchInput.value) }
 
-  refreshPage() {
-    location.reload();
-  }
+  refreshPage() { location.reload() }
 
   onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputBeingEntered = true } 
   onBlur_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputBeingEntered = false }

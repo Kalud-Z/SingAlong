@@ -1,8 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+
+import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger, displayEnlargeIconTrigger } from '../animations';
+
 import { DataService } from '../_services/data.service';
 import { LyricObj } from './lyrics.model';
-import { AjaxService } from '../_services/ajax.service';
-import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger, displayEnlargeIconTrigger } from '../animations';
 import { SynchUIService } from '../_services/synch-ui.service';
 
 @Component({
@@ -20,6 +21,7 @@ import { SynchUIService } from '../_services/synch-ui.service';
 //############################################################################################################################################################
 export class LyricsComponent implements OnInit {  //##########################################################################################################
   allSuggestions : LyricObj[] = [];
+
   lyricsCurrentFontSize : number = 1.5;
   selectedLyric : string;
   selectedTitle : string;
@@ -27,7 +29,7 @@ export class LyricsComponent implements OnInit {  //############################
   searchQuery : string = '';
 
   isLoading = false;
-  searchInputEntered = false;
+  searchInputBeingEntered = false;
   isLyricsFullScreen = false;
   showSuggestions = false;
   showLyricsContainer = false;
@@ -53,13 +55,12 @@ export class LyricsComponent implements OnInit {  //############################
 
   }
 
-  onSearch(searchInput) {
+  onSearch(searchInput : HTMLInputElement) {
     this.isLoading = true;
     this.dataService.getLyrics(searchInput.value);
   }
 
   onSelectLyric(lyricObj : LyricObj) {
-    // this.hideBackgroundImageEmitter = true;
     this.hideBackgroundImageEmitter.emit(true);
     this.selectedLyric = lyricObj.lyrics;
     this.selectedTitle = lyricObj.title;
@@ -85,26 +86,20 @@ export class LyricsComponent implements OnInit {  //############################
 
   
   increaseFontSize() {
-    if(this.lyricsCurrentFontSize < 2.5) {
-      this.lyricsCurrentFontSize += 0.5;
-    }
+    if(this.lyricsCurrentFontSize < 2.5) { this.lyricsCurrentFontSize += 0.5 }
   }
 
   decreaseFontSize() {
-    if(this.lyricsCurrentFontSize > 1.5) {
-      this.lyricsCurrentFontSize -= 0.5;
-    }
+    if(this.lyricsCurrentFontSize > 1.5) { this.lyricsCurrentFontSize -= 0.5 }
   }
 
   
-  onFocus_SearchInput(event) { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputEntered = true }
-  onBlur_SearchInput(event) { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputBeingEntered = true }
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputBeingEntered = false }
 
 
 }  //########################################################################################################################################################
 // ##########################################################################################################################################################
-
-
 
 
 

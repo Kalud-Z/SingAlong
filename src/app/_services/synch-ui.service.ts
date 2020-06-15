@@ -7,9 +7,8 @@ import { Subject } from 'rxjs';
 
 // #########################################################################################################################################################
 export class SynchUIService {  //#########################################################################################################################
-
-  lyricsSearch_LoadingNowSubject  = new Subject<boolean>() ;   
-  videoSearch_LoadingNowSubject   = new Subject<boolean>() ;   
+  lyricsSearch_LoadingNowSubject  = new Subject<boolean>() ;  //controls the loading icon
+  videoSearch_LoadingNowSubject   = new Subject<boolean>() ;  //controls the loading icon
 
   setVideoOnTheSideSubject        = new Subject<boolean>() ;    
   scrolledToEndOfPageSubject      = new Subject<boolean>() ;
@@ -19,23 +18,15 @@ export class SynchUIService {  //###############################################
   searchQueryIsBeingTypedNow      = false;  
   
   
-  lyricsSearch_StopLoading() {
-    this.lyricsSearch_LoadingNowSubject.next(false)
-  }
-
+  lyricsSearch_StopLoading() { this.lyricsSearch_LoadingNowSubject.next(false) }
   
-  videoSearch_StopLoading() {
-    this.videoSearch_LoadingNowSubject.next(false)
-  }
+  videoSearch_StopLoading() { this.videoSearch_LoadingNowSubject.next(false) }
 
   /**
    * It passes along the searchQuery to the subscribers of 'searchQueryTypedSubject' 
    */
-  bindSearchQuery(searchInput : string) {
-    this.searchQueryTypedSubject.next(searchInput);
-  }
-
-
+  bindSearchQuery(searchInput : string) { this.searchQueryTypedSubject.next(searchInput) }
+  
 
 }  //########################################################################################################################################################
 // ##########################################################################################################################################################

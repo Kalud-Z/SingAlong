@@ -2,9 +2,11 @@
 
 <div class="searchBoxContainer  searchBoxContainer-video"   *ngIf='!isLyricsFullScreen'>
     
-    <input type="text"   [ngClass]="{ 'searchBox-active'  : searchInputEntered }" 
-    (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for music videos .." #searchInput 
-    (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
+    <input  class="searchBox"  #searchInput
+    [ngClass]="{ 'searchBox-active'  : searchInputEntered }" 
+    type="text"  placeholder="search for music videos .."
+    [value]="searchQuery"
+    (focus)='onFocus_SearchInput()' (blur)='onBlur_SearchInput()' (keyup.enter)="onSearch(searchInput); searchInput.blur()"> 
 
     <div class="searchIconWrapper" (click)='onSearch(searchInput); searchInput.blur()'  >
         <svg class="searchIconWrapper__mainIcon"     *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
@@ -15,9 +17,8 @@
  
 
 
-<ul class="videosSuggestions" *ngIf="showSuggestions"   @displayVideoSuggestionsState >
-
-    <li class="videosSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)" >
+<ul class="videosSuggestionsWrapper" *ngIf="showSuggestions"   @displayVideoSuggestionsState >
+    <li class="videosSuggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)">
         <figure class="videosSuggestions__suggestion__imgWrapper"> <img  [src]="[sugg.thumbnail]"> </figure>
         <p class="videosSuggestions__suggestion__title"   > {{ sugg.title }} </p>
     </li>
@@ -26,11 +27,17 @@
 
 
 <!-- weird issue : if I use *ngIf on this div. The player obj , stops being able to load a second video !! => I had to add a ...-hide class to hide it. -->
-<div class="iframeOuterContainer" #iframeOuterContainer  [@iframeOuterContainerState]="!showVideoFrame ? 'hidden' : 'shown'"
+<div class="iframeOuterContainer" #iframeOuterContainer  
+[@iframeOuterContainerState]="!showVideoFrame ? 'hidden' : 'shown'"
 [ngClass]="{ 'iframeOuterContainer-inLyricsFullscreenMode' : isLyricsFullScreen ,
 'iframeOuterContainer-inInitialMode' : !isLyricsFullScreen , 'iframeOuterContainer-hide' : !showVideoFrame }">
 
-    <svg class="closeVideoIcon"  @closeVideoIconState  *ngIf='showVideoFrame && !isLyricsFullScreen'  (click)="returnToVideos()" > <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use> </svg>
+    <svg class="closeVideoIcon"  
+    *ngIf='showVideoFrame && !isLyricsFullScreen'  
+    @closeVideoIconState  
+    (click)="returnToVideos()"> 
+        <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use>
+    </svg>
 
     <div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,'iframeWrapper-hide' : !showVideoFrame  }" >
         <div id='player'></div>

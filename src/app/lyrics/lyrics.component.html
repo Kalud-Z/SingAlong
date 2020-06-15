@@ -1,15 +1,20 @@
 
-
-
-<div class="screenSizeIconsContainer" @displayEnlargeIconState [ngClass]="{ 'screenSizeIconsContainer-fullScreenMode' : isLyricsFullScreen }" *ngIf='isVideoSelected && showLyricsContainer' >
+<div class="screenSizeIconsContainer"
+*ngIf='isVideoSelected && showLyricsContainer'
+@displayEnlargeIconState  
+[ngClass]="{ 'screenSizeIconsContainer-fullScreenMode' : isLyricsFullScreen }">
     <div class="screenSizeIconsContainer__tooltiptext"> <span *ngIf='!isLyricsFullScreen' > fullscreen </span>  <span *ngIf='isLyricsFullScreen' > minimize </span> </div>
-    <svg class="screenSizeIcon  screenSizeIcon-enlarge" (click)='onFullScreenLyrics()' *ngIf='!isLyricsFullScreen && showLyricsContainer' ><use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use></svg>
-    <!-- <svg class="screenSizeIcon  screenSizeIcon-shrink"  (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg> -->
+    <svg class="screenSizeIcon  screenSizeIcon-enlarge" *ngIf='!isLyricsFullScreen && showLyricsContainer'  (click)='onFullScreenLyrics()'>
+        <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use>
+    </svg>
 </div>
 
 
 
-<div class="fontSizeIconsContainer"  *ngIf='showLyricsContainer'  @displayChosenLyricState  appAdjustPositionOfFontSizeIcons
+<div class="fontSizeIconsContainer"  
+*ngIf='showLyricsContainer' 
+@displayChosenLyricState  
+appAdjustPositionOfFontSizeIcons
 [ngClass]="{ 'fontSizeIconsContainer-lyricsFullScreen' : isLyricsFullScreen , 'fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement' : scrolledToEndOfPage }">
     <span class="fontSizeIconsContainer__tooltiptext"> increase/decrease font-size </span>
     <svg class="fontSizeIcon fontSizeIcon-shrink"  (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
@@ -21,11 +26,13 @@
 
 <div class="searchBoxContainer  searchBoxContainer-lyrics">
 
-    <input type="text"  [ngClass]="{ 'searchBox-active'  : searchInputEntered }"  
-    (focus)='onFocus_SearchInput($event)' (blur)='onBlur_SearchInput($event)'  class="searchBox" placeholder="search for lyrics .." #searchInput 
-    (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery"> 
+    <input class="searchBox" #searchInput
+    [ngClass]="{ 'searchBox-active'  : searchInputBeingEntered }"  
+    placeholder="search for lyrics .."   type="text" 
+    [value]="searchQuery"
+    (keyup.enter)="onSearch(searchInput); searchInput.blur()" (focus)='onFocus_SearchInput()' (blur)='onBlur_SearchInput()'> 
 
-    <div class="searchIconWrapper" (click)='onSearch(searchInput); searchInput.blur()'   >
+    <div class="searchIconWrapper" (click)='onSearch(searchInput); searchInput.blur()' >
         <svg class="searchIconWrapper__mainIcon"     *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>
         <img class="searchIconWrapper__loadingIcon"  *ngIf='isLoading'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
     </div>
@@ -34,15 +41,17 @@
 
 
 
-<ul class="lyricsSuggestions" *ngIf="showSuggestions"    @displayLyricsSuggestionsState>
-    <li class="lyricsSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)"  >  {{ sugg.title }} </li>
+<ul class="lyricsSuggestionsWrapper" *ngIf="showSuggestions"   @displayLyricsSuggestionsState>
+    <li class="lyricsSuggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)" >  {{ sugg.title }} </li>
 </ul>
 
 
 
-<div class="lyricWrapper"  [innerText]="FinalTextToDisplay" *ngIf='showLyricsContainer'   @displayChosenLyricState
-[ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2 ,
-            'fontSize-2_5rem' : lyricsCurrentFontSize === 2.5 }" >
+<div class="lyricWrapper"  
+*ngIf='showLyricsContainer' 
+@displayChosenLyricState
+[innerText]="FinalTextToDisplay"   
+[ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2 ,'fontSize-2_5rem' : lyricsCurrentFontSize === 2.5 }">
 </div>
 
 

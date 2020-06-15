@@ -8,10 +8,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
- /**
-  * This Service is solely responsible for asynchrnous HTTP calls.
-  * Its methods are being accessed ONLY by the DataService (which is responsible for handling the fetched data)
-  */
 
 // ##########################################################################################################################################################
 export class AjaxService {  //##############################################################################################################################
@@ -24,7 +20,7 @@ export class AjaxService {  //##################################################
    * @returns - it returns an observable that yields an array of objects. (each object contains alot of info about a video).
    *  - We subscribe to this observable from the dataService.
    */
-  searchVideo(searchQuery : string): Observable<any> {
+  fetchVideo(searchQuery : string): Observable<any> {
     return this.http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=12&q=" + searchQuery
                           + "&type=video&key=" + environment.YoutubeAPIKey);
   }
@@ -36,7 +32,7 @@ export class AjaxService {  //##################################################
    * * @returns - it returns an observable that yields an array of objects. (each object contains alot of info about a lyric).
    *  - We subscribe to this observable from the dataService.
    */
-  searchLyrics(searchQuery : string): Observable<any> {
+  fetchLyrics(searchQuery : string): Observable<any> {
     return this.http.get("https://canarado-lyrics.p.rapidapi.com/lyrics/" + searchQuery , {
       headers: {
         "x-rapidapi-host": "canarado-lyrics.p.rapidapi.com",

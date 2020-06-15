@@ -23,10 +23,7 @@ export class DataService {  //##################################################
 
   constructor(private ajaxService : AjaxService, private synchUIService : SynchUIService) {}
 
-
-  /**
-   * It delivers the 'allLyricsSuggestions' to the subscribers of 'allLyricsSuggestionsSubject'.
-   */
+  
   lyricsNotify() {
     this.allLyricsSuggestionsSubject.next(this.allLyricsSuggestions);
   }
@@ -34,19 +31,13 @@ export class DataService {  //##################################################
 
   videosNotify() {
     this.allVideosSuggestionsSubject.next(this.allVideosSuggestions);
-    // console.log('this is thevideo list :' , this.allVideosSuggestions)
   }
 
 
-  /**
-   * This method is called by a component.
-   * It fill the 'allLyricsSuggestions' array with  'LyricObj' objects.
-   * @param searchQuery entered by the user.
-   */
   getLyrics(searchQuery : string) {
     this.allLyricsSuggestions = [];  // delete previous data.
 
-    this.ajaxService.searchLyrics(searchQuery).subscribe((data : any) => {
+    this.ajaxService.fetchLyrics(searchQuery).subscribe((data : any) => {
       data.content.forEach((el, index) => {
         const newLyric = new LyricObj(index+1, el.artist , el.lyrics , el.title);
         this.allLyricsSuggestions.push(newLyric);
@@ -60,11 +51,10 @@ export class DataService {  //##################################################
 
   getVideos(searchQuery : string) {
     this.allVideosSuggestions = [];
-    this.ajaxService.searchVideo(searchQuery).subscribe((data : any) => {
-      // console.log(data)
+    this.ajaxService.fetchVideo(searchQuery).subscribe((data : any) => {
       const allItems = data.items;
       allItems.forEach(el => {
-        const newVideoObj = new videoObj( this.transformHTMLChars(el.snippet.title), el.id.videoId , el.snippet.thumbnails.high.url);
+        const newVideoObj = new videoObj(this.transformHTMLChars(el.snippet.title), el.id.videoId , el.snippet.thumbnails.high.url);
         this.allVideosSuggestions.push(newVideoObj);
       })
       this.videosNotify();

@@ -60,13 +60,11 @@ export const iframeOuterContainerTrigger = trigger('iframeOuterContainerState' ,
 
 
 
-
-
 // Lyrics stuff ##########################################################################################
 
 export const displayLyricsSuggestionsTrigger = trigger('displayLyricsSuggestionsState' , [
     transition(':enter' , [
-        query('.lyricsSuggestions__suggestion' , [
+        query('.lyricsSuggestion' , [
             style({ opacity : 0  }),
             stagger('120ms' , animate('.12s' , style({ opacity : 1 })))
         ] , { optional : true }), 

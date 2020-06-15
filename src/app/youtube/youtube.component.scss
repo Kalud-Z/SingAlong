@@ -20,20 +20,15 @@
     padding : 1.5rem;
     padding-top : 4rem;
     padding-bottom : 1rem;
-    // transition: all 0.5s ease-in-out;
 
     &-hide {
         opacity: 0 !important;
         pointer-events: none !important;
     }
 
-    &-inLyricsFullscreenMode {
-        padding-top : 1rem !important;
-    }
+    &-inLyricsFullscreenMode { padding-top : 1rem !important }
 
-    &-inInitialMode {
-        height : auto !important;
-    }
+    &-inInitialMode { height : auto !important }
 
     .closeVideoIcon {
         position: absolute;
@@ -52,11 +47,8 @@
         z-index: 10;
         border-radius: 4px;
         height: 16vw;
-        // width : 90%;
         align-self: stretch;
         position: relative;
-        // transition: all 0.5s ease-in-out;
-
 
         &-small {
             height : 30vh !important;
@@ -134,16 +126,14 @@
             right: 3% !important;
             padding: 1rem 0;
             opacity : 0.5 !important;
-            &:hover { opacity : 1 !important ; border : .5px solid black;  }
+            &:hover { opacity : 1 !important ; border : .5px solid black }
         }
-
-    
 
         .controlIcon {
             align-self: center;
             height : 3.5rem;
             width : 3.5rem;
-            @include respond(phone) { height : 4.5rem ; width : 4.5rem;  }
+            @include respond(phone) { height : 4.5rem; width : 4.5rem  }
             cursor : pointer;
             transition : all 0.13s;
             fill : currentColor;
@@ -153,13 +143,11 @@
             &-play , &-pause {
                 height : 4.5rem;
                 width : 4.5rem;
-                @include respond(phone) { height : 5.5rem ; width : 5.5rem;  }
-
+                @include respond(phone) { height : 5.5rem; width : 5.5rem  }
             }
         }
 
         .controlVolumeWrapper {
-            // background-color: green;
             display : flex;
             justify-content: center;
             align-items: center;
@@ -168,7 +156,6 @@
             left: 17%;
             transform: translate(-50%, -50%);
             @include respond(phone) { display :none }
-
 
             .controlVolumeIcon {
                 height : 2rem;
@@ -197,16 +184,14 @@
                 &:hover {
                     opacity: 1;
                     visibility: visible;
-                    // z-index: 600 !important;
                 }
             }
 
             .volumeRangeSliderWrapper {
                 display : flex;
+                @include respond(phone) { display : none }
                 align-items: center;
                 justify-content: center;
-
-                @include respond(phone) { display : none }
 
                 &:hover .volumeRangeSlider {
                     opacity: 1;
@@ -228,15 +213,15 @@
 
 
 
-.videosSuggestions {
+.videosSuggestionsWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
     justify-content: center;
     @include respond(tab-port) { grid-template-columns: 1fr 1fr }
-    @include respond(tab-port-small) { grid-template-columns: 1fr}
+    @include respond(tab-port-small) { grid-template-columns: 1fr }
 
-    &__suggestion {
+    .videosSuggestion {
         cursor: pointer;
         overflow:hidden;
         border-radius: 4px;

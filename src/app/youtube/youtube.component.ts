@@ -1,13 +1,13 @@
 // https://developers.google.com/youtube/iframe_api_reference#seekTo
 
 
-import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef, SimpleChanges } from '@angular/core';
-import { DataService } from '../_services/data.service';
-import { videoObj } from './video.model';
+import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from '../animations';
+
 import { SynchUIService } from '../_services/synch-ui.service';
-// import { YouTubePlayer } from '@angular/youtube-player';
+import { DataService } from '../_services/data.service';
+import { videoObj } from './video.model';
 
 
 @Component({
@@ -56,6 +56,7 @@ export class YoutubeComponent implements OnInit {  //###########################
     })
 
     this.synchUIService.setVideoOnTheSideSubject.subscribe(data => {
+      // to make sure the container doesn't lose its height, when the video moves to the side. 
      if(!this.iframeOuterContainerHeight_alreadySet) {
        const desiredHeight = this.iframeOuterContainer.nativeElement.clientHeight;
        this.renderer.setStyle(this.iframeOuterContainer.nativeElement, 'height', `${desiredHeight}px`);
@@ -70,14 +71,11 @@ export class YoutubeComponent implements OnInit {  //###########################
     this.showSuggestions = true;
     this.showVideoFrame = false;
     this.videoSelectedEmitter.emit(false);
-
-    console.log(this.player.getIframe())
-    
-    this.player.destroy();
+    this.player.destroy(); //so we can load another video afterwards, by creating a new player.
   }
 
-  onSearch(searchInput?) {
-    if(this.showVideoFrame) { this.returnToVideos() }
+  onSearch(searchInput : HTMLInputElement) {
+    if(this.showVideoFrame) { this.returnToVideos() } //we close the video in case it is opened. 
     this.isLoading = true;
     this.showVideoFrame = false;
     this.dataService.getVideos(searchInput.value)
@@ -85,42 +83,30 @@ export class YoutubeComponent implements OnInit {  //###########################
 
   onSelectVideo(sugg : videoObj) {
     this.selectedVideoID = sugg.videoID;
-    this.selectedVideoURL = 'https://www.youtube.com/embed/' + this.selectedVideoID ;
-    this.selectedVideoUrlSafe = this.makeUrlSafe(this.selectedVideoURL);
-    
     this.videoSelectedEmitter.emit(true);
+
     this.showSuggestions = false;
-    
     this.showVideoFrame = true;
     
-    this.initAPI()
+    this.initYoutubeIframeAPI()
   }
 
 
-  //I had a pipe that does this. But when i use in the iframe . the video frame loses its controls ! (only pause works !)
-  // when I remove the pipe. everything works fine.
-  private makeUrlSafe(url : string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-  }
-
-  
-  onFocus_SearchInput(event) { this.synchUIService.searchQueryIsBeingTypedNow = true  ; this.searchInputEntered = true }
-  onBlur_SearchInput(event)  { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true  ; this.searchInputEntered = true }
+  onBlur_SearchInput()  { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
 
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   
-  setCalculatedPlayerWidth(event) {
-    this.playerWidth = event;
-    this.playerHeight = this.playerWidth / 1.777
-  }
 
-  videoAlreadyLoadedOnce = false;
+  selectedVideoID = ''
   YT: any;
   videoID: string;
   player: any;
   videoState = 1; //= 2 ==> playin // = 1 ==> paused
   isVideoMuted = false;
+  videoAlreadyLoadedOnce = false;
+  showVideoFrame = false;
 
   @ViewChild('volumeRangeSlider' , { static : false}) volumeRangeSlider : ElementRef; 
 
@@ -144,33 +130,17 @@ export class YoutubeComponent implements OnInit {  //###########################
       if(event.keyCode === 32) {  //we pause or play
         if(event.target === document.body) { event.preventDefault() }
 
-        if(this.videoState == 1) {
-          this.playVideo();
-        }
-        if(this.videoState == 2) {
-          this.pauseVideo();
-        }
+        if(this.videoState == 1) { this.playVideo() }
+        if(this.videoState == 2) { this.pauseVideo() }
       }
 
     } //outer-if
   } //HostListener
         
 
-  // selectedVideoID = 'As0RsSTYbAI'
-  selectedVideoID = ''
-  
-  selectedVideoURL = ''
-  selectedVideoUrlSafe : any;
-  showVideoFrame = false;
-
-  playerWidth : number 
-  playerHeight : number
-
-
-  initAPI() {
+  initYoutubeIframeAPI() {
     // Return if Player is already created . in case we wanna play another video . without refreshing the app.
     if (window['YT']) {
-      console.log('yes , YT already exists. goin straight to : initVideoPlayer ')
       this.initVideoPlayer();
       return;
     }
@@ -191,30 +161,26 @@ export class YoutubeComponent implements OnInit {  //###########################
       // videoId: 'tNy8Y7BhUeI',
       height: "100%",
       width: "100%",
-      playerVars: {   //these parameters , most of them aint working properly !!! WEIRD 
+      playerVars: {  
         autoplay: 0,
         modestbranding: 1,
         controls: 1,
         disablekb: 1,
         rel: 0,
         showinfo: 0,
-        fs: 1,
-        // playsinline: 1,
+        fs: 0,
         enablejsapi : 1,
         iv_load_policy : 3, // annotations => 1 : show | 3 : hide
         cc_load_policy : 0
       },
       events: {
         'onReady'  : this.onPlayerReady
-        // 'onStateChange' : this.onPlayerStateChange,
       }
     });
 
   }
 
   onPlayerReady(event) {
-    // event.target.playVideo();
-    // setTimeout(() => { event.target.pauseVideo() }, 1000)
   }
 
   playVideo() {
