@@ -118,7 +118,15 @@
         top : auto;
         right : auto;
 
-        &-endOfPageAdjustement { margin-top: -3rem !important }
+        &-mainPageAdjustement { 
+            @include respond(tab-port-small-minWidth) { margin-top: -3rem !important  }
+        }
+
+        &-endOfPageAdjustement { 
+            margin-top: -6rem !important
+        }
+
+        // @include respond(tab-port-small) { margin-top: 1rem  }
     }
 
     .fontSizeIcon {

@@ -12,6 +12,7 @@ export class SynchUIService {  //###############################################
 
   setVideoOnTheSideSubject        = new Subject<boolean>() ;    
   scrolledToEndOfPageSubject      = new Subject<boolean>() ;
+  mainScollOfPageSubject          = new Subject<boolean>() ;
   lyricsFullScreenSubject         = new Subject<boolean>() ;
 
   searchQueryTypedSubject         = new Subject<string>()  ;  

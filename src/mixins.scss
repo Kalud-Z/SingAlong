@@ -38,6 +38,10 @@
         @media (max-width:43.750em) { @content };  //700px    
     }
 
+    @if $breakpoint == tab-port-small-minWidth {
+        @media (min-width:43.750em) { @content };  //700px    
+    }
+
     @if $breakpoint == tab-port {
         @media (max-width:59.375em) { @content };  //950px  
     }

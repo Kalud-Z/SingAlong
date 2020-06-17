@@ -14,10 +14,11 @@
 <div class="fontSizeIconsContainer"  
 *ngIf='showLyricsContainer' 
 @displayChosenLyricState  
-appAdjustPositionOfFontSizeIcons
-[ngClass]="{ 'fontSizeIconsContainer-lyricsFullScreen' : isLyricsFullScreen , 'fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement' : scrolledToEndOfPage }">
+[ngClass]="{ 'fontSizeIconsContainer-lyricsFullScreen' : isLyricsFullScreen ,
+'fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement'  : scrolledToEndOfPage , 
+'fontSizeIconsContainer-lyricsFullScreen-mainPageAdjustement'   : mainPageScrolled }"> 
     <span class="fontSizeIconsContainer__tooltiptext"> increase/decrease font-size </span>
-    <svg class="fontSizeIcon fontSizeIcon-shrink"  (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
+    <svg class="fontSizeIcon fontSizeIcon-shrink"   (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
     <svg class="fontSizeIcon fontSizeIcon-increase" (click)='increaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
     <svg class="fontSizeIcon fontSizeIcon-decrease" (click)='decreaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
 </div>
