@@ -66,6 +66,12 @@
 
 
 
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
 
 
 <section>
@@ -145,6 +151,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
                                 <a href="#onLyricsFullScreen">onLyricsFullScreen</a>
                             </li>
                         </ul>
@@ -154,20 +163,6 @@
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>HostListeners</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#window:scroll">window:scroll</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
         </tbody>
     </table>
@@ -179,7 +174,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, dataService: <a href="../injectables/DataService.html">DataService</a>)</code>
+<code>constructor(synchUIService: <a href="../injectables/SynchUIService.html">SynchUIService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -202,22 +197,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>renderer</td>
+                                                        <td>synchUIService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>dataService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                                        <code><a href="../injectables/SynchUIService.html" target="_self" >SynchUIService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -237,48 +220,51 @@
 
 
 
-    <section>
-    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="window:scroll"></a>
-                    <span class="name">
-                        <b>
-                            window:scroll
-                        </b>
-                        <a href="#window:scroll"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <i>Arguments : </i><code>'$event' </code>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>window:scroll(e)</code>
-                </td>
-            </tr>
 
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/app.component.ts:28</a></div>
-                </td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
     <section>
     
     <h3 id="methods">
         Methods
     </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/app.component.ts:24</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
@@ -301,8 +287,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/app.component.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/app.component.ts:30</a></div>
                 </td>
             </tr>
 
@@ -435,10 +421,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, HostListener, OnInit, Inject, ViewChild, Renderer2, ElementRef } from &#x27;@angular/core&#x27;;
-import { DOCUMENT } from &#x27;@angular/common&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { lyricsFullScreenTrigger } from &#x27;./animations&#x27;;
-import { DataService } from &#x27;./_services/data.service&#x27;;
+import { SynchUIService } from &#x27;./_services/synch-ui.service&#x27;;
 
 
 @Component({
@@ -449,32 +434,24 @@ import { DataService } from &#x27;./_services/data.service&#x27;;
     lyricsFullScreenTrigger
   ]
 })
+
 // ##########################################################################################################################################################
-export class AppComponent  {  //############################################################################################################################
+export class AppComponent implements OnInit {  //############################################################################################################################
   hideBackgroundImage &#x3D; false;
   isLyricsFullScreen &#x3D; false;
 
   videoSelected &#x3D; false;
 
-  //if you dont specify the read option , you will get the instance of the youtube class itself.
-  // @ViewChild(&#x27;youtubeVideoContainer&#x27; , { static : false , read: ElementRef }) youtubeVideoContainer : ElementRef; 
+  constructor(private synchUIService : SynchUIService) {}
 
-  constructor(private renderer : Renderer2 , private dataService : DataService) {}
-
-
-  @HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;]) onWindowScroll(e) { //attatch this call back func to the container. IMPORTANT !!
-    const  main &#x3D; e.target;
-
-    if (main.scrollTop &gt; 500 &amp;&amp; main.scrollTop &lt; 800) { this.dataService.setVideoOnTheSide.next(true) } 
-    else if (main.scrollTop &lt; 485  &amp;&amp; main.scrollTop &gt; 200) { this.dataService.setVideoOnTheSide.next(false) }
-  }  //HostListener
-
-
+  ngOnInit() {
+    this.synchUIService.lyricsFullScreen$.subscribe(data &#x3D;&gt; {
+      this.isLyricsFullScreen &#x3D; data;
+    })
+  }
 
   onLyricsFullScreen(event) {
     this.isLyricsFullScreen &#x3D; event;
-    console.log(&#x27;we just tun full svren&#x27;);
-    console.log(&#x27;and thisi the isLyricsFullScreen &#x27; , this.isLyricsFullScreen)
   }
 
 
@@ -486,17 +463,21 @@ export class AppComponent  {  //################################################
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">
 
-&lt;div class&#x3D;&quot;container&quot;  (scroll)&#x3D;&quot;onWindowScroll($event)&quot; &gt;
+&lt;div class&#x3D;&quot;container&quot;   appDetectScroll &gt;
     &lt;app-header&gt;&lt;/app-header&gt;
 
     &lt;main class&#x3D;&quot;body&quot;   [ngClass]&#x3D;&quot;{ body__lyricsFullScreen : isLyricsFullScreen }&quot;  [@lyricsFullScreenState]&#x3D;&quot;isLyricsFullScreen ? &#x27;fullScreen&#x27; : &#x27;default&#x27;&quot; &gt;
-        &lt;app-youtube #youtubeVideoContainer [ngClass]&#x3D;&quot;{ videoShrink : isLyricsFullScreen }&quot; (videoSelectedEmitter)&#x3D;&#x27;videoSelected &#x3D; $event&#x27;
-          [isLyricsFullScreen]&#x3D;&quot;isLyricsFullScreen&quot;  &gt;
-        &lt;/app-youtube&gt;
+        &lt;app-youtube #youtubeVideoContainer 
+          [ngClass]&#x3D;&quot;{ videoShrink : isLyricsFullScreen }&quot; 
+          (videoSelectedEmitter)&#x3D;&#x27;videoSelected &#x3D; $event&#x27;
+          [isLyricsFullScreen]&#x3D;&quot;isLyricsFullScreen&quot;
+        &gt;&lt;/app-youtube&gt;
 
-        &lt;app-lyrics   (hideBackgroundImageEmitter)&#x3D;&#x27;hideBackgroundImage &#x3D; true&#x27; [isVideoSelected]&#x3D;&#x27;videoSelected&#x27;
-        [ngClass]&#x3D;&quot;{&#x27;lyrics-background-hideImage&#x27; : hideBackgroundImage , lyricsFullScreen : isLyricsFullScreen}&quot; 
-        (lyricsFullScreenEmitter)&#x3D;&#x27;onLyricsFullScreen($event)&#x27;  
+        &lt;app-lyrics   
+          (hideBackgroundImageEmitter)&#x3D;&#x27;hideBackgroundImage &#x3D; true&#x27; 
+          [isVideoSelected]&#x3D;&#x27;videoSelected&#x27;
+          [ngClass]&#x3D;&quot;{&#x27;lyrics-background-hideImage&#x27; : hideBackgroundImage , lyricsFullScreen : isLyricsFullScreen}&quot; 
+          (lyricsFullScreenEmitter)&#x3D;&#x27;onLyricsFullScreen($event)&#x27;  
         &gt;&lt;/app-lyrics&gt;
     &lt;/main&gt;
 
@@ -531,7 +512,7 @@ export class AppComponent  {  //################################################
 
 app-header {
     // min-height : 22vh;
-    min-height : 17rem;
+    // min-height : 17rem;
     background: rgb(185,204,237);
     background: linear-gradient(0deg, rgba(185,204,237,1) 0%, rgba(255,255,255,0.8071603641456583) 100%);
     border-bottom : 3px solid black;
@@ -588,6 +569,7 @@ app-header {
       z-index: 10;
       background-image: linear-gradient(180deg, rgba(246,231,230,1) 0%, rgba(255,255,255,0.5606617647058824) 100%), url(/assets/pic2-small.jpg);
       background-size: cover;
+      padding : 0;
     }
 
 }
@@ -648,9 +630,9 @@ app-header {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container"  (scroll)="onWindowScroll($event)" >    <app-header></app-header>    <main class="body"   [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }"  [@lyricsFullScreenState]="isLyricsFullScreen ? \'fullScreen\' : \'default\'" >        <app-youtube #youtubeVideoContainer [ngClass]="{ videoShrink : isLyricsFullScreen }" (videoSelectedEmitter)=\'videoSelected = $event\'          [isLyricsFullScreen]="isLyricsFullScreen"  >        </app-youtube>        <app-lyrics   (hideBackgroundImageEmitter)=\'hideBackgroundImage = true\' [isVideoSelected]=\'videoSelected\'        [ngClass]="{\'lyrics-background-hideImage\' : hideBackgroundImage , lyricsFullScreen : isLyricsFullScreen}"         (lyricsFullScreenEmitter)=\'onLyricsFullScreen($event)\'          ></app-lyrics>    </main></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingSpinnerComponent', 'selector': 'app-loading-spinner'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SearchFieldComponent', 'selector': 'app-search-field'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'MoveVideoToTheSideDirective', 'selector': '[appMoveVideoToTheSide]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container"   appDetectScroll >    <app-header></app-header>    <main class="body"   [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }"  [@lyricsFullScreenState]="isLyricsFullScreen ? \'fullScreen\' : \'default\'" >        <app-youtube #youtubeVideoContainer           [ngClass]="{ videoShrink : isLyricsFullScreen }"           (videoSelectedEmitter)=\'videoSelected = $event\'          [isLyricsFullScreen]="isLyricsFullScreen"        ></app-youtube>        <app-lyrics             (hideBackgroundImageEmitter)=\'hideBackgroundImage = true\'           [isVideoSelected]=\'videoSelected\'          [ngClass]="{\'lyrics-background-hideImage\' : hideBackgroundImage , lyricsFullScreen : isLyricsFullScreen}"           (lyricsFullScreenEmitter)=\'onLyricsFullScreen($event)\'          ></app-lyrics>    </main></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'detectScroll', 'selector': '[appDetectScroll]'}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>
 <script src="../js/tree.js"></script>

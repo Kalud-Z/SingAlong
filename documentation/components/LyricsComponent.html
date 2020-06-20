@@ -145,7 +145,13 @@
                                 <a href="#lyricsCurrentFontSize">lyricsCurrentFontSize</a>
                             </li>
                             <li>
-                                <a href="#searchInputEntered">searchInputEntered</a>
+                                <a href="#mainPageScrolled">mainPageScrolled</a>
+                            </li>
+                            <li>
+                                <a href="#scrolledToEndOfPage">scrolledToEndOfPage</a>
+                            </li>
+                            <li>
+                                <a href="#searchInputBeingEntered">searchInputBeingEntered</a>
                             </li>
                             <li>
                                 <a href="#searchQuery">searchQuery</a>
@@ -250,12 +256,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, ajaxService: <a href="../injectables/AjaxService.html">AjaxService</a>)</code>
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, synchUIService: <a href="../injectables/SynchUIService.html">SynchUIService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/lyrics/lyrics.component.ts:36</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/lyrics/lyrics.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -285,10 +291,10 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>ajaxService</td>
+                                                        <td>synchUIService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/AjaxService.html" target="_self" >AjaxService</a></code>
+                                                                        <code><a href="../injectables/SynchUIService.html" target="_self" >SynchUIService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -322,7 +328,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/lyrics/lyrics.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/lyrics/lyrics.component.ts:41</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -346,7 +352,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/lyrics/lyrics.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/lyrics/lyrics.component.ts:39</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -367,7 +373,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/lyrics/lyrics.component.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/lyrics/lyrics.component.ts:40</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -402,8 +408,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:94</a></div>
                 </td>
             </tr>
 
@@ -441,8 +447,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="81"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:81</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:90</a></div>
                 </td>
             </tr>
 
@@ -480,8 +486,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:46</a></div>
                 </td>
             </tr>
 
@@ -512,15 +518,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onBlur_SearchInput(event)</code>
+<code>onBlur_SearchInput()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="95"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:95</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:100</a></div>
                 </td>
             </tr>
 
@@ -528,36 +534,9 @@
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -578,15 +557,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onFocus_SearchInput(event)</code>
+<code>onFocus_SearchInput()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:99</a></div>
                 </td>
             </tr>
 
@@ -594,36 +573,9 @@
             <tr>
                 <td class="col-md-4">
 
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>event</td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
                     <div class="io-description">
                         <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
-                    </div>
-                    <div class="io-description">
-                        
                     </div>
                 </td>
             </tr>
@@ -651,8 +603,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:74</a></div>
                 </td>
             </tr>
 
@@ -683,15 +635,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>onSearch(searchInput)</code>
+<code>onSearch(searchInput: HTMLInputElement)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:59</a></div>
                 </td>
             </tr>
 
@@ -705,12 +657,16 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
+                                    <td>Type</td>
                                     <td>Optional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>searchInput</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
 
                                     <td>
                                         No
@@ -756,8 +712,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:64</a></div>
                 </td>
             </tr>
 
@@ -826,8 +782,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:83</a></div>
                 </td>
             </tr>
 
@@ -874,7 +830,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/lyrics/lyrics.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/lyrics/lyrics.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -906,7 +862,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/lyrics/lyrics.component.ts:25</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/lyrics/lyrics.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -932,7 +888,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/lyrics/lyrics.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/lyrics/lyrics.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -958,7 +914,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/lyrics/lyrics.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/lyrics/lyrics.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -990,7 +946,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/lyrics/lyrics.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/lyrics/lyrics.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -1001,11 +957,11 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="searchInputEntered"></a>
+                        <a name="mainPageScrolled"></a>
                         <span class="name">
                             <b>
-                            searchInputEntered</b>
-                            <a href="#searchInputEntered"><span class="icon ion-ios-link"></span></a>
+                            mainPageScrolled</b>
+                            <a href="#mainPageScrolled"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
@@ -1016,7 +972,59 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/lyrics/lyrics.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/lyrics/lyrics.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scrolledToEndOfPage"></a>
+                        <span class="name">
+                            <b>
+                            scrolledToEndOfPage</b>
+                            <a href="#scrolledToEndOfPage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/lyrics/lyrics.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchInputBeingEntered"></a>
+                        <span class="name">
+                            <b>
+                            searchInputBeingEntered</b>
+                            <a href="#searchInputBeingEntered"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/lyrics/lyrics.component.ts:32</a></div>
                             </td>
                         </tr>
 
@@ -1048,7 +1056,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/lyrics/lyrics.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/lyrics/lyrics.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -1075,7 +1083,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/lyrics/lyrics.component.ts:23</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/lyrics/lyrics.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -1102,7 +1110,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/lyrics/lyrics.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/lyrics/lyrics.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -1128,7 +1136,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/lyrics/lyrics.component.ts:32</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/lyrics/lyrics.component.ts:35</a></div>
                             </td>
                         </tr>
 
@@ -1154,7 +1162,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/lyrics/lyrics.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/lyrics/lyrics.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -1167,11 +1175,13 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, Input } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Output, EventEmitter, Input } from &#x27;@angular/core&#x27;;
+
+import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger, displayEnlargeIconTrigger } from &#x27;../animations&#x27;;
+
 import { DataService } from &#x27;../_services/data.service&#x27;;
 import { LyricObj } from &#x27;./lyrics.model&#x27;;
-import { AjaxService } from &#x27;../_services/ajax.service&#x27;;
-import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger, displayEnlargeIconTrigger } from &#x27;../animations&#x27;;
+import { SynchUIService } from &#x27;../_services/synch-ui.service&#x27;;
 
 @Component({
   selector: &#x27;app-lyrics&#x27;,
@@ -1188,6 +1198,7 @@ import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displa
 //############################################################################################################################################################
 export class LyricsComponent implements OnInit {  //##########################################################################################################
   allSuggestions : LyricObj[] &#x3D; [];
+
   lyricsCurrentFontSize : number &#x3D; 1.5;
   selectedLyric : string;
   selectedTitle : string;
@@ -1195,36 +1206,39 @@ export class LyricsComponent implements OnInit {  //############################
   searchQuery : string &#x3D; &#x27;&#x27;;
 
   isLoading &#x3D; false;
-  searchInputEntered &#x3D; false;
+  searchInputBeingEntered &#x3D; false;
   isLyricsFullScreen &#x3D; false;
   showSuggestions &#x3D; false;
   showLyricsContainer &#x3D; false;
+  scrolledToEndOfPage &#x3D; false;
+  mainPageScrolled &#x3D; false;
 
   @Output() hideBackgroundImageEmitter &#x3D; new EventEmitter&lt;boolean&gt;();
   @Output() lyricsFullScreenEmitter &#x3D; new EventEmitter&lt;boolean&gt;();
   @Input() isVideoSelected &#x3D; false;
 
 
-  constructor(private dataService : DataService , private ajaxService : AjaxService) { }
+  constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
 
   ngOnInit(): void {
-    this.dataService.searchQueryTypedSubject.subscribe(data &#x3D;&gt; { this.searchQuery &#x3D; data })
-    this.dataService.lyricsSearch_LoadingNow.subscribe(data &#x3D;&gt; { this.isLoading &#x3D; data })
-
-    // this.ajaxService.searchLyrics();
-    this.dataService.allLyricsSuggestionsSubject.subscribe((data : any) &#x3D;&gt; {
+    this.synchUIService.searchQueryTyped$.subscribe(data &#x3D;&gt; { this.searchQuery &#x3D; data })
+    this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data &#x3D;&gt; { this.isLoading &#x3D; data })
+    this.dataService.allLyricsSuggestions$.subscribe((data : any) &#x3D;&gt; {
       this.allSuggestions &#x3D; data;
       this.showSuggestions &#x3D; true;
     })
+    this.synchUIService.lyricsFullScreen$.subscribe(data &#x3D;&gt; {
+      this.isLyricsFullScreen &#x3D; data;
+    })
+
   }
 
-  onSearch(searchInput) {
+  onSearch(searchInput : HTMLInputElement) {
     this.isLoading &#x3D; true;
     this.dataService.getLyrics(searchInput.value);
   }
 
   onSelectLyric(lyricObj : LyricObj) {
-    // this.hideBackgroundImageEmitter &#x3D; true;
     this.hideBackgroundImageEmitter.emit(true);
     this.selectedLyric &#x3D; lyricObj.lyrics;
     this.selectedTitle &#x3D; lyricObj.title;
@@ -1238,36 +1252,33 @@ export class LyricsComponent implements OnInit {  //############################
     if(this.isVideoSelected) {
       this.lyricsFullScreenEmitter.emit(true);
       this.isLyricsFullScreen &#x3D; true;
+      this.synchUIService.scrolledToEndOfPage$.subscribe(data &#x3D;&gt; { this.scrolledToEndOfPage &#x3D; data })
+      this.synchUIService.mainScollOfPage$.subscribe(data &#x3D;&gt; { this.mainPageScrolled &#x3D; data })
     }
   }
 
   onShrinkLyrics() {
     this.lyricsFullScreenEmitter.emit(false);
-    this.isLyricsFullScreen &#x3D; false;
+    this.synchUIService.lyricsFullScreen$.next(false);
+    this.synchUIService.setVideoOnTheSide$.next(false);
   }
 
   
   increaseFontSize() {
-    if(this.lyricsCurrentFontSize &lt; 2.5) {
-      this.lyricsCurrentFontSize +&#x3D; 0.5;
-    }
+    if(this.lyricsCurrentFontSize &lt; 2.5) { this.lyricsCurrentFontSize +&#x3D; 0.5 }
   }
 
   decreaseFontSize() {
-    if(this.lyricsCurrentFontSize &gt; 1.5) {
-      this.lyricsCurrentFontSize -&#x3D; 0.5;
-    }
+    if(this.lyricsCurrentFontSize &gt; 1.5) { this.lyricsCurrentFontSize -&#x3D; 0.5 }
   }
 
   
-  onFocus_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow &#x3D; true ; this.searchInputEntered &#x3D; true }
-  onBlur_SearchInput(event) { this.dataService.searchQueryIsBeingTypedNow &#x3D; false ; this.searchInputEntered &#x3D; false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ &#x3D; true ; this.searchInputBeingEntered &#x3D; true }
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeing$ &#x3D; false ; this.searchInputBeingEntered &#x3D; false }
 
 
 }  //########################################################################################################################################################
 // ##########################################################################################################################################################
-
-
 
 
 
@@ -1317,19 +1328,26 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">
-
-
-&lt;div class&#x3D;&quot;screenSizeIconsContainer&quot; @displayEnlargeIconState [ngClass]&#x3D;&quot;{ &#x27;screenSizeIconsContainer-fullScreenMode&#x27; : isLyricsFullScreen }&quot; *ngIf&#x3D;&#x27;isVideoSelected &amp;&amp; showLyricsContainer&#x27; &gt;
+&lt;div class&#x3D;&quot;screenSizeIconsContainer&quot;
+*ngIf&#x3D;&#x27;isVideoSelected &amp;&amp; showLyricsContainer&#x27;
+@displayEnlargeIconState  
+[ngClass]&#x3D;&quot;{ &#x27;screenSizeIconsContainer-fullScreenMode&#x27; : isLyricsFullScreen }&quot;&gt;
     &lt;div class&#x3D;&quot;screenSizeIconsContainer__tooltiptext&quot;&gt; &lt;span *ngIf&#x3D;&#x27;!isLyricsFullScreen&#x27; &gt; fullscreen &lt;/span&gt;  &lt;span *ngIf&#x3D;&#x27;isLyricsFullScreen&#x27; &gt; minimize &lt;/span&gt; &lt;/div&gt;
-    &lt;svg class&#x3D;&quot;screenSizeIcon  screenSizeIcon-enlarge&quot; (click)&#x3D;&#x27;onFullScreenLyrics()&#x27; *ngIf&#x3D;&#x27;!isLyricsFullScreen &amp;&amp; showLyricsContainer&#x27; &gt;&lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-enlarge&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
-    &lt;svg class&#x3D;&quot;screenSizeIcon  screenSizeIcon -shrink&quot;  (click)&#x3D;&#x27;onShrinkLyrics()&#x27; *ngIf&#x3D;&#x27;isLyricsFullScreen&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-shrink&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+    &lt;svg class&#x3D;&quot;screenSizeIcon  screenSizeIcon-enlarge&quot; *ngIf&#x3D;&#x27;!isLyricsFullScreen &amp;&amp; showLyricsContainer&#x27;  (click)&#x3D;&#x27;onFullScreenLyrics()&#x27;&gt;
+        &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-enlarge&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
 &lt;/div&gt;
 
 
 
-&lt;div class&#x3D;&quot;fontSizeIconsContainer&quot;  *ngIf&#x3D;&#x27;showLyricsContainer&#x27;  @displayChosenLyricState  
-[ngClass]&#x3D;&quot;{ fontSizeIconsContainer__lyricsFullScreen : isLyricsFullScreen }&quot;&gt;
+&lt;div class&#x3D;&quot;fontSizeIconsContainer&quot;  
+*ngIf&#x3D;&#x27;showLyricsContainer&#x27; 
+@displayChosenLyricState  
+[ngClass]&#x3D;&quot;{ &#x27;fontSizeIconsContainer-lyricsFullScreen&#x27; : isLyricsFullScreen ,
+&#x27;fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement&#x27;  : scrolledToEndOfPage , 
+&#x27;fontSizeIconsContainer-lyricsFullScreen-mainPageAdjustement&#x27;   : mainPageScrolled }&quot;&gt; 
     &lt;span class&#x3D;&quot;fontSizeIconsContainer__tooltiptext&quot;&gt; increase/decrease font-size &lt;/span&gt;
+    &lt;svg class&#x3D;&quot;fontSizeIcon fontSizeIcon-shrink&quot;   (click)&#x3D;&#x27;onShrinkLyrics()&#x27; *ngIf&#x3D;&#x27;isLyricsFullScreen&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-shrink&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
     &lt;svg class&#x3D;&quot;fontSizeIcon fontSizeIcon-increase&quot; (click)&#x3D;&#x27;increaseFontSize()&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-plus-square&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
     &lt;svg class&#x3D;&quot;fontSizeIcon fontSizeIcon-decrease&quot; (click)&#x3D;&#x27;decreaseFontSize()&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-minus-square&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
 &lt;/div&gt;
@@ -1338,11 +1356,13 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
 
 &lt;div class&#x3D;&quot;searchBoxContainer  searchBoxContainer-lyrics&quot;&gt;
 
-    &lt;input type&#x3D;&quot;text&quot;  [ngClass]&#x3D;&quot;{ &#x27;searchBox-active&#x27;  : searchInputEntered }&quot;  
-    (focus)&#x3D;&#x27;onFocus_SearchInput($event)&#x27; (blur)&#x3D;&#x27;onBlur_SearchInput($event)&#x27;  class&#x3D;&quot;searchBox&quot; placeholder&#x3D;&quot;search for lyrics ..&quot; #searchInput 
-    (keyup.enter)&#x3D;&quot;onSearch(searchInput); searchInput.blur()&quot; [value]&#x3D;&quot;searchQuery&quot;&gt; 
+    &lt;input class&#x3D;&quot;searchBox&quot; #searchInput
+    [ngClass]&#x3D;&quot;{ &#x27;searchBox-active&#x27;  : searchInputBeingEntered }&quot;  
+    placeholder&#x3D;&quot;search for lyrics ..&quot;   type&#x3D;&quot;text&quot; 
+    [value]&#x3D;&quot;searchQuery&quot;
+    (keyup.enter)&#x3D;&quot;onSearch(searchInput); searchInput.blur()&quot; (focus)&#x3D;&#x27;onFocus_SearchInput()&#x27; (blur)&#x3D;&#x27;onBlur_SearchInput()&#x27;&gt; 
 
-    &lt;div class&#x3D;&quot;searchIconWrapper&quot; (click)&#x3D;&#x27;onSearch(searchInput); searchInput.blur()&#x27;   &gt;
+    &lt;div class&#x3D;&quot;searchIconWrapper&quot; (click)&#x3D;&#x27;onSearch(searchInput); searchInput.blur()&#x27; &gt;
         &lt;svg class&#x3D;&quot;searchIconWrapper__mainIcon&quot;     *ngIf&#x3D;&#x27;!isLoading&#x27; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-file-music&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
         &lt;img class&#x3D;&quot;searchIconWrapper__loadingIcon&quot;  *ngIf&#x3D;&#x27;isLoading&#x27;  src&#x3D;&quot;/assets/loadingSpinners/svg-loaders/audio.svg&quot;/&gt;
     &lt;/div&gt;
@@ -1351,15 +1371,17 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
 
 
 
-&lt;ul class&#x3D;&quot;lyricsSuggestions&quot; *ngIf&#x3D;&quot;showSuggestions&quot;    @displayLyricsSuggestionsState&gt;
-    &lt;li class&#x3D;&quot;lyricsSuggestions__suggestion&quot; *ngFor&#x3D;&quot;let sugg of allSuggestions&quot; (click)&#x3D;&quot;onSelectLyric(sugg)&quot;  &gt;  {{ sugg.title }} &lt;/li&gt;
+&lt;ul class&#x3D;&quot;lyricsSuggestionsWrapper&quot; *ngIf&#x3D;&quot;showSuggestions&quot;   @displayLyricsSuggestionsState&gt;
+    &lt;li class&#x3D;&quot;lyricsSuggestion&quot; *ngFor&#x3D;&quot;let sugg of allSuggestions&quot; (click)&#x3D;&quot;onSelectLyric(sugg)&quot; &gt;  {{ sugg.title }} &lt;/li&gt;
 &lt;/ul&gt;
 
 
 
-&lt;div class&#x3D;&quot;lyric-container&quot;  [innerText]&#x3D;&quot;FinalTextToDisplay&quot; *ngIf&#x3D;&#x27;showLyricsContainer&#x27;   @displayChosenLyricState
-[ngClass]&#x3D;&quot;{&#x27;fontSize-1_5rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 1.5 , &#x27;fontSize-2rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 2 ,
-            &#x27;fontSize-2_5rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 2.5 }&quot; &gt;
+&lt;div class&#x3D;&quot;lyricWrapper&quot;  
+*ngIf&#x3D;&#x27;showLyricsContainer&#x27; 
+@displayChosenLyricState
+[innerText]&#x3D;&quot;FinalTextToDisplay&quot;   
+[ngClass]&#x3D;&quot;{&#x27;fontSize-1_5rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 1.5 , &#x27;fontSize-2rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 2 ,&#x27;fontSize-2_5rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 2.5 }&quot;&gt;
 &lt;/div&gt;
 
 
@@ -1391,11 +1413,6 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
     position: absolute;
     top: 1.2%;
     left : 1.2%;
-
-    &amp;-fullScreenMode {
-        top: 10px !important;
-        left: 10px !important;
-    }
 
     &amp;:hover .screenSizeIconsContainer__tooltiptext {
         opacity: 0.8;
@@ -1452,10 +1469,9 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
 
 
 
-
 .fontSizeIconsContainer {
     position : fixed;
-    top: 32%;
+    top: 37%;
     right: 5%;
     @include respond(tab-port-small) { top : 84% }
     
@@ -1463,10 +1479,9 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
+    transition: all 0.2s ease-out;
 
-    &amp;:hover &gt; &amp;__tooltiptext {
-        opacity: 0.8;
-    }
+    &amp;:hover &gt; &amp;__tooltiptext { opacity: 0.8 }
 
     &amp;__tooltiptext {
         background-color: white;
@@ -1495,9 +1510,21 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
         }
     }
 
-    &amp;__lyricsFullScreen {
-        top : 83% !important;
-        right : 3.5% !important;
+    &amp;-lyricsFullScreen {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        top : auto;
+        right : auto;
+
+        &amp;-mainPageAdjustement { 
+            @include respond(tab-port-small-minWidth) { margin-top: -3rem !important  }
+        }
+
+        &amp;-endOfPageAdjustement { 
+            margin-top: -6rem !important
+        }
+
+        // @include respond(tab-port-small) { margin-top: 1rem  }
     }
 
     .fontSizeIcon {
@@ -1506,10 +1533,16 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
         cursor : pointer;
         fill : rgba(0, 0, 0, 0.521);
         @include respond(tab-port-small) {  height: 4rem; width: 4rem }
-
-        &amp;-increase {
-            position: relative;
+        &amp;:not(:last-child) { 
             margin-bottom: 1rem;
+            @include respond(phone) { margin-bottom: 2rem }
+        }
+        
+        &amp;-increase { position: relative }
+
+        &amp;-shrink {
+            height: 2.7rem;
+            width: 2.7rem;
         }
     }
 }
@@ -1517,27 +1550,25 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
 
 
 .searchBoxContainer-lyrics {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
     margin-bottom: 2rem;
     align-self: center;
 }
 
 
 
-.lyricsSuggestions {
+.lyricsSuggestionsWrapper {
     align-self: center;
     list-style: none;
-    // margin-bottom: auto;
     width : 87%;
 
-    &amp;__suggestion {
-        transition : all 0.2s;
+    .lyricsSuggestion {
         cursor : pointer;
         background-color: #D4E0F4;
         padding: 1rem 2rem;
         font-size: 1.5rem;
-
         border : 1px solid rgba(0, 0, 0, 0.473);
+        transition : all 0.2s;
 
         &amp;:first-child {
             border-top-left-radius: 7px;
@@ -1550,28 +1581,25 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
             margin-bottom: 2rem;
         }
 
-        &amp;:not(:first-child) {
-            border-top : 1px solid rgba(0, 0, 0, 0.473)
-        }
+        &amp;:not(:first-child) { border-top : 1px solid rgba(0, 0, 0, 0.473) }
 
-        &amp;:not(:last-child) {
-            border-bottom : none
-        }
+        &amp;:not(:last-child) { border-bottom : none }
 
-        &amp;:hover {
-            background-color: rgba(147, 181, 241, 0.644);
-        }
+        &amp;:hover { background-color: rgba(147, 181, 241, 0.644) }
     }
 }
 
 
-.lyric-container {
+.lyricWrapper {
+    margin-bottom: 1.5rem;
     font-family: &#x27;Raleway&#x27;, sans-serif;
     line-height: 152%;
     font-weight: 500;
     font-size : 1.5rem;
     text-align: center;
     transition: all .2s ease-in-out;
+    padding : 0 0.5rem;
+
     &amp;::first-line {
         font-weight: bolder;
         font-style: italic;
@@ -1580,19 +1608,9 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
 }
 
 
-.fontSize-1_5rem {
-    font-size: 1.5rem !important;
-}
-
-
-.fontSize-2rem {
-    font-size: 2rem !important;
-}
-
-
-.fontSize-2_5rem {
-    font-size: 2.5rem !important;
-}
+.fontSize-1_5rem { font-size: 1.5rem !important }
+.fontSize-2rem { font-size: 2rem !important }
+.fontSize-2_5rem { font-size: 2.5rem !important }
 
 
 </code></pre>
@@ -1623,9 +1641,9 @@ strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="screenSizeIconsContainer" @displayEnlargeIconState [ngClass]="{ \'screenSizeIconsContainer-fullScreenMode\' : isLyricsFullScreen }" *ngIf=\'isVideoSelected && showLyricsContainer\' >    <div class="screenSizeIconsContainer__tooltiptext"> <span *ngIf=\'!isLyricsFullScreen\' > fullscreen </span>  <span *ngIf=\'isLyricsFullScreen\' > minimize </span> </div>    <svg class="screenSizeIcon  screenSizeIcon-enlarge" (click)=\'onFullScreenLyrics()\' *ngIf=\'!isLyricsFullScreen && showLyricsContainer\' ><use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use></svg>    <svg class="screenSizeIcon  screenSizeIcon -shrink"  (click)=\'onShrinkLyrics()\' *ngIf=\'isLyricsFullScreen\'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg></div><div class="fontSizeIconsContainer"  *ngIf=\'showLyricsContainer\'  @displayChosenLyricState  [ngClass]="{ fontSizeIconsContainer__lyricsFullScreen : isLyricsFullScreen }">    <span class="fontSizeIconsContainer__tooltiptext"> increase/decrease font-size </span>    <svg class="fontSizeIcon fontSizeIcon-increase" (click)=\'increaseFontSize()\'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>    <svg class="fontSizeIcon fontSizeIcon-decrease" (click)=\'decreaseFontSize()\'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg></div><div class="searchBoxContainer  searchBoxContainer-lyrics">    <input type="text"  [ngClass]="{ \'searchBox-active\'  : searchInputEntered }"      (focus)=\'onFocus_SearchInput($event)\' (blur)=\'onBlur_SearchInput($event)\'  class="searchBox" placeholder="search for lyrics .." #searchInput     (keyup.enter)="onSearch(searchInput); searchInput.blur()" [value]="searchQuery">     <div class="searchIconWrapper" (click)=\'onSearch(searchInput); searchInput.blur()\'   >        <svg class="searchIconWrapper__mainIcon"     *ngIf=\'!isLoading\' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>        <img class="searchIconWrapper__loadingIcon"  *ngIf=\'isLoading\'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>    </div></div><ul class="lyricsSuggestions" *ngIf="showSuggestions"    @displayLyricsSuggestionsState>    <li class="lyricsSuggestions__suggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)"  >  {{ sugg.title }} </li></ul><div class="lyric-container"  [innerText]="FinalTextToDisplay" *ngIf=\'showLyricsContainer\'   @displayChosenLyricState[ngClass]="{\'fontSize-1_5rem\' : lyricsCurrentFontSize === 1.5 , \'fontSize-2rem\' : lyricsCurrentFontSize === 2 ,            \'fontSize-2_5rem\' : lyricsCurrentFontSize === 2.5 }" ></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LoadingSpinnerComponent', 'selector': 'app-loading-spinner'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SearchFieldComponent', 'selector': 'app-search-field'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'MoveVideoToTheSideDirective', 'selector': '[appMoveVideoToTheSide]'}];
+        var COMPONENT_TEMPLATE = '<div><div class="screenSizeIconsContainer"*ngIf=\'isVideoSelected && showLyricsContainer\'@displayEnlargeIconState  [ngClass]="{ \'screenSizeIconsContainer-fullScreenMode\' : isLyricsFullScreen }">    <div class="screenSizeIconsContainer__tooltiptext"> <span *ngIf=\'!isLyricsFullScreen\' > fullscreen </span>  <span *ngIf=\'isLyricsFullScreen\' > minimize </span> </div>    <svg class="screenSizeIcon  screenSizeIcon-enlarge" *ngIf=\'!isLyricsFullScreen && showLyricsContainer\'  (click)=\'onFullScreenLyrics()\'>        <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use>    </svg></div><div class="fontSizeIconsContainer"  *ngIf=\'showLyricsContainer\' @displayChosenLyricState  [ngClass]="{ \'fontSizeIconsContainer-lyricsFullScreen\' : isLyricsFullScreen ,\'fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement\'  : scrolledToEndOfPage , \'fontSizeIconsContainer-lyricsFullScreen-mainPageAdjustement\'   : mainPageScrolled }">     <span class="fontSizeIconsContainer__tooltiptext"> increase/decrease font-size </span>    <svg class="fontSizeIcon fontSizeIcon-shrink"   (click)=\'onShrinkLyrics()\' *ngIf=\'isLyricsFullScreen\'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>    <svg class="fontSizeIcon fontSizeIcon-increase" (click)=\'increaseFontSize()\'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>    <svg class="fontSizeIcon fontSizeIcon-decrease" (click)=\'decreaseFontSize()\'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg></div><div class="searchBoxContainer  searchBoxContainer-lyrics">    <input class="searchBox" #searchInput    [ngClass]="{ \'searchBox-active\'  : searchInputBeingEntered }"      placeholder="search for lyrics .."   type="text"     [value]="searchQuery"    (keyup.enter)="onSearch(searchInput); searchInput.blur()" (focus)=\'onFocus_SearchInput()\' (blur)=\'onBlur_SearchInput()\'>     <div class="searchIconWrapper" (click)=\'onSearch(searchInput); searchInput.blur()\' >        <svg class="searchIconWrapper__mainIcon"     *ngIf=\'!isLoading\' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>        <img class="searchIconWrapper__loadingIcon"  *ngIf=\'isLoading\'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>    </div></div><ul class="lyricsSuggestionsWrapper" *ngIf="showSuggestions"   @displayLyricsSuggestionsState>    <li class="lyricsSuggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)" >  {{ sugg.title }} </li></ul><div class="lyricWrapper"  *ngIf=\'showLyricsContainer\' @displayChosenLyricState[innerText]="FinalTextToDisplay"   [ngClass]="{\'fontSize-1_5rem\' : lyricsCurrentFontSize === 1.5 , \'fontSize-2rem\' : lyricsCurrentFontSize === 2 ,\'fontSize-2_5rem\' : lyricsCurrentFontSize === 2.5 }"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'detectScroll', 'selector': '[appDetectScroll]'}];
     var ACTUAL_COMPONENT = {'name': 'LyricsComponent'};
 </script>
 <script src="../js/tree.js"></script>

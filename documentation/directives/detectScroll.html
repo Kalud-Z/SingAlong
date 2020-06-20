@@ -27,15 +27,17 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content directive">
                    <div class="content-data">
 
 
 
 
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>SoundCloudComponent</li>
+  <li>Directives</li>
+  <li>detectScroll</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -45,118 +47,74 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/sound-cloud/sound-cloud.component.ts</code>
-</p>
-
-
-
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/lyrics/detect-scroll.directive.ts</code>
+        </p>
 
 
 
 
+        <section>
+            <h3>Metadata</h3>
+            <table class="table table-sm table-hover">
+                <tbody>
 
+                    <tr>
+                        <td class="col-md-3">Selector</td>
+                        <td class="col-md-9"><code>[appDetectScroll]</code></td>
+                    </tr>
 
+                </tbody>
+            </table>
+        </section>
 
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-sound-cloud</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>./sound-cloud.component.scss</code></td>
-            </tr>
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./sound-cloud.component.html</code></td>
-            </tr>
-
-
-
-
-
-
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
 
+
+
+
+
                 <tr>
                     <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
+                        <h6><b>HostListeners</b></h6>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#scroll">scroll</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
-
-
-
-
         </tbody>
     </table>
 </section>
 
-    <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(ajaxService: <a href="../injectables/AjaxService.html">AjaxService</a>)</code>
+<code>constructor(synchUIService: <a href="../injectables/SynchUIService.html">SynchUIService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/sound-cloud/sound-cloud.component.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/lyrics/detect-scroll.directive.ts:9</a></div>
                             </td>
                         </tr>
 
@@ -174,10 +132,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>ajaxService</td>
+                                                        <td>synchUIService</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/AjaxService.html" target="_self" >AjaxService</a></code>
+                                                                        <code><a href="../injectables/SynchUIService.html" target="_self" >SynchUIService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -197,28 +155,28 @@
 
 
 
-
-    <section>
-    
-    <h3 id="methods">
-        Methods
-    </h3>
-    <table class="table table-sm table-bordered">
+            <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="ngOnInit"></a>
+                    <a name="scroll"></a>
                     <span class="name">
                         <b>
-                            ngOnInit
+                            scroll
                         </b>
-                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        <a href="#scroll"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>ngOnInit()</code>
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>scroll(event)</code>
                 </td>
             </tr>
 
@@ -226,107 +184,73 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/sound-cloud/sound-cloud.component.ts:13</a></div>
+                            class="link-to-prism">src/app/lyrics/detect-scroll.directive.ts:13</a></div>
                 </td>
             </tr>
 
 
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
         </tbody>
     </table>
 </section>
 
-</div>
+
+
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { AjaxService } from &#x27;../_services/ajax.service&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Directive, ElementRef, Renderer2, HostListener } from &#x27;@angular/core&#x27;;
+import { SynchUIService } from &#x27;../_services/synch-ui.service&#x27;;
 
-@Component({
-  selector: &#x27;app-sound-cloud&#x27;,
-  templateUrl: &#x27;./sound-cloud.component.html&#x27;,
-  styleUrls: [&#x27;./sound-cloud.component.scss&#x27;]
+@Directive({
+  selector: &#x27;[appDetectScroll]&#x27;
 })
-export class SoundCloudComponent implements OnInit {
 
-  constructor(private ajaxService : AjaxService) { }
+// #######################################################################################################################################################
+export class detectScroll {  //#########################################################################################################################
+  constructor(private synchUIService : SynchUIService) {}
 
-  ngOnInit(): void {
-    //  this.ajaxService.searchSoundCloudTracks();
+
+  @HostListener(&quot;scroll&quot;, [&quot;$event&quot;]) onListenerTriggered(event): void {
+    const percent &#x3D; Math.round((event.srcElement.scrollTop / (event.srcElement.scrollHeight - event.srcElement.clientHeight)) * 100);
+    console.log(percent)
+
+    if(percent &lt; 2) {
+      this.synchUIService.scrolledToEndOfPage$.next(false);
+      this.synchUIService.mainScollOfPage$.next(false);
+    }
+
+    if(percent &gt; 2 &amp;&amp; percent &lt; 98) {
+      this.synchUIService.mainScollOfPage$.next(true);
+      this.synchUIService.scrolledToEndOfPage$.next(false);
+    } 
+
+
+    if(percent &gt;&#x3D; 98 &amp;&amp; percent &lt;&#x3D; 100) {
+      this.synchUIService.scrolledToEndOfPage$.next(true);
+      this.synchUIService.mainScollOfPage$.next(false);
+    }
+
+    if(percent &gt;&#x3D; 0 &amp;&amp; percent &lt; 11) {
+      this.synchUIService.setVideoOnTheSide$.next(false)
+    } 
+
+    if(percent &gt; 14 &amp;&amp; percent &lt; 33) {
+      this.synchUIService.setVideoOnTheSide$.next(true)
+    } 
+   
+    // console.log(percent)
   }
 
-}
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">
-&lt;p&gt;sound-cloud works!&lt;/p&gt;
 
 
-
-
-
-
-
-
-
-
-
-
+} //########################################################################################################################################################
+// ##########################################################################################################################################################
 
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
-                <p class="comment">
-                    <code>./sound-cloud.component.scss</code>
-                </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><p>sound-cloud works!</p></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
-    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'detectScroll', 'selector': '[appDetectScroll]'}];
-    var ACTUAL_COMPONENT = {'name': 'SoundCloudComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
 
 
 
@@ -356,8 +280,8 @@ export class SoundCloudComponent implements OnInit {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'SoundCloudComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'directive';
+            var COMPODOC_CURRENT_PAGE_URL = 'detectScroll.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

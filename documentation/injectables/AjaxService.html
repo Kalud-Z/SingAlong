@@ -76,10 +76,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#searchLyrics">searchLyrics</a>
+                                <a href="#fetchLyrics">fetchLyrics</a>
                             </li>
                             <li>
-                                <a href="#searchVideo">searchVideo</a>
+                                <a href="#fetchVideo">fetchVideo</a>
                             </li>
                         </ul>
                     </td>
@@ -104,7 +104,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/_services/ajax.service.ts:17</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/_services/ajax.service.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -151,26 +151,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="searchLyrics"></a>
+                    <a name="fetchLyrics"></a>
                     <span class="name">
                         <b>
-                            searchLyrics
+                            fetchLyrics
                         </b>
-                        <a href="#searchLyrics"><span class="icon ion-ios-link"></span></a>
+                        <a href="#fetchLyrics"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>searchLyrics(searchQuery: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>fetchLyrics(searchQuery: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/_services/ajax.service.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/_services/ajax.service.ts:35</a></div>
                 </td>
             </tr>
 
@@ -232,26 +232,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="searchVideo"></a>
+                    <a name="fetchVideo"></a>
                     <span class="name">
                         <b>
-                            searchVideo
+                            fetchVideo
                         </b>
-                        <a href="#searchVideo"><span class="icon ion-ios-link"></span></a>
+                        <a href="#fetchVideo"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>searchVideo(searchQuery: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+<code>fetchVideo(searchQuery: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/_services/ajax.service.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/_services/ajax.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -320,10 +320,6 @@ import { Observable } from &#x27;rxjs&#x27;;
   providedIn: &#x27;root&#x27;
 })
 
- /**
-  * This Service is solely responsible for asynchrnous HTTP calls.
-  * Its methods are being accessed ONLY by the DataService (which is responsible for handling the fetched data)
-  */
 
 // ##########################################################################################################################################################
 export class AjaxService {  //##############################################################################################################################
@@ -336,7 +332,7 @@ export class AjaxService {  //##################################################
    * @returns - it returns an observable that yields an array of objects. (each object contains alot of info about a video).
    *  - We subscribe to this observable from the dataService.
    */
-  searchVideo(searchQuery : string): Observable&lt;any&gt; {
+  fetchVideo(searchQuery : string): Observable&lt;any&gt; {
     return this.http.get(&quot;https://www.googleapis.com/youtube/v3/search?part&#x3D;snippet&amp;maxResults&#x3D;12&amp;q&#x3D;&quot; + searchQuery
                           + &quot;&amp;type&#x3D;video&amp;key&#x3D;&quot; + environment.YoutubeAPIKey);
   }
@@ -348,7 +344,7 @@ export class AjaxService {  //##################################################
    * * @returns - it returns an observable that yields an array of objects. (each object contains alot of info about a lyric).
    *  - We subscribe to this observable from the dataService.
    */
-  searchLyrics(searchQuery : string): Observable&lt;any&gt; {
+  fetchLyrics(searchQuery : string): Observable&lt;any&gt; {
     return this.http.get(&quot;https://canarado-lyrics.p.rapidapi.com/lyrics/&quot; + searchQuery , {
       headers: {
         &quot;x-rapidapi-host&quot;: &quot;canarado-lyrics.p.rapidapi.com&quot;,
