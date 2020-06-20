@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit { //#############################
   constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
 
   ngOnInit(): void {
-    this.synchUIService.lyricsSearch_LoadingNowSubject.subscribe(data => { this.lyricsStillLoading = data })
-    this.synchUIService.videoSearch_LoadingNowSubject.subscribe(data => { this.videoStillLoading = data })
+    this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data => { this.lyricsStillLoading = data })
+    this.synchUIService.videoSearch_LoadingNow$.subscribe(data => { this.videoStillLoading = data })
   }
 
   //searches for both videos and lyrics at the same time
@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit { //#############################
       this.videoStillLoading = true;
       this.dataService.getLyrics(input.value);
       this.dataService.getVideos(input.value);
-      this.synchUIService.lyricsFullScreenSubject.next(false); //in case we are in fullscreen mode. we wanna exit it, upon a new search.
+      this.synchUIService.lyricsFullScreen$.next(false); //in case we are in fullscreen mode. we wanna exit it, upon a new search.
     }
   }
 
@@ -36,8 +36,8 @@ export class HeaderComponent implements OnInit { //#############################
 
   refreshPage() { location.reload() }
 
-  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputBeingEntered = true } 
-  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputBeingEntered = false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ = true ; this.searchInputBeingEntered = true } 
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeing$ = false ; this.searchInputBeingEntered = false }
 
   
 }  //###############################################################################################################################################

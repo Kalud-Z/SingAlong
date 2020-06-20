@@ -114,19 +114,22 @@
         color :  rgb(209, 75, 75);
 
         &-onTheSide {
+            z-index: 20;
             z-index: 500;
             background-color: #f3bcb8;
             transition: all .2s ease-in-out !important;
             border : .5px solid rgba(0, 0, 0, 0.418);
-            z-index: 20;
             width: 33vw !important;
             @include respond(tab-port-small) {  width: 75vw !important }
             position : fixed !important;
             top: 85% !important;
             right: 3% !important;
-            padding: 1rem 0;
             opacity : 0.5 !important;
+            padding: 1rem 0;
+            transition: all 0.2s ease-out;
             &:hover { opacity : 1 !important ; border : .5px solid black }
+
+            &-endOfPageAdjustement { top : 83% !important }
         }
 
         .controlIcon {

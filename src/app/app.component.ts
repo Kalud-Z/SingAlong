@@ -11,6 +11,7 @@ import { SynchUIService } from './_services/synch-ui.service';
     lyricsFullScreenTrigger
   ]
 })
+
 // ##########################################################################################################################################################
 export class AppComponent implements OnInit {  //############################################################################################################################
   hideBackgroundImage = false;
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {  //###############################
   constructor(private synchUIService : SynchUIService) {}
 
   ngOnInit() {
-    this.synchUIService.lyricsFullScreenSubject.subscribe(data => {
+    this.synchUIService.lyricsFullScreen$.subscribe(data => {
       this.isLyricsFullScreen = data;
     })
   }

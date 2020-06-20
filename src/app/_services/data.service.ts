@@ -15,22 +15,22 @@ import { SynchUIService } from './synch-ui.service';
 // #########################################################################################################################################################
 export class DataService {  //##############################################################################################################################
   allLyricsSuggestions : LyricObj[] = [];
-  allLyricsSuggestionsSubject = new Subject<LyricObj[]>() ;
+  allLyricsSuggestions$ = new Subject<LyricObj[]>() ;
   
   allVideosSuggestions : videoObj[] = [];
-  allVideosSuggestionsSubject = new Subject<videoObj[]>() ;
+  allVideosSuggestions$ = new Subject<videoObj[]>() ;
 
 
   constructor(private ajaxService : AjaxService, private synchUIService : SynchUIService) {}
 
   
   lyricsNotify() {
-    this.allLyricsSuggestionsSubject.next(this.allLyricsSuggestions);
+    this.allLyricsSuggestions$.next(this.allLyricsSuggestions);
   }
 
 
   videosNotify() {
-    this.allVideosSuggestionsSubject.next(this.allVideosSuggestions);
+    this.allVideosSuggestions$.next(this.allVideosSuggestions);
   }
 
 

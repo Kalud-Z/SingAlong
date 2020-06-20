@@ -44,13 +44,13 @@ export class LyricsComponent implements OnInit {  //############################
   constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
 
   ngOnInit(): void {
-    this.synchUIService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
-    this.synchUIService.lyricsSearch_LoadingNowSubject.subscribe(data => { this.isLoading = data })
-    this.dataService.allLyricsSuggestionsSubject.subscribe((data : any) => {
+    this.synchUIService.searchQueryTyped$.subscribe(data => { this.searchQuery = data })
+    this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data => { this.isLoading = data })
+    this.dataService.allLyricsSuggestions$.subscribe((data : any) => {
       this.allSuggestions = data;
       this.showSuggestions = true;
     })
-    this.synchUIService.lyricsFullScreenSubject.subscribe(data => {
+    this.synchUIService.lyricsFullScreen$.subscribe(data => {
       this.isLyricsFullScreen = data;
     })
 
@@ -75,15 +75,15 @@ export class LyricsComponent implements OnInit {  //############################
     if(this.isVideoSelected) {
       this.lyricsFullScreenEmitter.emit(true);
       this.isLyricsFullScreen = true;
-      this.synchUIService.scrolledToEndOfPageSubject.subscribe(data => { this.scrolledToEndOfPage = data })
-      this.synchUIService.mainScollOfPageSubject.subscribe(data => { this.mainPageScrolled = data })
+      this.synchUIService.scrolledToEndOfPage$.subscribe(data => { this.scrolledToEndOfPage = data })
+      this.synchUIService.mainScollOfPage$.subscribe(data => { this.mainPageScrolled = data })
     }
   }
 
   onShrinkLyrics() {
     this.lyricsFullScreenEmitter.emit(false);
-    this.synchUIService.lyricsFullScreenSubject.next(false);
-    this.synchUIService.setVideoOnTheSideSubject.next(false);
+    this.synchUIService.lyricsFullScreen$.next(false);
+    this.synchUIService.setVideoOnTheSide$.next(false);
   }
 
   
@@ -96,8 +96,8 @@ export class LyricsComponent implements OnInit {  //############################
   }
 
   
-  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true ; this.searchInputBeingEntered = true }
-  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputBeingEntered = false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ = true ; this.searchInputBeingEntered = true }
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeing$ = false ; this.searchInputBeingEntered = false }
 
 
 }  //########################################################################################################################################################

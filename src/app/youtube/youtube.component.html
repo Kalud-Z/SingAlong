@@ -45,7 +45,8 @@
         <div class="iframeWrapper__loadingWindow">   <img class="iframeWrapper__loadingWindow__icon"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
     </div> 
 
-    <div class="controlVideoIconsContainer" [ngClass]="{'controlVideoIconsContainer-onTheSide' : setVideoOnTheSide }" >
+    <div class="controlVideoIconsContainer" [ngClass]="{'controlVideoIconsContainer-onTheSide' : setVideoOnTheSide ,
+     'controlVideoIconsContainer-onTheSide-endOfPageAdjustement' : scrolledToEndOfPage }" >
         <div class="controlVolumeWrapper" >
             <svg class="controlVolumeIcon controlVolumeIcon-mute   controlIcon"  (click)='unmuteVideo()'  *ngIf='isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use> </svg>
             <svg class="controlVolumeIcon controlVolumeIcon-unMute controlIcon"  (click)='muteVideo()'  *ngIf='!isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use> </svg>

@@ -1,10 +1,10 @@
 // https://developers.google.com/youtube/iframe_api_reference#seekTo
 
-
 import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
-import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from '../animations';
 
+
+import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from '../animations';
 import { SynchUIService } from '../_services/synch-ui.service';
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
@@ -29,6 +29,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   searchInputEntered = false;
   iframeOuterContainerHeight_alreadySet = false;
   setVideoOnTheSide = false;
+  scrolledToEndOfPage = false;
   searchQuery : string = '';
 
   @Input() isLyricsFullScreen = false;
@@ -46,16 +47,17 @@ export class YoutubeComponent implements OnInit {  //###########################
 
 
   ngOnInit() {
-    this.synchUIService.searchQueryTypedSubject.subscribe(data => { this.searchQuery = data })
-    this.synchUIService.videoSearch_LoadingNowSubject.subscribe(data => { this.isLoading = data })
+    this.synchUIService.searchQueryTyped$.subscribe(data => { this.searchQuery = data })
 
-    this.dataService.allVideosSuggestionsSubject.subscribe(data => {
+    this.synchUIService.videoSearch_LoadingNow$.subscribe(data => { this.isLoading = data })
+
+    this.dataService.allVideosSuggestions$.subscribe(data => {
       if(this.showVideoFrame) { this.returnToVideos()  }
       this.allSuggestions = data;
       this.showSuggestions = true;
     })
 
-    this.synchUIService.setVideoOnTheSideSubject.subscribe(data => {
+    this.synchUIService.setVideoOnTheSide$.subscribe(data => {
       // to make sure the container doesn't lose its height, when the video moves to the side. 
      if(!this.iframeOuterContainerHeight_alreadySet) {
        const desiredHeight = this.iframeOuterContainer.nativeElement.clientHeight;
@@ -63,7 +65,10 @@ export class YoutubeComponent implements OnInit {  //###########################
        this.iframeOuterContainerHeight_alreadySet = true;
      }
       this.setVideoOnTheSide = data;
+      console.log('set video in thesdie now , this isthe this.setVideoOnTheSide : ' ,  this.setVideoOnTheSide)
     })
+
+    this.synchUIService.scrolledToEndOfPage$.subscribe(data => { this.scrolledToEndOfPage = data })
   } //ngOnInit
 
 
@@ -92,8 +97,8 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
 
-  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeingTypedNow = true  ; this.searchInputEntered = true }
-  onBlur_SearchInput()  { this.synchUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ = true  ; this.searchInputEntered = true }
+  onBlur_SearchInput()  { this.synchUIService.searchQueryIsBeing$ = false ; this.searchInputEntered = false }
 
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,7 +123,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   // keyCode = 32  space
 
   @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
-    if(this.player && !this.synchUIService.searchQueryIsBeingTypedNow) { //otherwise , unexpected error and behavior might occur.
+    if(this.player && !this.synchUIService.searchQueryIsBeing$) { //otherwise , unexpected error and behavior might occur.
       if(event.keyCode === 39) {  //we skip forward
         this.jumpForward();
       }
