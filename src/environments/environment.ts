@@ -5,9 +5,11 @@
 export const environment = {
   production: false,
   // APIKey : 'AIzaSyD1fHEPYk2Si2RHx1vTCQc3N5wNiEhSgSc'
-  YoutubeAPIKey : 'AIzaSyAFfKaZQkOjrsUMgJYfix3urmR6mpOYVH8',
+  // YoutubeAPIKey : 'AIzaSyAFfKaZQkOjrsUMgJYfix3urmR6mpOYVH8',
+  // YoutubeAPIKey : 'AIzaSyBdrKd4dcEc7jSPs80GUM1bgvSmXqQoEd4', //old project
+  YoutubeAPIKey : 'AIzaSyDLCxhgbEJC5TTYNcAT53NzBXXB5_WZjag', //new project
   LyricsAPIKey : 'B22Vz3RGZBYB1fYyGcIzFa2V5L1yZhw6ZmqiWWw4yidVvVl3rbm9DkKqPP9wfmi4'
-  
+
 };
 
 /*

@@ -38,7 +38,7 @@ export class LyricsComponent implements OnInit {  //############################
 
   @Output() hideBackgroundImageEmitter = new EventEmitter<boolean>();
   @Output() lyricsFullScreenEmitter = new EventEmitter<boolean>();
-  @Input() isVideoSelected = false;
+  @Input()  isVideoSelected = false;
 
 
   constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
@@ -47,6 +47,7 @@ export class LyricsComponent implements OnInit {  //############################
     this.synchUIService.searchQueryTyped$.subscribe(data => { this.searchQuery = data })
     this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data => { this.isLoading = data })
     this.dataService.allLyricsSuggestions$.subscribe((data : any) => {
+      console.log('this is the teeee : ' , data)
       this.allSuggestions = data;
       this.showSuggestions = true;
     })
@@ -66,7 +67,7 @@ export class LyricsComponent implements OnInit {  //############################
     this.selectedLyric = lyricObj.lyrics;
     this.selectedTitle = lyricObj.title;
     this.FinalTextToDisplay =  this.selectedTitle + '\n \n \n' + this.selectedLyric;
-  
+
     this.showSuggestions = false;
     this.showLyricsContainer = true;
   }
@@ -86,7 +87,7 @@ export class LyricsComponent implements OnInit {  //############################
     this.synchUIService.setVideoOnTheSide$.next(false);
   }
 
-  
+
   increaseFontSize() {
     if(this.lyricsCurrentFontSize < 2.5) { this.lyricsCurrentFontSize += 0.5 }
   }
@@ -95,7 +96,7 @@ export class LyricsComponent implements OnInit {  //############################
     if(this.lyricsCurrentFontSize > 1.5) { this.lyricsCurrentFontSize -= 0.5 }
   }
 
-  
+
   onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ = true ; this.searchInputBeingEntered = true }
   onBlur_SearchInput() { this.synchUIService.searchQueryIsBeing$ = false ; this.searchInputBeingEntered = false }
 
@@ -107,7 +108,7 @@ export class LyricsComponent implements OnInit {  //############################
 
 
 
-/* 
+/*
 str = `[Verse 1]
 Hello, it's me
 I was wondering if after all these years you'd like to meet

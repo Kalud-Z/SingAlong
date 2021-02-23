@@ -32,18 +32,18 @@ export class YoutubeComponent implements OnInit {  //###########################
   scrolledToEndOfPage = false;
   searchQuery : string = '';
 
-  @Input() isLyricsFullScreen = false;
+  @Input()  isLyricsFullScreen = false;
   @Output() videoSelectedEmitter = new EventEmitter<boolean>();
 
-  @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef; 
-  @ViewChild('iframeOuterContainer' , { static : false}) iframeOuterContainer : ElementRef; 
+  @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef;
+  @ViewChild('iframeOuterContainer' , { static : false}) iframeOuterContainer : ElementRef;
 
   constructor(private dataService : DataService,
               private sanitizer: DomSanitizer,
               private renderer : Renderer2,
               private synchUIService : SynchUIService
               ) { }
-            
+
 
 
   ngOnInit() {
@@ -58,7 +58,7 @@ export class YoutubeComponent implements OnInit {  //###########################
     })
 
     this.synchUIService.setVideoOnTheSide$.subscribe(data => {
-      // to make sure the container doesn't lose its height, when the video moves to the side. 
+      // to make sure the container doesn't lose its height, when the video moves to the side.
      if(!this.iframeOuterContainerHeight_alreadySet) {
        const desiredHeight = this.iframeOuterContainer.nativeElement.clientHeight;
        this.renderer.setStyle(this.iframeOuterContainer.nativeElement, 'height', `${desiredHeight}px`);
@@ -80,7 +80,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   }
 
   onSearch(searchInput : HTMLInputElement) {
-    if(this.showVideoFrame) { this.returnToVideos() } //we close the video in case it is opened. 
+    if(this.showVideoFrame) { this.returnToVideos() } //we close the video in case it is opened.
     this.isLoading = true;
     this.showVideoFrame = false;
     this.dataService.getVideos(searchInput.value)
@@ -92,7 +92,7 @@ export class YoutubeComponent implements OnInit {  //###########################
 
     this.showSuggestions = false;
     this.showVideoFrame = true;
-    
+
     this.initYoutubeIframeAPI()
   }
 
@@ -102,7 +102,7 @@ export class YoutubeComponent implements OnInit {  //###########################
 
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  
+
 
   selectedVideoID = ''
   YT: any;
@@ -113,7 +113,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   videoAlreadyLoadedOnce = false;
   showVideoFrame = false;
 
-  @ViewChild('volumeRangeSlider' , { static : false}) volumeRangeSlider : ElementRef; 
+  @ViewChild('volumeRangeSlider' , { static : false}) volumeRangeSlider : ElementRef;
 
 
   // keyCode = 39  arrow right
@@ -122,7 +122,7 @@ export class YoutubeComponent implements OnInit {  //###########################
   // keyCode = 40  arrow down
   // keyCode = 32  space
 
-  @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) { 
+  @HostListener('document:keydown', ['$event']) handleKeyboardEvent(event: KeyboardEvent) {
     if(this.player && !this.synchUIService.searchQueryIsBeing$) { //otherwise , unexpected error and behavior might occur.
       if(event.keyCode === 39) {  //we skip forward
         this.jumpForward();
@@ -141,7 +141,7 @@ export class YoutubeComponent implements OnInit {  //###########################
 
     } //outer-if
   } //HostListener
-        
+
 
   initYoutubeIframeAPI() {
     // Return if Player is already created . in case we wanna play another video . without refreshing the app.
@@ -166,7 +166,7 @@ export class YoutubeComponent implements OnInit {  //###########################
       // videoId: 'tNy8Y7BhUeI',
       height: "100%",
       width: "100%",
-      playerVars: {  
+      playerVars: {
         autoplay: 0,
         modestbranding: 1,
         controls: 1,

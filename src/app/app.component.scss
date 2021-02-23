@@ -24,7 +24,7 @@ app-header {
     // min-height : 17rem;
     background: rgb(185,204,237);
     background: linear-gradient(0deg, rgba(185,204,237,1) 0%, rgba(255,255,255,0.8071603641456583) 100%);
-    border-bottom : 3px solid black;
+    border-bottom: 3px solid black;
     width: 100vw;
 }
 
@@ -61,7 +61,7 @@ app-header {
         width: 46vw;
         @include respond(phone) { width: 50vw; }
         overflow-y: scroll;
-        box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.75);
+        box-shadow: 0 0 2px 1px rgba(0,0,0,0.75);
         padding : 1.5rem 1rem;
         transition: all 0.4s;
     }
@@ -72,7 +72,7 @@ app-header {
         background-position: center;
         // transition: all .9s !important;
         transition: all 0.5s ease-in-out;
-    }  
+    }
 
     app-lyrics {
       z-index: 10;

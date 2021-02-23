@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit { //#############################
   constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
 
   ngOnInit(): void {
-    this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data => { this.lyricsStillLoading = data })
-    this.synchUIService.videoSearch_LoadingNow$.subscribe(data => { this.videoStillLoading = data })
+    this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data => { this.lyricsStillLoading = data });
+    this.synchUIService.videoSearch_LoadingNow$.subscribe(data => { this.videoStillLoading = data });
   }
 
   //searches for both videos and lyrics at the same time
@@ -32,13 +32,13 @@ export class HeaderComponent implements OnInit { //#############################
     }
   }
 
-  typingSearchQuery(searchInput  : HTMLInputElement) { this.synchUIService.bindSearchQuery(searchInput.value) }
+  typingSearchQuery(searchInput: HTMLInputElement) { this.synchUIService.bindSearchQuery(searchInput.value) }
 
   refreshPage() { location.reload() }
 
-  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ = true ; this.searchInputBeingEntered = true } 
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ = true ; this.searchInputBeingEntered = true }
   onBlur_SearchInput() { this.synchUIService.searchQueryIsBeing$ = false ; this.searchInputBeingEntered = false }
 
-  
+
 }  //###############################################################################################################################################
 // ######################################################################################################################################################

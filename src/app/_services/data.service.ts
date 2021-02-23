@@ -14,16 +14,16 @@ import { SynchUIService } from './synch-ui.service';
  */
 // #########################################################################################################################################################
 export class DataService {  //##############################################################################################################################
-  allLyricsSuggestions : LyricObj[] = [];
+  allLyricsSuggestions: LyricObj[] = [];
   allLyricsSuggestions$ = new Subject<LyricObj[]>() ;
-  
-  allVideosSuggestions : videoObj[] = [];
+
+  allVideosSuggestions: videoObj[] = [];
   allVideosSuggestions$ = new Subject<videoObj[]>() ;
 
 
-  constructor(private ajaxService : AjaxService, private synchUIService : SynchUIService) {}
+  constructor(private ajaxService: AjaxService, private synchUIService: SynchUIService) {}
 
-  
+
   lyricsNotify() {
     this.allLyricsSuggestions$.next(this.allLyricsSuggestions);
   }
@@ -44,26 +44,32 @@ export class DataService {  //##################################################
       })
       this.lyricsNotify();
       this.synchUIService.lyricsSearch_StopLoading();
-    })
+    },
+      err => {
+        console.log('fetching lyrics error : ', err);
+        alert(err.error.messages);
+      })
 
   }
 
 
   getVideos(searchQuery : string) {
-    this.allVideosSuggestions = [];
-    this.ajaxService.fetchVideo(searchQuery).subscribe((data : any) => {
-      const allItems = data.items;
-      allItems.forEach(el => {
-        const newVideoObj = new videoObj(this.transformHTMLChars(el.snippet.title), el.id.videoId , el.snippet.thumbnails.high.url);
-        this.allVideosSuggestions.push(newVideoObj);
-      })
-      this.videosNotify();
-      this.synchUIService.videoSearch_StopLoading();
-    })
-
+      this.allVideosSuggestions = [];
+      this.ajaxService.fetchVideo(searchQuery).subscribe((data : any) => {
+        console.log('data videos : ' , data);
+        const allItems = data.items;
+        allItems.forEach(el => {
+          const newVideoObj = new videoObj(this.transformHTMLChars(el.snippet.title), el.id.videoId , el.snippet.thumbnails.high.url);
+          this.allVideosSuggestions.push(newVideoObj);
+        })
+        this.videosNotify();
+        this.synchUIService.videoSearch_StopLoading();
+      }
+      ,
+        err => console.log('fetchin videos Error', err))
   }
 
- 
+
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ PRIVATE  §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
