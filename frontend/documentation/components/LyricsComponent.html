@@ -1,0 +1,1714 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sing-along documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sing-along documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>LyricsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/lyrics/lyrics.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-lyrics</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./lyrics.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./lyrics.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allSuggestions">allSuggestions</a>
+                            </li>
+                            <li>
+                                <a href="#FinalTextToDisplay">FinalTextToDisplay</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading">isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isLyricsFullScreen">isLyricsFullScreen</a>
+                            </li>
+                            <li>
+                                <a href="#lyricsCurrentFontSize">lyricsCurrentFontSize</a>
+                            </li>
+                            <li>
+                                <a href="#mainPageScrolled">mainPageScrolled</a>
+                            </li>
+                            <li>
+                                <a href="#scrolledToEndOfPage">scrolledToEndOfPage</a>
+                            </li>
+                            <li>
+                                <a href="#searchInputBeingEntered">searchInputBeingEntered</a>
+                            </li>
+                            <li>
+                                <a href="#searchQuery">searchQuery</a>
+                            </li>
+                            <li>
+                                <a href="#selectedLyric">selectedLyric</a>
+                            </li>
+                            <li>
+                                <a href="#selectedTitle">selectedTitle</a>
+                            </li>
+                            <li>
+                                <a href="#showLyricsContainer">showLyricsContainer</a>
+                            </li>
+                            <li>
+                                <a href="#showSuggestions">showSuggestions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#decreaseFontSize">decreaseFontSize</a>
+                            </li>
+                            <li>
+                                <a href="#increaseFontSize">increaseFontSize</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBlur_SearchInput">onBlur_SearchInput</a>
+                            </li>
+                            <li>
+                                <a href="#onFocus_SearchInput">onFocus_SearchInput</a>
+                            </li>
+                            <li>
+                                <a href="#onFullScreenLyrics">onFullScreenLyrics</a>
+                            </li>
+                            <li>
+                                <a href="#onSearch">onSearch</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectLyric">onSelectLyric</a>
+                            </li>
+                            <li>
+                                <a href="#onShrinkLyrics">onShrinkLyrics</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isVideoSelected">isVideoSelected</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#hideBackgroundImageEmitter">hideBackgroundImageEmitter</a>
+                            </li>
+                            <li>
+                                <a href="#lyricsFullScreenEmitter">lyricsFullScreenEmitter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, synchUIService: <a href="../injectables/SynchUIService.html">SynchUIService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/lyrics/lyrics.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>synchUIService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SynchUIService.html" target="_self" >SynchUIService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isVideoSelected"></a>
+                        <b>isVideoSelected</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/lyrics/lyrics.component.ts:41</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="hideBackgroundImageEmitter"></a>
+                        <b>hideBackgroundImageEmitter</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/lyrics/lyrics.component.ts:39</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lyricsFullScreenEmitter"></a>
+                        <b>lyricsFullScreenEmitter</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/lyrics/lyrics.component.ts:40</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="decreaseFontSize"></a>
+                    <span class="name">
+                        <b>
+                            decreaseFontSize
+                        </b>
+                        <a href="#decreaseFontSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>decreaseFontSize()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="94"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:94</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="increaseFontSize"></a>
+                    <span class="name">
+                        <b>
+                            increaseFontSize
+                        </b>
+                        <a href="#increaseFontSize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>increaseFontSize()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="90"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:90</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="46"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:46</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBlur_SearchInput"></a>
+                    <span class="name">
+                        <b>
+                            onBlur_SearchInput
+                        </b>
+                        <a href="#onBlur_SearchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBlur_SearchInput()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFocus_SearchInput"></a>
+                    <span class="name">
+                        <b>
+                            onFocus_SearchInput
+                        </b>
+                        <a href="#onFocus_SearchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFocus_SearchInput()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="99"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:99</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFullScreenLyrics"></a>
+                    <span class="name">
+                        <b>
+                            onFullScreenLyrics
+                        </b>
+                        <a href="#onFullScreenLyrics"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFullScreenLyrics()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:74</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                        <b>
+                            onSearch
+                        </b>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearch(searchInput: HTMLInputElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:59</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>searchInput</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectLyric"></a>
+                    <span class="name">
+                        <b>
+                            onSelectLyric
+                        </b>
+                        <a href="#onSelectLyric"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectLyric(lyricObj: <a href="../classes/LyricObj.html">LyricObj</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>lyricObj</td>
+                                    <td>
+                                                <code><a href="../classes/LyricObj.html" target="_self" >LyricObj</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onShrinkLyrics"></a>
+                    <span class="name">
+                        <b>
+                            onShrinkLyrics
+                        </b>
+                        <a href="#onShrinkLyrics"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onShrinkLyrics()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/lyrics/lyrics.component.ts:83</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allSuggestions"></a>
+                        <span class="name">
+                            <b>
+                            allSuggestions</b>
+                            <a href="#allSuggestions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/LyricObj.html" target="_self" >LyricObj[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/lyrics/lyrics.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="FinalTextToDisplay"></a>
+                        <span class="name">
+                            <b>
+                            FinalTextToDisplay</b>
+                            <a href="#FinalTextToDisplay"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/lyrics/lyrics.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <span class="name">
+                            <b>
+                            isLoading</b>
+                            <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/lyrics/lyrics.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLyricsFullScreen"></a>
+                        <span class="name">
+                            <b>
+                            isLyricsFullScreen</b>
+                            <a href="#isLyricsFullScreen"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/lyrics/lyrics.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lyricsCurrentFontSize"></a>
+                        <span class="name">
+                            <b>
+                            lyricsCurrentFontSize</b>
+                            <a href="#lyricsCurrentFontSize"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1.5</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/lyrics/lyrics.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mainPageScrolled"></a>
+                        <span class="name">
+                            <b>
+                            mainPageScrolled</b>
+                            <a href="#mainPageScrolled"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/lyrics/lyrics.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scrolledToEndOfPage"></a>
+                        <span class="name">
+                            <b>
+                            scrolledToEndOfPage</b>
+                            <a href="#scrolledToEndOfPage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/lyrics/lyrics.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchInputBeingEntered"></a>
+                        <span class="name">
+                            <b>
+                            searchInputBeingEntered</b>
+                            <a href="#searchInputBeingEntered"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/lyrics/lyrics.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchQuery"></a>
+                        <span class="name">
+                            <b>
+                            searchQuery</b>
+                            <a href="#searchQuery"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/lyrics/lyrics.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedLyric"></a>
+                        <span class="name">
+                            <b>
+                            selectedLyric</b>
+                            <a href="#selectedLyric"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/lyrics/lyrics.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedTitle"></a>
+                        <span class="name">
+                            <b>
+                            selectedTitle</b>
+                            <a href="#selectedTitle"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/lyrics/lyrics.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showLyricsContainer"></a>
+                        <span class="name">
+                            <b>
+                            showLyricsContainer</b>
+                            <a href="#showLyricsContainer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/lyrics/lyrics.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showSuggestions"></a>
+                        <span class="name">
+                            <b>
+                            showSuggestions</b>
+                            <a href="#showSuggestions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/lyrics/lyrics.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Output, EventEmitter, Input } from &#x27;@angular/core&#x27;;
+
+import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displayChosenLyricTrigger, displayEnlargeIconTrigger } from &#x27;../animations&#x27;;
+
+import { DataService } from &#x27;../_services/data.service&#x27;;
+import { LyricObj } from &#x27;./lyrics.model&#x27;;
+import { SynchUIService } from &#x27;../_services/synch-ui.service&#x27;;
+
+@Component({
+  selector: &#x27;app-lyrics&#x27;,
+  templateUrl: &#x27;./lyrics.component.html&#x27;,
+  styleUrls: [&#x27;./lyrics.component.scss&#x27;],
+  animations : [
+    displayVideoSuggestionsTrigger,
+    displayLyricsSuggestionsTrigger,
+    displayChosenLyricTrigger,
+    displayEnlargeIconTrigger
+  ]
+})
+
+//############################################################################################################################################################
+export class LyricsComponent implements OnInit {  //##########################################################################################################
+  allSuggestions : LyricObj[] &#x3D; [];
+
+  lyricsCurrentFontSize : number &#x3D; 1.5;
+  selectedLyric : string;
+  selectedTitle : string;
+  FinalTextToDisplay : string &#x3D; &#x27;&#x27;;
+  searchQuery : string &#x3D; &#x27;&#x27;;
+
+  isLoading &#x3D; false;
+  searchInputBeingEntered &#x3D; false;
+  isLyricsFullScreen &#x3D; false;
+  showSuggestions &#x3D; false;
+  showLyricsContainer &#x3D; false;
+  scrolledToEndOfPage &#x3D; false;
+  mainPageScrolled &#x3D; false;
+
+  @Output() hideBackgroundImageEmitter &#x3D; new EventEmitter&lt;boolean&gt;();
+  @Output() lyricsFullScreenEmitter &#x3D; new EventEmitter&lt;boolean&gt;();
+  @Input() isVideoSelected &#x3D; false;
+
+
+  constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
+
+  ngOnInit(): void {
+    this.synchUIService.searchQueryTyped$.subscribe(data &#x3D;&gt; { this.searchQuery &#x3D; data })
+    this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data &#x3D;&gt; { this.isLoading &#x3D; data })
+    this.dataService.allLyricsSuggestions$.subscribe((data : any) &#x3D;&gt; {
+      this.allSuggestions &#x3D; data;
+      this.showSuggestions &#x3D; true;
+    })
+    this.synchUIService.lyricsFullScreen$.subscribe(data &#x3D;&gt; {
+      this.isLyricsFullScreen &#x3D; data;
+    })
+
+  }
+
+  onSearch(searchInput : HTMLInputElement) {
+    this.isLoading &#x3D; true;
+    this.dataService.getLyrics(searchInput.value);
+  }
+
+  onSelectLyric(lyricObj : LyricObj) {
+    this.hideBackgroundImageEmitter.emit(true);
+    this.selectedLyric &#x3D; lyricObj.lyrics;
+    this.selectedTitle &#x3D; lyricObj.title;
+    this.FinalTextToDisplay &#x3D;  this.selectedTitle + &#x27;\n \n \n&#x27; + this.selectedLyric;
+  
+    this.showSuggestions &#x3D; false;
+    this.showLyricsContainer &#x3D; true;
+  }
+
+  onFullScreenLyrics() {
+    if(this.isVideoSelected) {
+      this.lyricsFullScreenEmitter.emit(true);
+      this.isLyricsFullScreen &#x3D; true;
+      this.synchUIService.scrolledToEndOfPage$.subscribe(data &#x3D;&gt; { this.scrolledToEndOfPage &#x3D; data })
+      this.synchUIService.mainScollOfPage$.subscribe(data &#x3D;&gt; { this.mainPageScrolled &#x3D; data })
+    }
+  }
+
+  onShrinkLyrics() {
+    this.lyricsFullScreenEmitter.emit(false);
+    this.synchUIService.lyricsFullScreen$.next(false);
+    this.synchUIService.setVideoOnTheSide$.next(false);
+  }
+
+  
+  increaseFontSize() {
+    if(this.lyricsCurrentFontSize &lt; 2.5) { this.lyricsCurrentFontSize +&#x3D; 0.5 }
+  }
+
+  decreaseFontSize() {
+    if(this.lyricsCurrentFontSize &gt; 1.5) { this.lyricsCurrentFontSize -&#x3D; 0.5 }
+  }
+
+  
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ &#x3D; true ; this.searchInputBeingEntered &#x3D; true }
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeing$ &#x3D; false ; this.searchInputBeingEntered &#x3D; false }
+
+
+}  //########################################################################################################################################################
+// ##########################################################################################################################################################
+
+
+
+
+
+/* 
+str &#x3D; &#x60;[Verse 1]
+Hello, it&#x27;s me
+I was wondering if after all these years you&#x27;d like to meet
+To go over everything
+They say that time&#x27;s supposed to heal ya, but I ain&#x27;t done much healing
+Hello, can you hear me?
+I&#x27;m in California dreaming about who we used to be
+When we were younger and free
+I&#x27;ve forgotten how it felt before the world fell at our feet
+
+[Pre-Chorus]
+There&#x27;s such a difference between us
+And a million miles
+
+[Chorus]
+Hello from the other side
+I must&#x27;ve called a thousand times
+To tell you I&#x27;m sorry for everything that I&#x27;ve done
+But when I call, you never seem to be home
+Hello from the outside
+At least, I can say that I&#x27;ve tried
+To tell you I&#x27;m sorry for breaking your heart
+But it don&#x27;t matter, it clearly doesn&#x27;t tear you apart anymore
+
+[Verse 2]
+Hello, how are you?
+It&#x27;s so typical of me to talk about myself, I&#x27;m sorry
+I hope that you&#x27;re well
+Did you ever make it out of that town where nothing ever happened?
+
+[Pre-Chorus]
+It&#x27;s no secret that the both of us
+Are running out of time
+
+[Chorus]&#x60;
+
+strFinal &#x3D; &#x27;Adele milionssss \n \n \n&#x27; + this.str;
+
+ */</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;screenSizeIconsContainer&quot;
+*ngIf&#x3D;&#x27;isVideoSelected &amp;&amp; showLyricsContainer&#x27;
+@displayEnlargeIconState  
+[ngClass]&#x3D;&quot;{ &#x27;screenSizeIconsContainer-fullScreenMode&#x27; : isLyricsFullScreen }&quot;&gt;
+    &lt;div class&#x3D;&quot;screenSizeIconsContainer__tooltiptext&quot;&gt; &lt;span *ngIf&#x3D;&#x27;!isLyricsFullScreen&#x27; &gt; fullscreen &lt;/span&gt;  &lt;span *ngIf&#x3D;&#x27;isLyricsFullScreen&#x27; &gt; minimize &lt;/span&gt; &lt;/div&gt;
+    &lt;svg class&#x3D;&quot;screenSizeIcon  screenSizeIcon-enlarge&quot; *ngIf&#x3D;&#x27;!isLyricsFullScreen &amp;&amp; showLyricsContainer&#x27;  (click)&#x3D;&#x27;onFullScreenLyrics()&#x27;&gt;
+        &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-enlarge&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class&#x3D;&quot;fontSizeIconsContainer&quot;  
+*ngIf&#x3D;&#x27;showLyricsContainer&#x27; 
+@displayChosenLyricState  
+[ngClass]&#x3D;&quot;{ &#x27;fontSizeIconsContainer-lyricsFullScreen&#x27; : isLyricsFullScreen ,
+&#x27;fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement&#x27;  : scrolledToEndOfPage , 
+&#x27;fontSizeIconsContainer-lyricsFullScreen-mainPageAdjustement&#x27;   : mainPageScrolled }&quot;&gt; 
+    &lt;span class&#x3D;&quot;fontSizeIconsContainer__tooltiptext&quot;&gt; increase/decrease font-size &lt;/span&gt;
+    &lt;svg class&#x3D;&quot;fontSizeIcon fontSizeIcon-shrink&quot;   (click)&#x3D;&#x27;onShrinkLyrics()&#x27; *ngIf&#x3D;&#x27;isLyricsFullScreen&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-shrink&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+    &lt;svg class&#x3D;&quot;fontSizeIcon fontSizeIcon-increase&quot; (click)&#x3D;&#x27;increaseFontSize()&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-plus-square&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+    &lt;svg class&#x3D;&quot;fontSizeIcon fontSizeIcon-decrease&quot; (click)&#x3D;&#x27;decreaseFontSize()&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-minus-square&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class&#x3D;&quot;searchBoxContainer  searchBoxContainer-lyrics&quot;&gt;
+
+    &lt;input class&#x3D;&quot;searchBox&quot; #searchInput
+    [ngClass]&#x3D;&quot;{ &#x27;searchBox-active&#x27;  : searchInputBeingEntered }&quot;  
+    placeholder&#x3D;&quot;search for lyrics ..&quot;   type&#x3D;&quot;text&quot; 
+    [value]&#x3D;&quot;searchQuery&quot;
+    (keyup.enter)&#x3D;&quot;onSearch(searchInput); searchInput.blur()&quot; (focus)&#x3D;&#x27;onFocus_SearchInput()&#x27; (blur)&#x3D;&#x27;onBlur_SearchInput()&#x27;&gt; 
+
+    &lt;div class&#x3D;&quot;searchIconWrapper&quot; (click)&#x3D;&#x27;onSearch(searchInput); searchInput.blur()&#x27; &gt;
+        &lt;svg class&#x3D;&quot;searchIconWrapper__mainIcon&quot;     *ngIf&#x3D;&#x27;!isLoading&#x27; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-file-music&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+        &lt;img class&#x3D;&quot;searchIconWrapper__loadingIcon&quot;  *ngIf&#x3D;&#x27;isLoading&#x27;  src&#x3D;&quot;/assets/loadingSpinners/svg-loaders/audio.svg&quot;/&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;ul class&#x3D;&quot;lyricsSuggestionsWrapper&quot; *ngIf&#x3D;&quot;showSuggestions&quot;   @displayLyricsSuggestionsState&gt;
+    &lt;li class&#x3D;&quot;lyricsSuggestion&quot; *ngFor&#x3D;&quot;let sugg of allSuggestions&quot; (click)&#x3D;&quot;onSelectLyric(sugg)&quot; &gt;  {{ sugg.title }} &lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+&lt;div class&#x3D;&quot;lyricWrapper&quot;  
+*ngIf&#x3D;&#x27;showLyricsContainer&#x27; 
+@displayChosenLyricState
+[innerText]&#x3D;&quot;FinalTextToDisplay&quot;   
+[ngClass]&#x3D;&quot;{&#x27;fontSize-1_5rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 1.5 , &#x27;fontSize-2rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 2 ,&#x27;fontSize-2_5rem&#x27; : lyricsCurrentFontSize &#x3D;&#x3D;&#x3D; 2.5 }&quot;&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./lyrics.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;src/variables.scss&#x27; ;
+@import &#x27;src/mixins.scss&#x27;;
+
+
+
+:host {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+}
+
+
+.screenSizeIconsContainer {
+    position: absolute;
+    top: 1.2%;
+    left : 1.2%;
+
+    &amp;:hover .screenSizeIconsContainer__tooltiptext {
+        opacity: 0.8;
+        visibility: visible;
+    }
+
+    &amp;__tooltiptext {
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 5px;
+        font-style: italic;
+        padding: .5rem;
+        position: absolute;
+        top: 124%;
+        left: -12%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+
+        &amp;::after {
+            content : &#x27;&#x27;;
+            position :absolute;
+            top: -19%;
+            right: 54%;
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+        }
+    }
+ 
+    .screenSizeIcon {
+        height : 2rem;
+        width: 2rem;
+        cursor : pointer;
+        fill : rgba(0, 0, 0, 0.521);
+
+        &amp;-enlarge {
+            @include respond(tab-port-small) { 
+                height : 3rem;
+                width: 3rem;
+                position : fixed;
+                top: 77.7%;
+                right: 5.7%;
+            }
+        }
+    
+    }
+
+}
+
+
+
+
+.fontSizeIconsContainer {
+    position : fixed;
+    top: 37%;
+    right: 5%;
+    @include respond(tab-port-small) { top : 84% }
+    
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    transition: all 0.2s ease-out;
+
+    &amp;:hover &gt; &amp;__tooltiptext { opacity: 0.8 }
+
+    &amp;__tooltiptext {
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 5px;
+        font-style: italic;
+        padding: .5rem;
+        position: absolute;
+        top: 122%;
+        left: -219%;
+        opacity: 0;
+        transition: all 0.2s;
+
+        &amp;::after {
+            content : &#x27;&#x27;;
+            position :absolute;
+            top: -19%;
+            right: 12%;
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            
+            border-bottom: 10px solid white;
+        }
+    }
+
+    &amp;-lyricsFullScreen {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        top : auto;
+        right : auto;
+
+        &amp;-mainPageAdjustement { 
+            @include respond(tab-port-small-minWidth) { margin-top: -3rem !important  }
+        }
+
+        &amp;-endOfPageAdjustement { 
+            margin-top: -6rem !important
+        }
+
+        // @include respond(tab-port-small) { margin-top: 1rem  }
+    }
+
+    .fontSizeIcon {
+        height: 3rem;
+        width: 3rem;
+        cursor : pointer;
+        fill : rgba(0, 0, 0, 0.521);
+        @include respond(tab-port-small) {  height: 4rem; width: 4rem }
+        &amp;:not(:last-child) { 
+            margin-bottom: 1rem;
+            @include respond(phone) { margin-bottom: 2rem }
+        }
+        
+        &amp;-increase { position: relative }
+
+        &amp;-shrink {
+            height: 2.7rem;
+            width: 2.7rem;
+        }
+    }
+}
+
+
+
+.searchBoxContainer-lyrics {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+
+
+.lyricsSuggestionsWrapper {
+    align-self: center;
+    list-style: none;
+    width : 87%;
+
+    .lyricsSuggestion {
+        cursor : pointer;
+        background-color: #D4E0F4;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        border : 1px solid rgba(0, 0, 0, 0.473);
+        transition : all 0.2s;
+
+        &amp;:first-child {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        &amp;:last-child {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            margin-bottom: 2rem;
+        }
+
+        &amp;:not(:first-child) { border-top : 1px solid rgba(0, 0, 0, 0.473) }
+
+        &amp;:not(:last-child) { border-bottom : none }
+
+        &amp;:hover { background-color: rgba(147, 181, 241, 0.644) }
+    }
+}
+
+
+.lyricWrapper {
+    margin-bottom: 1.5rem;
+    font-family: &#x27;Raleway&#x27;, sans-serif;
+    line-height: 152%;
+    font-weight: 500;
+    font-size : 1.5rem;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    padding : 0 0.5rem;
+
+    &amp;::first-line {
+        font-weight: bolder;
+        font-style: italic;
+        font-size : 2rem;
+    }
+}
+
+
+.fontSize-1_5rem { font-size: 1.5rem !important }
+.fontSize-2rem { font-size: 2rem !important }
+.fontSize-2_5rem { font-size: 2.5rem !important }
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="screenSizeIconsContainer"*ngIf=\'isVideoSelected && showLyricsContainer\'@displayEnlargeIconState  [ngClass]="{ \'screenSizeIconsContainer-fullScreenMode\' : isLyricsFullScreen }">    <div class="screenSizeIconsContainer__tooltiptext"> <span *ngIf=\'!isLyricsFullScreen\' > fullscreen </span>  <span *ngIf=\'isLyricsFullScreen\' > minimize </span> </div>    <svg class="screenSizeIcon  screenSizeIcon-enlarge" *ngIf=\'!isLyricsFullScreen && showLyricsContainer\'  (click)=\'onFullScreenLyrics()\'>        <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use>    </svg></div><div class="fontSizeIconsContainer"  *ngIf=\'showLyricsContainer\' @displayChosenLyricState  [ngClass]="{ \'fontSizeIconsContainer-lyricsFullScreen\' : isLyricsFullScreen ,\'fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement\'  : scrolledToEndOfPage , \'fontSizeIconsContainer-lyricsFullScreen-mainPageAdjustement\'   : mainPageScrolled }">     <span class="fontSizeIconsContainer__tooltiptext"> increase/decrease font-size </span>    <svg class="fontSizeIcon fontSizeIcon-shrink"   (click)=\'onShrinkLyrics()\' *ngIf=\'isLyricsFullScreen\'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>    <svg class="fontSizeIcon fontSizeIcon-increase" (click)=\'increaseFontSize()\'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>    <svg class="fontSizeIcon fontSizeIcon-decrease" (click)=\'decreaseFontSize()\'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg></div><div class="searchBoxContainer  searchBoxContainer-lyrics">    <input class="searchBox" #searchInput    [ngClass]="{ \'searchBox-active\'  : searchInputBeingEntered }"      placeholder="search for lyrics .."   type="text"     [value]="searchQuery"    (keyup.enter)="onSearch(searchInput); searchInput.blur()" (focus)=\'onFocus_SearchInput()\' (blur)=\'onBlur_SearchInput()\'>     <div class="searchIconWrapper" (click)=\'onSearch(searchInput); searchInput.blur()\' >        <svg class="searchIconWrapper__mainIcon"     *ngIf=\'!isLoading\' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>        <img class="searchIconWrapper__loadingIcon"  *ngIf=\'isLoading\'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>    </div></div><ul class="lyricsSuggestionsWrapper" *ngIf="showSuggestions"   @displayLyricsSuggestionsState>    <li class="lyricsSuggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)" >  {{ sugg.title }} </li></ul><div class="lyricWrapper"  *ngIf=\'showLyricsContainer\' @displayChosenLyricState[innerText]="FinalTextToDisplay"   [ngClass]="{\'fontSize-1_5rem\' : lyricsCurrentFontSize === 1.5 , \'fontSize-2rem\' : lyricsCurrentFontSize === 2 ,\'fontSize-2_5rem\' : lyricsCurrentFontSize === 2.5 }"></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'detectScroll', 'selector': '[appDetectScroll]'}];
+    var ACTUAL_COMPONENT = {'name': 'LyricsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LyricsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

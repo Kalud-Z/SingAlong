@@ -1,0 +1,994 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sing-along documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sing-along documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>HeaderComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/header/header.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-header</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./header.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./header.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#lyricsStillLoading">lyricsStillLoading</a>
+                            </li>
+                            <li>
+                                <a href="#searchInputBeingEntered">searchInputBeingEntered</a>
+                            </li>
+                            <li>
+                                <a href="#videoStillLoading">videoStillLoading</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBlur_SearchInput">onBlur_SearchInput</a>
+                            </li>
+                            <li>
+                                <a href="#onFocus_SearchInput">onFocus_SearchInput</a>
+                            </li>
+                            <li>
+                                <a href="#onSearch">onSearch</a>
+                            </li>
+                            <li>
+                                <a href="#refreshPage">refreshPage</a>
+                            </li>
+                            <li>
+                                <a href="#typingSearchQuery">typingSearchQuery</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, synchUIService: <a href="../injectables/SynchUIService.html">SynchUIService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/header/header.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>synchUIService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SynchUIService.html" target="_self" >SynchUIService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="19"
+                            class="link-to-prism">src/app/header/header.component.ts:19</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBlur_SearchInput"></a>
+                    <span class="name">
+                        <b>
+                            onBlur_SearchInput
+                        </b>
+                        <a href="#onBlur_SearchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBlur_SearchInput()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/header/header.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFocus_SearchInput"></a>
+                    <span class="name">
+                        <b>
+                            onFocus_SearchInput
+                        </b>
+                        <a href="#onFocus_SearchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFocus_SearchInput()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/header/header.component.ts:39</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                        <b>
+                            onSearch
+                        </b>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearch(input: HTMLInputElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/header/header.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>input</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="refreshPage"></a>
+                    <span class="name">
+                        <b>
+                            refreshPage
+                        </b>
+                        <a href="#refreshPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>refreshPage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/header/header.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="typingSearchQuery"></a>
+                    <span class="name">
+                        <b>
+                            typingSearchQuery
+                        </b>
+                        <a href="#typingSearchQuery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>typingSearchQuery(searchInput: HTMLInputElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/header/header.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>searchInput</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="lyricsStillLoading"></a>
+                        <span class="name">
+                            <b>
+                            lyricsStillLoading</b>
+                            <a href="#lyricsStillLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/header/header.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchInputBeingEntered"></a>
+                        <span class="name">
+                            <b>
+                            searchInputBeingEntered</b>
+                            <a href="#searchInputBeingEntered"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/header/header.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoStillLoading"></a>
+                        <span class="name">
+                            <b>
+                            videoStillLoading</b>
+                            <a href="#videoStillLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/header/header.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { DataService } from &#x27;../_services/data.service&#x27;;
+import { SynchUIService } from &#x27;../_services/synch-ui.service&#x27;;
+
+@Component({
+  selector: &#x27;app-header&#x27;,
+  templateUrl: &#x27;./header.component.html&#x27;,
+  styleUrls: [&#x27;./header.component.scss&#x27;]
+})
+
+// ##########################################################################################################################################################
+export class HeaderComponent implements OnInit { //###########################################################################################################
+  lyricsStillLoading &#x3D; false;
+  videoStillLoading  &#x3D; false;
+  searchInputBeingEntered &#x3D; false;
+
+  constructor(private dataService : DataService , private synchUIService : SynchUIService) { }
+
+  ngOnInit(): void {
+    this.synchUIService.lyricsSearch_LoadingNow$.subscribe(data &#x3D;&gt; { this.lyricsStillLoading &#x3D; data })
+    this.synchUIService.videoSearch_LoadingNow$.subscribe(data &#x3D;&gt; { this.videoStillLoading &#x3D; data })
+  }
+
+  //searches for both videos and lyrics at the same time
+  onSearch(input : HTMLInputElement) {
+    if(input.value.length &gt; 0) {
+      this.lyricsStillLoading &#x3D; true;
+      this.videoStillLoading &#x3D; true;
+      this.dataService.getLyrics(input.value);
+      this.dataService.getVideos(input.value);
+      this.synchUIService.lyricsFullScreen$.next(false); //in case we are in fullscreen mode. we wanna exit it, upon a new search.
+    }
+  }
+
+  typingSearchQuery(searchInput  : HTMLInputElement) { this.synchUIService.bindSearchQuery(searchInput.value) }
+
+  refreshPage() { location.reload() }
+
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ &#x3D; true ; this.searchInputBeingEntered &#x3D; true } 
+  onBlur_SearchInput() { this.synchUIService.searchQueryIsBeing$ &#x3D; false ; this.searchInputBeingEntered &#x3D; false }
+
+  
+}  //###############################################################################################################################################
+// ######################################################################################################################################################
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+&lt;div class&#x3D;&quot;logoContainer&quot; (click)&#x3D;&#x27;refreshPage()&#x27;&gt;
+    &lt;span&gt; Sing &lt;/span&gt;
+    &lt;span&gt; Along&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class&#x3D;&quot;titleWrapper&quot;&gt;
+    &lt;div class&#x3D;&quot;text&quot;&gt;
+        &lt;div class&#x3D;&quot;text__partA&quot;&gt;
+            &lt;span class&#x3D;&quot;text__partA__1&quot;&gt; Music gives a soul to the Universe,  &lt;/span&gt;
+            &lt;span class&#x3D;&quot;text__partA__2&quot;&gt; wings to the Mind &lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;text__partB&quot;&gt;
+            &lt;span class&#x3D;&quot;text__partB__1&quot;&gt; flight to the Imagination &lt;/span&gt;
+            &lt;span class&#x3D;&quot;text__partB__2&quot;&gt; and life to Everything &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;img class&#x3D;&quot;musicIcon&quot;  src&#x3D;&quot;/assets/music-icon.svg&quot;/&gt;
+
+
+&lt;div class&#x3D;&quot;searchBoxContainer  searchBoxContainer-headerComponent&quot;&gt;
+        &lt;input  
+        #searchInput
+        type&#x3D;&quot;text&quot;  class&#x3D;&quot;searchBox&quot;  placeholder&#x3D;&quot;search for songs ..&quot; 
+        [ngClass]&#x3D;&quot;{ &#x27;searchBox-active&#x27;  : searchInputBeingEntered }&quot;
+        (input)&#x3D;&quot;typingSearchQuery(searchInput)&quot;  (focus)&#x3D;&#x27;onFocus_SearchInput()&#x27;  (blur)&#x3D;&#x27;onBlur_SearchInput()&#x27; 
+        (keyup.enter)&#x3D;&quot;onSearch(searchInput); searchInput.blur()&quot;
+        &gt; 
+
+        &lt;div class&#x3D;&quot;searchIconWrapper&quot;  (click)&#x3D;&#x27;onSearch(searchInput) ; searchInput.blur()&#x27;  &gt;
+            &lt;svg class&#x3D;&quot;searchIconWrapper__mainIcon&quot;     *ngIf&#x3D;&#x27;!(lyricsStillLoading || videoStillLoading)&#x27; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-music-playlist&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+            &lt;img class&#x3D;&quot;searchIconWrapper__loadingIcon&quot;  *ngIf&#x3D;&#x27;lyricsStillLoading || videoStillLoading&#x27; src&#x3D;&quot;/assets/loadingSpinners/svg-loaders/audio.svg&quot;/&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./header.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+@import &#x27;src/variables.scss&#x27; ;
+@import &#x27;src/mixins.scss&#x27;;
+
+
+
+:host {
+   display : flex;
+   justify-content: center;
+//    align-items: flex-end;
+   align-items: center;
+   flex-direction: column;
+   position: relative;
+   padding : 2rem 0;
+}
+
+
+
+.logoContainer {
+    position: absolute;
+    top: 0 ;
+    left : 0;
+    display : grid;
+    padding :0 1rem;
+
+
+    &amp; span {
+        font-size: 3rem;
+        font-family: &#x27;Niconne&#x27;, cursive;
+        color: #c21f27;
+
+        &amp;::first-letter {
+            font-size : 5rem;
+            color: rgb(236, 37, 146);
+            font-weight:bolder
+        }
+
+        &amp;:last-child {
+            margin-left: 2rem;
+            margin-top: -1.5rem;
+        }
+    }
+}
+
+.titleWrapper {
+    width : 70%;
+    margin-bottom: 6rem;
+    transform: translateX(3%);
+    @include respond(phone-small) { 
+        margin-top : 1.2rem;
+        align-self: flex-end;
+        margin-right : 2rem;
+        max-width : 75%;
+    }
+
+    // background-color: rgba(255, 0, 0, 0.103);
+
+    .text {
+        height : 100%;
+        width : 100%;
+
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+
+        font-family: &#x27;Delius Swash Caps&#x27;, cursive;
+        font-size: 2.6rem;
+        @include respond(tab-port) { font-size: 2rem;  }
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+
+        &amp;__partA , &amp;__partB {
+            @include respond(phone-small) {
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                justify-self: center !important;
+            }
+        }
+
+        &amp;__partA {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            justify-self: start;
+            @include colorGradientTop;
+
+            &amp;__1 {
+                @include respond(phone-small) { @include colorGradientTop }
+            }
+
+            &amp;__2 {
+                @include respond(phone-small) { @include colorGradientBottom }
+            }
+        }
+
+        &amp;__partB {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            justify-self: end;
+            @include colorGradientBottom;
+
+            &amp;__1 {
+                @include respond(phone-small) { @include colorGradientTop }
+            }
+
+            &amp;__2 {
+                @include respond(phone-small) { @include colorGradientBottom }
+            }
+
+        }
+        
+
+
+    }
+}
+
+.musicIcon {
+    position: absolute;
+    bottom: 4%;
+    right: -0.9%;
+    width : 8rem;
+    height: 8rem;
+    animation: rotating 60s infinite;
+
+}
+
+.searchBoxContainer-headerComponent {
+    // align-self: flex-end;
+    // margin-bottom : 2rem;
+}
+
+
+
+@keyframes rotating {
+    0% {
+      transform: rotateY(0deg);
+    }
+    10% {
+      transform: rotateY(360deg);
+    }
+    20% {
+        transform: rotateY(0deg);
+    }
+  }
+
+
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="logoContainer" (click)=\'refreshPage()\'>    <span> Sing </span>    <span> Along</span></div><div class="titleWrapper">    <div class="text">        <div class="text__partA">            <span class="text__partA__1"> Music gives a soul to the Universe,  </span>            <span class="text__partA__2"> wings to the Mind </span>        </div>        <div class="text__partB">            <span class="text__partB__1"> flight to the Imagination </span>            <span class="text__partB__2"> and life to Everything </span>        </div>    </div></div><img class="musicIcon"  src="/assets/music-icon.svg"/><div class="searchBoxContainer  searchBoxContainer-headerComponent">        <input          #searchInput        type="text"  class="searchBox"  placeholder="search for songs .."         [ngClass]="{ \'searchBox-active\'  : searchInputBeingEntered }"        (input)="typingSearchQuery(searchInput)"  (focus)=\'onFocus_SearchInput()\'  (blur)=\'onBlur_SearchInput()\'         (keyup.enter)="onSearch(searchInput); searchInput.blur()"        >         <div class="searchIconWrapper"  (click)=\'onSearch(searchInput) ; searchInput.blur()\'  >            <svg class="searchIconWrapper__mainIcon"     *ngIf=\'!(lyricsStillLoading || videoStillLoading)\' > <use xlink:href="/assets/symbol-defs.svg#icon-music-playlist"></use> </svg>            <img class="searchIconWrapper__loadingIcon"  *ngIf=\'lyricsStillLoading || videoStillLoading\' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>        </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'detectScroll', 'selector': '[appDetectScroll]'}];
+    var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HeaderComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

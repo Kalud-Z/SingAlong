@@ -1,0 +1,16 @@
+<div class="container"   appDetectScroll >
+    <app-header></app-header>
+
+    <main class="body"   [ngClass]="{ body__lyricsFullScreen : isLyricsFullScreen }"  [@lyricsFullScreenState]="isLyricsFullScreen ? 'fullScreen' : 'default'" >
+        <app-youtube #youtubeVideoContainer
+          [ngClass]="{ videoShrink : isLyricsFullScreen }"
+          (videoSelectedEmitter)='videoSelected = $event'
+          [isLyricsFullScreen]="isLyricsFullScreen"></app-youtube>
+
+        <app-lyrics
+          (hideBackgroundImageEmitter)='hideBackgroundImage = true'
+          [isVideoSelected]='videoSelected'
+          [ngClass]="{'lyrics-background-hideImage' : hideBackgroundImage , lyricsFullScreen : isLyricsFullScreen}"
+          (lyricsFullScreenEmitter)='onLyricsFullScreen($event)'></app-lyrics>
+    </main>
+</div>

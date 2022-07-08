@@ -1,0 +1,328 @@
+@import 'src/mixins.scss';
+
+
+:host {
+    display : flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+
+.iframeOuterContainer {
+    background-color: rgba(189, 207, 238, 0.616);
+    border :1px solid rgba(255, 0, 0, 0.5);
+    border-radius: 5px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position : relative;
+    padding : 1.5rem;
+    padding-top : 4rem;
+    padding-bottom : 1rem;
+
+    &-hide {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    &-inLyricsFullscreenMode { padding-top : 1rem !important }
+
+    &-inInitialMode { height : auto !important }
+
+    .closeVideoIcon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        cursor : pointer;
+        transition : all 0.15s;
+        fill : rgba(0, 0, 0, 0.527);
+        &:hover { fill : black  }
+    }
+
+
+    .iframeWrapper {
+        z-index: 10;
+        border-radius: 4px;
+        height: 13vw;
+        align-self: stretch;
+        position: relative;
+
+        &-small {
+            height : 30vh !important;
+            width : 39vw !important;
+            @include respond(tab-port) { width : 60vw !important }
+            @include respond(tab-port-small) { width : 80vw !important }
+            
+            align-self: center;
+        }
+
+        &-onTheSide {
+            transition: all .2s ease-in-out !important;
+            z-index: 510;
+            height: 24vh !important;
+            width: 32vw !important;
+            position : fixed !important;
+            top: 0.9% !important;
+            right: 3% !important;
+            border-radius: 1rem !important;
+            opacity : 0.4 !important;
+            &:hover { opacity : 1 !important }
+        }
+
+        &-hide {
+            opacity : 0 !important;
+            visibility: hidden !important;
+        }
+
+        &__shield , &__loadingWindow {
+            position : absolute;
+            top: 0;
+            left : 0;
+            height : 100%;
+            width : 100%;
+        }
+
+        &__shield { cursor: pointer }
+
+        &__loadingWindow {
+            z-index: -1;
+            background-color: black;
+            display : flex;
+            align-items: center;
+            justify-content: center;
+            &__icon { 
+                width : 16%;
+                height : auto;
+            }
+        }
+    
+
+    }
+
+
+    .controlVideoIconsContainer {
+        z-index: 50;
+        position: relative;
+        align-self: stretch;
+        margin-top : 1rem;
+        display :flex;
+        justify-content: center;
+        align-items: center;
+        color :  rgb(209, 75, 75);
+
+        &-onTheSide {
+            z-index: 500;
+            background-color: #f3bcb8;
+            border : .5px solid rgba(0, 0, 0, 0.418);
+            width: 33vw !important;
+            @include respond(tab-port-small) {  width: 75vw !important }
+            position : fixed !important;
+            top: 85% !important;
+            right: 3% !important;
+            opacity : 0.5 !important;
+            padding: 1rem 0;
+            transition: all 0.2s ease-out;
+            &:hover { opacity : 1 !important ; border : .5px solid black }
+
+            &-endOfPageAdjustement { top : 83% !important }
+        }
+
+        .controlIcon {
+            align-self: center;
+            height : 3.5rem;
+            width : 3.5rem;
+            @include respond(phone) { height : 4.5rem; width : 4.5rem  }
+            cursor : pointer;
+            transition : all 0.13s;
+            fill : currentColor;
+            &:hover { fill : rgba(0, 0, 0, 0.692) }
+        
+            &:not(:last-child) { margin-right : 2rem ; @include respond(tab-port-small) { margin-right : 2rem }  }
+            &-play , &-pause {
+                height : 4.5rem;
+                width : 4.5rem;
+                @include respond(phone) { height : 5.5rem; width : 5.5rem  }
+            }
+        }
+
+        .controlVolumeWrapper {
+            display : flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 17%;
+            transform: translate(-50%, -50%);
+            @include respond(phone) { display :none }
+
+            .controlVolumeIcon {
+                height: 2rem;
+                width: 2rem;
+                @include respond(phone) { height: 3rem; width: 3rem }
+    
+                &-equalizer {
+                    margin: 0;
+                    fill: currentColor;
+                    &:hover + .volumeRangeSlider {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            .volumeRangeSlider {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: -294%;
+                left: 0%;
+                @include respond(tab-port-small) { left: -20% }
+                transform: rotate(-90deg);
+                width : 10rem;
+                &:hover {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .volumeRangeSliderWrapper {
+                display : flex;
+                @include respond(phone) { display : none }
+                align-items: center;
+                justify-content: center;
+
+                &:hover .volumeRangeSlider {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                
+            }
+        }
+    }
+
+}
+
+
+.searchBoxContainer-video {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+
+
+.videosSuggestionsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    justify-content: center;
+    @include respond(tab-port) { grid-template-columns: 1fr 1fr }
+    @include respond(tab-port-small) { grid-template-columns: 1fr }
+
+    .videosSuggestion {
+        cursor: pointer;
+        overflow:hidden;
+        border-radius: 4px;
+        transition: all 0.1s;
+        display : grid;
+        grid-template-rows: 15rem 1fr;
+        align-items: stretch;
+        
+        border :1px solid transparent;
+        &:hover {  border :1px solid rgba(255, 0, 0, 0.5) }
+
+        &__imgWrapper {
+            width: 100%;
+            height: 100%;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        &__title {
+            display : flex;
+            align-items: center;
+            justify-content: center;
+            padding : 1.5rem 1rem;
+            background-color: rgba(195, 155, 218, 0.527);
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+
+
+// ##################################################################################################################################################
+
+
+// custom input range slider
+/* between chrome and firefox all properties are the same, Expect translateY needs a diff value. */
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: transparent;
+    z-index: 600;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    z-index: 600;
+    width: 100%;
+    height: 2rem;
+    cursor: pointer;
+    background: white;
+    border-radius: 25px;
+    border-width: 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    z-index: 600;
+    border-width: 0;
+    // height: 1.5rem;
+    height: 2rem;
+    width: 3.5rem;
+    border-radius: 6px;
+    background: rgb(187, 59, 59);
+    cursor: -webkit-grab;
+    cursor: pointer;
+    -webkit-appearance: none;
+} 
+
+
+// for Firefox ###################################################################
+
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1.5rem;
+    cursor: pointer;
+    background: rgb(221, 184, 191);
+    border-radius: 25px;
+    border-width: 0;
+}
+
+input[type=range]::-moz-range-thumb {
+    border-width: 0;
+    height: 1.5rem;
+    width: 2rem;
+    border-radius: 6px;
+    background: rgb(187, 59, 59);
+    cursor: -webkit-grab;
+    cursor: grab;
+    -webkit-appearance: none;
+    // transform: translateY(-7%);
+}
+

@@ -1,0 +1,49 @@
+<div class="screenSizeIconsContainer"
+*ngIf='isVideoSelected && showLyricsContainer'
+@displayEnlargeIconState
+[ngClass]="{ 'screenSizeIconsContainer-fullScreenMode' : isLyricsFullScreen }">
+    <div class="screenSizeIconsContainer__tooltiptext">
+      <span *ngIf='!isLyricsFullScreen' > fullscreen </span>
+      <span *ngIf='isLyricsFullScreen' > minimize </span>
+    </div>
+    <svg class="screenSizeIcon  screenSizeIcon-enlarge" *ngIf='!isLyricsFullScreen && showLyricsContainer'  (click)='onFullScreenLyrics()'>
+        <use xlink:href="/assets/symbol-defs.svg#icon-enlarge"></use>
+    </svg>
+</div>
+
+<div class="fontSizeIconsContainer"
+*ngIf='showLyricsContainer'
+@displayChosenLyricState
+[ngClass]="{ 'fontSizeIconsContainer-lyricsFullScreen' : isLyricsFullScreen ,
+'fontSizeIconsContainer-lyricsFullScreen-endOfPageAdjustement'  : scrolledToEndOfPage ,
+'fontSizeIconsContainer-lyricsFullScreen-mainPageAdjustement'   : mainPageScrolled }">
+    <span class="fontSizeIconsContainer__tooltiptext"> increase/decrease font-size </span>
+    <svg class="fontSizeIcon fontSizeIcon-shrink"   (click)='onShrinkLyrics()' *ngIf='isLyricsFullScreen'> <use xlink:href="/assets/symbol-defs.svg#icon-shrink"></use> </svg>
+    <svg class="fontSizeIcon fontSizeIcon-increase" (click)='increaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-plus-square"></use> </svg>
+    <svg class="fontSizeIcon fontSizeIcon-decrease" (click)='decreaseFontSize()'> <use xlink:href="/assets/symbol-defs.svg#icon-minus-square"></use> </svg>
+</div>
+
+<div class="searchBoxContainer  searchBoxContainer-lyrics">
+    <input class="searchBox" #searchInput
+           placeholder="search for lyrics .."   type="text"
+           [ngClass]="{'searchBox-active': searchInputBeingEntered}"  [value]="searchQuery"
+           (keyup.enter)="onSearch(searchInput); searchInput.blur()" (focus)='onFocus_SearchInput()' (blur)='onBlur_SearchInput()'>
+    <div class="searchIconWrapper" (click)='onSearch(searchInput); searchInput.blur()' >
+        <svg class="searchIconWrapper__mainIcon"     *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-file-music"></use> </svg>
+        <img class="searchIconWrapper__loadingIcon"  *ngIf='isLoading'  src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
+    </div>
+</div>
+
+<ul class="lyricsSuggestionsWrapper" *ngIf="showSuggestions"   @displayLyricsSuggestionsState>
+    <li class="lyricsSuggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectLyric(sugg)" >  {{ sugg.fullTitle }} </li>
+</ul>
+
+<div class="lyricWrapper"  *ngIf='showLyricsContainer'  @displayChosenLyricState  [innerText]="FinalTextToDisplay"
+    [ngClass]="{'fontSize-1_5rem' : lyricsCurrentFontSize === 1.5 , 'fontSize-2rem' : lyricsCurrentFontSize === 2,
+                'fontSize-2_5rem' : lyricsCurrentFontSize === 2.5 }">
+</div>
+
+<div class="loaderOverlay" *ngIf="fetchingLyricLoader">
+    <img  src="/assets/loadingSpinners/svg-loaders/circles.svg"/>
+</div>
+

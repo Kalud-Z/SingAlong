@@ -1,0 +1,2563 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>sing-along documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">sing-along documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>YoutubeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/youtube/youtube.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-youtube</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./youtube.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./youtube.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#allSuggestions">allSuggestions</a>
+                            </li>
+                            <li>
+                                <a href="#iframeOuterContainer">iframeOuterContainer</a>
+                            </li>
+                            <li>
+                                <a href="#iframeOuterContainerHeight_alreadySet">iframeOuterContainerHeight_alreadySet</a>
+                            </li>
+                            <li>
+                                <a href="#isLoading">isLoading</a>
+                            </li>
+                            <li>
+                                <a href="#isVideoMuted">isVideoMuted</a>
+                            </li>
+                            <li>
+                                <a href="#player">player</a>
+                            </li>
+                            <li>
+                                <a href="#scrolledToEndOfPage">scrolledToEndOfPage</a>
+                            </li>
+                            <li>
+                                <a href="#searchInputEntered">searchInputEntered</a>
+                            </li>
+                            <li>
+                                <a href="#searchQuery">searchQuery</a>
+                            </li>
+                            <li>
+                                <a href="#selectedVideoID">selectedVideoID</a>
+                            </li>
+                            <li>
+                                <a href="#setVideoOnTheSide">setVideoOnTheSide</a>
+                            </li>
+                            <li>
+                                <a href="#showSuggestions">showSuggestions</a>
+                            </li>
+                            <li>
+                                <a href="#showVideoFrame">showVideoFrame</a>
+                            </li>
+                            <li>
+                                <a href="#videoAlreadyLoadedOnce">videoAlreadyLoadedOnce</a>
+                            </li>
+                            <li>
+                                <a href="#videoID">videoID</a>
+                            </li>
+                            <li>
+                                <a href="#videoPlayer">videoPlayer</a>
+                            </li>
+                            <li>
+                                <a href="#videoState">videoState</a>
+                            </li>
+                            <li>
+                                <a href="#volumeRangeSlider">volumeRangeSlider</a>
+                            </li>
+                            <li>
+                                <a href="#YT">YT</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changeVolume">changeVolume</a>
+                            </li>
+                            <li>
+                                <a href="#initVideoPlayer">initVideoPlayer</a>
+                            </li>
+                            <li>
+                                <a href="#initYoutubeIframeAPI">initYoutubeIframeAPI</a>
+                            </li>
+                            <li>
+                                <a href="#jumpBackward">jumpBackward</a>
+                            </li>
+                            <li>
+                                <a href="#jumpForward">jumpForward</a>
+                            </li>
+                            <li>
+                                <a href="#muteVideo">muteVideo</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onBlur_SearchInput">onBlur_SearchInput</a>
+                            </li>
+                            <li>
+                                <a href="#onFocus_SearchInput">onFocus_SearchInput</a>
+                            </li>
+                            <li>
+                                <a href="#onPlayerReady">onPlayerReady</a>
+                            </li>
+                            <li>
+                                <a href="#onSearch">onSearch</a>
+                            </li>
+                            <li>
+                                <a href="#onSelectVideo">onSelectVideo</a>
+                            </li>
+                            <li>
+                                <a href="#pauseVideo">pauseVideo</a>
+                            </li>
+                            <li>
+                                <a href="#playVideo">playVideo</a>
+                            </li>
+                            <li>
+                                <a href="#returnToVideos">returnToVideos</a>
+                            </li>
+                            <li>
+                                <a href="#toggleVideo">toggleVideo</a>
+                            </li>
+                            <li>
+                                <a href="#unmuteVideo">unmuteVideo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isLyricsFullScreen">isLyricsFullScreen</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#videoSelectedEmitter">videoSelectedEmitter</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#document:keydown">document:keydown</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, sanitizer: <a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank">DomSanitizer</a>, renderer: <a href="https://angular.io/api/core/Renderer2" target="_blank">Renderer2</a>, synchUIService: <a href="../injectables/SynchUIService.html">SynchUIService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/youtube/youtube.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dataService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DataService.html" target="_self" >DataService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sanitizer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/platform-browser/DomSanitizer" target="_blank" >DomSanitizer</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>renderer</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Renderer2" target="_blank" >Renderer2</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>synchUIService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SynchUIService.html" target="_self" >SynchUIService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLyricsFullScreen"></a>
+                        <b>isLyricsFullScreen</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/youtube/youtube.component.ts:35</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoSelectedEmitter"></a>
+                        <b>videoSelectedEmitter</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/youtube/youtube.component.ts:36</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="document:keydown"></a>
+                    <span class="name">
+                        <b>
+                            document:keydown
+                        </b>
+                        <a href="#document:keydown"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>document:keydown(event: KeyboardEvent)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changeVolume"></a>
+                    <span class="name">
+                        <b>
+                            changeVolume
+                        </b>
+                        <a href="#changeVolume"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changeVolume(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="220"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:220</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initVideoPlayer"></a>
+                    <span class="name">
+                        <b>
+                            initVideoPlayer
+                        </b>
+                        <a href="#initVideoPlayer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initVideoPlayer()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="163"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:163</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initYoutubeIframeAPI"></a>
+                    <span class="name">
+                        <b>
+                            initYoutubeIframeAPI
+                        </b>
+                        <a href="#initYoutubeIframeAPI"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initYoutubeIframeAPI()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:146</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jumpBackward"></a>
+                    <span class="name">
+                        <b>
+                            jumpBackward
+                        </b>
+                        <a href="#jumpBackward"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>jumpBackward()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:201</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jumpForward"></a>
+                    <span class="name">
+                        <b>
+                            jumpForward
+                        </b>
+                        <a href="#jumpForward"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>jumpForward()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="205"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:205</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="muteVideo"></a>
+                    <span class="name">
+                        <b>
+                            muteVideo
+                        </b>
+                        <a href="#muteVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>muteVideo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:209</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onBlur_SearchInput"></a>
+                    <span class="name">
+                        <b>
+                            onBlur_SearchInput
+                        </b>
+                        <a href="#onBlur_SearchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onBlur_SearchInput()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onFocus_SearchInput"></a>
+                    <span class="name">
+                        <b>
+                            onFocus_SearchInput
+                        </b>
+                        <a href="#onFocus_SearchInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onFocus_SearchInput()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:100</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPlayerReady"></a>
+                    <span class="name">
+                        <b>
+                            onPlayerReady
+                        </b>
+                        <a href="#onPlayerReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onPlayerReady(event)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="188"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:188</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                        <b>
+                            onSearch
+                        </b>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearch(searchInput: HTMLInputElement)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>searchInput</td>
+                                    <td>
+                                            <code>HTMLInputElement</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSelectVideo"></a>
+                    <span class="name">
+                        <b>
+                            onSelectVideo
+                        </b>
+                        <a href="#onSelectVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSelectVideo(sugg: <a href="../classes/videoObj.html">videoObj</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sugg</td>
+                                    <td>
+                                                <code><a href="../classes/videoObj.html" target="_self" >videoObj</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pauseVideo"></a>
+                    <span class="name">
+                        <b>
+                            pauseVideo
+                        </b>
+                        <a href="#pauseVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pauseVideo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="196"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:196</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="playVideo"></a>
+                    <span class="name">
+                        <b>
+                            playVideo
+                        </b>
+                        <a href="#playVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>playVideo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="191"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:191</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="returnToVideos"></a>
+                    <span class="name">
+                        <b>
+                            returnToVideos
+                        </b>
+                        <a href="#returnToVideos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>returnToVideos()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleVideo"></a>
+                    <span class="name">
+                        <b>
+                            toggleVideo
+                        </b>
+                        <a href="#toggleVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleVideo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="225"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:225</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unmuteVideo"></a>
+                    <span class="name">
+                        <b>
+                            unmuteVideo
+                        </b>
+                        <a href="#unmuteVideo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unmuteVideo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="215"
+                            class="link-to-prism">src/app/youtube/youtube.component.ts:215</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="allSuggestions"></a>
+                        <span class="name">
+                            <b>
+                            allSuggestions</b>
+                            <a href="#allSuggestions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/videoObj.html" target="_self" >videoObj[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/youtube/youtube.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="iframeOuterContainer"></a>
+                        <span class="name">
+                            <b>
+                            iframeOuterContainer</b>
+                            <a href="#iframeOuterContainer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;iframeOuterContainer&#x27;, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/youtube/youtube.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="iframeOuterContainerHeight_alreadySet"></a>
+                        <span class="name">
+                            <b>
+                            iframeOuterContainerHeight_alreadySet</b>
+                            <a href="#iframeOuterContainerHeight_alreadySet"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/youtube/youtube.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isLoading"></a>
+                        <span class="name">
+                            <b>
+                            isLoading</b>
+                            <a href="#isLoading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/youtube/youtube.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isVideoMuted"></a>
+                        <span class="name">
+                            <b>
+                            isVideoMuted</b>
+                            <a href="#isVideoMuted"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="112" class="link-to-prism">src/app/youtube/youtube.component.ts:112</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="player"></a>
+                        <span class="name">
+                            <b>
+                            player</b>
+                            <a href="#player"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">src/app/youtube/youtube.component.ts:110</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scrolledToEndOfPage"></a>
+                        <span class="name">
+                            <b>
+                            scrolledToEndOfPage</b>
+                            <a href="#scrolledToEndOfPage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/youtube/youtube.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchInputEntered"></a>
+                        <span class="name">
+                            <b>
+                            searchInputEntered</b>
+                            <a href="#searchInputEntered"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/youtube/youtube.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchQuery"></a>
+                        <span class="name">
+                            <b>
+                            searchQuery</b>
+                            <a href="#searchQuery"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/youtube/youtube.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedVideoID"></a>
+                        <span class="name">
+                            <b>
+                            selectedVideoID</b>
+                            <a href="#selectedVideoID"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/youtube/youtube.component.ts:107</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setVideoOnTheSide"></a>
+                        <span class="name">
+                            <b>
+                            setVideoOnTheSide</b>
+                            <a href="#setVideoOnTheSide"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/youtube/youtube.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showSuggestions"></a>
+                        <span class="name">
+                            <b>
+                            showSuggestions</b>
+                            <a href="#showSuggestions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/youtube/youtube.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showVideoFrame"></a>
+                        <span class="name">
+                            <b>
+                            showVideoFrame</b>
+                            <a href="#showVideoFrame"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/youtube/youtube.component.ts:114</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoAlreadyLoadedOnce"></a>
+                        <span class="name">
+                            <b>
+                            videoAlreadyLoadedOnce</b>
+                            <a href="#videoAlreadyLoadedOnce"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/app/youtube/youtube.component.ts:113</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoID"></a>
+                        <span class="name">
+                            <b>
+                            videoID</b>
+                            <a href="#videoID"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/youtube/youtube.component.ts:109</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoPlayer"></a>
+                        <span class="name">
+                            <b>
+                            videoPlayer</b>
+                            <a href="#videoPlayer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;videoPlayer&#x27;, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/youtube/youtube.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="videoState"></a>
+                        <span class="name">
+                            <b>
+                            videoState</b>
+                            <a href="#videoState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>1</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="111" class="link-to-prism">src/app/youtube/youtube.component.ts:111</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="volumeRangeSlider"></a>
+                        <span class="name">
+                            <b>
+                            volumeRangeSlider</b>
+                            <a href="#volumeRangeSlider"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;volumeRangeSlider&#x27;, {static: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/youtube/youtube.component.ts:116</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="YT"></a>
+                        <span class="name">
+                            <b>
+                            YT</b>
+                            <a href="#YT"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/youtube/youtube.component.ts:108</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+import { DomSanitizer} from &#x27;@angular/platform-browser&#x27;;
+
+
+import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from &#x27;../animations&#x27;;
+import { SynchUIService } from &#x27;../_services/synch-ui.service&#x27;;
+import { DataService } from &#x27;../_services/data.service&#x27;;
+import { videoObj } from &#x27;./video.model&#x27;;
+
+
+@Component({
+  selector: &#x27;app-youtube&#x27;,
+  templateUrl: &#x27;./youtube.component.html&#x27;,
+  styleUrls: [&#x27;./youtube.component.scss&#x27;],
+  animations : [
+    closeVideoIconTrigger,
+    displayVideoSuggestionsTrigger,
+    iframeOuterContainerTrigger
+  ]
+})
+
+//############################################################################################################################################################
+export class YoutubeComponent implements OnInit {  //#########################################################################################################
+  allSuggestions : videoObj[] &#x3D; [];
+  isLoading &#x3D; false;
+  showSuggestions &#x3D; false;
+  searchInputEntered &#x3D; false;
+  iframeOuterContainerHeight_alreadySet &#x3D; false;
+  setVideoOnTheSide &#x3D; false;
+  scrolledToEndOfPage &#x3D; false;
+  searchQuery : string &#x3D; &#x27;&#x27;;
+
+  @Input() isLyricsFullScreen &#x3D; false;
+  @Output() videoSelectedEmitter &#x3D; new EventEmitter&lt;boolean&gt;();
+
+  @ViewChild(&#x27;videoPlayer&#x27; , { static : false}) videoPlayer : ElementRef; 
+  @ViewChild(&#x27;iframeOuterContainer&#x27; , { static : false}) iframeOuterContainer : ElementRef; 
+
+  constructor(private dataService : DataService,
+              private sanitizer: DomSanitizer,
+              private renderer : Renderer2,
+              private synchUIService : SynchUIService
+              ) { }
+            
+
+
+  ngOnInit() {
+    this.synchUIService.searchQueryTyped$.subscribe(data &#x3D;&gt; { this.searchQuery &#x3D; data })
+
+    this.synchUIService.videoSearch_LoadingNow$.subscribe(data &#x3D;&gt; { this.isLoading &#x3D; data })
+
+    this.dataService.allVideosSuggestions$.subscribe(data &#x3D;&gt; {
+      if(this.showVideoFrame) { this.returnToVideos()  }
+      this.allSuggestions &#x3D; data;
+      this.showSuggestions &#x3D; true;
+    })
+
+    this.synchUIService.setVideoOnTheSide$.subscribe(data &#x3D;&gt; {
+      // to make sure the container doesn&#x27;t lose its height, when the video moves to the side. 
+     if(!this.iframeOuterContainerHeight_alreadySet) {
+       const desiredHeight &#x3D; this.iframeOuterContainer.nativeElement.clientHeight;
+       this.renderer.setStyle(this.iframeOuterContainer.nativeElement, &#x27;height&#x27;, &#x60;${desiredHeight}px&#x60;);
+       this.iframeOuterContainerHeight_alreadySet &#x3D; true;
+     }
+      this.setVideoOnTheSide &#x3D; data;
+      console.log(&#x27;set video in thesdie now , this isthe this.setVideoOnTheSide : &#x27; ,  this.setVideoOnTheSide)
+    })
+
+    this.synchUIService.scrolledToEndOfPage$.subscribe(data &#x3D;&gt; { this.scrolledToEndOfPage &#x3D; data })
+  } //ngOnInit
+
+
+  returnToVideos() {
+    this.showSuggestions &#x3D; true;
+    this.showVideoFrame &#x3D; false;
+    this.videoSelectedEmitter.emit(false);
+    this.player.destroy(); //so we can load another video afterwards, by creating a new player.
+  }
+
+  onSearch(searchInput : HTMLInputElement) {
+    if(this.showVideoFrame) { this.returnToVideos() } //we close the video in case it is opened. 
+    this.isLoading &#x3D; true;
+    this.showVideoFrame &#x3D; false;
+    this.dataService.getVideos(searchInput.value)
+  }
+
+  onSelectVideo(sugg : videoObj) {
+    this.selectedVideoID &#x3D; sugg.videoID;
+    this.videoSelectedEmitter.emit(true);
+
+    this.showSuggestions &#x3D; false;
+    this.showVideoFrame &#x3D; true;
+    
+    this.initYoutubeIframeAPI()
+  }
+
+
+  onFocus_SearchInput() { this.synchUIService.searchQueryIsBeing$ &#x3D; true  ; this.searchInputEntered &#x3D; true }
+  onBlur_SearchInput()  { this.synchUIService.searchQueryIsBeing$ &#x3D; false ; this.searchInputEntered &#x3D; false }
+
+
+  // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+
+  selectedVideoID &#x3D; &#x27;&#x27;
+  YT: any;
+  videoID: string;
+  player: any;
+  videoState &#x3D; 1; //&#x3D; 2 &#x3D;&#x3D;&gt; playin // &#x3D; 1 &#x3D;&#x3D;&gt; paused
+  isVideoMuted &#x3D; false;
+  videoAlreadyLoadedOnce &#x3D; false;
+  showVideoFrame &#x3D; false;
+
+  @ViewChild(&#x27;volumeRangeSlider&#x27; , { static : false}) volumeRangeSlider : ElementRef; 
+
+
+  // keyCode &#x3D; 39  arrow right
+  // keyCode &#x3D; 37  arrow left
+  // keyCode &#x3D; 38  arrow up
+  // keyCode &#x3D; 40  arrow down
+  // keyCode &#x3D; 32  space
+
+  @HostListener(&#x27;document:keydown&#x27;, [&#x27;$event&#x27;]) handleKeyboardEvent(event: KeyboardEvent) { 
+    if(this.player &amp;&amp; !this.synchUIService.searchQueryIsBeing$) { //otherwise , unexpected error and behavior might occur.
+      if(event.keyCode &#x3D;&#x3D;&#x3D; 39) {  //we skip forward
+        this.jumpForward();
+      }
+
+      if(event.keyCode &#x3D;&#x3D;&#x3D; 37) {  //we skip backward
+        this.jumpBackward();
+      }
+
+      if(event.keyCode &#x3D;&#x3D;&#x3D; 32) {  //we pause or play
+        if(event.target &#x3D;&#x3D;&#x3D; document.body) { event.preventDefault() }
+
+        if(this.videoState &#x3D;&#x3D; 1) { this.playVideo() }
+        if(this.videoState &#x3D;&#x3D; 2) { this.pauseVideo() }
+      }
+
+    } //outer-if
+  } //HostListener
+        
+
+  initYoutubeIframeAPI() {
+    // Return if Player is already created . in case we wanna play another video . without refreshing the app.
+    if (window[&#x27;YT&#x27;]) {
+      this.initVideoPlayer();
+      return;
+    }
+
+    var tag &#x3D; document.createElement(&#x27;script&#x27;);
+    tag.src &#x3D; &#x27;https://www.youtube.com/iframe_api&#x27;;
+    var firstScriptTag &#x3D; document.getElementsByTagName(&#x27;script&#x27;)[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    /* initVideoPlayer() will create an &lt;iframe&gt; (and YouTube player) after the API code downloads. */
+    window[&#x27;onYouTubeIframeAPIReady&#x27;] &#x3D; () &#x3D;&gt; this.initVideoPlayer();
+  }
+
+
+  initVideoPlayer() {
+    this.player &#x3D; new window[&#x27;YT&#x27;].Player(&#x27;player&#x27;, {
+      videoId: this.selectedVideoID,
+      // videoId: &#x27;tNy8Y7BhUeI&#x27;,
+      height: &quot;100%&quot;,
+      width: &quot;100%&quot;,
+      playerVars: {  
+        autoplay: 0,
+        modestbranding: 1,
+        controls: 1,
+        disablekb: 1,
+        rel: 0,
+        showinfo: 0,
+        fs: 0,
+        enablejsapi : 1,
+        iv_load_policy : 3, // annotations &#x3D;&gt; 1 : show | 3 : hide
+        cc_load_policy : 0
+      },
+      events: {
+        &#x27;onReady&#x27;  : this.onPlayerReady
+      }
+    });
+
+  }
+
+  onPlayerReady(event) {
+  }
+
+  playVideo() {
+    this.player.playVideo()
+    setTimeout(() &#x3D;&gt; { this.videoState &#x3D; 2 }, 50)
+  }
+
+  pauseVideo() {
+    this.player.pauseVideo()
+    setTimeout(() &#x3D;&gt; { this.videoState &#x3D; 1 }, 50);
+  }
+
+  jumpBackward() {
+    this.player.seekTo(this.player.getCurrentTime() - 5, true)
+  }
+
+  jumpForward() {
+    this.player.seekTo(this.player.getCurrentTime() + 5, true)
+  }
+
+  muteVideo() {
+    this.player.mute();
+    this.isVideoMuted &#x3D; true;
+    this.volumeRangeSlider.nativeElement.value &#x3D; 2;
+  }
+
+  unmuteVideo() {
+    this.player.unMute();
+    this.isVideoMuted &#x3D; false;
+  }
+
+  changeVolume(event) {
+    this.unmuteVideo();
+    this.player.setVolume(event.target.value);
+  }
+
+  toggleVideo() {
+    if(this.videoState &#x3D;&#x3D;&#x3D; 1) { this.playVideo() }
+    if(this.videoState &#x3D;&#x3D;&#x3D; 2) { this.pauseVideo() }
+  }
+
+}  //#########################################################################################################################################################
+// ###########################################################################################################################################################
+
+
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">
+
+&lt;div class&#x3D;&quot;searchBoxContainer  searchBoxContainer-video&quot;   *ngIf&#x3D;&#x27;!isLyricsFullScreen&#x27;&gt;
+    
+    &lt;input  class&#x3D;&quot;searchBox&quot;  #searchInput
+    [ngClass]&#x3D;&quot;{ &#x27;searchBox-active&#x27;  : searchInputEntered }&quot; 
+    type&#x3D;&quot;text&quot;  placeholder&#x3D;&quot;search for music videos ..&quot;
+    [value]&#x3D;&quot;searchQuery&quot;
+    (focus)&#x3D;&#x27;onFocus_SearchInput()&#x27; (blur)&#x3D;&#x27;onBlur_SearchInput()&#x27; (keyup.enter)&#x3D;&quot;onSearch(searchInput); searchInput.blur()&quot;&gt; 
+
+    &lt;div class&#x3D;&quot;searchIconWrapper&quot; (click)&#x3D;&#x27;onSearch(searchInput); searchInput.blur()&#x27;  &gt;
+        &lt;svg class&#x3D;&quot;searchIconWrapper__mainIcon&quot;     *ngIf&#x3D;&#x27;!isLoading&#x27; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-film&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+        &lt;img class&#x3D;&quot;searchIconWrapper__loadingIcon&quot;  *ngIf&#x3D;&#x27;isLoading&#x27; src&#x3D;&quot;/assets/loadingSpinners/svg-loaders/audio.svg&quot;/&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+ 
+
+
+&lt;ul class&#x3D;&quot;videosSuggestionsWrapper&quot; *ngIf&#x3D;&quot;showSuggestions&quot;   @displayVideoSuggestionsState &gt;
+    &lt;li class&#x3D;&quot;videosSuggestion&quot; *ngFor&#x3D;&quot;let sugg of allSuggestions&quot; (click)&#x3D;&quot;onSelectVideo(sugg)&quot;&gt;
+        &lt;figure class&#x3D;&quot;videosSuggestion__imgWrapper&quot;&gt; &lt;img  [src]&#x3D;&quot;[sugg.thumbnail]&quot;&gt; &lt;/figure&gt;
+        &lt;p class&#x3D;&quot;videosSuggestion__title&quot; &gt; {{ sugg.title }} &lt;/p&gt;
+    &lt;/li&gt;
+
+&lt;/ul&gt; 
+
+
+&lt;!-- weird issue : if I use *ngIf on this div. The player obj , stops being able to load a second video !! &#x3D;&gt; I had to add a ...-hide class to hide it. --&gt;
+&lt;div class&#x3D;&quot;iframeOuterContainer&quot; #iframeOuterContainer  
+[@iframeOuterContainerState]&#x3D;&quot;!showVideoFrame ? &#x27;hidden&#x27; : &#x27;shown&#x27;&quot;
+[ngClass]&#x3D;&quot;{ &#x27;iframeOuterContainer-inLyricsFullscreenMode&#x27; : isLyricsFullScreen ,
+&#x27;iframeOuterContainer-inInitialMode&#x27; : !isLyricsFullScreen , &#x27;iframeOuterContainer-hide&#x27; : !showVideoFrame }&quot;&gt;
+
+    &lt;svg class&#x3D;&quot;closeVideoIcon&quot;  
+    *ngIf&#x3D;&#x27;showVideoFrame &amp;&amp; !isLyricsFullScreen&#x27;  
+    @closeVideoIconState  
+    (click)&#x3D;&quot;returnToVideos()&quot;&gt; 
+        &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-x-square&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+
+    &lt;div class&#x3D;&quot;iframeWrapper&quot;  #videoPlayer  [ngClass]&#x3D;&quot;{&#x27;iframeWrapper-small&#x27; : isLyricsFullScreen ,&#x27;iframeWrapper-hide&#x27; : !showVideoFrame  }&quot; &gt;
+        &lt;div id&#x3D;&#x27;player&#x27;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;iframeWrapper__shield&quot; (click)&#x3D;&#x27;toggleVideo()&#x27; &gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;iframeWrapper__loadingWindow&quot;&gt;   &lt;img class&#x3D;&quot;iframeWrapper__loadingWindow__icon&quot;  src&#x3D;&quot;/assets/loadingSpinners/svg-loaders/bars.svg&quot;/&gt; &lt;/div&gt;
+    &lt;/div&gt; 
+
+    &lt;div class&#x3D;&quot;controlVideoIconsContainer&quot; [ngClass]&#x3D;&quot;{&#x27;controlVideoIconsContainer-onTheSide&#x27; : setVideoOnTheSide ,
+     &#x27;controlVideoIconsContainer-onTheSide-endOfPageAdjustement&#x27; : scrolledToEndOfPage }&quot; &gt;
+        &lt;div class&#x3D;&quot;controlVolumeWrapper&quot; &gt;
+            &lt;svg class&#x3D;&quot;controlVolumeIcon controlVolumeIcon-mute   controlIcon&quot;  (click)&#x3D;&#x27;unmuteVideo()&#x27;  *ngIf&#x3D;&#x27;isVideoMuted&#x27; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-soundOff&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+            &lt;svg class&#x3D;&quot;controlVolumeIcon controlVolumeIcon-unMute controlIcon&quot;  (click)&#x3D;&#x27;muteVideo()&#x27;  *ngIf&#x3D;&#x27;!isVideoMuted&#x27; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-soundOn&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+            &lt;div class&#x3D;&quot;volumeRangeSliderWrapper&quot;  *ngIf&#x3D;&#x27;!setVideoOnTheSide&#x27;&gt; 
+                &lt;svg class&#x3D;&quot;controlVolumeIcon controlVolumeIcon-equalizer&quot; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-equalizer&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+                &lt;input type&#x3D;&quot;range&quot; class&#x3D;&quot;volumeRangeSlider&quot; #volumeRangeSlider (input)&#x3D;&#x27;changeVolume($event)&#x27; min&#x3D;&quot;0&quot; max&#x3D;&quot;100&quot;&gt;
+            &lt;/div&gt;  
+        &lt;/div&gt;
+        &lt;svg class&#x3D;&quot;controlIcon controlIcon-backward&quot;(click)&#x3D;&#x27;jumpBackward()&#x27; &gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-backward&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+        &lt;svg class&#x3D;&quot;controlIcon controlIcon-play&quot;    (click)&#x3D;&#x27;playVideo()&#x27;  *ngIf&#x3D;&#x27;videoState &#x3D;&#x3D;&#x3D; 1&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-play&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+        &lt;svg class&#x3D;&quot;controlIcon controlIcon-pause&quot;   (click)&#x3D;&#x27;pauseVideo()&#x27; *ngIf&#x3D;&#x27;videoState &#x3D;&#x3D;&#x3D; 2&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-pause&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+        &lt;svg class&#x3D;&quot;controlIcon controlIcon-forward&quot; (click)&#x3D;&#x27;jumpForward()&#x27;&gt; &lt;use xlink:href&#x3D;&quot;/assets/symbol-defs.svg#icon-forward&quot;&gt;&lt;/use&gt; &lt;/svg&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./youtube.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;src/mixins.scss&#x27;;
+
+
+:host {
+    display : flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+
+.iframeOuterContainer {
+    background-color: rgba(189, 207, 238, 0.616);
+    border :1px solid rgba(255, 0, 0, 0.5);
+    border-radius: 5px;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position : relative;
+    padding : 1.5rem;
+    padding-top : 4rem;
+    padding-bottom : 1rem;
+
+    &amp;-hide {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    &amp;-inLyricsFullscreenMode { padding-top : 1rem !important }
+
+    &amp;-inInitialMode { height : auto !important }
+
+    .closeVideoIcon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 2.5rem;
+        width: 2.5rem;
+        cursor : pointer;
+        transition : all 0.15s;
+        fill : rgba(0, 0, 0, 0.527);
+        &amp;:hover { fill : black  }
+    }
+
+
+    .iframeWrapper {
+        z-index: 10;
+        border-radius: 4px;
+        height: 13vw;
+        align-self: stretch;
+        position: relative;
+
+        &amp;-small {
+            height : 30vh !important;
+            width : 39vw !important;
+            @include respond(tab-port) { width : 60vw !important }
+            @include respond(tab-port-small) { width : 80vw !important }
+            
+            align-self: center;
+        }
+
+        &amp;-onTheSide {
+            transition: all .2s ease-in-out !important;
+            z-index: 510;
+            height: 24vh !important;
+            width: 32vw !important;
+            position : fixed !important;
+            top: 0.9% !important;
+            right: 3% !important;
+            border-radius: 1rem !important;
+            opacity : 0.4 !important;
+            &amp;:hover { opacity : 1 !important }
+        }
+
+        &amp;-hide {
+            opacity : 0 !important;
+            visibility: hidden !important;
+        }
+
+        &amp;__shield , &amp;__loadingWindow {
+            position : absolute;
+            top: 0;
+            left : 0;
+            height : 100%;
+            width : 100%;
+        }
+
+        &amp;__shield { cursor: pointer }
+
+        &amp;__loadingWindow {
+            z-index: -1;
+            background-color: black;
+            display : flex;
+            align-items: center;
+            justify-content: center;
+            &amp;__icon { 
+                width : 16%;
+                height : auto;
+            }
+        }
+    
+
+    }
+
+
+    .controlVideoIconsContainer {
+        z-index: 50;
+        position: relative;
+        align-self: stretch;
+        margin-top : 1rem;
+        display :flex;
+        justify-content: center;
+        align-items: center;
+        color :  rgb(209, 75, 75);
+
+        &amp;-onTheSide {
+            z-index: 20;
+            z-index: 500;
+            background-color: #f3bcb8;
+            transition: all .2s ease-in-out !important;
+            border : .5px solid rgba(0, 0, 0, 0.418);
+            width: 33vw !important;
+            @include respond(tab-port-small) {  width: 75vw !important }
+            position : fixed !important;
+            top: 85% !important;
+            right: 3% !important;
+            opacity : 0.5 !important;
+            padding: 1rem 0;
+            transition: all 0.2s ease-out;
+            &amp;:hover { opacity : 1 !important ; border : .5px solid black }
+
+            &amp;-endOfPageAdjustement { top : 83% !important }
+        }
+
+        .controlIcon {
+            align-self: center;
+            height : 3.5rem;
+            width : 3.5rem;
+            @include respond(phone) { height : 4.5rem; width : 4.5rem  }
+            cursor : pointer;
+            transition : all 0.13s;
+            fill : currentColor;
+            &amp;:hover { fill : rgba(0, 0, 0, 0.692) }
+        
+            &amp;:not(:last-child) { margin-right : 2rem ; @include respond(tab-port-small) { margin-right : 2rem }  }
+            &amp;-play , &amp;-pause {
+                height : 4.5rem;
+                width : 4.5rem;
+                @include respond(phone) { height : 5.5rem; width : 5.5rem  }
+            }
+        }
+
+        .controlVolumeWrapper {
+            display : flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 17%;
+            transform: translate(-50%, -50%);
+            @include respond(phone) { display :none }
+
+            .controlVolumeIcon {
+                height : 2rem;
+                width : 2rem;
+                @include respond(phone) { height : 3rem ; width : 3rem;  }
+    
+                &amp;-equalizer {
+                    margin: 0;
+                    fill : currentColor;
+                    &amp;:hover + .volumeRangeSlider {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+
+            .volumeRangeSlider {
+                opacity: 0;
+                visibility: hidden;
+                position: absolute;
+                top: -294%;
+                left: 0%;
+                @include respond(tab-port-small) { left: -20% }
+                transform: rotate(-90deg);
+                width : 10rem;
+                &amp;:hover {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            .volumeRangeSliderWrapper {
+                display : flex;
+                @include respond(phone) { display : none }
+                align-items: center;
+                justify-content: center;
+
+                &amp;:hover .volumeRangeSlider {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                
+            }
+        }
+    }
+
+}
+
+
+.searchBoxContainer-video {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+
+
+.videosSuggestionsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    justify-content: center;
+    @include respond(tab-port) { grid-template-columns: 1fr 1fr }
+    @include respond(tab-port-small) { grid-template-columns: 1fr }
+
+    .videosSuggestion {
+        cursor: pointer;
+        overflow:hidden;
+        border-radius: 4px;
+        transition: all 0.1s;
+        display : grid;
+        grid-template-rows: 15rem 1fr;
+        align-items: stretch;
+        
+        border :1px solid transparent;
+        &amp;:hover {  border :1px solid rgba(255, 0, 0, 0.5) }
+
+        &amp;__imgWrapper {
+            width: 100%;
+            height: 100%;
+
+            &amp; img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        &amp;__title {
+            display : flex;
+            align-items: center;
+            justify-content: center;
+            padding : 1.5rem 1rem;
+            background-color: rgba(195, 155, 218, 0.527);
+            font-size: 1.2rem;
+        }
+    }
+
+}
+
+
+
+// ##################################################################################################################################################
+
+
+// custom input range slider
+/* between chrome and firefox all properties are the same, Expect translateY needs a diff value. */
+
+input[type&#x3D;range] {
+    -webkit-appearance: none;
+    width: 100%;
+    background-color: transparent;
+    z-index: 600;
+}
+
+input[type&#x3D;range]:focus {
+    outline: none;
+}
+
+
+input[type&#x3D;range]::-webkit-slider-runnable-track {
+    z-index: 600;
+    width: 100%;
+    height: 2rem;
+    cursor: pointer;
+    background: white;
+    border-radius: 25px;
+    border-width: 0;
+}
+
+input[type&#x3D;range]::-webkit-slider-thumb {
+    z-index: 600;
+    border-width: 0;
+    // height: 1.5rem;
+    height: 2rem;
+    width: 3.5rem;
+    border-radius: 6px;
+    background: rgb(187, 59, 59);
+    cursor: -webkit-grab;
+    cursor: pointer;
+    -webkit-appearance: none;
+} 
+
+
+// for Firefox ###################################################################
+
+
+input[type&#x3D;range]::-moz-range-track {
+    width: 100%;
+    height: 1.5rem;
+    cursor: pointer;
+    background: rgb(221, 184, 191);
+    border-radius: 25px;
+    border-width: 0;
+}
+
+input[type&#x3D;range]::-moz-range-thumb {
+    border-width: 0;
+    height: 1.5rem;
+    width: 2rem;
+    border-radius: 6px;
+    background: rgb(187, 59, 59);
+    cursor: -webkit-grab;
+    cursor: grab;
+    -webkit-appearance: none;
+    // transform: translateY(-7%);
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="searchBoxContainer  searchBoxContainer-video"   *ngIf=\'!isLyricsFullScreen\'>        <input  class="searchBox"  #searchInput    [ngClass]="{ \'searchBox-active\'  : searchInputEntered }"     type="text"  placeholder="search for music videos .."    [value]="searchQuery"    (focus)=\'onFocus_SearchInput()\' (blur)=\'onBlur_SearchInput()\' (keyup.enter)="onSearch(searchInput); searchInput.blur()">     <div class="searchIconWrapper" (click)=\'onSearch(searchInput); searchInput.blur()\'  >        <svg class="searchIconWrapper__mainIcon"     *ngIf=\'!isLoading\' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>        <img class="searchIconWrapper__loadingIcon"  *ngIf=\'isLoading\' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>    </div></div> <ul class="videosSuggestionsWrapper" *ngIf="showSuggestions"   @displayVideoSuggestionsState >    <li class="videosSuggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)">        <figure class="videosSuggestion__imgWrapper"> <img  [src]="[sugg.thumbnail]"> </figure>        <p class="videosSuggestion__title" > {{ sugg.title }} </p>    </li></ul> <!-- weird issue : if I use *ngIf on this div. The player obj , stops being able to load a second video !! => I had to add a ...-hide class to hide it. --><div class="iframeOuterContainer" #iframeOuterContainer  [@iframeOuterContainerState]="!showVideoFrame ? \'hidden\' : \'shown\'"[ngClass]="{ \'iframeOuterContainer-inLyricsFullscreenMode\' : isLyricsFullScreen ,\'iframeOuterContainer-inInitialMode\' : !isLyricsFullScreen , \'iframeOuterContainer-hide\' : !showVideoFrame }">    <svg class="closeVideoIcon"      *ngIf=\'showVideoFrame && !isLyricsFullScreen\'      @closeVideoIconState      (click)="returnToVideos()">         <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use>    </svg>    <div class="iframeWrapper"  #videoPlayer  [ngClass]="{\'iframeWrapper-small\' : isLyricsFullScreen ,\'iframeWrapper-hide\' : !showVideoFrame  }" >        <div id=\'player\'></div>        <div class="iframeWrapper__shield" (click)=\'toggleVideo()\' ></div>        <div class="iframeWrapper__loadingWindow">   <img class="iframeWrapper__loadingWindow__icon"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>    </div>     <div class="controlVideoIconsContainer" [ngClass]="{\'controlVideoIconsContainer-onTheSide\' : setVideoOnTheSide ,     \'controlVideoIconsContainer-onTheSide-endOfPageAdjustement\' : scrolledToEndOfPage }" >        <div class="controlVolumeWrapper" >            <svg class="controlVolumeIcon controlVolumeIcon-mute   controlIcon"  (click)=\'unmuteVideo()\'  *ngIf=\'isVideoMuted\' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use> </svg>            <svg class="controlVolumeIcon controlVolumeIcon-unMute controlIcon"  (click)=\'muteVideo()\'  *ngIf=\'!isVideoMuted\' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use> </svg>            <div class="volumeRangeSliderWrapper"  *ngIf=\'!setVideoOnTheSide\'>                 <svg class="controlVolumeIcon controlVolumeIcon-equalizer" > <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg>                <input type="range" class="volumeRangeSlider" #volumeRangeSlider (input)=\'changeVolume($event)\' min="0" max="100">            </div>          </div>        <svg class="controlIcon controlIcon-backward"(click)=\'jumpBackward()\' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>        <svg class="controlIcon controlIcon-play"    (click)=\'playVideo()\'  *ngIf=\'videoState === 1\'> <use xlink:href="/assets/symbol-defs.svg#icon-play"></use> </svg>        <svg class="controlIcon controlIcon-pause"   (click)=\'pauseVideo()\' *ngIf=\'videoState === 2\'> <use xlink:href="/assets/symbol-defs.svg#icon-pause"></use> </svg>        <svg class="controlIcon controlIcon-forward" (click)=\'jumpForward()\'> <use xlink:href="/assets/symbol-defs.svg#icon-forward"></use> </svg>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'LyricsComponent', 'selector': 'app-lyrics'},{'name': 'SoundCloudComponent', 'selector': 'app-sound-cloud'},{'name': 'YoutubeComponent', 'selector': 'app-youtube'}];
+    var DIRECTIVES = [{'name': 'AdjustPlayerSizeDirective', 'selector': '[appAdjustPlayerSize]'},{'name': 'detectScroll', 'selector': '[appDetectScroll]'}];
+    var ACTUAL_COMPONENT = {'name': 'YoutubeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'YoutubeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

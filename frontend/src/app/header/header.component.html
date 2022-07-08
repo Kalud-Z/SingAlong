@@ -1,0 +1,35 @@
+<div class="logoContainer" (click)='refreshPage()'>
+    <span> Sing </span>
+    <span> Along</span>
+</div>
+
+<div class="titleWrapper">
+    <div class="text">
+        <div class="text__partA">
+            <span class="text__partA__1"> Music gives a soul to the Universe,  </span>
+            <span class="text__partA__2"> wings to the Mind </span>
+        </div>
+        <div class="text__partB">
+            <span class="text__partB__1"> flight to the Imagination </span>
+            <span class="text__partB__2"> and life to Everything </span>
+        </div>
+    </div>
+</div>
+
+<img class="musicIcon"  src="/assets/music-icon.svg"/>
+
+<div class="searchBoxContainer  searchBoxContainer-headerComponent">
+        <input  
+        #searchInput
+        type="text"  class="searchBox"  placeholder="search for songs .." 
+        [ngClass]="{ 'searchBox-active'  : searchInputBeingEntered }"
+        (input)="typingSearchQuery(searchInput)"  (focus)='onFocus_SearchInput()'  (blur)='onBlur_SearchInput()' 
+        (keyup.enter)="onSearch(searchInput); searchInput.blur()"
+        > 
+
+        <div class="searchIconWrapper"  (click)='onSearch(searchInput) ; searchInput.blur()'  >
+            <svg class="searchIconWrapper__mainIcon"     *ngIf='!(lyricsStillLoading || videoStillLoading)' > <use xlink:href="/assets/symbol-defs.svg#icon-music-playlist"></use> </svg>
+            <img class="searchIconWrapper__loadingIcon"  *ngIf='lyricsStillLoading || videoStillLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
+        </div>
+</div>
+

@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+
+  nestjs-api:
+    build:
+      context: ./backendd
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+
+
+  frontend-angular:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '4200:80'
+    volumes:
+      - /app/node_modules
+    depends_on:
+      - nestjs-api
+

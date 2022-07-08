@@ -1,0 +1,209 @@
+@import 'src/variables.scss' ;
+@import 'src/mixins.scss';
+
+
+
+:host {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .loaderOverlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(227, 190, 190, 0.58);
+        @include flexCenter;
+    }
+}
+
+
+.screenSizeIconsContainer {
+    position: absolute;
+    top: 1.2%;
+    left : 1.2%;
+
+    &:hover .screenSizeIconsContainer__tooltiptext {
+        opacity: 0.8;
+        visibility: visible;
+    }
+
+    &__tooltiptext {
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 5px;
+        font-style: italic;
+        padding: .5rem;
+        position: absolute;
+        top: 124%;
+        left: -12%;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s;
+
+        &::after {
+            content : '';
+            position :absolute;
+            top: -19%;
+            right: 54%;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+        }
+    }
+
+    .screenSizeIcon {
+        height : 2rem;
+        width: 2rem;
+        cursor : pointer;
+        fill : rgba(0, 0, 0, 0.521);
+
+        &-enlarge {
+            @include respond(tab-port-small) {
+                height : 3rem;
+                width: 3rem;
+                position : fixed;
+                top: 77.7%;
+                right: 5.7%;
+            }
+        }
+    }
+
+}
+
+.fontSizeIconsContainer {
+    position : fixed;
+    top: 37%;
+    right: 5%;
+    @include respond(tab-port-small) { top : 84% }
+
+    display : flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-out;
+
+    &:hover > &__tooltiptext { opacity: 0.8 }
+
+    &__tooltiptext {
+        background-color: white;
+        color: black;
+        text-align: center;
+        border-radius: 5px;
+        font-style: italic;
+        padding: .5rem;
+        position: absolute;
+        top: 122%;
+        left: -219%;
+        opacity: 0;
+        transition: all 0.2s;
+
+        &::after {
+            content : '';
+            position :absolute;
+            top: -19%;
+            right: 12%;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid white;
+        }
+    }
+
+    &-lyricsFullScreen {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        top : auto;
+        right : auto;
+
+        &-mainPageAdjustement {
+            @include respond(tab-port-small-minWidth) { margin-top: -3rem !important  }
+        }
+        &-endOfPageAdjustement { margin-top: -6rem !important }
+    }
+
+    .fontSizeIcon {
+        height: 3rem;
+        width: 3rem;
+        cursor : pointer;
+        fill : rgba(0, 0, 0, 0.521);
+        @include respond(tab-port-small) {  height: 4rem; width: 4rem }
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+            @include respond(phone) { margin-bottom: 2rem }
+        }
+
+        &-increase { position: relative }
+
+        &-shrink {
+            height: 2.7rem;
+            width: 2.7rem;
+        }
+    }
+}
+
+.searchBoxContainer-lyrics {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    align-self: center;
+}
+
+.lyricsSuggestionsWrapper {
+    overflow-y: scroll;
+    align-self: center;
+    list-style: none;
+    width : 87%;
+
+    .lyricsSuggestion {
+        cursor : pointer;
+        background-color: #D4E0F4;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        border : 1px solid rgba(0, 0, 0, 0.473);
+        transition : all 0.2s;
+
+        &:first-child {
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            margin-bottom: 2rem;
+        }
+
+        &:not(:first-child) { border-top : 1px solid rgba(0, 0, 0, 0.473) }
+
+        &:not(:last-child) { border-bottom : none }
+
+        &:hover { background-color: rgba(147, 181, 241, 0.644) }
+    }
+}
+
+.lyricWrapper {
+    margin-bottom: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+    line-height: 152%;
+    font-weight: 500;
+    font-size : 1.5rem;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    padding : 0 0.5rem;
+
+    &::first-line {
+        font-weight: bolder;
+        font-style: italic;
+        font-size : 2rem;
+    }
+}
+
+.fontSize-1_5rem { font-size: 1.5rem !important }
+.fontSize-2rem { font-size: 2rem !important }
+.fontSize-2_5rem { font-size: 2.5rem !important }
+
+

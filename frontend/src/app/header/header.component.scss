@@ -1,0 +1,117 @@
+
+@import 'src/variables.scss' ;
+@import 'src/mixins.scss';
+
+
+:host {
+   display : flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   position: relative;
+   padding : 2rem 0;
+}
+
+.logoContainer {
+    position: absolute;
+    top: 0 ;
+    left : 0;
+    display : grid;
+    padding :0 1rem;
+    & span {
+        font-size: 3rem;
+        font-family: 'Niconne', cursive;
+        color: #c21f27;
+
+        &::first-letter {
+            font-size : 5rem;
+            color: rgb(236, 37, 146);
+            font-weight:bolder
+        }
+        &:last-child {
+            margin-left: 2rem;
+            margin-top: -1.5rem;
+        }
+    }
+}
+
+.titleWrapper {
+    width : 70%;
+    margin-bottom: 6rem;
+    transform: translateX(3%);
+    @include respond(phone-small) {
+        margin-top : 1.2rem;
+        align-self: flex-end;
+        margin-right : 2rem;
+        max-width : 75%;
+    }
+    .text {
+        height : 100%;
+        width : 100%;
+
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        font-family: 'Delius Swash Caps', cursive;
+        font-size: 2.6rem;
+        @include respond(tab-port) { font-size: 2rem;  }
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+
+        &__partA , &__partB {
+            @include respond(phone-small) {
+                display : flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                justify-self: center !important;
+            }
+        }
+
+        &__partA {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            justify-self: start;
+            @include colorGradientTop;
+
+            &__1 { @include respond(phone-small) { @include colorGradientTop }}
+            &__2 { @include respond(phone-small) { @include colorGradientBottom }}
+        }
+
+        &__partB {
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+            justify-self: end;
+            @include colorGradientBottom;
+
+            &__1 { @include respond(phone-small) { @include colorGradientTop }}
+            &__2 { @include respond(phone-small) { @include colorGradientBottom }}
+        }
+    }
+}
+
+.musicIcon {
+    position: absolute;
+    bottom: 4%;
+    right: -0.9%;
+    width : 8rem;
+    height: 8rem;
+    animation: rotating 30s infinite;
+}
+
+
+@keyframes rotating {
+    0% { transform: rotateY(0deg)}
+    10% { transform: rotateY(360deg)}
+    20% { transform: rotateY(0deg)}
+  }
+
+
+
+
+
+
+
+
