@@ -34,14 +34,17 @@ export class DataService {
   getLyricsSuggestions(searchQuery : string) {
     this.allLyricsSuggestions = [];  // delete previous data.
     this.ajaxService.searchForLyrics(searchQuery).subscribe((res : any) => {
-        res.response.hits.forEach(el => {
-          const newLyric = {} as Lyric;
-          newLyric.artist = el.result.primary_artist.name;
-          newLyric.fullTitle = el.result.full_title;
-          newLyric.title = el.result.title;
-          newLyric.songID = el.result.id;
-          newLyric.lyricPath = el.result.path;
-          this.allLyricsSuggestions.push(newLyric);
+      console.log('this is the response : ', res);
+
+        res.hits.forEach(el => {
+          console.log(el.result.full_title);
+          // const newLyric = {} as Lyric;
+          // newLyric.artist = el.result.primary_artist.name;
+          // newLyric.fullTitle = el.result.full_title;
+          // newLyric.title = el.result.title;
+          // newLyric.songID = el.result.id;
+          // newLyric.lyricPath = el.result.path;
+          // this.allLyricsSuggestions.push(newLyric);
         });
         this.lyricsNotify();
         this.syncUIService.lyricsSearch_StopLoading();

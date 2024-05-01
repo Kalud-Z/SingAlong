@@ -26,10 +26,10 @@ export class AjaxService {
 
   searchForLyrics(searchQuery : string): Observable<any> {
     console.log('ajaxService | searchForLyrics is called')
-    return this.http.get("https://genius.p.rapidapi.com/search?q=" + searchQuery , {
+    return this.http.get("https://genius-song-lyrics1.p.rapidapi.com/search/?q=" + searchQuery , {
       headers: {
-        'x-rapidapi-host': 'genius.p.rapidapi.com',
-        'x-rapidapi-key': 'e46ba7e7e6mshb3209551624b62ep1f0160jsnca04aa702c0a'
+        'X-RapidAPI-Key': '2332262337mshc315559c61f6a55p17d7c5jsn5e3e4345aa2c',
+        'X-RapidAPI-Host': 'genius-song-lyrics1.p.rapidapi.com'
       }
     });
   }
