@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 
 
-export class SyncUIService {
+export class SyncUiService {
   lyricsSearch_LoadingNow$  = new Subject<boolean>();  //controls the loading icon
   videoSearch_LoadingNow$   = new Subject<boolean>();  //controls the loading icon
 

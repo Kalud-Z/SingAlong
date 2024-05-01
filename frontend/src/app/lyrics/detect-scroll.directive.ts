@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
-import { SyncUIService } from '../_services/sync-u-i.service';
+import { SyncUiService } from '../_services/sync-ui.service';
 
 @Directive({
   selector: '[appDetectScroll]'
@@ -7,7 +7,7 @@ import { SyncUIService } from '../_services/sync-u-i.service';
 
 //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 export class detectScroll {
-  constructor(private syncUIService : SyncUIService) {}
+  constructor(private syncUIService : SyncUiService) {}
 
 
   @HostListener("scroll", ["$event"]) onListenerTriggered(event): void {

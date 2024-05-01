@@ -3,16 +3,12 @@ import { Lyric } from '../lyrics/lyrics.model';
 import { AjaxService } from './ajax.service';
 import { Subject } from 'rxjs';
 import { videoObj } from '../youtube/video.model';
-import { SyncUIService } from './sync-u-i.service';
+import { SyncUiService } from './sync-ui.service';
 import { getLyrics, getSong } from 'genius-lyrics-api';
 
 @Injectable({
   providedIn: 'root'
 })
-
-/**
- * This service is responsible for handling the returned data from the APIs. It manipulates it and forwards it to the components.
- */
 
 export class DataService {
   allLyricsSuggestions: Lyric[] = [];
@@ -21,7 +17,7 @@ export class DataService {
   allVideosSuggestions: videoObj[] = [];
   allVideosSuggestions$ = new Subject<videoObj[]>() ;
 
-  constructor(private ajaxService: AjaxService, private syncUIService: SyncUIService) {}
+  constructor(private ajaxService: AjaxService, private syncUIService: SyncUiService) {}
 
   lyricsNotify() {
     this.allLyricsSuggestions$.next(this.allLyricsSuggestions);
@@ -31,13 +27,10 @@ export class DataService {
     this.allVideosSuggestions$.next(this.allVideosSuggestions);
   }
 
-  getLyricsSuggestions(searchQuery : string) {
-    this.allLyricsSuggestions = [];  // delete previous data.
-    this.ajaxService.searchForLyrics(searchQuery).subscribe((res : any) => {
-      console.log('this is the response : ', res);
-
+  getLyricsSuggestions(searchQuery: string) {
+    this.allLyricsSuggestions = [];
+    this.ajaxService.searchForLyricsFromGeniusAPI(searchQuery).subscribe((res : any) => {
         res.hits.forEach(el => {
-          // console.log(el.result.full_title);
           const newLyric = {} as Lyric;
           newLyric.artist = el.result.primary_artist.name;
           newLyric.fullTitle = el.result.full_title;
@@ -46,11 +39,8 @@ export class DataService {
           newLyric.lyricPath = el.result.path;
           this.allLyricsSuggestions.push(newLyric);
         });
-
-        console.log('allLyricsSuggestions : ', this.allLyricsSuggestions);
         this.lyricsNotify();
         this.syncUIService.lyricsSearch_StopLoading();
-
       },
       err => {
         console.log('fetching lyrics error : ', err);
@@ -59,12 +49,12 @@ export class DataService {
   }
 
   async getLyricText(lyricObj: Lyric) {
-      return await this.ajaxService.scrapeLyricFromGenius(lyricObj);
+      return await this.ajaxService.scrapeLyricFromGeniusAPI(lyricObj);
   }
 
   getVideos(searchQuery : string) {
       this.allVideosSuggestions = [];
-      this.ajaxService.fetchVideo(searchQuery).subscribe((data : any) => {
+      this.ajaxService.fetchVideoFromYouTubeAPI(searchQuery).subscribe((data : any) => {
         const allItems = data.items;
         allItems.forEach(el => {
           const newVideoObj = new videoObj(this.transformHTMLChars(el.snippet.title), el.id.videoId, el.snippet.thumbnails.high.url);

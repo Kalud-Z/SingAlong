@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { lyricsFullScreenTrigger } from './animations';
-import { SyncUIService } from './_services/sync-u-i.service';
+import { SyncUiService } from './_services/sync-ui.service';
 import { AjaxService } from './_services/ajax.service';
 
 
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
   videoSelected = false;
 
-  constructor(private synchUIService : SyncUIService, private  ajaxService : AjaxService) {}
+  constructor(private synchUIService : SyncUiService, private  ajaxService : AjaxService) {}
 
   ngOnInit() {
     this.synchUIService.lyricsFullScreen$.subscribe(data => {

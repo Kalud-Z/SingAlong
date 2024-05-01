@@ -2,7 +2,7 @@
 import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
 import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from '../animations';
-import { SyncUIService } from '../_services/sync-u-i.service';
+import { SyncUiService } from '../_services/sync-ui.service';
 import { DataService } from '../_services/data.service';
 import { videoObj } from './video.model';
 
@@ -38,7 +38,7 @@ export class YoutubeComponent implements OnInit {
   constructor(private dataService : DataService,
               private sanitizer: DomSanitizer,
               private renderer : Renderer2,
-              private syncUIService : SyncUIService) { }
+              private syncUIService : SyncUiService) { }
 
 
 

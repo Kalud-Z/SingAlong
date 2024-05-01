@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../_services/data.service';
-import { SyncUIService } from '../_services/sync-u-i.service';
+import { SyncUiService } from '../_services/sync-ui.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   videoStillLoading  = false;
   searchInputBeingEntered = false;
 
-  constructor(private dataService : DataService , private syncUIService : SyncUIService) { }
+  constructor(private dataService : DataService , private syncUIService : SyncUiService) { }
 
   ngOnInit(): void {
     this.syncUIService.lyricsSearch_LoadingNow$.subscribe(data => { this.lyricsStillLoading = data });

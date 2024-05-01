@@ -4,7 +4,7 @@ import { displayVideoSuggestionsTrigger, displayLyricsSuggestionsTrigger, displa
 
 import { DataService } from '../_services/data.service';
 import { Lyric } from './lyrics.model';
-import { SyncUIService } from '../_services/sync-u-i.service';
+import { SyncUiService } from '../_services/sync-ui.service';
 
 @Component({
   selector: 'app-lyrics',
@@ -42,7 +42,7 @@ export class LyricsComponent implements OnInit {
   @Input()  isVideoSelected = false;
 
   constructor(private dataService : DataService ,
-              private syncUIService : SyncUIService) { }
+              private syncUIService : SyncUiService) { }
 
   ngOnInit(): void {
     this.syncUIService.typedSearchQuery$.subscribe(data => { this.searchQuery = data })
