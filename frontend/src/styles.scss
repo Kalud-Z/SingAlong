@@ -1,7 +1,5 @@
 @import 'src/mixins.scss';
 
-
-
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Balsamiq+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:ital,wght@1,500&display=swap');
@@ -10,30 +8,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
 
 
-// <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
-
-// <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&display=swap" rel="stylesheet">
-// <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
-
-
 *,
 *::after,
 *::before {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
-
-    // border:1px solid yellow;
 }
 
 html { // this defines what 1 rem is : 1rem = 10px
     font-size: 62.5%;  /* this is the root font-size ! | and = 62.5% of the default browser font-size which is usually 16px ==> final value 10px */
     font-family: 'Baloo 2', cursive;
-
     @include respond(tab-port-small) { font-size: 52.5% }
     @include respond(phone-small)    { font-size: 42.5% }
-
-
 }
 
 
@@ -44,12 +31,10 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
 
 
 
-
 // ##################################################    SHARED COMPONENTS  ###########################################################################
 
 
 // --------------------------    Search Input   ------------------------------------------------------
-
 
 .searchBoxContainer {
     grid-column: 1 / -1;
@@ -119,8 +104,6 @@ body { /* all the stuff in here , will be inherited to the child elements.*/
     }
 
 }
-
-
 
 
 .lyrics-background-hideImage {

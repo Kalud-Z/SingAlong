@@ -1,53 +1,53 @@
-<div class="searchBoxContainer  searchBoxContainer-video"   *ngIf='!isLyricsFullScreen'>
-    
-    <input  class="searchBox"  #searchInput
-    [ngClass]="{ 'searchBox-active'  : searchInputEntered }" 
-    type="text"  placeholder="search for music videos .."
+<div class="searchBoxContainer searchBoxContainer-video" *ngIf='!isLyricsFullScreen'>
+    <input class="searchBox" #searchInput
+    [ngClass]="{'searchBox-active': searchInputEntered}"
+    type="text" placeholder="search for music videos .."
     [value]="searchQuery"
     (focus)='onFocus_SearchInput()' (blur)='onBlur_SearchInput()' (keyup.enter)="onSearch(searchInput); searchInput.blur()"> 
 
     <div class="searchIconWrapper" (click)='onSearch(searchInput); searchInput.blur()'  >
-        <svg class="searchIconWrapper__mainIcon"     *ngIf='!isLoading' > <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
-        <img class="searchIconWrapper__loadingIcon"  *ngIf='isLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
+        <svg class="searchIconWrapper__mainIcon" *ngIf='!isLoading'> <use xlink:href="/assets/symbol-defs.svg#icon-film"></use> </svg>
+        <img class="searchIconWrapper__loadingIcon" *ngIf='isLoading' src="/assets/loadingSpinners/svg-loaders/audio.svg"/>
     </div>
 
 </div>
 
-<ul class="videosSuggestionsWrapper" *ngIf="showSuggestions"   @displayVideoSuggestionsState >
+<ul class="videosSuggestionsWrapper" *ngIf="showSuggestions" @displayVideoSuggestionsState >
     <li class="videosSuggestion" *ngFor="let sugg of allSuggestions" (click)="onSelectVideo(sugg)">
-        <figure class="videosSuggestion__imgWrapper"> <img  [src]="[sugg.thumbnail]"> </figure>
-        <p class="videosSuggestion__title" > {{ sugg.title }} </p>
+        <figure class="videosSuggestion__imgWrapper"> <img [src]="[sugg.thumbnail]"></figure>
+        <p class="videosSuggestion__title"> {{sugg.title}} </p>
     </li>
 </ul>
 
 
-<!-- weird issue : if I use *ngIf on this div. The player obj , stops being able to load a second video !! => I had to add a ...-hide class to hide it. -->
+<!-- weird issue : if I use *ngIf on this div. The player obj, stops being able to load a second video !! => I had to add a ...-hide class to hide it. -->
 <div class="iframeOuterContainer" #iframeOuterContainer  
-    [@iframeOuterContainerState]="!showVideoFrame ? 'hidden' : 'shown'"
-    [ngClass]="{ 'iframeOuterContainer-inLyricsFullscreenMode' : isLyricsFullScreen ,
-    'iframeOuterContainer-inInitialMode' : !isLyricsFullScreen , 'iframeOuterContainer-hide' : !showVideoFrame }">
+    [ngClass]="{'iframeOuterContainer-inLyricsFullscreenMode': isLyricsFullScreen,
+    'iframeOuterContainer-inInitialMode': !isLyricsFullScreen, 'iframeOuterContainer-hide': !showVideoFrame}"
+     [@iframeOuterContainerState]="!showVideoFrame ? 'hidden' : 'shown'">
 
-    <svg class="closeVideoIcon"  
-    *ngIf='showVideoFrame && !isLyricsFullScreen'  
-    @closeVideoIconState  
-    (click)="returnToVideos()"> 
+    <svg class="closeVideoIcon" *ngIf='showVideoFrame && !isLyricsFullScreen' (click)="returnToVideos()" @closeVideoIconState>
         <use xlink:href="/assets/symbol-defs.svg#icon-x-square"></use>
     </svg>
 
-    <div class="iframeWrapper"  #videoPlayer  [ngClass]="{'iframeWrapper-small' : isLyricsFullScreen ,'iframeWrapper-hide' : !showVideoFrame  }" >
+    <div class="iframeWrapper" #videoPlayer [ngClass]="{'iframeWrapper-small': isLyricsFullScreen,'iframeWrapper-hide': !showVideoFrame}">
         <div id='player'></div>
-        <div class="iframeWrapper__shield" (click)='toggleVideo()' ></div>
-        <div class="iframeWrapper__loadingWindow">   <img class="iframeWrapper__loadingWindow__icon"  src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
+        <div class="iframeWrapper__shield" (click)='toggleVideo()'></div>
+        <div class="iframeWrapper__loadingWindow"> <img class="iframeWrapper__loadingWindow__icon" src="/assets/loadingSpinners/svg-loaders/bars.svg"/> </div>
     </div> 
 
-    <div class="controlVideoIconsContainer" [ngClass]="{'controlVideoIconsContainer-onTheSide' : setVideoOnTheSide ,
-     'controlVideoIconsContainer-onTheSide-endOfPageAdjustement' : scrolledToEndOfPage }" >
-        <div class="controlVolumeWrapper" >
-            <svg class="controlVolumeIcon controlVolumeIcon-mute   controlIcon"  (click)='unmuteVideo()'  *ngIf='isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use> </svg>
-            <svg class="controlVolumeIcon controlVolumeIcon-unMute controlIcon"  (click)='muteVideo()'  *ngIf='!isVideoMuted' > <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use> </svg>
-            <div class="volumeRangeSliderWrapper"  *ngIf='!setVideoOnTheSide'> 
-                <svg class="controlVolumeIcon controlVolumeIcon-equalizer" > <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg>
-                <input type="range" class="volumeRangeSlider" #volumeRangeSlider (input)='changeVolume($event)' min="0" max="100">
+    <div class="controlVideoIconsContainer" [ngClass]="{'controlVideoIconsContainer-onTheSide': setVideoOnTheSide,
+     'controlVideoIconsContainer-onTheSide-endOfPageAdjustement': scrolledToEndOfPage }">
+        <div class="controlVolumeWrapper">
+            <svg class="controlVolumeIcon controlVolumeIcon-mute controlIcon" (click)='unmuteVideo()' *ngIf='isVideoMuted'>
+                <use xlink:href="/assets/symbol-defs.svg#icon-soundOff"></use>
+            </svg>
+            <svg class="controlVolumeIcon controlVolumeIcon-unMute controlIcon" (click)='muteVideo()' *ngIf='!isVideoMuted'>
+                <use xlink:href="/assets/symbol-defs.svg#icon-soundOn"></use>
+            </svg>
+            <div class="volumeRangeSliderWrapper" *ngIf='!setVideoOnTheSide'>
+                <svg class="controlVolumeIcon controlVolumeIcon-equalizer"> <use xlink:href="/assets/symbol-defs.svg#icon-equalizer"></use> </svg>
+                <input type="range" #volumeRangeSlider class="volumeRangeSlider" (input)='changeVolume($event)' min="0" max="100">
             </div>  
         </div>
         <svg class="controlIcon controlIcon-backward"(click)='jumpBackward()' > <use xlink:href="/assets/symbol-defs.svg#icon-backward"></use> </svg>

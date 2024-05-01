@@ -4,15 +4,13 @@ import { environment }  from 'src/environments/environment'
 import { Observable } from 'rxjs';
 import { Lyric } from '../lyrics/lyrics.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
 
-export class AjaxService {  //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+export class AjaxService {
   constructor(private http : HttpClient) { }
 
- 
    /**
    * This method reaches out to the Youtube Data API to fetch the videos.
    * @param searchQuery 
@@ -20,12 +18,14 @@ export class AjaxService {  //°°°°°°°°°°°°°°°°°°°°°°°°°
    *  - We subscribe to this observable from the dataService.
    */
   fetchVideo(searchQuery : string): Observable<any> {
+    console.log('ajaxService | fetchVideo is called')
     return this.http.get("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=12&q=" + searchQuery
                           + "&type=video&key=" + environment.YoutubeAPIKey);
   }
 
 
   searchForLyrics(searchQuery : string): Observable<any> {
+    console.log('ajaxService | searchForLyrics is called')
     return this.http.get("https://genius.p.rapidapi.com/search?q=" + searchQuery , {
       headers: {
         'x-rapidapi-host': 'genius.p.rapidapi.com',
@@ -34,14 +34,12 @@ export class AjaxService {  //°°°°°°°°°°°°°°°°°°°°°°°°°
     });
   }
 
-
   scrapeLyricFromGenius(lyricsObj: Lyric) {
+    console.log('ajaxService | scrapeLyricFromGenius is called')
     return this.http.get(`${environment.backendUrl}/genius${lyricsObj.lyricPath}`).toPromise()
   }
 
-
-
-} //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+}
 
 
 

@@ -13,7 +13,7 @@ import { getLyrics, getSong } from 'genius-lyrics-api';
 /**
  * This service is responsible for handling the returned data from the APIs. It manipulates it and forwards it to the components.
  */
-//°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
 export class DataService {
   allLyricsSuggestions: Lyric[] = [];
   allLyricsSuggestions$ = new Subject<Lyric[]>() ;
@@ -61,9 +61,9 @@ export class DataService {
       this.ajaxService.fetchVideo(searchQuery).subscribe((data : any) => {
         const allItems = data.items;
         allItems.forEach(el => {
-          const newVideoObj = new videoObj(this.transformHTMLChars(el.snippet.title), el.id.videoId , el.snippet.thumbnails.high.url);
+          const newVideoObj = new videoObj(this.transformHTMLChars(el.snippet.title), el.id.videoId, el.snippet.thumbnails.high.url);
           this.allVideosSuggestions.push(newVideoObj);
-        })
+        });
         this.videosNotify();
         this.syncUIService.videoSearch_StopLoading();
       },
@@ -73,9 +73,6 @@ export class DataService {
         });
   }
 
-
-  // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§ PRIVATE  §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
-
   private transformHTMLChars(str: string): string {
     str = str.replace(/&#039;/gi , "'");
     str = str.replace(/&#39;/gi , "'");
@@ -83,12 +80,9 @@ export class DataService {
     str = str.replace(/&lt;/gi , "<");
     str = str.replace(/&gt;/gi , ">");
     str = str.replace(/&quot;/gi , '"');
-
     return str;
   }
 
-
-
-}  //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+}
 
 

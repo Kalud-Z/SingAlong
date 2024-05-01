@@ -1,9 +1,6 @@
 // https://developers.google.com/youtube/iframe_api_reference#seekTo
-
 import { Component, OnInit, Input, HostListener, Output, EventEmitter, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { DomSanitizer} from '@angular/platform-browser';
-
-
 import { displayVideoSuggestionsTrigger, iframeOuterContainerTrigger, closeVideoIconTrigger } from '../animations';
 import { SyncUIService } from '../_services/sync-u-i.service';
 import { DataService } from '../_services/data.service';
@@ -21,7 +18,7 @@ import { videoObj } from './video.model';
   ]
 })
 
-//°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
 export class YoutubeComponent implements OnInit {
   allSuggestions : videoObj[] = [];
   isLoading = false;
@@ -33,16 +30,15 @@ export class YoutubeComponent implements OnInit {
   searchQuery : string = '';
 
   @Input()  isLyricsFullScreen = false;
-  @Output() videoSelectedEmitter = new EventEmitter<boolean>();
+  @Output() videoSelectedEmitter= new EventEmitter<boolean>();
 
-  @ViewChild('videoPlayer' , { static : false}) videoPlayer : ElementRef;
-  @ViewChild('iframeOuterContainer' , { static : false}) iframeOuterContainer : ElementRef;
+  @ViewChild('videoPlayer', {static: false}) videoPlayer: ElementRef;
+  @ViewChild('iframeOuterContainer', {static: false}) iframeOuterContainer: ElementRef;
 
   constructor(private dataService : DataService,
               private sanitizer: DomSanitizer,
               private renderer : Renderer2,
-              private syncUIService : SyncUIService
-              ) { }
+              private syncUIService : SyncUIService) { }
 
 
 
@@ -65,17 +61,17 @@ export class YoutubeComponent implements OnInit {
        this.iframeOuterContainerHeight_alreadySet = true;
      }
       this.setVideoOnTheSide = data;
-    })
+    });
 
     this.syncUIService.scrolledToEndOfPage$.subscribe(data => { this.scrolledToEndOfPage = data })
-  } //ngOnInit
+  }
 
 
   returnToVideos() {
     this.showSuggestions = true;
     this.showVideoFrame = false;
     this.videoSelectedEmitter.emit(false);
-    this.player.destroy(); //so we can load another video afterwards, by creating a new player.
+    this.player.destroy(); //so we can load another video afterward, by creating a new player.
   }
 
   onSearch(searchInput : HTMLInputElement) {
@@ -88,13 +84,10 @@ export class YoutubeComponent implements OnInit {
   onSelectVideo(sugg : videoObj) {
     this.selectedVideoID = sugg.videoID;
     this.videoSelectedEmitter.emit(true);
-
     this.showSuggestions = false;
     this.showVideoFrame = true;
-
     this.initYoutubeIframeAPI()
   }
-
 
   onFocus_SearchInput() { this.syncUIService.searchQueryIsBeingTypedNow = true  ; this.searchInputEntered = true }
   onBlur_SearchInput()  { this.syncUIService.searchQueryIsBeingTypedNow = false ; this.searchInputEntered = false }
@@ -102,18 +95,16 @@ export class YoutubeComponent implements OnInit {
 
   // §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§  YOUTUBE IFRAME API  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
   selectedVideoID = ''
   YT: any;
   videoID: string;
   player: any;
-  videoState = 1; //= 2 ==> playin // = 1 ==> paused
+  videoState = 1; //= 2 ==> playing // = 1 ==> paused
   isVideoMuted = false;
   videoAlreadyLoadedOnce = false;
   showVideoFrame = false;
 
-  @ViewChild('volumeRangeSlider' , { static : false}) volumeRangeSlider : ElementRef;
-
+  @ViewChild('volumeRangeSlider', {static : false}) volumeRangeSlider: ElementRef;
 
   // keyCode = 39  arrow right
   // keyCode = 37  arrow left
@@ -133,13 +124,12 @@ export class YoutubeComponent implements OnInit {
 
       if(event.keyCode === 32) {  //we pause or play
         if(event.target === document.body) { event.preventDefault() }
-
         if(this.videoState == 1) { this.playVideo() }
         if(this.videoState == 2) { this.pauseVideo() }
       }
 
-    } //outer-if
-  } //HostListener
+    }
+  }
 
 
   initYoutubeIframeAPI() {
@@ -219,7 +209,7 @@ export class YoutubeComponent implements OnInit {
     if(this.videoState === 2) { this.pauseVideo() }
   }
 
-}  //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+}
 
 
 

@@ -3,5 +3,5 @@ export class videoObj {
         public title : string,
         public videoID : string,
         public thumbnail : string,
-    ) {}
+        ) {}
 }

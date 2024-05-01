@@ -5,8 +5,7 @@ import axios from 'axios';
 
 
 @Controller('genius')
-export class GeniusController { //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
-
+export class GeniusController {
     constructor() { }
 
     @Get(':lyricsUrlPath')
@@ -18,7 +17,6 @@ export class GeniusController { //°°°°°°°°°°°°°°°°°°°°°°°
 
         return {lyrics: result}
     }
-
 
     async extractLyric(lyricsUrlPath: string) {
         const currentURL = `https://genius.com/${lyricsUrlPath}`;
@@ -43,5 +41,4 @@ export class GeniusController { //°°°°°°°°°°°°°°°°°°°°°°°
         } catch (e) { throw e }
     }
 
-
-} //°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+}

@@ -1,132 +1,33 @@
-TODO :
-
-- dockerized and deploy it.
-
-
-
-
-
-
-
-
-
-____________________________________________________________________________________________________________________________________
-____________________________________________________________________________________________________________________________________
-
-
-
-https://developer.musixmatch.com/documentation
-
-
-https://www.programmableweb.com/api/apiseeds-lyrics
-
-___________________________________________________________________________________
-
-
-google api key :
-
-AIzaSyA7t-1w2-9J_9rhRPI9DA-xfpWtzpKye0E
-
-
-https://console.developers.google.com/apis/credentials?project=onlineshop-274318
-
-
-
-GET https://www.googleapis.com/youtube/v3/search?part=eminem&maxResults=25&q=surfing&key=[YOUR_API_KEY] HTTP/1.1
-
-Authorization: Bearer [YOUR_ACCESS_TOKEN]
-Accept: application/json
-
-
-___________________________________________________________________________________
-
-
-Lyrics APIs :
- 
- 
-
-https://apiseeds.com/documentation/lyrics   ==> sucks !
-apiKey . lyrics api : 
-B22Vz3RGZBYB1fYyGcIzFa2V5L1yZhw6ZmqiWWw4yidVvVl3rbm9DkKqPP9wfmi4
-
-
---------------------------		------------------		----------------------------	----------			--------------
-
-https://developer.musixmatch.com/documentation
-  ==> weird.
-  
-
-
---------------------------		------------------		----------------------------	----------			--------------
-
- this.http.get("https://canarado-lyrics.p.rapidapi.com/lyrics/" + this.searchQuery , {
-      headers: {
-        "x-rapidapi-host": "canarado-lyrics.p.rapidapi.com",
-        "x-rapidapi-key": "e46ba7e7e6mshb3209551624b62ep1f0160jsnca04aa702c0a"
-      }
-    }).subscribe(data => {
-	
-	==> Good . but return only 4 results at a time
-	
-	https://rapidapi.com/canarado/api/canarado-lyrics
-
---------------------------		------------------		----------------------------	----------			--------------
-
-
-animation libraries :
-
-	https://openbase.io/js/css-animator
-	
-	https://openbase.io/js/angular-animate
-	
-	https://openbase.io/packages/top-angular-animation-libraries
-
---------------------------		------------------		----------------------------	----------			--------------
-
-deploy link  :
+DEPLOYMENT  :
 
 https://sing-along111.herokuapp.com/
 
 repo :
 https://gitlab.com/Kalud999/singalong
 
-
 heroku link :
 https://dashboard.heroku.com/apps/sing-along111
 
+####################################################################################
+FETCHING LYRICS - GENIUS API [via rapidapi platform]
 
---------------------------		------------------		----------------------------	----------			--------------
+app name : SingAlong
 
-deploy to heroku tutorial :
-https://medium.com/codeshake/deploy-an-angular-nestjs-app-to-heroku-807a2833d88c
-
-
-
-"build:win": "(if exist ..\\backend\\front rmdir ..\\backend\\front /s /q) && ng build --prod && move dist/SingAlong ..\\backend\\front"
-
-1) build the front end and move the dist to the backend.
-
-2) install heroku cli
-
-3) heroku git:remote -a sing-along111
-
-4) git push heroku master
+api key : 2332262337mshc315559c61f6a55p17d7c5jsn5e3e4345aa2c
 
 
 
+####################################################################################
+GOOGLE API KEY :
 
-heroku git:remote -a sing-along111
+AIzaSyA7t-1w2-9J_9rhRPI9DA-xfpWtzpKye0E
 
+https://console.developers.google.com/apis/credentials?project=onlineshop-274318
 
+GET https://www.googleapis.com/youtube/v3/search?part=eminem&maxResults=25&q=surfing&key=[YOUR_API_KEY] HTTP/1.1
 
---------------------------		------------------		----------------------------	----------			--------------
-  
-  
-Genius API Client :
+Authorization: Bearer [YOUR_ACCESS_TOKEN]
+Accept: application/json
 
-client id : gXp0aSAXOtWfzpUmCRej4S8SDRq3X_Q55Pbdqmc-06XcH0Tc6Ew0vWzagZdzZ_NA
-
-client secret : A3ZogATPsHubRo3IL2Zv5Ylp5NKjTCmjKwbGnlODPSwcla4S-p60m0V8i-bwbfZKhoyCu27I6enobHuYq3Y2KA
-
-clent access token : o7Wifq8OOalGqer0AKp2Iw9rb54-hngoy_TWpvZTYYF-cxc4vQdolMiZq7HVKma2
+####################################################################################
 

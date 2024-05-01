@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
       this.videoStillLoading = true;
       this.dataService.getLyricsSuggestions(input.value);
       this.dataService.getVideos(input.value);
-      this.syncUIService.lyricsFullScreen$.next(false); //in case we are in fullscreen mode. we wanna exit it, upon a new search.
+      this.syncUIService.lyricsFullScreen$.next(false); //in case we are in fullscreen mode. we want to exit it, upon a new search.
     }
   }
 
