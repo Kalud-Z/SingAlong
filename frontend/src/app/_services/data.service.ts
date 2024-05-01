@@ -37,17 +37,20 @@ export class DataService {
       console.log('this is the response : ', res);
 
         res.hits.forEach(el => {
-          console.log(el.result.full_title);
-          // const newLyric = {} as Lyric;
-          // newLyric.artist = el.result.primary_artist.name;
-          // newLyric.fullTitle = el.result.full_title;
-          // newLyric.title = el.result.title;
-          // newLyric.songID = el.result.id;
-          // newLyric.lyricPath = el.result.path;
-          // this.allLyricsSuggestions.push(newLyric);
+          // console.log(el.result.full_title);
+          const newLyric = {} as Lyric;
+          newLyric.artist = el.result.primary_artist.name;
+          newLyric.fullTitle = el.result.full_title;
+          newLyric.title = el.result.title;
+          newLyric.songID = el.result.id;
+          newLyric.lyricPath = el.result.path;
+          this.allLyricsSuggestions.push(newLyric);
         });
+
+        console.log('allLyricsSuggestions : ', this.allLyricsSuggestions);
         this.lyricsNotify();
         this.syncUIService.lyricsSearch_StopLoading();
+
       },
       err => {
         console.log('fetching lyrics error : ', err);

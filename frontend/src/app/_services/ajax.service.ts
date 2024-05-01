@@ -12,7 +12,7 @@ export class AjaxService {
   constructor(private http : HttpClient) { }
 
    /**
-   * This method reaches out to the Youtube Data API to fetch the videos.
+   * This method reaches out to the YouTube Data API to fetch the videos.
    * @param searchQuery 
    * @returns - it returns an observable that yields an array of objects. (each object contains alot of info about a video).
    *  - We subscribe to this observable from the dataService.
