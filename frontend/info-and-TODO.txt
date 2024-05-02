@@ -1,0 +1,15 @@
+deplyoed
+
+https://kalud-z.github.io/SingAlong/
+
+
+############################################################################################
+TODO :
+Users login.
+
+they get profiles. bookmark video , lyrics ... the whole shabang
+
+upload own lyrics
+
+
+
